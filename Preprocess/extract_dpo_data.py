@@ -33,7 +33,7 @@ for i in data:
 
         sorted_output = [g for g in sorted(i['answers'],key=lambda x:x["nllb-200-distilled-600M-reward-mean"],reverse=True)]
 
-        temp = english_instruction2data.get(i['en_question'],[])
+        temp = english_instruction2data.get(i['prompt'],[])
         for j in range(len(sorted_output)-1):
             predict_answer = extract_last_num(sorted_output[j]['generated'])
             if abs(label - predict_answer) > 1e-3:
@@ -45,7 +45,7 @@ for i in data:
                 sample['score-diff'] = sorted_output[j]['nllb-200-distilled-600M-reward-mean']-sorted_output[l]['nllb-200-distilled-600M-reward-mean']
                 if sorted_output[j]['nllb-200-distilled-600M-reward-mean'] != sorted_output[l]['nllb-200-distilled-600M-reward-mean'] and process(sorted_output[j]['generated']) != process(sorted_output[l]['generated']):
                     temp.append(sample)
-        english_instruction2data[i['en_question']] = temp
+        english_instruction2data[i['prompt']] = temp
 
 
 ratio = 10
