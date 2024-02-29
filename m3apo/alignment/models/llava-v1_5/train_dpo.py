@@ -1,5 +1,5 @@
 import os
-os.environ["WANDB_PROJECT"]="ha-dpo"
+os.environ["WANDB_PROJECT"]="m3apo"
 
 import json
 import copy
@@ -33,7 +33,8 @@ from peft import (
     set_peft_model_state_dict,
 )
 
-from ha_dpo.trainer.llava_dpo_trainer import LlavaDPOTrainer
+from m3apo.alignment.trainer.llava_dpo_trainer import LlavaDPOTrainer
+from m3apo.utils.utils import process_jsonl
 
 local_rank = None
         
@@ -53,12 +54,11 @@ class ModelArguments:
 
 @dataclass
 class DataArguments:
-    vg_path: str = field(default=None, metadata={"help": "Path to the Visual Genome data."})
-    desc_data_path: str = field(default=None, metadata={"help": "Path to the training data."})
-    pope_data_path: str = field(default=None, metadata={"help": "Path to the training data."})
+    
+    data_path: str = field(default=None, metadata={"help": "Path to the training data."})
     lazy_preprocess: bool = False
     is_multimodal: bool = False
-    image_folder: Optional[str] = field(default="")
+    image_folder: Optional[str] = field(default="/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017")
     image_aspect_ratio: str = 'square'
     
     
@@ -192,39 +192,26 @@ class LazySupervisedDataset(Dataset):
     """Dataset for supervised fine-tuning."""
 
     def __init__(self, 
-        data_file_path: str,
+        data_path: str,
         # vg_path: str,
-        desc_data_path: str,
-        pope_data_path: str,
         tokenizer: transformers.PreTrainedTokenizer,
         data_args: DataArguments,
-        sample_strategy: str = "offline",
         seed: int = 42,
-        image_dir = "/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017",
     ):
         super(LazySupervisedDataset, self).__init__()
-        
-        vg_image_data = json.load(open(os.path.join(vg_path, "image_data.json")))
-        
-        self.id2path = lambda x: os.path.join(image_dir, x)       
         random.seed(seed)
-        # preprocess
-        # desc_data = json.load(open(desc_data_path, "r"))
-        # pope_data = json.load(open(pope_data_path, "r"))
-       
-        # desc_data_dict = self.desc_process(desc_data, sample_strategy)
-        # pope_data_dict = self.pope_process(pope_data)
-        # list_data_dict = pope_data_dict + desc_data_dict*2
+        data = process_jsonl(data_path)
+        list_data_dict = self.data_process(data)
         
-        rank0_print("Formatting inputs...Skip in lazy mode")
         self.tokenizer = tokenizer
-        # self.list_data_dict = list_data_dict
+        self.list_data_dict = list_data_dict
         self.data_args = data_args
+        
     def data_process(self, data):
         '''
             data: 是一个list, 每个元素是一个dict, 其中dict至少包含以下信息:
             {
-                "prompt":prompt of this question,
+                "question":prompt of this question,
                 "feedback":[
                     {
                     "chosen":chosen answer1,
@@ -241,17 +228,18 @@ class LazySupervisedDataset(Dataset):
         '''
         data_dict_list = []
         id = 0
+        chosen_sign="chosen" if "chosen" in data[0]['feedback'][0].keys() else "accept"
         for idx in range(len(data)):
-            for inner_idx in range(len(data[idx])):
-                image_id = data[idx]["image_id"]
-                chosen = data[idx]['feedback'][inner_idx]["chosen"]
-                reject = data[idx]['feedback'][inner_idx]["reject"]
-                question = data[idx]["prompt"]
+            for inner_idx in range(len(data[idx]['feedback'])):
+                image_id = data[idx]["image"]
+                chosen = data[idx]['feedback'][inner_idx]["accept"]
+                reject = data[idx]['feedback'][inner_idx][chosen_sign]
+                question = data[idx]["question"]
                 if not DEFAULT_IMAGE_TOKEN in question:
                     question = DEFAULT_IMAGE_TOKEN + '\n' + question
                 data_dict_list.append({
-                    "id": int(image_id),
-                    "image": self.id2path[int(image_id)],
+                    "id": int(id),
+                    "image": image_id,
                     "chosen_conversations": [
                         {"from": "human", "value": question},
                         {"from": "gpt", "value": chosen},
@@ -261,6 +249,7 @@ class LazySupervisedDataset(Dataset):
                         {"from": "gpt", "value": reject},
                     ],
                 })
+                id+=1
         return data_dict_list
         
     def __len__(self):
@@ -394,10 +383,10 @@ def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer,
                                 data_args) -> Dict:
     """Make dataset and collator for supervised fine-tuning."""
     train_dataset = LazySupervisedDataset(tokenizer=tokenizer,
-                                #data_path=data_args.data_path,
-                                vg_path=data_args.vg_path,
-                                desc_data_path=data_args.desc_data_path,
-                                pope_data_path=data_args.pope_data_path,
+                                data_path=data_args.data_path,
+                                # vg_path=data_args.vg_path,
+                                # desc_data_path=data_args.desc_data_path,
+                                # pope_data_path=data_args.pope_data_path,
                                 data_args=data_args)
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     return dict(train_dataset=train_dataset,
