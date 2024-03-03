@@ -15,5 +15,6 @@ def main(directory):
             # os.remove(jsonl_file)
 
 if __name__ == '__main__':
-    directory = '/mnt/petrelfs/songmingyang/code/VCD/experiments/output/cd/'  # 替换为你的目录路径
+    vcd_base="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments"
+    directory = f'{vcd_base}/output/test_dpo/'  # 替换为你的目录路径
     main(directory)

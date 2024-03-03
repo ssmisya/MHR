@@ -10,6 +10,7 @@ from experiments.eval.language_dict import language_dict
 import debugpy
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
+from m3apo.utils.utils import process_jsonl, write_jsonl
 loss_fn = nn.CrossEntropyLoss(reduction='none')
 langs = {
             'Swahili' :'swh_Latn',
@@ -33,9 +34,6 @@ def MultiLigual_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,
         y = tokenizer(labels, return_tensors='pt', padding='longest', truncation=True,max_length=512).to(model.device)
         y.input_ids[y.input_ids == tokenizer.pad_token_id] = -100
         results = []
-        
-        
-        
         with torch.no_grad():
             output = model(**x, labels=y.input_ids)
             loss = output.loss
@@ -45,10 +43,6 @@ def MultiLigual_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,
                 lab = y.input_ids[i]
                 result = loss_fn(pre.view(-1, output.logits.size(-1)), lab.view(-1)).mean().cpu().detach().numpy().tolist()
                 results.append(1/result)
-                
-        # debugpy.listen(("0.0.0.0", 5678))
-        # debugpy.wait_for_client()
-        # breakpoint()
         
         torch.cuda.empty_cache()
         return results
@@ -56,14 +50,15 @@ def MultiLigual_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,
 
 def main(args):
     data_path = os.path.join(args.input_data_dir, args.data_file)
-    target_dir = os.path.join(args.output_data_dir, args.data_file)
+    target_dir = os.path.join(args.output_data_dir, os.path.splitext(args.data_file)[0])
     target_path = target_dir + "_{proc}_{end}.jsonl".format(proc = args.begin_index,end = args.begin_index + args.data_length)
-    data = []
-    with open(data_path, 'r', encoding='utf-8') as f:
-         for line in f:
-            json_obj = json.loads(line)
-            data.append(json_obj)
-
+    
+    target_path = target_dir
+    data = process_jsonl(data_path)
+    if args.reference_style == "ref_file":
+        ref_data = process_jsonl(args.reference_en_file)
+    else:
+        ref_data = data
     
     rm_model_base = AutoModelForSeq2SeqLM.from_pretrained(args.reward_model_path,device_map='auto')
     rm_model_base = rm_model_base.eval()
@@ -76,17 +71,18 @@ def main(args):
     print("begin_index: {}, end_index: {}".format(begin_index, end_index))
 
     result = []
-    for i in tqdm(range(begin_index, end_index)):
+    for i in tqdm(range(begin_index,end_index)):
         item = data[i]
+        ref_item = ref_data[i]
+        assert item['question_id'] == ref_item['question_id']
         lang = langs[language_dict[args.language]['full_name']]
         if lang == "English":
-            continue
-        if len(item['en_answer']) == 0:
             continue
         item_reward_list=[]
         for it in item['answer']: 
             reward_list = []
-            en_answers = item['en_answer'] if isinstance(item['en_answer'], list) else [item['en_answer']]
+            en_answers = ref_item['answer'] if args.reference_style == "ref_file" else ref_item['en_answer']
+            en_answers = en_answers if isinstance(en_answers, list) else [en_answers]
             input_answer = [it for _ in en_answers]
             output = [j for j in en_answers]
             if len(input_answer) <= 20:
@@ -122,9 +118,10 @@ if __name__ == "__main__":
     parser.add_argument('-rm','--reward_model_path', type=str,default='/mnt/petrelfs/songmingyang/songmingyang/model/others/nllb-200-distilled-600M')
     parser.add_argument('-rf','--reference_en_file',type=str, default='/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/generations/llava_7b_v1_generation_num20_en.json')
     parser.add_argument('-i','--input_data_dir',type=str, default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/generations")
-    parser.add_argument('-o','--output_data_dir',type=str, default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/add_ppl")
+    parser.add_argument('-o','--output_data_dir',type=str, default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/add_ppl/20_en_refs/")
     parser.add_argument('-d','--data_file', type=str)
     parser.add_argument('-l','--language', type=str, default="en")
+    parser.add_argument('-rs','--reference_style',type=str, default="ref_file")
     args = parser.parse_args()
     main(args)
             

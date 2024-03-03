@@ -33,14 +33,16 @@ def main():
     languages = "en ar  bg  bn  de  el  es  fa  fr  gu  hi  id  it  ja  jv  ko  ml  mr  ms  my  nl  pt  ru  sv  sw  ta  te  th  tr  uk  ur  vi  zh"
     language_list = languages.split()
     dataset_list=["coco"]
-    type_list=["popular","random","adversarial"]
+    type_list=["popular"]
     seed=55
     cd_alpha=-1
     cd_beta=0.2
     noise_step=-500
     partition="MoE"
     model_path="/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b"
+    peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/dpo_full_paired_data/checkpoint-5000"
     image_folder="/mnt/petrelfs/share_data/quxiaoye/VCD_file/val2014"
+    vcd_base="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments"
     commands=[]
     
     for i in range(len(dataset_list)):
@@ -50,15 +52,15 @@ def main():
                 type_item=type_list[j]
                 language=language_list[k]
                 if args.use_cd:
-                    output_file=f"/mnt/petrelfs/songmingyang/code/VCD/experiments/output/cd/llava15_{dataset_name}_pope_{type_item}_answers_w_cd_seed{seed}_{language}.jsonl"
+                    output_file=f"{vcd_base}/output/test_dpo/cd/llava15_{dataset_name}_pope_{type_item}_answers_w_cd_seed{seed}_{language}.jsonl"
                 else:
-                    output_file=f"/mnt/petrelfs/songmingyang/code/VCD/experiments/output/llava15_{dataset_name}_pope_{type_item}_answers_no_cd_seed{seed}_{language}.jsonl"
+                    output_file=f"{vcd_base}/output/test_dpo/llava15_{dataset_name}_pope_{type_item}_answers_no_cd_seed{seed}_{language}.jsonl"
                 if os.path.exists(output_file):
                     continue
                 else:
                     cmd_args = [
                             f" --model-path {model_path} ",
-                            f" --question-file /mnt/petrelfs/songmingyang/code/VCD/experiments/data/POPE/multi_lingual/{dataset_name}/{language}/{dataset_name}_pope_{type_item}_{language}.json ",
+                            f" --question-file {vcd_base}/data/POPE/multi_lingual/{dataset_name}/{language}/{dataset_name}_pope_{type_item}_{language}.json ",
                             f" --image-folder {image_folder} ",
                             f" --answers-file {output_file} ",
                             f" --cd_alpha {cd_alpha} ",
@@ -66,20 +68,21 @@ def main():
                             f" --noise_step {noise_step} ",
                             f" --seed {seed}",
                             f" --language {language} ",
+                            f" --peft_model_path {peft_model_path}" ,
                         ]
                     if args.use_cd:
                         cmd_args.append(" --use_cd ")   
-                    log_path = f"/mnt/petrelfs/songmingyang/songmingyang/runs/llava/logs/cd/llava15_{dataset_name}_pope_{type_item}_answers_no_cd_seed{seed}_{language}.log"
+                    log_path = f"/mnt/petrelfs/songmingyang/songmingyang/runs/llava/logs/llava15_{dataset_name}_pope_{type_item}_answers_no_cd_seed{seed}_{language}.log"
                     # commands.append(f"nohup srun -p {partition} -n1 -N1 --gres=gpu:1 --quotatype=auto -c 16 --job-name=generate "
                     #         + f"--output={log_path} "
                     #         + f"--error={log_path} "
                     #         + "python /mnt/petrelfs/songmingyang/code/VCD/experiments/eval/object_hallucination_vqa_llava.py "
                     #         + " ".join(cmd_args)
                     #         + f" 1>{log_path} 2>&1")
-                    run_command(f"nohup srun -p {partition} -n1 -N1 --gres=gpu:1 --quotatype=reserved -c 16 --job-name=generate --output=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/logs/cd/%x-%j.log --error=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/logs/cd/%x-%j.log "
+                    run_command(f"nohup srun -p {partition} -n1 -N1 --gres=gpu:1 --quotatype=reserved -c 16 --job-name=generate "
                             + f"--output={log_path} "
                             + f"--error={log_path} "
-                            + "python /mnt/petrelfs/songmingyang/code/VCD/experiments/eval/object_hallucination_vqa_llava.py "
+                            + f"python {vcd_base}/eval/object_hallucination_vqa_llava.py "
                             + " ".join(cmd_args)
                             + f" 1>{log_path} 2>&1 &")
                 

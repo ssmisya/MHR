@@ -38,8 +38,10 @@ source ~/anaconda3/bin/activate vcd
 
 seed=55
 dataset_name=coco
-type=adversarial
+type=random
 model_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
+# model_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/dpo_full_paired_data/checkpoint-5000
+peft_model_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/dpo_full_paired_data/checkpoint-5000
 cd_alpha=-1
 cd_beta=0.2
 noise_step=-500
@@ -50,19 +52,21 @@ else
   image_folder=./data/gqa/images
 fi
 
-code_base=/mnt/petrelfs/songmingyang/code/VCD/experiments
+code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments
+# /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments/eval/object_hallucination_vqa_llava.py
 cd $code_base
 
 python ./eval/object_hallucination_vqa_llava.py \
 --model-path ${model_path} \
 --question-file ./data/POPE/multi_lingual/${dataset_name}/${language}/${dataset_name}_pope_${type}_${language}.json \
 --image-folder ${image_folder} \
---answers-file ./output/llava15_${dataset_name}_pope_${type}_answers_no_cd_seed${seed}_${language}.jsonl \
+--answers-file ./output/test_dpo/llava15_${dataset_name}_pope_${type}_answers_no_cd_seed${seed}_${language}.jsonl \
 --cd_alpha $cd_alpha \
 --cd_beta $cd_beta \
 --noise_step $noise_step \
 --seed ${seed} \
---language ${language}
+--language ${language} \
+--peft_model_path $peft_model_path
 
 # --use_cd \
 

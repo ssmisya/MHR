@@ -17,9 +17,8 @@ gpus=4
 cpus=64
 quotatype="reserved"
 
-OMP_NUM_THREADS=4 srun --partition=MoE --job-name="generate" --mpi=pmi2 --gres=gpu:${gpus} -n1 --ntasks-per-node=1 -c ${cpus} --kill-on-bad-exit=1 --quotatype=${quotatype} \
+OMP_NUM_THREADS=4 srun --partition=MoE --job-name="dpo" --mpi=pmi2 --gres=gpu:${gpus} -n1 --ntasks-per-node=1 -c ${cpus} --kill-on-bad-exit=1 --quotatype=${quotatype} \
 accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
-    --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \
     --deepspeed ./scripts/deepspeed/zero3.json \
     --model_name_or_path ${model_name_or_path} \
     --version v1 \
@@ -40,8 +39,8 @@ accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 50000 \
-    --save_total_limit 1 \
+    --save_steps 500 \
+    --save_total_limit 5 \
     --learning_rate 2e-6 \
     --weight_decay 0. \
     --warmup_steps 0 \
@@ -55,3 +54,5 @@ accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
     --report_to wandb \
     --run_name "llava-v1.5" \
     --beta 0.1
+   
+    #   --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \

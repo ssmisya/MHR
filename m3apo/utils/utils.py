@@ -1,6 +1,14 @@
 import json
 import os
 
+def load_json_file(filepath):
+    '''
+        将json文件读取成为列表或词典
+    '''
+    with open(filepath, 'r') as file:
+        data = json.load(file)
+    return data
+
 def process_jsonl(file_path):
     '''
         将jsonl文件转换为装有dict的列表
@@ -13,6 +21,9 @@ def process_jsonl(file_path):
     return data
 
 def write_jsonl(data, file_path):
+    '''
+        将list[dict]写入jsonl文件
+    '''
     with open(file_path, 'w', encoding='utf-8') as file:
         for item in data:
             line = json.dumps(item,ensure_ascii=False)
@@ -20,7 +31,7 @@ def write_jsonl(data, file_path):
 
 def merge_jsonl(input_file_dir, output_filepath):
     '''
-        将一个文件夹内的所有jsonl文件合并为一个jsonl文件
+        将源文件夹内的所有jsonl文件合并为一个jsonl文件,并保存在output_filepath中
     '''
     filepaths = [os.path.join(input_file_dir, file) for file in os.listdir(input_file_dir)]
     merged_data = []

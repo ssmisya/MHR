@@ -193,7 +193,6 @@ class LazySupervisedDataset(Dataset):
 
     def __init__(self, 
         data_path: str,
-        # vg_path: str,
         tokenizer: transformers.PreTrainedTokenizer,
         data_args: DataArguments,
         seed: int = 42,
@@ -232,8 +231,8 @@ class LazySupervisedDataset(Dataset):
         for idx in range(len(data)):
             for inner_idx in range(len(data[idx]['feedback'])):
                 image_id = data[idx]["image"]
-                chosen = data[idx]['feedback'][inner_idx]["accept"]
-                reject = data[idx]['feedback'][inner_idx][chosen_sign]
+                chosen = data[idx]['feedback'][inner_idx][chosen_sign]
+                reject = data[idx]['feedback'][inner_idx]["reject"]
                 question = data[idx]["question"]
                 if not DEFAULT_IMAGE_TOKEN in question:
                     question = DEFAULT_IMAGE_TOKEN + '\n' + question
@@ -384,10 +383,8 @@ def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer,
     """Make dataset and collator for supervised fine-tuning."""
     train_dataset = LazySupervisedDataset(tokenizer=tokenizer,
                                 data_path=data_args.data_path,
-                                # vg_path=data_args.vg_path,
-                                # desc_data_path=data_args.desc_data_path,
-                                # pope_data_path=data_args.pope_data_path,
                                 data_args=data_args)
+    
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     return dict(train_dataset=train_dataset,
                 eval_dataset=None,

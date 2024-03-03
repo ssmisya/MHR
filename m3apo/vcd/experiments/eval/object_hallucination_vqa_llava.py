@@ -9,11 +9,12 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # print(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
-from llava.conversation import conv_templates, SeparatorStyle
-from llava.model.builder import load_pretrained_model
-from llava.utils import disable_torch_init
-from llava.mm_utils import tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria
+from m3apo.vcd.experiments.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
+from m3apo.vcd.experiments.llava.conversation import conv_templates, SeparatorStyle
+from m3apo.vcd.experiments.llava.model.builder import load_pretrained_model
+from m3apo.vcd.experiments.llava.utils import disable_torch_init
+from m3apo.vcd.experiments.llava.mm_utils import tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria
+from peft import PeftModel
 
 from PIL import Image
 import math
@@ -23,7 +24,7 @@ from transformers import set_seed
 from vcd_utils.vcd_add_noise import add_diffusion_noise
 from vcd_utils.vcd_sample import evolve_vcd_sampling
 evolve_vcd_sampling()
-from language_dict import language_dict
+from m3apo.vcd.experiments.eval.language_dict import language_dict
 
 
 def eval_model(args):
@@ -32,6 +33,11 @@ def eval_model(args):
     model_path = os.path.expanduser(args.model_path)
     model_name = get_model_name_from_path(model_path)
     tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name)
+    if args.peft_model_path:
+        model = PeftModel.from_pretrained(model, args.peft_model_path, adapter_name="dpo")
+        model.to(torch.bfloat16)
+    else:
+        raise RuntimeError("not allowed")
 
     questions = [json.loads(q) for q in open(os.path.expanduser(args.question_file), "r")]
     answers_file = os.path.expanduser(args.answers_file)
@@ -69,8 +75,8 @@ def eval_model(args):
 
         with torch.inference_mode():
             output_ids = model.generate(
-                input_ids,
-                images=image_tensor.unsqueeze(0).half().cuda(),
+                inputs=input_ids,
+                images=image_tensor.unsqueeze(0).to(torch.bfloat16).cuda(),
                 images_cd=(image_tensor_cd.unsqueeze(0).half().cuda() if image_tensor_cd is not None else None),
                 cd_alpha = args.cd_alpha,
                 cd_beta = args.cd_beta,
@@ -120,6 +126,7 @@ if __name__ == "__main__":
     parser.add_argument("--cd_beta", type=float, default=0.1)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--language", type=str, default="en")
+    parser.add_argument("--peft_model_path", type=str, default=None)
     args = parser.parse_args()
     set_seed(args.seed)
     eval_model(args)

@@ -1,0 +1,4 @@
+phoenix-srun: job 2567331 queued and waiting for resources
+phoenix-srun: job 2567331 has been allocated resources
+phoenix-srun: Force Terminated job 2567331
+phoenix-srun: error: Job allocation 2567331 has been revoked

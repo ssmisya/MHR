@@ -33,3 +33,16 @@ language_dict = {
     'jv':{'full_name':'Javanese','yes':'iya','no':'ora','prompt_suffix':' Mugi pilih jawaban sampeyan saka ({},{}). Lan pastikan yèn jawaban sampeyan ora duwe pitakon liyane.'},
     'sw':{'full_name':'Swahili','yes':'ndiyo','no':'hapana','prompt_suffix':' Tafadhali chagua jibu lako kutoka kwa ({},{}). Na hakikisha kwamba jibu lako halina neno lingine lolote.'},
 }
+
+nllb_200_distilled_600M_language_dict = {
+        'Swahili' :'swh_Latn',
+        'Chinese' : "zho_Hans",
+        "Bengali" : "ben_Beng",
+        "German" : "deu_Latn",
+        "Spanish" : "spa_Latn",
+        "French" : "fra_Latn",
+        "Japanese" : "jpn_Hani",
+        "Russian" : "rus_Cyrl",
+        "Thai" : "tha_Thai",
+        "English" : "eng_Latn"
+        } 
