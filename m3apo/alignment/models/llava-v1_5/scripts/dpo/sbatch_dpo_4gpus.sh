@@ -44,14 +44,15 @@ cd $code_base
 seed=55
 
 # program settings
-# model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
-model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/LLaVA-RLHF-7b-v1.5-224/sft_model
-dataset_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/merged/llava_multilingual_dpo_data.jsonl
+model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
+# model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/LLaVA-RLHF-7b-v1.5-224/sft_model
+# dataset_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/merged/llava_multilingual_dpo_data.jsonl
+self_hallucination_data_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/ha_dpo_desc/dpo_data
 vision_tower_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336
 image_folder=/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017
 
 accelerate_config_file=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/scripts/deepspeed/4gpus.yaml
-ckpt_save_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/llava-v1_5_sft_lora
+ckpt_save_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/llava-v1_5_self_hallucination
 
 save_steps=1000
 
@@ -61,18 +62,17 @@ accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
     --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \
     --model_name_or_path ${model_name_or_path} \
     --version v1 \
-    --data_path ${dataset_path} \
+    --self_hallucination_data_path ${self_hallucination_data_path} \
     --vision_tower ${vision_tower_path} \
     --mm_projector_type mlp2x_gelu \
     --mm_vision_select_layer -2 \
     --mm_use_im_start_end False \
     --mm_use_im_patch_token False \
     --image_aspect_ratio pad \
-    --image_folder ${image_folder} \
     --group_by_modality_length True \
     --bf16 True \
     --output_dir ${ckpt_save_path} \
-    --num_train_epochs 1 \
+    --num_train_epochs 3 \
     --per_device_train_batch_size 16 \
     --per_device_eval_batch_size 4 \
     --gradient_accumulation_steps 1 \
@@ -95,3 +95,5 @@ accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
     --beta 0.1
    
     # --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \
+        # --data_path ${dataset_path} \
+            # --image_folder ${image_folder} \

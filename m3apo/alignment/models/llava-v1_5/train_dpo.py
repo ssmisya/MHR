@@ -35,6 +35,7 @@ from peft import (
 
 from m3apo.alignment.trainer.llava_dpo_trainer import LlavaDPOTrainer
 from m3apo.utils.utils import process_jsonl
+from m3apo.utils.debugging import remote_breakpoint
 
 local_rank = None
         
@@ -58,8 +59,9 @@ class DataArguments:
     data_path: str = field(default=None, metadata={"help": "Path to the training data."})
     lazy_preprocess: bool = False
     is_multimodal: bool = False
-    image_folder: Optional[str] = field(default="/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017")
+    image_folder: Optional[str] = field(default=None)
     image_aspect_ratio: str = 'square'
+    self_hallucination_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the self-hallucination data."})
     
     
 
@@ -193,20 +195,64 @@ class LazySupervisedDataset(Dataset):
 
     def __init__(self, 
         data_path: str,
+        self_hallucination_data_path: str,
         tokenizer: transformers.PreTrainedTokenizer,
         data_args: DataArguments,
         seed: int = 42,
     ):
         super(LazySupervisedDataset, self).__init__()
         random.seed(seed)
-        data = process_jsonl(data_path)
-        list_data_dict = self.data_process(data)
+        
+        if self_hallucination_data_path:
+            list_data_dict = self.self_hallucination_data_process(self_hallucination_data_path)
+        elif data_path:
+            list_data_dict = self.data_process(data_path)
+        else:
+            raise ValueError("Please provide a valid data path.")
         
         self.tokenizer = tokenizer
         self.list_data_dict = list_data_dict
         self.data_args = data_args
+    
+    def self_hallucination_data_process(self,data_path):
+        data_dir = [os.path.join(data_path,a) for a in os.listdir(data_path)]
         
-    def data_process(self, data):
+        data_across_different_langs = [process_jsonl(a) for a in data_dir]
+        length_list = [len(data) for data in data_across_different_langs]
+        ids2feedbacks = [{_data["question_id"]:{"language":_data["language"],"question":_data["question"],"feedback":_data["feedback"]} for _data in data} for data in data_across_different_langs]
+        data = data_across_different_langs[length_list.index(max(length_list))]
+        
+        data_dict_list = []
+        id = 0
+        for idx in range(len(data)):
+            question_id = data[idx]["question_id"]
+            image_file_path = data[idx]["image"]
+            questions_and_feedbacks = {}
+            for _data in ids2feedbacks:
+                item = _data.get(question_id,None)
+                if item is not None:
+                    question = item["question"]
+                    if not DEFAULT_IMAGE_TOKEN in question:
+                        question = DEFAULT_IMAGE_TOKEN + '\n' + question
+                    questions_and_feedbacks[item["language"]] = {"question":question,"feedback":item["feedback"]}
+            data_dict_list.append({
+                    "id": int(id),
+                    "image": image_file_path,
+                    "chosen_conversations": [
+                        {"from": "human", "value": "{question}"},
+                        {"from": "gpt", "value": "{chosen}"},
+                    ],
+                    "reject_conversations": [
+                        {"from": "human", "value": "{question}"},
+                        {"from": "gpt", "value": "{reject}"},
+                    ],
+                    "questions_and_feedbacks":questions_and_feedbacks,
+            })
+            id+=1
+        return data_dict_list
+        
+        
+    def data_process(self, data_path):
         '''
             data: 是一个list, 每个元素是一个dict, 其中dict至少包含以下信息:
             {
@@ -225,6 +271,7 @@ class LazySupervisedDataset(Dataset):
                 ...
             }
         '''
+        data = process_jsonl(data_path)
         data_dict_list = []
         id = 0
         chosen_sign="chosen" if "chosen" in data[0]['feedback'][0].keys() else "accept"
@@ -276,11 +323,39 @@ class LazySupervisedDataset(Dataset):
         if isinstance(i, int):
             sources = [sources]
         assert len(sources) == 1, "Don't know why it is wrapped to a list"  # FIXME
+        
+        questions_and_feedbacks = sources[0].get("questions_and_feedbacks",None)
+        if questions_and_feedbacks is not None:
+            language_set = list(questions_and_feedbacks.keys())
+            language = random.choice(language_set)
+            # print("dataset length:",len(self.list_data_dict),)
+            question = questions_and_feedbacks[language]["question"]
+            chosen = random.choice(questions_and_feedbacks[language]["feedback"]["chosen"])
+            reject = random.choice(questions_and_feedbacks[language]["feedback"]["reject"])
+            chosen_conversations = [{"from": "human", "value": question},{"from": "gpt", "value": chosen}]
+            reject_conversations =  [{"from": "human", "value": question},{"from": "gpt", "value": reject}]
+            # print(chosen_conversations)
+            chosen_sources = preprocess_multimodal(
+                copy.deepcopy([chosen_conversations for _ in sources]),
+                self.data_args)
+            reject_sources = preprocess_multimodal(
+                copy.deepcopy([reject_conversations for _ in sources]),
+                self.data_args)
+            
+        else:
+            chosen_sources = preprocess_multimodal(
+                copy.deepcopy([e["chosen_conversations"] for e in sources]),
+                self.data_args)
+            reject_sources = preprocess_multimodal(
+                copy.deepcopy([e["reject_conversations"] for e in sources]),
+                self.data_args)
+        # remote_breakpoint()
         if 'image' in sources[0]:
             image_file = self.list_data_dict[i]['image']
             image_folder = self.data_args.image_folder
             processor = self.data_args.image_processor
-            image = Image.open(os.path.join(image_folder, image_file)).convert('RGB')
+            image_path = image_file if os.path.isabs(image_file) else os.path.join(image_folder, image_file)
+            image = Image.open(image_path).convert('RGB')
             if self.data_args.image_aspect_ratio == 'pad':
                 def expand2square(pil_img, background_color):
                     width, height = pil_img.size
@@ -298,12 +373,7 @@ class LazySupervisedDataset(Dataset):
                 image = processor.preprocess(image, return_tensors='pt')['pixel_values'][0]
             else:
                 image = processor.preprocess(image, return_tensors='pt')['pixel_values'][0]
-            chosen_sources = preprocess_multimodal(
-                copy.deepcopy([e["chosen_conversations"] for e in sources]),
-                self.data_args)
-            reject_sources = preprocess_multimodal(
-                copy.deepcopy([e["reject_conversations"] for e in sources]),
-                self.data_args)
+            
         else:
             sources = copy.deepcopy([e["conversations"] for e in sources])
         chosen_data_dict = preprocess(
@@ -323,12 +393,14 @@ class LazySupervisedDataset(Dataset):
             )
 
         # image exist in the data
+        
         if 'image' in self.list_data_dict[i]:
             data_dict['images'] = image
         elif self.data_args.is_multimodal:
             # image does not exist in the data, but the model is multimodal
             crop_size = self.data_args.image_processor.crop_size
             data_dict['images'] = torch.zeros(3, crop_size['height'], crop_size['width'])
+        
         return data_dict
 
 
@@ -383,6 +455,7 @@ def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer,
     """Make dataset and collator for supervised fine-tuning."""
     train_dataset = LazySupervisedDataset(tokenizer=tokenizer,
                                 data_path=data_args.data_path,
+                                self_hallucination_data_path=data_args.self_hallucination_data_path,
                                 data_args=data_args)
     
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)

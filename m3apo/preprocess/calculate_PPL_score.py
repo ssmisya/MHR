@@ -53,7 +53,7 @@ def main(args):
     target_dir = os.path.join(args.output_data_dir, os.path.splitext(args.data_file)[0])
     target_path = target_dir + "_{proc}_{end}.jsonl".format(proc = args.begin_index,end = args.begin_index + args.data_length)
     
-    target_path = target_dir
+    # target_path = target_dir
     data = process_jsonl(data_path)
     if args.reference_style == "ref_file":
         ref_data = process_jsonl(args.reference_en_file)
@@ -71,6 +71,7 @@ def main(args):
     print("begin_index: {}, end_index: {}".format(begin_index, end_index))
 
     result = []
+    fw = open(target_path, 'w', encoding='utf-8')
     for i in tqdm(range(begin_index,end_index)):
         item = data[i]
         ref_item = ref_data[i]
@@ -85,6 +86,23 @@ def main(args):
             en_answers = en_answers if isinstance(en_answers, list) else [en_answers]
             input_answer = [it for _ in en_answers]
             output = [j for j in en_answers]
+            if args.reference_style == "self_hallucination":
+                reject_en_answers = ref_item["reject_en_answer"]
+                reject_en_answers = reject_en_answers if isinstance(en_answers,list) else [reject_en_answers]
+                reject_input_answer = [it for _ in reject_en_answers]
+                reject_output = [j for j in reject_en_answers]
+                if len(reject_en_answers)<=20:
+                    reject_reward_list = MultiLigual_Alighment_reward_fuction(rm_tokenizer,rm_model_base,reject_input_answer,reject_output,lang)
+                else:
+                    raise NotImplementedError
+                reject_res = {
+                    'reject-nllb-200-distilled-600M-reward-mean':sum(reject_reward_list)/len(reject_reward_list),
+                    'reject-nllb-200-distilled-600M-reward-max':max(reject_reward_list),
+                    'reject-nllb-200-distilled-600M-reawrdlist':reject_reward_list,
+                }
+            else:
+                reject_res = {}
+                
             if len(input_answer) <= 20:
                 reward_list = MultiLigual_Alighment_reward_fuction(rm_tokenizer,rm_model_base,input_answer,output,lang)
             else:
@@ -97,18 +115,18 @@ def main(args):
                 'nllb-200-distilled-600M-reward-max':max(reward_list),
                 'nllb-200-distilled-600M-reawrdlist':reward_list,
             }
+            reward_res.update(reject_res)
             item_reward_list.append(reward_res)
             torch.cuda.empty_cache()
-            # it['nllb-200-distilled-600M-reward-mean'] =  sum(reward_list)/len(reward_list)
-            # it['nllb-200-distilled-600M-reward-max'] =  max(reward_list)
-            # it['nllb-200-distilled-600M-reawrdlist'] =  reward_list
         item["reward_list"] = item_reward_list
-        result.append(item)
+        fw.write(json.dumps(item, ensure_ascii=False) + '\n')
+        # result.append(item)
+    fw.close()
 
-    with open(target_path, 'w', encoding='utf-8') as fw:
-        for item in result:
-            line = json.dumps(item, ensure_ascii=False)
-            fw.write(line + '\n')
+    # with open(target_path, 'w', encoding='utf-8') as fw:
+    #     for item in result:
+    #         line = json.dumps(item, ensure_ascii=False)
+    #         fw.write(line + '\n')
             
 
 if __name__ == "__main__":
@@ -121,7 +139,7 @@ if __name__ == "__main__":
     parser.add_argument('-o','--output_data_dir',type=str, default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/add_ppl/20_en_refs/")
     parser.add_argument('-d','--data_file', type=str)
     parser.add_argument('-l','--language', type=str, default="en")
-    parser.add_argument('-rs','--reference_style',type=str, default="ref_file")
+    parser.add_argument('-rs','--reference_style',type=str, default="self_hallucination")
     args = parser.parse_args()
     main(args)
             

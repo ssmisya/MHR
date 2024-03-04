@@ -85,6 +85,60 @@ def extract_top3(args):
         dpo_data.append(format_data)
     write_jsonl(dpo_data,os.path.join(args.output_dir,args.file_name))
 
+def extract_self_hallucinagion_top3(args):
+    input_file=os.path.join(args.input_dir,args.file_name)
+    data = process_jsonl(input_file)
+
+    dpo_data = []
+    for i in tqdm(data):
+        output_with_score = [{"answer":i['answer'][k],'score':i['reward_list'][k]} for k in range(len(i['answer']))] 
+        filtered_output_with_score = []
+        for obj in output_with_score:
+            try:
+                sign = (detect(obj["answer"]) == args.language)
+            except:
+                sign = False
+            if sign:
+                filtered_output_with_score.append(obj)
+        output_with_score = filtered_output_with_score
+        if len(output_with_score) < 2:
+            print(f"Warning: question_id:{i['question_id']} has less than 2 {args.language} answers")
+            continue
+            
+        sorted_output = [g for g in sorted(output_with_score,key=lambda x:x['score']["nllb-200-distilled-600M-reward-mean"],reverse=True)]
+        sorted_output_reject = [g for g in sorted(output_with_score,key=lambda x:x['score']["reject-nllb-200-distilled-600M-reward-mean"],reverse=True)]
+        
+        topk = min(3,len(sorted_output)//2)
+        # test language and choose top 3
+
+        reject_list=[sorted_output_reject[k_rej]['answer'] for k_rej in range(topk)]
+
+        accept_list =[]
+        k=0
+        while len(accept_list) < topk and k < len(sorted_output):
+            if sorted_output[k]['answer'] not in reject_list:
+                accept_list.append(sorted_output[k]['answer'])
+            k += 1
+                
+        if len(reject_list) == 0 or len(accept_list) == 0:
+            print(f"Warning: question_id:{i['question_id']} has less than 2 {args.language} answers")
+            continue
+        sample = {
+                "chosen":accept_list,
+                "reject":reject_list,
+        }
+        # construct data
+        prompt_suffix = f" Please answer this question in {language_dict[args.language]['full_name']}"
+        format_data = {
+                "question_id":i['question_id'],
+                "question":i['prompt']+prompt_suffix,
+                "feedback":sample,
+                "image":i['image'],
+                "language":args.language,
+        }
+        dpo_data.append(format_data)
+    write_jsonl(dpo_data,os.path.join(args.output_dir,args.file_name))
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -99,5 +153,7 @@ if __name__ == "__main__":
         extract_top3(args)
     elif args.extract_method == "compare_with_everyone":
         main(args)
+    elif args.extract_method == "extract_self_hallucinagion_top3":
+        extract_self_hallucinagion_top3(args)
     else:
         raise ValueError("extract_method should be one of ['extract_top3','compare_with_everyone']")
