@@ -51,23 +51,28 @@ def extract_top3(args):
     dpo_data = []
     for i in tqdm(data):
         output_with_score = [{"answer":i['answer'][k],'score':i['reward_list'][k]} for k in range(len(i['answer']))] 
+        filtered_output_with_score = []
+        for obj in output_with_score:
+            try:
+                sign = (detect(obj["answer"]) == args.language)
+            except:
+                sign = False
+            if sign:
+                filtered_output_with_score.append(obj)
+        output_with_score = filtered_output_with_score
+        if len(output_with_score) < 2:
+            print(f"Warning: question_id:{i['question_id']} has less than 2 {args.language} answers")
+            continue
+            
         sorted_output = [g for g in sorted(output_with_score,key=lambda x:x['score']["nllb-200-distilled-600M-reward-mean"],reverse=True)]
+        
+        topk = min(3,len(sorted_output)//2)
         # test language and choose top 3
-        k = 0
-        accept_list =[]
-        while len(accept_list) < 3 and k < len(sorted_output) - 3:
-            k += 1
-            if detect(sorted_output[k]['answer']) == args.language:
-                accept_list.append(sorted_output[k]['answer'])
 
-        k_rej = 0
-        reject_list=[]
-        while len(reject_list) < 3 and k_rej < len(sorted_output)-k:
-            k_rej += 1
-            if detect(sorted_output[-k_rej-1]['answer']) == args.language:
-                reject_list.append(sorted_output[-k_rej-1]['answer'])
-                
+        reject_list=[sorted_output[-k_rej-1]['answer'] for k_rej in range(topk)]
+        accept_list=[sorted_output[k]["answer"] for k in range(topk)]
         if len(reject_list) == 0 or len(accept_list) == 0:
+            print(f"Warning: question_id:{i['question_id']} has less than 2 {args.language} answers")
             continue
         sample = {
                 "chosen":accept_list,
