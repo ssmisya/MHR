@@ -1,7 +1,4 @@
-phoenix-srun: job 2567340 queued and waiting for resources
-phoenix-srun: job 2567340 has been allocated resources
-phoenix-srun: Job 2567340 scheduled successfully!
-Current QUOTA_TYPE is [reserved], which means the job has occupied quota in RESERVED_TOTAL under your partition.
-Current PHX_PRIORITY is normal
-
-phoenix-srun: error: Unable to create step for job 2567340: Reach max user active rpc limit
+phoenix-srun: job 2567400 queued and waiting for resources
+phoenix-srun: Force Terminated job 2567400
+phoenix-srun: Job has been cancelled
+phoenix-srun: error: Unable to allocate resources: Job/step already completing or completed

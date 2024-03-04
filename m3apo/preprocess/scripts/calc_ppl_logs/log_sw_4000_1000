@@ -1,4 +1,4 @@
-phoenix-srun: job 2567336 queued and waiting for resources
-phoenix-srun: job 2567336 has been allocated resources
-phoenix-srun: Force Terminated job 2567336
-phoenix-srun: error: Job allocation 2567336 has been revoked
+phoenix-srun: job 2567396 queued and waiting for resources
+phoenix-srun: Force Terminated job 2567396
+phoenix-srun: Job has been cancelled
+phoenix-srun: error: Unable to allocate resources: Job/step already completing or completed

@@ -44,19 +44,21 @@ cd $code_base
 seed=55
 
 # program settings
-model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
+# model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
+model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/LLaVA-RLHF-7b-v1.5-224/sft_model
 dataset_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/merged/llava_multilingual_dpo_data.jsonl
 vision_tower_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336
 image_folder=/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017
 
 accelerate_config_file=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/scripts/deepspeed/4gpus.yaml
-ckpt_save_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/llava-v1_5_full
+ckpt_save_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/llava-v1_5_sft_lora
 
-save_steps=500
+save_steps=1000
 
 
 accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
-    --deepspeed ./scripts/deepspeed/zero3_offload.json \
+    --deepspeed ./scripts/deepspeed/zero3.json \
+    --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \
     --model_name_or_path ${model_name_or_path} \
     --version v1 \
     --data_path ${dataset_path} \
@@ -89,7 +91,7 @@ accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
     --dataloader_num_workers 4 \
     --lazy_preprocess True \
     --report_to wandb \
-    --run_name "llava-v1.5-lora" \
+    --run_name "llava-v1.5-sft-lora" \
     --beta 0.1
    
     # --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \

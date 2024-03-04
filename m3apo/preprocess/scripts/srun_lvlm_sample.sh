@@ -2,7 +2,7 @@ source ~/.bashrc
 source ~/anaconda3/bin/activate vcd
 
 
-code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/Preprocess
+code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess
 cd $code_base
 
 seed=55
@@ -16,20 +16,31 @@ generation_num=20
 default_language=en
 language=${1:-default_language}
 
-image_folder=/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017
-question_file=/mnt/petrelfs/songmingyang/songmingyang/data/mm/annotation/LLaVA-Human-Preference-10K/llava_7b_v1_preference.json
-generation_dir_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/generations
-generation_file=${generation_dir_path}/llava_7b_v1_generation_num${generation_num}_${language}.json
+data_base=/mnt/petrelfs/songmingyang/songmingyang/data/mm
+
+# image_folder=/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017
+image_folder=${data_base}/imgs/vg
+
+# question_file=/mnt/petrelfs/songmingyang/songmingyang/data/mm/annotation/LLaVA-Human-Preference-10K/llava_7b_v1_preference.json
+question_file=${data_base}/annotation/hadpo-data/hadpo/llava-v1.5/desc_data.json
+vg_path=${data_base}/annotation/vg
+run_base=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/ha_dpo_desc
+
+dataset_type=vg
+generation_dir_path=${run_base}/generations
+generation_file=${generation_dir_path}/llava_7b_v1_generation_${dataset_type}_num${generation_num}_${language}.json
+
+#--nodelist=SH-IDCA1404-10-140-54-[11,16]
 
 gpus=1
 cpus=16
 quotatype="reserved"
-OMP_NUM_THREADS=4 srun --partition=MoE --job-name="generate" --mpi=pmi2 --gres=gpu:${gpus} -n1 --ntasks-per-node=1 -c ${cpus} --kill-on-bad-exit=1 --quotatype=${quotatype} \
-python ./lvlm_sampling.py \
+OMP_NUM_THREADS=4 srun --partition=MoE --job-name="sampling" --mpi=pmi2 --gres=gpu:${gpus} -n1 --ntasks-per-node=1 -c ${cpus} --kill-on-bad-exit=1 --quotatype=${quotatype} \
+python /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess/lvlm_sampling.py \
 --model-path ${model_path} \
 --question-file  ${question_file} \
 --question_file_format "json" \
---image-folder ${image_folder} \
+--image_folder ${image_folder} \
 --answers-file  ${generation_file} \
 --answers_file_format "json" \
 --cd_alpha $cd_alpha \
@@ -37,4 +48,6 @@ python ./lvlm_sampling.py \
 --noise_step $noise_step \
 --seed ${seed} \
 --language ${language} \
---generation_num ${generation_num} 
+--generation_num ${generation_num} \
+--dataset_type ${dataset_type} \
+--vg_path ${vg_path}

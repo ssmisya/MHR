@@ -1,13 +1,15 @@
-phoenix-srun: job 2567333 queued and waiting for resources
-phoenix-srun: job 2567333 has been allocated resources
-phoenix-srun: Job 2567333 scheduled successfully!
+phoenix-srun: job 2567393 queued and waiting for resources
+phoenix-srun: job 2567393 has been allocated resources
+phoenix-srun: Job 2567393 scheduled successfully!
 Current QUOTA_TYPE is [reserved], which means the job has occupied quota in RESERVED_TOTAL under your partition.
 Current PHX_PRIORITY is normal
 
-phoenix-srun: Force Terminated job 2567333
-slurmstepd: error: *** STEP 2567333.0 ON SH-IDCA1404-10-140-54-66 CANCELLED AT 2024-03-03T16:15:28 ***
+[2024-03-03 16:27:58,083] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+begin_index: 1000, end_index: 2000
+phoenix-srun: Force Terminated job 2567393
 phoenix-srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 1/1000 [00:07<2:06:21,  7.59s/it]  0%|          | 2/1000 [00:16<2:23:58,  8.66s/it]  0%|          | 3/1000 [00:22<2:02:29,  7.37s/it]  0%|          | 4/1000 [00:27<1:47:28,  6.47s/it]  0%|          | 5/1000 [00:38<2:13:23,  8.04s/it]  1%|          | 6/1000 [00:43<1:54:36,  6.92s/it]  1%|          | 7/1000 [00:48<1:45:51,  6.40s/it]  1%|          | 8/1000 [00:54<1:43:01,  6.23s/it]  1%|          | 9/1000 [01:01<1:47:01,  6.48s/it]  1%|          | 10/1000 [01:05<1:32:30,  5.61s/it]slurmstepd: error: *** STEP 2567393.0 ON SH-IDCA1404-10-140-54-6 CANCELLED AT 2024-03-03T16:29:28 ***
 phoenix-srun: Easily find out why your job was killed by following the link below:
 	https://docs.phoenix.sensetime.com/FAQ/SlurmFAQ/Find-out-why-my-job-was-killed/
-phoenix-srun: error: SH-IDCA1404-10-140-54-66: task 0: Terminated
-phoenix-srun: launch/slurm: _step_signal: Terminating StepId=2567333.0
+phoenix-srun: error: SH-IDCA1404-10-140-54-6: task 0: Terminated
+phoenix-srun: launch/slurm: _step_signal: Terminating StepId=2567393.0

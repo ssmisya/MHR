@@ -5,7 +5,8 @@ cd $code_base
 
 seed=55
 
-model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
+# model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
+model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/LLaVA-RLHF-7b-v1.5-224/sft_model
 dataset_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/merged/llava_multilingual_dpo_data.jsonl
 vision_tower_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336
 image_folder=/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017
@@ -19,6 +20,7 @@ quotatype="reserved"
 
 OMP_NUM_THREADS=4 srun --partition=MoE --job-name="dpo" --mpi=pmi2 --gres=gpu:${gpus} -n1 --ntasks-per-node=1 -c ${cpus} --kill-on-bad-exit=1 --quotatype=${quotatype} \
 accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
+    --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \
     --deepspeed ./scripts/deepspeed/zero3.json \
     --model_name_or_path ${model_name_or_path} \
     --version v1 \
@@ -52,7 +54,7 @@ accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
     --dataloader_num_workers 4 \
     --lazy_preprocess True \
     --report_to wandb \
-    --run_name "llava-v1.5" \
+    --run_name "llava-v1.5-sft-lora" \
     --beta 0.1
    
     #   --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \

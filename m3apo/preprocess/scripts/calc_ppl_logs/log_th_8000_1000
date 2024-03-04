@@ -1,1 +1,13 @@
-phoenix-srun: error: Unable to allocate resources: Reach max user active rpc limit
+phoenix-srun: job 2567409 queued and waiting for resources
+phoenix-srun: job 2567409 has been allocated resources
+phoenix-srun: Job 2567409 scheduled successfully!
+Current QUOTA_TYPE is [reserved], which means the job has occupied quota in RESERVED_TOTAL under your partition.
+Current PHX_PRIORITY is normal
+
+phoenix-srun: Force Terminated job 2567409
+slurmstepd: error: *** STEP 2567409.0 ON SH-IDCA1404-10-140-54-52 CANCELLED AT 2024-03-03T16:29:33 ***
+phoenix-srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+phoenix-srun: Easily find out why your job was killed by following the link below:
+	https://docs.phoenix.sensetime.com/FAQ/SlurmFAQ/Find-out-why-my-job-was-killed/
+phoenix-srun: error: SH-IDCA1404-10-140-54-52: task 0: Terminated
+phoenix-srun: launch/slurm: _step_signal: Terminating StepId=2567409.0
