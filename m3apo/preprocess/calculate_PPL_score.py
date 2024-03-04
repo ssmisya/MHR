@@ -6,7 +6,7 @@ from tqdm import tqdm
 
 import argparse
 import torch.nn as nn
-from experiments.eval.language_dict import language_dict
+from m3apo.vcd.experiments.eval.language_dict import language_dict
 import debugpy
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
