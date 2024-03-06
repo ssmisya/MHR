@@ -1,0 +1,19 @@
+2024-03-05 14:23:33,683 INFO    MainThread:16116 [wandb_setup.py:_flush():76] Current SDK version is 0.16.3
+2024-03-05 14:23:33,684 INFO    MainThread:16116 [wandb_setup.py:_flush():76] Configure stats pid to 16116
+2024-03-05 14:23:33,685 INFO    MainThread:16116 [wandb_setup.py:_flush():76] Loading settings from /mnt/petrelfs/songmingyang/.config/wandb/settings
+2024-03-05 14:23:33,685 INFO    MainThread:16116 [wandb_setup.py:_flush():76] Loading settings from /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/settings
+2024-03-05 14:23:33,685 INFO    MainThread:16116 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'api_key': '***REDACTED***', 'project': 'm3apo'}
+2024-03-05 14:23:33,686 INFO    MainThread:16116 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-03-05 14:23:33,686 INFO    MainThread:16116 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'm3apo/alignment/models/llava-v1_5/train_dpo.py', 'program_abspath': '/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/train_dpo.py', 'program': '/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/./train_dpo.py'}
+2024-03-05 14:23:33,686 INFO    MainThread:16116 [wandb_init.py:_log_setup():526] Logging user logs to /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_142333-1zs07m9n/logs/debug.log
+2024-03-05 14:23:33,687 INFO    MainThread:16116 [wandb_init.py:_log_setup():527] Logging internal logs to /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_142333-1zs07m9n/logs/debug-internal.log
+2024-03-05 14:23:33,687 INFO    MainThread:16116 [wandb_init.py:init():566] calling init triggers
+2024-03-05 14:23:33,688 INFO    MainThread:16116 [wandb_init.py:init():573] wandb.init called with sweep_config: {}
+config: {}
+2024-03-05 14:23:33,688 INFO    MainThread:16116 [wandb_init.py:init():616] starting backend
+2024-03-05 14:23:33,688 INFO    MainThread:16116 [wandb_init.py:init():620] setting up manager
+2024-03-05 14:23:33,707 INFO    MainThread:16116 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-03-05 14:23:33,711 INFO    MainThread:16116 [wandb_init.py:init():628] backend started and connected
+2024-03-05 14:23:33,741 INFO    MainThread:16116 [wandb_init.py:init():720] updated telemetry
+2024-03-05 14:23:33,958 INFO    MainThread:16116 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-03-05 14:23:34,623 INFO    MainThread:16116 [wandb_run.py:_on_init():2262] communicating current version

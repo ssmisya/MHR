@@ -1,0 +1,138 @@
+  0%|          | 0/978 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:135: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/978 [00:24<6:40:17, 24.58s/it]
+{'loss': 0.6931, 'learning_rate': 6.666666666666667e-08, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'policy_logps/rejected': -561.1561889648438, 'policy_logps/chosen': -504.530029296875, 'referece_logps/rejected': -561.1561889648438, 'referece_logps/chosen': -504.530029296875, 'logits/rejected': -1.3416757583618164, 'logits/chosen': -1.3131712675094604, 'epoch': 0.0}
+[2024-03-05 13:55:47,672] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  0%|          | 3/978 [01:06<5:55:07, 21.85s/it]
+
+  0%|          | 4/978 [01:27<5:49:30, 21.53s/it]
+
+  1%|          | 5/978 [01:48<5:43:00, 21.15s/it]
+
+  1%|          | 6/978 [02:09<5:40:17, 21.01s/it]
+{'loss': 0.7026, 'learning_rate': 4e-07, 'rewards/chosen': -0.022971250116825104, 'rewards/rejected': -0.009292983449995518, 'rewards/accuracies': 0.5625, 'rewards/margins': -0.013678264804184437, 'policy_logps/rejected': -311.1562805175781, 'policy_logps/chosen': -326.4541015625, 'referece_logps/rejected': -311.0633239746094, 'referece_logps/chosen': -326.2243957519531, 'logits/rejected': -1.0596081018447876, 'logits/chosen': -1.1199190616607666, 'epoch': 0.02}
+
+
+  1%|          | 8/978 [02:51<5:41:19, 21.11s/it]
+[2024-03-05 13:57:53,001] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  1%|          | 9/978 [03:10<5:32:33, 20.59s/it]
+
+  1%|          | 10/978 [03:32<5:34:47, 20.75s/it]
+
+  1%|          | 11/978 [03:52<5:34:42, 20.77s/it]
+
+  1%|          | 12/978 [04:13<5:33:00, 20.68s/it]
+
+  1%|▏         | 13/978 [04:34<5:33:40, 20.75s/it]
+{'loss': 0.698, 'learning_rate': 8.666666666666667e-07, 'rewards/chosen': 6.313249468803406e-05, 'rewards/rejected': -0.00950765423476696, 'rewards/accuracies': 0.5, 'rewards/margins': 0.009570789523422718, 'policy_logps/rejected': -505.18035888671875, 'policy_logps/chosen': -388.99346923828125, 'referece_logps/rejected': -505.08526611328125, 'referece_logps/chosen': -388.9940490722656, 'logits/rejected': -0.8284010291099548, 'logits/chosen': -0.9187566637992859, 'epoch': 0.04}
+
+
+  2%|▏         | 15/978 [05:15<5:33:00, 20.75s/it]
+
+  2%|▏         | 16/978 [05:36<5:33:06, 20.78s/it]
+
+  2%|▏         | 17/978 [05:56<5:28:59, 20.54s/it]
+{'loss': 0.6892, 'learning_rate': 1.1333333333333332e-06, 'rewards/chosen': -0.01721019670367241, 'rewards/rejected': -0.025966931134462357, 'rewards/accuracies': 0.625, 'rewards/margins': 0.008756732568144798, 'policy_logps/rejected': -397.614990234375, 'policy_logps/chosen': -453.53521728515625, 'referece_logps/rejected': -397.3553161621094, 'referece_logps/chosen': -453.3631591796875, 'logits/rejected': -0.803683876991272, 'logits/chosen': -0.9019163250923157, 'epoch': 0.05}
+
+
+  2%|▏         | 19/978 [06:37<5:27:57, 20.52s/it]
+
+  2%|▏         | 20/978 [06:58<5:28:22, 20.57s/it]
+
+  2%|▏         | 21/978 [07:18<5:28:35, 20.60s/it]
+
+  2%|▏         | 22/978 [07:39<5:28:43, 20.63s/it]
+
+  2%|▏         | 23/978 [08:00<5:28:23, 20.63s/it]
+{'loss': 0.6927, 'learning_rate': 1.5333333333333334e-06, 'rewards/chosen': -0.08025141060352325, 'rewards/rejected': -0.06299801170825958, 'rewards/accuracies': 0.375, 'rewards/margins': -0.017253398895263672, 'policy_logps/rejected': -406.27655029296875, 'policy_logps/chosen': -433.8388977050781, 'referece_logps/rejected': -405.6466064453125, 'referece_logps/chosen': -433.0364074707031, 'logits/rejected': -1.1741119623184204, 'logits/chosen': -1.135736346244812, 'epoch': 0.07}
+
+
+  3%|▎         | 25/978 [08:41<5:28:24, 20.68s/it]
+
+  3%|▎         | 26/978 [09:02<5:28:06, 20.68s/it]
+
+  3%|▎         | 27/978 [09:22<5:27:34, 20.67s/it]
+
+  3%|▎         | 28/978 [09:43<5:27:29, 20.68s/it]
+
+  3%|▎         | 29/978 [10:04<5:27:36, 20.71s/it]
+
+  3%|▎         | 30/978 [10:25<5:27:29, 20.73s/it]
+
+  3%|▎         | 31/978 [10:45<5:27:01, 20.72s/it]
+
+  3%|▎         | 32/978 [11:06<5:26:42, 20.72s/it]
+
+  3%|▎         | 33/978 [11:27<5:26:16, 20.72s/it]
+
+  3%|▎         | 34/978 [11:48<5:26:12, 20.73s/it]
+
+  4%|▎         | 35/978 [12:08<5:26:21, 20.76s/it]
+
+  4%|▎         | 36/978 [12:29<5:25:51, 20.75s/it]
+
+  4%|▍         | 37/978 [12:50<5:25:15, 20.74s/it]
+
+  4%|▍         | 38/978 [13:11<5:25:04, 20.75s/it]
+
+  4%|▍         | 39/978 [13:31<5:24:16, 20.72s/it]
+
+  4%|▍         | 40/978 [13:52<5:23:59, 20.72s/it]
+{'loss': 0.6819, 'learning_rate': 1.9994509481877533e-06, 'rewards/chosen': -0.18866407871246338, 'rewards/rejected': -0.3210620880126953, 'rewards/accuracies': 0.8125, 'rewards/margins': 0.13239803910255432, 'policy_logps/rejected': -536.8756713867188, 'policy_logps/chosen': -393.05096435546875, 'referece_logps/rejected': -533.6650390625, 'referece_logps/chosen': -391.164306640625, 'logits/rejected': -1.1508045196533203, 'logits/chosen': -1.1790771484375, 'epoch': 0.12}
+
+
+  4%|▍         | 42/978 [14:33<5:22:18, 20.66s/it]
+
+  4%|▍         | 43/978 [14:54<5:22:29, 20.69s/it]
+{'loss': 0.6641, 'learning_rate': 1.9990721610305992e-06, 'rewards/chosen': -0.18984758853912354, 'rewards/rejected': -0.2751086354255676, 'rewards/accuracies': 0.75, 'rewards/margins': 0.08526104688644409, 'policy_logps/rejected': -490.3323669433594, 'policy_logps/chosen': -265.0558776855469, 'referece_logps/rejected': -487.58123779296875, 'referece_logps/chosen': -263.15740966796875, 'logits/rejected': -1.0351901054382324, 'logits/chosen': -0.9269501566886902, 'epoch': 0.13}
+
+
+  5%|▍         | 45/978 [15:36<5:22:13, 20.72s/it]
+
+  5%|▍         | 46/978 [15:56<5:21:46, 20.72s/it]
+{'loss': 0.6861, 'learning_rate': 1.998594628021599e-06, 'rewards/chosen': -0.15768276154994965, 'rewards/rejected': -0.1677456796169281, 'rewards/accuracies': 0.625, 'rewards/margins': 0.010062936693429947, 'policy_logps/rejected': -438.7860107421875, 'policy_logps/chosen': -412.564453125, 'referece_logps/rejected': -437.1085205078125, 'referece_logps/chosen': -410.9876403808594, 'logits/rejected': -1.1584327220916748, 'logits/chosen': -1.1726588010787964, 'epoch': 0.14}
+
+
+  5%|▍         | 48/978 [16:38<5:21:53, 20.77s/it]
+
+  5%|▌         | 49/978 [16:59<5:21:33, 20.77s/it]
+
+  5%|▌         | 50/978 [17:18<5:15:30, 20.40s/it]
+
+  5%|▌         | 51/978 [17:39<5:16:33, 20.49s/it]
+
+  5%|▌         | 52/978 [18:00<5:17:01, 20.54s/it]
+
+  5%|▌         | 53/978 [18:20<5:17:31, 20.60s/it]
+{'loss': 0.6942, 'learning_rate': 1.9970966560786322e-06, 'rewards/chosen': -0.3878517150878906, 'rewards/rejected': -0.41472843289375305, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.02687673270702362, 'policy_logps/rejected': -404.5656433105469, 'policy_logps/chosen': -424.9332275390625, 'referece_logps/rejected': -400.41839599609375, 'referece_logps/chosen': -421.0547180175781, 'logits/rejected': -0.6226904988288879, 'logits/chosen': -0.6551485061645508, 'epoch': 0.16}
+
+
+  6%|▌         | 55/978 [19:02<5:17:59, 20.67s/it]
+
+  6%|▌         | 56/978 [19:22<5:17:23, 20.65s/it]
+{'loss': 0.6763, 'learning_rate': 1.9962903658927036e-06, 'rewards/chosen': -0.2845805287361145, 'rewards/rejected': -0.37473392486572266, 'rewards/accuracies': 0.625, 'rewards/margins': 0.09015341103076935, 'policy_logps/rejected': -438.4199523925781, 'policy_logps/chosen': -415.48486328125, 'referece_logps/rejected': -434.672607421875, 'referece_logps/chosen': -412.6390686035156, 'logits/rejected': -1.101096749305725, 'logits/chosen': -1.1681816577911377, 'epoch': 0.17}
+
+
+  6%|▌         | 58/978 [20:03<5:10:52, 20.27s/it]
+
+  6%|▌         | 59/978 [20:23<5:12:25, 20.40s/it]
+
+  6%|▌         | 60/978 [20:44<5:13:25, 20.49s/it]
+
+  6%|▌         | 61/978 [21:04<5:13:31, 20.51s/it]
+{'loss': 0.667, 'learning_rate': 1.994727768440505e-06, 'rewards/chosen': -0.24261270463466644, 'rewards/rejected': -0.305711567401886, 'rewards/accuracies': 0.625, 'rewards/margins': 0.06309886276721954, 'policy_logps/rejected': -369.6543273925781, 'policy_logps/chosen': -363.9791564941406, 'referece_logps/rejected': -366.59722900390625, 'referece_logps/chosen': -361.55303955078125, 'logits/rejected': -0.9387636780738831, 'logits/chosen': -1.004727840423584, 'epoch': 0.19}
+
+
+  6%|▋         | 63/978 [21:46<5:14:28, 20.62s/it]
+
+  7%|▋         | 64/978 [22:07<5:14:44, 20.66s/it]
+
+  7%|▋         | 65/978 [22:26<5:08:49, 20.29s/it]
+
+  7%|▋         | 66/978 [22:47<5:10:16, 20.41s/it]
+{'loss': 0.7014, 'learning_rate': 1.992892073701973e-06, 'rewards/chosen': -0.3458118438720703, 'rewards/rejected': -0.3631718158721924, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.01735992729663849, 'policy_logps/rejected': -442.1500244140625, 'policy_logps/chosen': -436.15179443359375, 'referece_logps/rejected': -438.51824951171875, 'referece_logps/chosen': -432.69366455078125, 'logits/rejected': -1.0751599073410034, 'logits/chosen': -1.0696308612823486, 'epoch': 0.2}
+

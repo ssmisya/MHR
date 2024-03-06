@@ -30,7 +30,8 @@ def main():
     parser.add_argument('--use_cd', action='store_true', help='Use CD if specified')
 
     args = parser.parse_args()
-    languages = "en ar  bg  bn  de  el  es  fa  fr  gu  hi  id  it  ja  jv  ko  ml  mr  ms  my  nl  pt  ru  sv  sw  ta  te  th  tr  uk  ur  vi  zh"
+    # languages = "en ar  bg  bn  de  el  es  fa  fr  gu  hi  id  it  ja  jv  ko  ml  mr  ms  my  nl  pt  ru  sv  sw  ta  te  th  tr  uk  ur  vi  zh"
+    languages = "en bn fr ru th sw ja"
     language_list = languages.split()
     dataset_list=["coco"]
     type_list=["popular"]
@@ -40,9 +41,17 @@ def main():
     noise_step=-500
     partition="MoE"
     model_path="/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b"
-    peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/dpo_full_paired_data/checkpoint-5000"
+    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/llava-v1_5_sft_lora/checkpoint-5000"
+    peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/sft_self_hallucination_full"
+    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/origin_self_hallucination_full"
+    
     image_folder="/mnt/petrelfs/share_data/quxiaoye/VCD_file/val2014"
     vcd_base="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments"
+    
+    output_file_base = "/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/generations"
+    # output_file_dir = "origin/origin_full_self_hallucination"
+   
+    output_file_dir = "llava_rlhf_sft/sft_full_self_hallucination"
     commands=[]
     
     for i in range(len(dataset_list)):
@@ -51,10 +60,7 @@ def main():
                 dataset_name=dataset_list[i]
                 type_item=type_list[j]
                 language=language_list[k]
-                if args.use_cd:
-                    output_file=f"{vcd_base}/output/test_dpo/cd/llava15_{dataset_name}_pope_{type_item}_answers_w_cd_seed{seed}_{language}.jsonl"
-                else:
-                    output_file=f"{vcd_base}/output/test_dpo/llava15_{dataset_name}_pope_{type_item}_answers_no_cd_seed{seed}_{language}.jsonl"
+                output_file=f"{output_file_base}/{output_file_dir}/llava15_dpo_pope_{type_item}_answers_{language}.jsonl"
                 if os.path.exists(output_file):
                     continue
                 else:
@@ -79,7 +85,7 @@ def main():
                     #         + "python /mnt/petrelfs/songmingyang/code/VCD/experiments/eval/object_hallucination_vqa_llava.py "
                     #         + " ".join(cmd_args)
                     #         + f" 1>{log_path} 2>&1")
-                    run_command(f"nohup srun -p {partition} -n1 -N1 --gres=gpu:1 --quotatype=reserved -c 16 --job-name=generate "
+                    run_command(f"nohup srun -p {partition} -n1 -N1 --gres=gpu:1 --quotatype=reserved -c 16 --job-name=llavaGen "
                             + f"--output={log_path} "
                             + f"--error={log_path} "
                             + f"python {vcd_base}/eval/object_hallucination_vqa_llava.py "
