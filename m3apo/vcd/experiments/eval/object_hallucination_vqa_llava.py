@@ -36,8 +36,6 @@ def eval_model(args):
     if args.peft_model_path:
         model = PeftModel.from_pretrained(model, args.peft_model_path, adapter_name="dpo")
         model.to(torch.bfloat16)
-    else:
-        raise RuntimeError("not allowed")
 
     questions = [json.loads(q) for q in open(os.path.expanduser(args.question_file), "r")]
     answers_file = os.path.expanduser(args.answers_file)
