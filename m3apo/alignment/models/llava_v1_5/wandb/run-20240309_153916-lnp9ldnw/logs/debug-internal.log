@@ -1,0 +1,86 @@
+2024-03-09 15:39:16,761 INFO    StreamThr :49333 [internal.py:wandb_internal():86] W&B internal server running at pid: 49333, started at: 2024-03-09 15:39:16.760235
+2024-03-09 15:39:16,763 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: status
+2024-03-09 15:39:16,769 INFO    WriterThread:49333 [datastore.py:open_for_write():87] open: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_153916-lnp9ldnw/run-lnp9ldnw.wandb
+2024-03-09 15:39:16,771 DEBUG   SenderThread:49333 [sender.py:send():382] send: header
+2024-03-09 15:39:16,995 DEBUG   SenderThread:49333 [sender.py:send():382] send: run
+2024-03-09 15:39:21,998 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:39:27,000 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:39:32,003 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:39:37,006 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:39:42,008 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:39:47,011 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:39:52,013 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:39:57,016 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:02,019 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:07,021 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:12,024 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:17,026 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:20,261 INFO    SenderThread:49333 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connection.py", line 170, in _new_conn
+    conn = connection.create_connection(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/util/connection.py", line 79, in create_connection
+    raise err
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/util/connection.py", line 69, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connectionpool.py", line 815, in _prepare_proxy
+    conn.connect()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connection.py", line 314, in connect
+    conn = self._new_conn()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x7fc2a8743160>, 'Connection to 10.1.8.50 timed out. (connect timeout=20)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connectionpool.py", line 637, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/util/retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7fc2a8743160>, 'Connection to 10.1.8.50 timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x7fc2a8743160>, 'Connection to 10.1.8.50 timed out. (connect timeout=20)'))
+2024-03-09 15:40:22,029 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:27,031 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:32,034 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:37,036 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:42,039 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-09 15:40:47,041 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: cancel
+2024-03-09 15:40:47,042 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: cancel
+2024-03-09 15:40:47,042 DEBUG   SenderThread:49333 [sender.py:send():391] Record cancelled: run
+2024-03-09 15:40:47,042 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: status_report
+2024-03-09 15:40:49,085 DEBUG   HandlerThread:49333 [handler.py:handle_request():146] handle_request: shutdown
+2024-03-09 15:40:49,085 INFO    HandlerThread:49333 [handler.py:finish():869] shutting down handler
+2024-03-09 15:40:50,043 INFO    SenderThread:49333 [sender.py:finish():1572] shutting down sender
+2024-03-09 15:40:50,043 INFO    WriterThread:49333 [datastore.py:close():296] close: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_153916-lnp9ldnw/run-lnp9ldnw.wandb

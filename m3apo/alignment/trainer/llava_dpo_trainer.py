@@ -7,6 +7,8 @@ import warnings
 from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
 
 from .base_dpo_trainer import BaseDPOTrainer
+from m3apo.utils.debugging import remote_breakpoint
+from m3apo.alignment.models.llava_v1_5.llava.constants import IGNORE_INDEX, IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_PATCH_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
 
 class LlavaDPOTrainer(BaseDPOTrainer):
         
@@ -32,22 +34,64 @@ class LlavaDPOTrainer(BaseDPOTrainer):
         batch_attention_mask[:chosen_attention_mask.shape[0], :chosen_attention_mask.shape[1]] = chosen_attention_mask
         batch_attention_mask[reject_attention_mask.shape[0]:, :reject_attention_mask.shape[1]] = reject_attention_mask
         
-        # prepare inputs
-        (
-            batch_input_ids,
-            batch_position_ids,
-            batch_attention_mask,
-            batch_past_key_values,
-            batch_inputs_embeds,
-            batch_labels
-        ) = self.model.prepare_inputs_labels_for_multimodal(
-            input_ids=batch_input_ids,
-            position_ids=None,
-            attention_mask=batch_attention_mask,
-            past_key_values=None,
-            labels=batch_labels,
-            images=torch.cat([images, images], dim=0),
-        )
+        # current_step = self.state.global_step
+        # assert self.tokenizer is not None
+        # if current_step == 0:
+        #     remote_breakpoint()
+                
+        # if current_step == 55:
+        #     print(f"batch_input_ids: {(batch_input_ids == IMAGE_TOKEN_INDEX).sum(),}")
+        #     if (batch_input_ids == IMAGE_TOKEN_INDEX).sum() > 32:
+        #         for i in batch_input_ids:
+        #             if (i == IMAGE_TOKEN_INDEX).sum() > 1:
+        #                 text = self.tokenizer.decode(i[:256])
+        #                 print(text)
+            
+        try:
+            # prepare inputs
+            (
+                batch_input_ids,
+                batch_position_ids,
+                batch_attention_mask,
+                batch_past_key_values,
+                batch_inputs_embeds,
+                batch_labels
+            ) = self.model.prepare_inputs_labels_for_multimodal(
+                input_ids=batch_input_ids,
+                position_ids=None,
+                attention_mask=batch_attention_mask,
+                past_key_values=None,
+                labels=batch_labels,
+                images=torch.cat([images, images], dim=0),
+            )
+        except:
+            mask = batch_input_ids == IMAGE_TOKEN_INDEX
+            for mask_line in mask:
+                if mask_line.sum() > 1:
+                    limit = 0
+                    for i in mask_line.shape[0]:
+                        if mask_line[i]:
+                            if limit == 0:
+                                limit+=1
+                            else:
+                                mask_line[i] = False
+            mask2 = batch_input_ids == IMAGE_TOKEN_INDEX
+            batch_input_ids[mask2 - mask] = IGNORE_INDEX
+            (
+                batch_input_ids,
+                batch_position_ids,
+                batch_attention_mask,
+                batch_past_key_values,
+                batch_inputs_embeds,
+                batch_labels
+            ) = self.model.prepare_inputs_labels_for_multimodal(
+                input_ids=batch_input_ids,
+                position_ids=None,
+                attention_mask=batch_attention_mask,
+                past_key_values=None,
+                labels=batch_labels,
+                images=torch.cat([images, images], dim=0),
+            )
         
         # calculate logits
         all_logits = model.forward(

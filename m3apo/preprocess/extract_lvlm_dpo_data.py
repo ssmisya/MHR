@@ -37,7 +37,7 @@ def main(args):
                         feedback.append(sample)
         prompt_suffix = f" Please answer this question in {language_dict[args.language]['full_name']}"
         format_data = {
-            "question":i['prompt']+prompt_suffix,
+            "question":i['prompt'],
             "feedback":feedback,
             "image":i['image']
         }
@@ -49,12 +49,16 @@ def extract_top3(args):
     data = process_jsonl(input_file)
 
     dpo_data = []
+    lang_code=args.language if args.language != "zh" else "zh-cn"
     for i in tqdm(data):
         output_with_score = [{"answer":i['answer'][k],'score':i['reward_list'][k]} for k in range(len(i['answer']))] 
         filtered_output_with_score = []
         for obj in output_with_score:
             try:
-                sign = (detect(obj["answer"]) == args.language)
+                detected_lang = detect(obj["answer"])
+                sign = detected_lang == lang_code
+                if lang_code == 'mr':
+                    sign = (detected_lang in  ['hi','bn','mr']) 
             except:
                 sign = False
             if sign:
@@ -82,7 +86,7 @@ def extract_top3(args):
         prompt_suffix = f" Please answer this question in {language_dict[args.language]['full_name']}"
         format_data = {
                 "question_id":i['question_id'],
-                "question":i['prompt']+prompt_suffix,
+                "question":i['prompt'],
                 "feedback":sample,
                 "image":i['image'],
                 "language":args.language,
@@ -95,12 +99,16 @@ def extract_self_hallucinagion_top3(args):
     data = process_jsonl(input_file)
 
     dpo_data = []
+    lang_code=args.language if args.language != "zh" else "zh-cn"
     for i in tqdm(data):
         output_with_score = [{"answer":i['answer'][k],'score':i['reward_list'][k]} for k in range(len(i['answer']))] 
         filtered_output_with_score = []
         for obj in output_with_score:
             try:
-                sign = (detect(obj["answer"]) == args.language)
+                detected_lang = detect(obj["answer"])
+                sign = (detected_lang == lang_code)
+                if lang_code == 'mr':
+                    sign = (detected_lang in  ['hi','bn','mr'])
             except:
                 sign = False
             if sign:
@@ -136,7 +144,7 @@ def extract_self_hallucinagion_top3(args):
         prompt_suffix = f" Please answer this question in {language_dict[args.language]['full_name']}"
         format_data = {
                 "question_id":i['question_id'],
-                "question":i['prompt']+prompt_suffix,
+                "question":i['prompt'],
                 "feedback":sample,
                 "image":i['image'],
                 "language":args.language,

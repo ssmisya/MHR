@@ -19,6 +19,8 @@ from vcd_utils.vcd_sample import evolve_vcd_sampling
 evolve_vcd_sampling()
 from experiments.eval.language_dict import language_dict
 
+from m3apo.utils.utils import process_jsonl
+
 from PIL import Image
 import math
 
@@ -45,8 +47,9 @@ def construct_prompt_and_inference(model,qs, tokenizer,image_processor,image_fil
 
         conv = conv_templates[args.conv_mode].copy()
         # prompt_suffix = language_dict[args.language]['prompt_suffix'].format(language_dict[args.language]['yes'],language_dict[args.language]['no'])
-        prompt_suffix = f" Please answer this question in {language_dict[args.language]['full_name']}"
-        conv.append_message(conv.roles[0], qs + prompt_suffix)
+        prompt_suffix = f" Please answer this question in {language_dict[args.language]['full_name']}."
+        cur_full_prompt = qs + prompt_suffix
+        conv.append_message(conv.roles[0], cur_full_prompt)
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
 
@@ -91,7 +94,7 @@ def construct_prompt_and_inference(model,qs, tokenizer,image_processor,image_fil
                 output = output[:-len(stop_str)]
             output = output.strip()
             new_outputs.append(output)
-        return cur_prompt, new_outputs
+        return cur_full_prompt, new_outputs
     
 
 def eval_model(args):
@@ -102,8 +105,13 @@ def eval_model(args):
     tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name)
     
     answers_file = os.path.expanduser(args.answers_file)
-    os.makedirs(os.path.dirname(answers_file), exist_ok=True)
-    ans_file = open(answers_file, "w",encoding="utf8")
+    if os.path.exists(answers_file):
+        exist_data = process_jsonl(answers_file)
+        ans_file = open(answers_file, "a+",encoding="utf8")
+    else:
+        os.makedirs(os.path.dirname(answers_file), exist_ok=True)
+        ans_file = open(answers_file, "a+",encoding="utf8")
+        exist_data = None
     
     if args.dataset_type == "vg":
         vg_image_data = json.load(open(os.path.join(args.vg_path, "image_data.json")))
@@ -112,7 +120,11 @@ def eval_model(args):
             for _data in vg_image_data
         }
         questions = json.load(open(args.question_file, "r",encoding="utf8"))
+        k=0
         for image_id in tqdm(questions.keys()):
+            if exist_data is not None and k < len(exist_data) and str(image_id) == exist_data[k]["question_id"]: 
+                k+=1
+                continue
             image_file = id2path[int(image_id)]
             idx=image_id
             qs = random.choice([
@@ -140,9 +152,12 @@ def eval_model(args):
         else:
             questions = load_json_file(args.question_file)
 
-        
+        k=0
         for line in tqdm(questions):
-
+            if exist_data is not None and k < len(exist_data) and line["id"] == exist_data[k]["question_id"]:
+                k+=1
+                continue
+            
             if args.question_file_format == "jsonl":
                 idx = line["question_id"]
                 image_file = line["image"]
@@ -164,6 +179,8 @@ def eval_model(args):
                                     "language":args.language,
                                     "metadata": {}},ensure_ascii=False) + "\n")
             ans_file.flush()
+    else:
+        raise ValueError(f"dataset_type {args.dataset_type} not supported")
     ans_file.close()
 
 if __name__ == "__main__":

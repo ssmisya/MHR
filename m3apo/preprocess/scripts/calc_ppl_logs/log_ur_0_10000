@@ -1,0 +1,17 @@
+phoenix-srun: job 2582373 queued and waiting for resources
+phoenix-srun: job 2582373 has been allocated resources
+phoenix-srun: Job 2582373 scheduled successfully!
+Current QUOTA_TYPE is [reserved], which means the job has occupied quota in RESERVED_TOTAL under your partition.
+Current PHX_PRIORITY is normal
+
+[2024-03-08 14:50:25,336] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess/calculate_PPL_score.py", line 132, in <module>
+    main(args)
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess/calculate_PPL_score.py", line 47, in main
+    ref_data = process_jsonl(args.reference_en_file)
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/utils/utils.py", line 17, in process_jsonl
+    with open(file_path, 'r', encoding='utf-8') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/generations/llava_7b_v1_generation_num20_en.json'
+phoenix-srun: error: SH-IDCA1404-10-140-54-109: task 0: Exited with exit code 1
+phoenix-srun: launch/slurm: _step_signal: Terminating StepId=2582373.0

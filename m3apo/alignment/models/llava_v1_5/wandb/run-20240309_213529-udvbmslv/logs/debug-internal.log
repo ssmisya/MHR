@@ -1,0 +1,199 @@
+2024-03-09 21:35:29,550 INFO    StreamThr :72425 [internal.py:wandb_internal():86] W&B internal server running at pid: 72425, started at: 2024-03-09 21:35:29.549511
+2024-03-09 21:35:29,553 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: status
+2024-03-09 21:35:29,558 INFO    WriterThread:72425 [datastore.py:open_for_write():87] open: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/run-udvbmslv.wandb
+2024-03-09 21:35:29,560 DEBUG   SenderThread:72425 [sender.py:send():382] send: header
+2024-03-09 21:35:29,791 DEBUG   SenderThread:72425 [sender.py:send():382] send: run
+2024-03-09 21:35:30,728 INFO    SenderThread:72425 [dir_watcher.py:__init__():211] watching files in: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files
+2024-03-09 21:35:30,728 INFO    SenderThread:72425 [sender.py:_start_run_threads():1136] run started: udvbmslv with start time 1709991329.553892
+2024-03-09 21:35:30,739 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: check_version
+2024-03-09 21:35:30,740 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: check_version
+2024-03-09 21:35:31,592 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: run_start
+2024-03-09 21:35:31,601 DEBUG   HandlerThread:72425 [system_info.py:__init__():27] System info init
+2024-03-09 21:35:31,601 DEBUG   HandlerThread:72425 [system_info.py:__init__():42] System info init done
+2024-03-09 21:35:31,602 INFO    HandlerThread:72425 [system_monitor.py:start():194] Starting system monitor
+2024-03-09 21:35:31,602 INFO    SystemMonitor:72425 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-09 21:35:31,602 INFO    HandlerThread:72425 [system_monitor.py:probe():214] Collecting system info
+2024-03-09 21:35:31,603 INFO    SystemMonitor:72425 [interfaces.py:start():190] Started cpu monitoring
+2024-03-09 21:35:31,604 INFO    SystemMonitor:72425 [interfaces.py:start():190] Started disk monitoring
+2024-03-09 21:35:31,605 INFO    SystemMonitor:72425 [interfaces.py:start():190] Started gpu monitoring
+2024-03-09 21:35:31,606 INFO    SystemMonitor:72425 [interfaces.py:start():190] Started memory monitoring
+2024-03-09 21:35:31,608 INFO    SystemMonitor:72425 [interfaces.py:start():190] Started network monitoring
+2024-03-09 21:35:31,651 DEBUG   HandlerThread:72425 [system_info.py:probe():151] Probing system
+2024-03-09 21:35:31,664 DEBUG   HandlerThread:72425 [system_info.py:_probe_git():136] Probing git
+2024-03-09 21:35:31,699 DEBUG   HandlerThread:72425 [system_info.py:_probe_git():144] Probing git done
+2024-03-09 21:35:31,700 DEBUG   HandlerThread:72425 [system_info.py:probe():199] Probing system done
+2024-03-09 21:35:31,700 DEBUG   HandlerThread:72425 [system_monitor.py:probe():223] {'os': 'Linux-3.10.0-957.el7.x86_64-x86_64-with-glibc2.17', 'python': '3.9.18', 'heartbeatAt': '2024-03-09T13:35:31.651677', 'startedAt': '2024-03-09T13:35:29.515436', 'docker': None, 'cuda': None, 'args': ('--deepspeed', './scripts/deepspeed/zero3.json', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '0', '--model_name_or_path', '/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/llava_checkpoint_1000', '--version', 'v1', '--self_hallucination_data_path', '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_dpo_data', '--vision_tower', '/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/palo_sfted_self_hallucination_full', '--num_train_epochs', '3', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '500', '--save_total_limit', '5', '--learning_rate', '2e-6', '--weight_decay', '0.', '--warmup_steps', '0', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--beta', '0.1'), 'state': 'running', 'program': '/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py', 'codePathLocal': 'train_dpo.py', 'codePath': 'm3apo/alignment/models/llava_v1_5/train_dpo.py', 'git': {'remote': 'git@github.com:ssmisya/M3APO.git', 'commit': 'fc99efbc7b81a0927000be6b5e3760ffca90bc46'}, 'email': 'hitsmy@qq.com', 'root': '/mnt/petrelfs/songmingyang/code/mm/MAPO', 'host': 'SH-IDCA1404-10-140-54-52', 'username': 'songmingyang', 'executable': '/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}], 'disk': {'/': {'total': 488.89007568359375, 'used': 27.893539428710938}}, 'gpu': 'NVIDIA A100-SXM4-80GB', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 1007.3445129394531}}
+2024-03-09 21:35:31,701 INFO    HandlerThread:72425 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-09 21:35:31,701 INFO    HandlerThread:72425 [system_monitor.py:probe():227] Publishing system info
+2024-03-09 21:35:31,702 DEBUG   HandlerThread:72425 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-03-09 21:35:31,730 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/conda-environment.yaml
+2024-03-09 21:35:34,472 DEBUG   HandlerThread:72425 [system_info.py:_save_conda():220] Saving conda packages done
+2024-03-09 21:35:34,477 INFO    HandlerThread:72425 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-09 21:35:34,484 DEBUG   SenderThread:72425 [sender.py:send():382] send: files
+2024-03-09 21:35:34,484 INFO    SenderThread:72425 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-03-09 21:35:34,492 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-09 21:35:34,492 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-09 21:35:34,493 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: python_packages
+2024-03-09 21:35:34,493 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-09 21:35:34,495 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: stop_status
+2024-03-09 21:35:34,736 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/requirements.txt
+2024-03-09 21:35:34,737 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/wandb-metadata.json
+2024-03-09 21:35:35,108 DEBUG   SenderThread:72425 [sender.py:send():382] send: telemetry
+2024-03-09 21:35:35,109 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: status_report
+2024-03-09 21:35:35,109 DEBUG   SenderThread:72425 [sender.py:send():382] send: config
+2024-03-09 21:35:35,110 DEBUG   SenderThread:72425 [sender.py:send():382] send: metric
+2024-03-09 21:35:35,111 DEBUG   SenderThread:72425 [sender.py:send():382] send: telemetry
+2024-03-09 21:35:35,111 DEBUG   SenderThread:72425 [sender.py:send():382] send: metric
+2024-03-09 21:35:35,112 WARNING SenderThread:72425 [sender.py:send_metric():1354] Seen metric with glob (shouldn't happen)
+2024-03-09 21:35:35,738 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/output.log
+2024-03-09 21:35:35,931 INFO    wandb-upload_0:72425 [upload_job.py:push():131] Uploaded file /tmp/tmpt673n9y0wandb/03xb5alx-wandb-metadata.json
+2024-03-09 21:35:37,322 DEBUG   SenderThread:72425 [sender.py:send():382] send: exit
+2024-03-09 21:35:37,322 INFO    SenderThread:72425 [sender.py:send_exit():589] handling exit code: 1
+2024-03-09 21:35:37,323 INFO    SenderThread:72425 [sender.py:send_exit():591] handling runtime: 5
+2024-03-09 21:35:37,325 INFO    SenderThread:72425 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-09 21:35:37,326 INFO    SenderThread:72425 [sender.py:send_exit():597] send defer
+2024-03-09 21:35:37,327 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:37,327 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 0
+2024-03-09 21:35:37,327 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:37,328 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-03-09 21:35:37,328 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 1
+2024-03-09 21:35:37,328 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:37,329 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 1
+2024-03-09 21:35:37,329 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:37,330 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-03-09 21:35:37,330 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 2
+2024-03-09 21:35:37,330 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:37,331 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 2
+2024-03-09 21:35:37,331 INFO    HandlerThread:72425 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-09 21:35:37,331 DEBUG   SystemMonitor:72425 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-09 21:35:37,332 INFO    HandlerThread:72425 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-09 21:35:37,332 DEBUG   SystemMonitor:72425 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-09 21:35:37,332 INFO    HandlerThread:72425 [interfaces.py:finish():202] Joined disk monitor
+2024-03-09 21:35:37,333 DEBUG   SystemMonitor:72425 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-09 21:35:37,744 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/output.log
+2024-03-09 21:35:37,745 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/wandb-summary.json
+2024-03-09 21:35:38,136 INFO    HandlerThread:72425 [interfaces.py:finish():202] Joined gpu monitor
+2024-03-09 21:35:38,137 INFO    HandlerThread:72425 [interfaces.py:finish():202] Joined memory monitor
+2024-03-09 21:35:38,137 INFO    HandlerThread:72425 [interfaces.py:finish():202] Joined network monitor
+2024-03-09 21:35:38,137 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:38,138 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-03-09 21:35:38,138 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 3
+2024-03-09 21:35:38,138 DEBUG   SenderThread:72425 [sender.py:send():382] send: stats
+2024-03-09 21:35:38,138 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:38,140 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 3
+2024-03-09 21:35:38,140 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:38,140 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-03-09 21:35:38,141 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 4
+2024-03-09 21:35:38,141 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:38,141 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 4
+2024-03-09 21:35:38,142 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:38,142 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-03-09 21:35:38,142 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 5
+2024-03-09 21:35:38,143 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:38,143 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 5
+2024-03-09 21:35:38,143 DEBUG   SenderThread:72425 [sender.py:send():382] send: summary
+2024-03-09 21:35:38,146 INFO    SenderThread:72425 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-09 21:35:38,146 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:38,147 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-03-09 21:35:38,147 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 6
+2024-03-09 21:35:38,147 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:38,148 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 6
+2024-03-09 21:35:38,148 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:38,148 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-03-09 21:35:38,152 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: status_report
+2024-03-09 21:35:38,322 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-09 21:35:38,632 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 7
+2024-03-09 21:35:38,633 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: poll_exit
+2024-03-09 21:35:38,633 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:38,633 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 7
+2024-03-09 21:35:38,634 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:38,634 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-03-09 21:35:38,747 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/config.yaml
+2024-03-09 21:35:38,747 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/wandb-summary.json
+2024-03-09 21:35:39,322 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-09 21:35:39,602 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 8
+2024-03-09 21:35:39,602 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: poll_exit
+2024-03-09 21:35:39,602 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:39,603 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 8
+2024-03-09 21:35:39,604 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:39,604 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-03-09 21:35:39,604 INFO    SenderThread:72425 [job_builder.py:build():296] Attempting to build job artifact
+2024-03-09 21:35:39,607 INFO    SenderThread:72425 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-03-09 21:35:39,659 INFO    SenderThread:72425 [job_builder.py:build():402] adding wandb-job metadata file
+2024-03-09 21:35:39,673 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 9
+2024-03-09 21:35:39,674 DEBUG   SenderThread:72425 [sender.py:send():382] send: artifact
+2024-03-09 21:35:39,674 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:39,676 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 9
+2024-03-09 21:35:39,749 INFO    Thread-12 :72425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/output.log
+2024-03-09 21:35:40,323 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-09 21:35:41,225 INFO    SenderThread:72425 [sender.py:send_artifact():1494] sent artifact job-git_github.com_ssmisya_M3APO.git_m3apo_alignment_models_llava_v1_5_train_dpo.py - {'id': 'QXJ0aWZhY3Q6NzQ2ODEwOTM3', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE0Njc3MzM5NA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzQ4Mjk5Nzgy', 'versionIndex': 1}}}
+2024-03-09 21:35:41,226 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:41,226 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-03-09 21:35:41,227 INFO    SenderThread:72425 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-03-09 21:35:41,753 INFO    SenderThread:72425 [dir_watcher.py:finish():388] scan: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files
+2024-03-09 21:35:41,753 INFO    SenderThread:72425 [dir_watcher.py:finish():402] scan save: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/wandb-metadata.json wandb-metadata.json
+2024-03-09 21:35:41,754 INFO    SenderThread:72425 [dir_watcher.py:finish():402] scan save: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/requirements.txt requirements.txt
+2024-03-09 21:35:41,755 INFO    SenderThread:72425 [dir_watcher.py:finish():402] scan save: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/conda-environment.yaml conda-environment.yaml
+2024-03-09 21:35:41,757 INFO    SenderThread:72425 [dir_watcher.py:finish():402] scan save: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/wandb-summary.json wandb-summary.json
+2024-03-09 21:35:41,758 INFO    SenderThread:72425 [dir_watcher.py:finish():402] scan save: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/config.yaml config.yaml
+2024-03-09 21:35:41,761 INFO    SenderThread:72425 [dir_watcher.py:finish():402] scan save: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/output.log output.log
+2024-03-09 21:35:41,763 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 10
+2024-03-09 21:35:41,765 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: poll_exit
+2024-03-09 21:35:41,765 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:41,766 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 10
+2024-03-09 21:35:41,766 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:41,767 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-03-09 21:35:41,767 INFO    SenderThread:72425 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-09 21:35:42,325 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-09 21:35:42,325 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: poll_exit
+2024-03-09 21:35:42,427 INFO    wandb-upload_0:72425 [upload_job.py:push():131] Uploaded file /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/requirements.txt
+2024-03-09 21:35:42,710 INFO    wandb-upload_1:72425 [upload_job.py:push():131] Uploaded file /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/wandb-summary.json
+2024-03-09 21:35:43,024 INFO    wandb-upload_2:72425 [upload_job.py:push():131] Uploaded file /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/config.yaml
+2024-03-09 21:35:43,325 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-09 21:35:43,326 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: poll_exit
+2024-03-09 21:35:43,348 INFO    wandb-upload_3:72425 [upload_job.py:push():131] Uploaded file /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/files/output.log
+2024-03-09 21:35:43,549 INFO    Thread-11 :72425 [sender.py:transition_state():617] send defer: 11
+2024-03-09 21:35:43,549 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:43,550 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 11
+2024-03-09 21:35:43,550 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:43,550 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-03-09 21:35:43,551 INFO    SenderThread:72425 [file_pusher.py:join():178] waiting for file pusher
+2024-03-09 21:35:43,551 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 12
+2024-03-09 21:35:43,551 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:43,552 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 12
+2024-03-09 21:35:43,552 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:43,552 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-03-09 21:35:43,553 INFO    SenderThread:72425 [file_stream.py:finish():595] file stream finish called
+2024-03-09 21:35:43,871 INFO    SenderThread:72425 [file_stream.py:finish():599] file stream finish is done
+2024-03-09 21:35:43,871 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 13
+2024-03-09 21:35:43,872 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:43,872 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 13
+2024-03-09 21:35:43,873 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:43,873 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-03-09 21:35:43,873 INFO    SenderThread:72425 [sender.py:transition_state():617] send defer: 14
+2024-03-09 21:35:43,874 DEBUG   SenderThread:72425 [sender.py:send():382] send: final
+2024-03-09 21:35:43,874 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: defer
+2024-03-09 21:35:43,874 DEBUG   SenderThread:72425 [sender.py:send():382] send: footer
+2024-03-09 21:35:43,874 INFO    HandlerThread:72425 [handler.py:handle_request_defer():172] handle defer: 14
+2024-03-09 21:35:43,875 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: defer
+2024-03-09 21:35:43,876 INFO    SenderThread:72425 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-03-09 21:35:43,876 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-09 21:35:43,877 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: poll_exit
+2024-03-09 21:35:43,877 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-09 21:35:43,877 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: server_info
+2024-03-09 21:35:43,878 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: poll_exit
+2024-03-09 21:35:43,878 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: get_summary
+2024-03-09 21:35:43,878 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: server_info
+2024-03-09 21:35:43,879 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: sampled_history
+2024-03-09 21:35:43,881 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-09 21:35:43,881 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: job_info
+2024-03-09 21:35:44,171 DEBUG   SenderThread:72425 [sender.py:send_request():409] send_request: job_info
+2024-03-09 21:35:44,172 INFO    MainThread:72425 [wandb_run.py:_footer_history_summary_info():3866] rendering history
+2024-03-09 21:35:44,172 INFO    MainThread:72425 [wandb_run.py:_footer_history_summary_info():3898] rendering summary
+2024-03-09 21:35:44,173 INFO    MainThread:72425 [wandb_run.py:_footer_sync_info():3825] logging synced files
+2024-03-09 21:35:44,174 DEBUG   HandlerThread:72425 [handler.py:handle_request():146] handle_request: shutdown
+2024-03-09 21:35:44,174 INFO    HandlerThread:72425 [handler.py:finish():869] shutting down handler
+2024-03-09 21:35:44,882 INFO    WriterThread:72425 [datastore.py:close():296] close: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_213529-udvbmslv/run-udvbmslv.wandb
+2024-03-09 21:35:45,172 INFO    SenderThread:72425 [sender.py:finish():1572] shutting down sender
+2024-03-09 21:35:45,172 INFO    SenderThread:72425 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-09 21:35:45,172 INFO    SenderThread:72425 [file_pusher.py:join():178] waiting for file pusher

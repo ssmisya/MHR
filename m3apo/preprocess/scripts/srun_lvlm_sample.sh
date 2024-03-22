@@ -1,34 +1,39 @@
 source ~/.bashrc
 source ~/anaconda3/bin/activate vcd
 
-
-code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess
-cd $code_base
-
 seed=55
-# dataset_name=coco
-# type=adversarial
-model_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
+model_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/checkpoint-1000
 cd_alpha=-1
 cd_beta=0.2
 noise_step=-500
 generation_num=20
 default_language=en
-language=${1:-default_language}
-
+language=${1:-$default_language}
+sample_dataset_type=${2:-"vg"}
 data_base=/mnt/petrelfs/songmingyang/songmingyang/data/mm
+run_base=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess
+code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess
+cd $code_base
 
-# image_folder=/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017
-image_folder=${data_base}/imgs/vg
+if [ $sample_dataset_type == "vg" ]
+then
+    image_folder=${data_base}/imgs/vg
+    question_file=${data_base}/annotation/hadpo-data/hadpo/llava-v1.5/desc_data.json
+   
+    generation_dir_path=${run_base}/sft_on_palo_1000/desc_generations
+    dataset_type=vg
+else
+    image_folder=${data_base}/imgs/coco/train2017
+    question_file=${data_base}/annotation/LLaVA-Human-Preference-10K/llava_7b_v1_preference.json
 
-# question_file=/mnt/petrelfs/songmingyang/songmingyang/data/mm/annotation/LLaVA-Human-Preference-10K/llava_7b_v1_preference.json
-question_file=${data_base}/annotation/hadpo-data/hadpo/llava-v1.5/desc_data.json
+    generation_dir_path=${run_base}/sft_on_palo_1000/human_generations
+    dataset_type=human_preference_10k
+fi
+
 vg_path=${data_base}/annotation/vg
-run_base=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/ha_dpo_desc
 
-dataset_type=vg
-generation_dir_path=${run_base}/generations
-generation_file=${generation_dir_path}/llava_7b_v1_generation_${dataset_type}_num${generation_num}_${language}.json
+mkdir -p ${generation_dir_path}
+generation_file=${generation_dir_path}/llava_sft_palo_generation_${dataset_type}_num${generation_num}_${language}.json
 
 #--nodelist=SH-IDCA1404-10-140-54-[11,16]
 

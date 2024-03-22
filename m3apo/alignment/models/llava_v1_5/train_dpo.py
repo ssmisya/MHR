@@ -19,10 +19,13 @@ import transformers
 from transformers import TrainerCallback
 from transformers import HfArgumentParser, TrainingArguments
 
-from llava.model import *
-from llava import conversation as conversation_lib
-from llava.train.train import preprocess_multimodal, preprocess
-from llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IGNORE_INDEX
+# from m3apo.alignment.models.llava_v1_5.llava.model import *
+# form m3apo.vcd.experiments.llava.model import *
+
+from m3apo.alignment.models.llava_v1_5.llava.model import *
+from m3apo.alignment.models.llava_v1_5.llava import conversation as conversation_lib
+from m3apo.alignment.models.llava_v1_5.llava.train.train import preprocess_multimodal, preprocess
+from m3apo.alignment.models.llava_v1_5.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IGNORE_INDEX
 
 from peft.peft_model import PeftModelForCausalLM
 from peft import (
@@ -62,6 +65,7 @@ class DataArguments:
     image_folder: Optional[str] = field(default=None)
     image_aspect_ratio: str = 'square'
     self_hallucination_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the self-hallucination data."})
+    human_prefer_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the human_preference dpo data."})
     
     
 
@@ -196,23 +200,91 @@ class LazySupervisedDataset(Dataset):
     def __init__(self, 
         data_path: str,
         self_hallucination_data_path: str,
+        human_prefer_data_path: str,
         tokenizer: transformers.PreTrainedTokenizer,
         data_args: DataArguments,
         seed: int = 42,
     ):
         super(LazySupervisedDataset, self).__init__()
         random.seed(seed)
-        
-        if self_hallucination_data_path:
-            list_data_dict = self.self_hallucination_data_process(self_hallucination_data_path)
+        if human_prefer_data_path:
+            list_data_dict = self.human_preference_data_process(human_prefer_data_path)*3
+        elif self_hallucination_data_path:
+            list_data_dict = self.self_hallucination_data_process_pile(self_hallucination_data_path)*3
         elif data_path:
             list_data_dict = self.data_process(data_path)
         else:
             raise ValueError("Please provide a valid data path.")
         
+        # if human_prefer_data_path:
+        #     list_data_dict = list_data_dict + self.human_preference_data_process(human_prefer_data_path)
+        
         self.tokenizer = tokenizer
-        self.list_data_dict = list_data_dict*18
+        self.list_data_dict = list_data_dict
         self.data_args = data_args
+    
+    def self_hallucination_data_process_pile(self,data_path):
+        data_dir = [os.path.join(data_path,a) for a in os.listdir(data_path)]
+        
+        data_across_different_langs = [process_jsonl(a) for a in data_dir]
+        id = 0
+        data_dict_list = []
+        for file in data_across_different_langs:
+            for idx,data in enumerate(file):
+                image_file_path = data["image"]
+                questions_and_feedbacks = {}
+                question = data["question"]
+                # if not DEFAULT_IMAGE_TOKEN in question:
+                #     question = DEFAULT_IMAGE_TOKEN + '\n' + question
+                questions_and_feedbacks[data["language"]] = {"question":question,"feedback":data["feedback"]}
+                data_dict_list.append({
+                        "id": int(id),
+                        "image": image_file_path,
+                        "chosen_conversations": [
+                            {"from": "human", "value": "{question}"},
+                            {"from": "gpt", "value": "{chosen}"},
+                        ],
+                        "reject_conversations": [
+                            {"from": "human", "value": "{question}"},
+                            {"from": "gpt", "value": "{reject}"},
+                        ],
+                        "questions_and_feedbacks":questions_and_feedbacks,
+                })
+                id+=1
+        return data_dict_list
+        
+    def human_preference_data_process(self,data_path):
+        data_dir = [os.path.join(data_path,a) for a in os.listdir(data_path)]
+        
+        data_across_different_langs = [process_jsonl(a) for a in data_dir]
+
+        data_dict_list = []
+        id = 0
+        for language_data in data_across_different_langs:
+            for data in language_data:
+                question_id = data["question_id"]
+                image_file_path = data["image"]
+                questions_and_feedbacks = {}
+                question = data["question"]
+                if not DEFAULT_IMAGE_TOKEN in question:
+                    question = DEFAULT_IMAGE_TOKEN + '\n' + question
+                questions_and_feedbacks[data["language"]] = {"question":question,"feedback":data["feedback"]}
+                    
+                data_dict_list.append({
+                        "id": int(id),
+                        "image": image_file_path,
+                        "chosen_conversations": [
+                            {"from": "human", "value": "{question}"},
+                            {"from": "gpt", "value": "{chosen}"},
+                        ],
+                        "reject_conversations": [
+                            {"from": "human", "value": "{question}"},
+                            {"from": "gpt", "value": "{reject}"},
+                        ],
+                        "questions_and_feedbacks":questions_and_feedbacks,
+                })
+                id+=1
+        return data_dict_list
     
     def self_hallucination_data_process(self,data_path):
         data_dir = [os.path.join(data_path,a) for a in os.listdir(data_path)]
@@ -232,8 +304,8 @@ class LazySupervisedDataset(Dataset):
                 item = _data.get(question_id,None)
                 if item is not None:
                     question = item["question"]
-                    if not DEFAULT_IMAGE_TOKEN in question:
-                        question = DEFAULT_IMAGE_TOKEN + '\n' + question
+                    # if not DEFAULT_IMAGE_TOKEN in question:
+                    #     question = DEFAULT_IMAGE_TOKEN + '\n' + question
                     questions_and_feedbacks[item["language"]] = {"question":question,"feedback":item["feedback"]}
             data_dict_list.append({
                     "id": int(id),
@@ -334,6 +406,8 @@ class LazySupervisedDataset(Dataset):
             reject = random.choice(questions_and_feedbacks[language]["feedback"]["reject"])
             chosen_conversations = [{"from": "human", "value": question},{"from": "gpt", "value": chosen}]
             reject_conversations =  [{"from": "human", "value": question},{"from": "gpt", "value": reject}]
+            if question.count(DEFAULT_IMAGE_TOKEN) != 1 or question.count("\n") !=1:
+                print(f"error on question: {question}, image: {sources[0]['image']}")
             # print(chosen_conversations)
             chosen_sources = preprocess_multimodal(
                 copy.deepcopy([chosen_conversations for _ in sources]),
@@ -455,6 +529,7 @@ def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer,
     """Make dataset and collator for supervised fine-tuning."""
     train_dataset = LazySupervisedDataset(tokenizer=tokenizer,
                                 data_path=data_args.data_path,
+                                human_prefer_data_path=data_args.human_prefer_data_path,
                                 self_hallucination_data_path=data_args.self_hallucination_data_path,
                                 data_args=data_args)
     

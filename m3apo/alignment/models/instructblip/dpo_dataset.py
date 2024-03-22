@@ -6,8 +6,183 @@ from PIL import Image
 from omegaconf import OmegaConf
 from torch.utils.data import Dataset
 
-from vigc.common.config import Config
-from vigc.common.registry import registry
+from m3apo.alignment.models.instructblip.vigc.common.config import Config
+from m3apo.alignment.models.instructblip.vigc.common.registry import registry
+import transformers
+import torch
+from dataclasses import dataclass, field
+from typing import Dict, Optional, Sequence, List
+
+
+class PaloSFTDataset(Dataset):
+    """
+        AugmentedCaptionDataset:
+        use GPT-3.5 augmented revised descriptions as chosen and augmented model response as rejected
+    """
+    def __init__(self, 
+        data_path: str,
+        data_args,
+        seed: int = 42,
+    ):
+        super(PaloSFTDataset, self).__init__()
+        
+        random.seed(seed)
+        self.data_path = data_path
+        self.data_args = data_args
+        self.image_folder = self.data_args.image_folder
+        self.vis_processor = self.data_args.image_processor
+        self.tokenizer = self.data_args.tokenizer
+        self.qformer_tokenizer = self.data_args.qformer_tokenizer
+        
+        print('Loading SFT Data...')
+        self.data = self.preprocess_data(self.data_path)
+        print(f"Loaded {len(self.data)} SFT data")
+        
+        
+    
+    def preprocess_data(self,data_path):
+        dict_list = []
+        with open(data_path,"r",encoding="UTF-8") as f:
+            data_file = json.load(f)
+        for data in data_file:
+            if data.get("image",None) is None:
+                continue
+            image_id = data["id"]
+            image_path = data["image"] if os.path.isabs(data["image"]) else os.path.join(self.image_folder,data["image"])
+            dict_list.append({
+                "image_id": image_id,
+                "image_path": image_path,
+                "conversations":data["conversations"]
+            })
+        return dict_list
+        
+        
+    def load_data(self, index):
+        anno = self.data[index]
+        image_id = anno["image_id"]
+        
+        image_path = anno["image_path"]
+        conversations = anno["conversations"]
+        questionAndAnswers = []
+        for i in range(0,len(conversations),2):
+            if conversations[i]["from"] == "human":
+                questionAndAnswers.append((conversations[i]["value"], conversations[i+1]["value"]))
+            else:
+                raise ValueError("The first message in the conversation should be from the human")
+        questionAndAnswersItem = random.choice(questionAndAnswers)[0]
+        question = questionAndAnswersItem[0].replace("\n","").replace("<image>","")
+        answers = questionAndAnswersItem[1].replace("\n","").replace("<image>","")
+        
+        encode_item = self.tokenizer(question,return_tensors="pt")
+        encode_item_qformer = self.qformer_tokenizer(question,return_tensors="pt")
+        input_ids = encode_item["input_ids"]
+        attention_mask = encode_item["attention_mask"]
+        qfomer_input_ids = encode_item_qformer["input_ids"]
+        qfomer_attention_mask = encode_item_qformer["attention_mask"]
+        labels = self.tokenizer(answers,return_tensors="pt")["input_ids"]
+        
+        image = Image.open(image_path).convert('RGB')
+        if self.data_args.image_aspect_ratio == 'pad':
+                def expand2square(pil_img, background_color):
+                    width, height = pil_img.size
+                    if width == height:
+                        return pil_img
+                    elif width > height:
+                        result = Image.new(pil_img.mode, (width, width), background_color)
+                        result.paste(pil_img, (0, (width - height) // 2))
+                        return result
+                    else:
+                        result = Image.new(pil_img.mode, (height, height), background_color)
+                        result.paste(pil_img, ((height - width) // 2, 0))
+                        return result
+                image = expand2square(image, tuple(int(x*255) for x in self.vis_processor.image_mean))
+                image = self.vis_processor.preprocess(image, return_tensors='pt')['pixel_values'][0]
+        else:
+            image =  self.vis_processor(Image.open(image_path).convert("RGB"),return_tensors="pt")['pixel_values'][0]
+        pixel_values = image
+        return {
+            "input_ids": input_ids,
+            "attention_mask": attention_mask,
+            "qfomer_input_ids": qfomer_input_ids,
+            "qfomer_attention_mask": qfomer_attention_mask,
+            "labels": labels,
+            "pixel_values": pixel_values,
+        }
+    
+        
+    def __len__(self):
+        return len(self.data)
+        
+    def __getitem__(self, index):
+        sample = self.load_data(index)
+        return sample
+    
+    def collater(self, samples):
+        # Filter out None samples
+        samples = [s for s in samples if s is not None]
+        # Check if samples is empty after filtering
+        if not samples:
+            return {}
+        collated_dict = {}
+        keys = samples[0].keys() # Use the keys of the first sample as a reference
+        for k in keys:
+            values = [sample[k] for sample in samples]
+            # If the value type for the key is torch.Tensor, stack them else return list
+            collated_dict[k] = torch.stack(values, dim=0) if isinstance(values[0], torch.Tensor) else values
+        return collated_dict
+    
+@dataclass
+class DataCollatorForPaloSFTDataset(object):
+    """Collate examples for supervised fine-tuning."""
+
+    tokenizer: transformers.PreTrainedTokenizer
+    qformer_tokenizer: transformers.PreTrainedTokenizer
+
+    def __call__(self, instances: Sequence[Dict]) -> Dict[str, torch.Tensor]:
+        input_ids, attention_mask, qformer_input_ids, qformer_attention_mask, labels = tuple([instance[key] for instance in instances]
+            for key in ("input_ids", "attention_mask", "qfomer_input_ids", "qfomer_attention_mask", "labels"))
+        input_ids = torch.nn.utils.rnn.pad_sequence(
+            input_ids,
+            batch_first=True,
+            padding_value=self.tokenizer.pad_token_id)
+        attention_mask = torch.nn.utils.rnn.pad_sequence(attention_mask,
+                                                    batch_first=True,
+                                                    padding_value=0)
+        qformer_input_ids = torch.nn.utils.rnn.pad_sequence(
+            qformer_input_ids,
+            batch_first=True,
+            padding_value=self.qformer_tokenizer.pad_token_id)
+        qformer_attention_mask = torch.nn.utils.rnn.pad_sequence(qformer_attention_mask,
+                                                    batch_first=True,
+                                                    padding_value=0)
+        labels = torch.nn.utils.rnn.pad_sequence(labels,
+                                                    batch_first=True,
+                                                    padding_value=-100)
+        
+        input_ids = input_ids[:, :self.tokenizer.model_max_length]
+        attention_mask = attention_mask[:, :self.tokenizer.model_max_length]
+        qformer_input_ids = qformer_input_ids[:, :self.qformer_tokenizer.model_max_length]
+        qformer_attention_mask = qformer_attention_mask[:, :self.qformer_tokenizer.model_max_length]
+        
+        batch = dict(
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+            qformer_input_ids=qformer_input_ids,
+            qformer_attention_mask=qformer_attention_mask,
+            labels=labels,
+        )
+
+        if 'pixel_values' in instances[0]:
+            images = [instance['pixel_values'] for instance in instances]
+            if all(x is not None and x.shape == images[0].shape for x in images):
+                batch['pixel_values'] = torch.stack(images)
+            else:
+                batch['pixel_values'] = images
+
+        return batch
+
+
+
 
 class AugmentedCaptionDataset(Dataset):
     """

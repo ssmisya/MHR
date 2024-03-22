@@ -6,24 +6,12 @@ from tqdm import tqdm
 
 import argparse
 import torch.nn as nn
-from m3apo.vcd.experiments.eval.language_dict import language_dict
+from m3apo.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
 import debugpy
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 from m3apo.utils.utils import process_jsonl, write_jsonl
 loss_fn = nn.CrossEntropyLoss(reduction='none')
-langs = {
-            'Swahili' :'swh_Latn',
-            'Chinese' : "zho_Hans",
-            "Bengali" : "ben_Beng",
-            "German" : "deu_Latn",
-            "Spanish" : "spa_Latn",
-            "French" : "fra_Latn",
-            "Japanese" : "jpn_Hani",
-            "Russian" : "rus_Cyrl",
-            "Thai" : "tha_Thai",
-            "English" : "eng_Latn"
-            } 
 
 def MultiLigual_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,language='Chinese'):
         model = rm_model
@@ -76,7 +64,7 @@ def main(args):
         item = data[i]
         ref_item = ref_data[i]
         assert item['question_id'] == ref_item['question_id']
-        lang = langs[language_dict[args.language]['full_name']]
+        lang = nllb_200_distilled_600M_language_dict[language_dict[args.language]['full_name']]
         if lang == "English":
             continue
         item_reward_list=[]

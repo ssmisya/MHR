@@ -44,19 +44,20 @@ cd $code_base
 seed=55
 
 # program settings
-model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
-# model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/LLaVA-RLHF-7b-v1.5-224/sft_model
+# model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b
+model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/llava_checkpoint_1000
 # dataset_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/merged/llava_multilingual_dpo_data.jsonl
-self_hallucination_data_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/ha_dpo_desc/dpo_data
+self_hallucination_data_path=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_dpo_data
 vision_tower_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336
-image_folder=/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017
+image_folder=/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/coco/train2017
 
-accelerate_config_file=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/scripts/deepspeed/4gpus.yaml
+accelerate_config_file=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/scripts/deepspeed/4gpus.yaml
 ckpt_save_dir=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints
 
-ckpt_name=origin_self_hallucination_full
+ckpt_name=palo_sfted_self_hallucination_full
 # ckpt_name=sft_self_hallucination_full
 ckpt_save_path=${ckpt_save_dir}/${ckpt_name}
+mkdir -p ${ckpt_save_path}
 
 save_steps=500
 
@@ -92,11 +93,13 @@ accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
     --tf32 True \
     --model_max_length 2048 \
     --gradient_checkpointing True \
-    --dataloader_num_workers 4 \
-    --lazy_preprocess True \
     --report_to wandb \
     --run_name ${ckpt_name} \
+    --dataloader_num_workers 4 \
+    --lazy_preprocess True \
     --beta 0.1
+
+
    
     # --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \
         # --data_path ${dataset_path} \

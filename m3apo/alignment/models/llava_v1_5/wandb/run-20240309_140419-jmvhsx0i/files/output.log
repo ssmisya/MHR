@@ -1,0 +1,254 @@
+  0%|          | 0/1464 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:141: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+0
+0
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/1464 [00:25<10:19:24, 25.40s/it]
+{'loss': 0.6931, 'learning_rate': 4.545454545454545e-08, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'policy_logps/rejected': -299.92828369140625, 'policy_logps/chosen': -301.01531982421875, 'referece_logps/rejected': -299.92828369140625, 'referece_logps/chosen': -301.01531982421875, 'logits/rejected': -0.37190359830856323, 'logits/chosen': -0.4063689410686493, 'epoch': 0.0}
+1
+
+  0%|          | 2/1464 [00:46<9:20:09, 22.99s/it]
+{'loss': 0.6931, 'learning_rate': 9.09090909090909e-08, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'policy_logps/rejected': -433.8616638183594, 'policy_logps/chosen': -412.6845397949219, 'referece_logps/rejected': -433.8616638183594, 'referece_logps/chosen': -412.6845397949219, 'logits/rejected': 0.053385090082883835, 'logits/chosen': 0.06789463758468628, 'epoch': 0.0}
+2
+
+  0%|          | 3/1464 [01:08<9:09:23, 22.56s/it]
+{'loss': 0.7025, 'learning_rate': 1.3636363636363635e-07, 'rewards/chosen': 0.00880737416446209, 'rewards/rejected': 0.0009802815038710833, 'rewards/accuracies': 0.625, 'rewards/margins': 0.007827091962099075, 'policy_logps/rejected': -414.9014892578125, 'policy_logps/chosen': -409.8787536621094, 'referece_logps/rejected': -414.91131591796875, 'referece_logps/chosen': -409.96685791015625, 'logits/rejected': 0.17288993299007416, 'logits/chosen': 0.1514091044664383, 'epoch': 0.01}
+3
+3
+{'loss': 0.6991, 'learning_rate': 1.818181818181818e-07, 'rewards/chosen': -0.018591977655887604, 'rewards/rejected': -0.013291883282363415, 'rewards/accuracies': 0.5625, 'rewards/margins': -0.0053000920452177525, 'policy_logps/rejected': -416.8836975097656, 'policy_logps/chosen': -367.02606201171875, 'referece_logps/rejected': -416.7508239746094, 'referece_logps/chosen': -366.8401794433594, 'logits/rejected': -0.9415879249572754, 'logits/chosen': -1.0892252922058105, 'epoch': 0.01}
+
+  0%|          | 4/1464 [01:29<8:54:41, 21.97s/it]
+4
+{'loss': 0.6934, 'learning_rate': 2.2727272727272726e-07, 'rewards/chosen': 0.017726805061101913, 'rewards/rejected': -0.018658161163330078, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.03638496249914169, 'policy_logps/rejected': -378.90899658203125, 'policy_logps/chosen': -390.0523681640625, 'referece_logps/rejected': -378.7223815917969, 'referece_logps/chosen': -390.2296142578125, 'logits/rejected': 0.1787145882844925, 'logits/chosen': 0.12609900534152985, 'epoch': 0.01}
+
+  0%|          | 5/1464 [01:50<8:45:37, 21.62s/it]
+5
+{'loss': 0.7009, 'learning_rate': 2.727272727272727e-07, 'rewards/chosen': -0.005648613907396793, 'rewards/rejected': 0.018122674897313118, 'rewards/accuracies': 0.5, 'rewards/margins': -0.023771286010742188, 'policy_logps/rejected': -357.264404296875, 'policy_logps/chosen': -315.9916687011719, 'referece_logps/rejected': -357.4456481933594, 'referece_logps/chosen': -315.9352111816406, 'logits/rejected': -0.7730511426925659, 'logits/chosen': -0.9220423698425293, 'epoch': 0.01}
+
+  0%|          | 6/1464 [02:11<8:39:12, 21.37s/it]
+6
+{'loss': 0.6899, 'learning_rate': 3.1818181818181815e-07, 'rewards/chosen': -0.0018554208800196648, 'rewards/rejected': -0.011033439077436924, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.00917801819741726, 'policy_logps/rejected': -298.323486328125, 'policy_logps/chosen': -327.70306396484375, 'referece_logps/rejected': -298.2131652832031, 'referece_logps/chosen': -327.68450927734375, 'logits/rejected': -0.22392423450946808, 'logits/chosen': -0.2701767683029175, 'epoch': 0.01}
+
+  0%|          | 7/1464 [02:32<8:35:45, 21.24s/it]
+7
+{'loss': 0.6884, 'learning_rate': 3.636363636363636e-07, 'rewards/chosen': 0.006396389100700617, 'rewards/rejected': 0.014083386398851871, 'rewards/accuracies': 0.5, 'rewards/margins': -0.007686996832489967, 'policy_logps/rejected': -413.597412109375, 'policy_logps/chosen': -440.66717529296875, 'referece_logps/rejected': -413.73828125, 'referece_logps/chosen': -440.7311096191406, 'logits/rejected': -0.49360793828964233, 'logits/chosen': -0.47035151720046997, 'epoch': 0.02}
+
+  1%|          | 8/1464 [02:54<8:36:11, 21.27s/it]
+8
+{'loss': 0.6995, 'learning_rate': 4.090909090909091e-07, 'rewards/chosen': 0.008477974683046341, 'rewards/rejected': -0.004182910546660423, 'rewards/accuracies': 0.4375, 'rewards/margins': 0.012660883367061615, 'policy_logps/rejected': -330.2366943359375, 'policy_logps/chosen': -337.3205871582031, 'referece_logps/rejected': -330.1948547363281, 'referece_logps/chosen': -337.4053649902344, 'logits/rejected': -0.019310317933559418, 'logits/chosen': -0.009539172053337097, 'epoch': 0.02}
+
+  1%|          | 9/1464 [03:14<8:33:12, 21.16s/it]
+9
+{'loss': 0.6937, 'learning_rate': 4.545454545454545e-07, 'rewards/chosen': 0.018103599548339844, 'rewards/rejected': -0.0002107613254338503, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.018314361572265625, 'policy_logps/rejected': -404.8006591796875, 'policy_logps/chosen': -410.432861328125, 'referece_logps/rejected': -404.798583984375, 'referece_logps/chosen': -410.61395263671875, 'logits/rejected': -1.072198510169983, 'logits/chosen': -1.0372711420059204, 'epoch': 0.02}
+
+  1%|          | 10/1464 [03:35<8:30:40, 21.07s/it]
+10
+{'loss': 0.6953, 'learning_rate': 5e-07, 'rewards/chosen': -0.023734092712402344, 'rewards/rejected': -0.011671924963593483, 'rewards/accuracies': 0.375, 'rewards/margins': -0.01206216774880886, 'policy_logps/rejected': -373.7121276855469, 'policy_logps/chosen': -403.71929931640625, 'referece_logps/rejected': -373.59539794921875, 'referece_logps/chosen': -403.48199462890625, 'logits/rejected': -0.41563767194747925, 'logits/chosen': -0.495754599571228, 'epoch': 0.02}
+
+  1%|          | 11/1464 [03:56<8:29:17, 21.03s/it]
+11
+{'loss': 0.6951, 'learning_rate': 5.454545454545454e-07, 'rewards/chosen': 0.004427624400705099, 'rewards/rejected': -0.007348298095166683, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.011775923892855644, 'policy_logps/rejected': -329.50103759765625, 'policy_logps/chosen': -320.0977783203125, 'referece_logps/rejected': -329.42755126953125, 'referece_logps/chosen': -320.14202880859375, 'logits/rejected': -0.4271024763584137, 'logits/chosen': -0.6011919379234314, 'epoch': 0.02}
+
+  1%|          | 12/1464 [04:17<8:28:15, 21.00s/it]
+
+  1%|          | 13/1464 [04:38<8:25:42, 20.91s/it]
+{'loss': 0.6846, 'learning_rate': 5.909090909090909e-07, 'rewards/chosen': 0.003947353921830654, 'rewards/rejected': -0.008378696627914906, 'rewards/accuracies': 0.5, 'rewards/margins': 0.01232605054974556, 'policy_logps/rejected': -346.98919677734375, 'policy_logps/chosen': -326.0435791015625, 'referece_logps/rejected': -346.9053649902344, 'referece_logps/chosen': -326.0830383300781, 'logits/rejected': -0.18264491856098175, 'logits/chosen': -0.2363065481185913, 'epoch': 0.03}
+13
+13
+{'loss': 0.7005, 'learning_rate': 6.363636363636363e-07, 'rewards/chosen': -0.013807104900479317, 'rewards/rejected': -0.0064980508759617805, 'rewards/accuracies': 0.625, 'rewards/margins': -0.007309056352823973, 'policy_logps/rejected': -283.0050048828125, 'policy_logps/chosen': -358.9761657714844, 'referece_logps/rejected': -282.94000244140625, 'referece_logps/chosen': -358.8381042480469, 'logits/rejected': -0.22624260187149048, 'logits/chosen': -0.2480010837316513, 'epoch': 0.03}
+
+  1%|          | 14/1464 [04:58<8:22:32, 20.79s/it]
+
+  1%|          | 15/1464 [05:20<8:25:40, 20.94s/it]
+{'loss': 0.6983, 'learning_rate': 6.818181818181817e-07, 'rewards/chosen': 0.011275958269834518, 'rewards/rejected': 0.002746009733527899, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.008529949933290482, 'policy_logps/rejected': -421.7157287597656, 'policy_logps/chosen': -428.81744384765625, 'referece_logps/rejected': -421.74322509765625, 'referece_logps/chosen': -428.93017578125, 'logits/rejected': -0.3319326937198639, 'logits/chosen': -0.3158043622970581, 'epoch': 0.03}
+15
+
+  1%|          | 16/1464 [05:41<8:25:09, 20.93s/it]
+{'loss': 0.6959, 'learning_rate': 7.272727272727272e-07, 'rewards/chosen': -0.011980343610048294, 'rewards/rejected': 7.38147646188736e-05, 'rewards/accuracies': 0.4375, 'rewards/margins': -0.012054158374667168, 'policy_logps/rejected': -370.2602844238281, 'policy_logps/chosen': -430.3173522949219, 'referece_logps/rejected': -370.2610168457031, 'referece_logps/chosen': -430.1975402832031, 'logits/rejected': -0.17361831665039062, 'logits/chosen': -0.18951626121997833, 'epoch': 0.03}
+16
+
+  1%|          | 17/1464 [06:02<8:24:49, 20.93s/it]
+{'loss': 0.6983, 'learning_rate': 7.727272727272727e-07, 'rewards/chosen': -0.007960986346006393, 'rewards/rejected': 0.0036291591823101044, 'rewards/accuracies': 0.375, 'rewards/margins': -0.011590146459639072, 'policy_logps/rejected': -314.17901611328125, 'policy_logps/chosen': -324.6441955566406, 'referece_logps/rejected': -314.21533203125, 'referece_logps/chosen': -324.5646057128906, 'logits/rejected': -0.22579994797706604, 'logits/chosen': -0.26530921459198, 'epoch': 0.03}
+17
+17
+{'loss': 0.6962, 'learning_rate': 8.181818181818182e-07, 'rewards/chosen': 0.01485538575798273, 'rewards/rejected': 0.009113692678511143, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.005741694010794163, 'policy_logps/rejected': -354.639404296875, 'policy_logps/chosen': -458.4910888671875, 'referece_logps/rejected': -354.7305603027344, 'referece_logps/chosen': -458.6396789550781, 'logits/rejected': -0.8821012377738953, 'logits/chosen': -0.9995388388633728, 'epoch': 0.04}
+
+  1%|          | 18/1464 [06:22<8:24:23, 20.93s/it]
+18
+{'loss': 0.6908, 'learning_rate': 8.636363636363636e-07, 'rewards/chosen': 0.01404652651399374, 'rewards/rejected': 0.014087343588471413, 'rewards/accuracies': 0.5625, 'rewards/margins': -4.081660881638527e-05, 'policy_logps/rejected': -265.96441650390625, 'policy_logps/chosen': -289.41900634765625, 'referece_logps/rejected': -266.10528564453125, 'referece_logps/chosen': -289.55950927734375, 'logits/rejected': -0.513418436050415, 'logits/chosen': -0.48421770334243774, 'epoch': 0.04}
+
+  1%|▏         | 19/1464 [06:43<8:23:44, 20.92s/it]
+19
+{'loss': 0.684, 'learning_rate': 9.09090909090909e-07, 'rewards/chosen': 0.01740741729736328, 'rewards/rejected': -0.014222001656889915, 'rewards/accuracies': 0.625, 'rewards/margins': 0.031629420816898346, 'policy_logps/rejected': -391.48309326171875, 'policy_logps/chosen': -332.6755676269531, 'referece_logps/rejected': -391.34088134765625, 'referece_logps/chosen': -332.8496398925781, 'logits/rejected': -0.777317225933075, 'logits/chosen': -0.6635323166847229, 'epoch': 0.04}
+
+  1%|▏         | 20/1464 [07:03<8:14:01, 20.53s/it]
+
+  1%|▏         | 21/1464 [07:24<8:17:08, 20.67s/it]
+{'loss': 0.6917, 'learning_rate': 9.545454545454546e-07, 'rewards/chosen': 0.003345203585922718, 'rewards/rejected': -0.009105300530791283, 'rewards/accuracies': 0.625, 'rewards/margins': 0.012450504116714, 'policy_logps/rejected': -435.35906982421875, 'policy_logps/chosen': -435.5920104980469, 'referece_logps/rejected': -435.2680358886719, 'referece_logps/chosen': -435.6253967285156, 'logits/rejected': -0.3260866403579712, 'logits/chosen': -0.2735830545425415, 'epoch': 0.04}
+21
+
+  2%|▏         | 22/1464 [07:45<8:19:13, 20.77s/it]
+{'loss': 0.685, 'learning_rate': 1e-06, 'rewards/chosen': 7.181230466812849e-05, 'rewards/rejected': -0.0005250456742942333, 'rewards/accuracies': 0.5, 'rewards/margins': 0.000596858561038971, 'policy_logps/rejected': -399.97259521484375, 'policy_logps/chosen': -344.07928466796875, 'referece_logps/rejected': -399.9673156738281, 'referece_logps/chosen': -344.08001708984375, 'logits/rejected': -0.4084095358848572, 'logits/chosen': -0.37340235710144043, 'epoch': 0.05}
+22
+
+  2%|▏         | 23/1464 [08:06<8:19:55, 20.82s/it]
+{'loss': 0.6886, 'learning_rate': 1.0454545454545454e-06, 'rewards/chosen': 0.0023090364411473274, 'rewards/rejected': 0.010800219140946865, 'rewards/accuracies': 0.5, 'rewards/margins': -0.008491182699799538, 'policy_logps/rejected': -363.5798645019531, 'policy_logps/chosen': -541.49951171875, 'referece_logps/rejected': -363.6878967285156, 'referece_logps/chosen': -541.5225830078125, 'logits/rejected': -0.5190093517303467, 'logits/chosen': -0.6746923923492432, 'epoch': 0.05}
+23
+
+  2%|▏         | 24/1464 [08:27<8:20:23, 20.85s/it]
+{'loss': 0.6884, 'learning_rate': 1.0909090909090908e-06, 'rewards/chosen': 0.004807281773537397, 'rewards/rejected': -0.027806570753455162, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.0326138511300087, 'policy_logps/rejected': -426.4989318847656, 'policy_logps/chosen': -490.04461669921875, 'referece_logps/rejected': -426.22088623046875, 'referece_logps/chosen': -490.0926818847656, 'logits/rejected': -0.09287664294242859, 'logits/chosen': -0.22840045392513275, 'epoch': 0.05}
+24
+24
+{'loss': 0.6885, 'learning_rate': 1.1363636363636364e-06, 'rewards/chosen': -0.016846656799316406, 'rewards/rejected': -0.0048104748129844666, 'rewards/accuracies': 0.5, 'rewards/margins': -0.012036181055009365, 'policy_logps/rejected': -363.376220703125, 'policy_logps/chosen': -340.5617370605469, 'referece_logps/rejected': -363.32806396484375, 'referece_logps/chosen': -340.3932800292969, 'logits/rejected': -0.12979382276535034, 'logits/chosen': -0.1964733898639679, 'epoch': 0.05}
+
+  2%|▏         | 25/1464 [08:48<8:21:12, 20.90s/it]
+
+  2%|▏         | 26/1464 [09:09<8:19:33, 20.84s/it]
+{'loss': 0.6886, 'learning_rate': 1.1818181818181818e-06, 'rewards/chosen': 0.013922404497861862, 'rewards/rejected': -0.003991985693573952, 'rewards/accuracies': 0.625, 'rewards/margins': 0.017914392054080963, 'policy_logps/rejected': -401.5382080078125, 'policy_logps/chosen': -481.4301452636719, 'referece_logps/rejected': -401.4983215332031, 'referece_logps/chosen': -481.56939697265625, 'logits/rejected': -0.6182207465171814, 'logits/chosen': -0.6170928478240967, 'epoch': 0.05}
+26
+26
+{'loss': 0.6899, 'learning_rate': 1.2272727272727272e-06, 'rewards/chosen': 0.00611767778173089, 'rewards/rejected': -0.009483338333666325, 'rewards/accuracies': 0.5, 'rewards/margins': 0.015601015649735928, 'policy_logps/rejected': -450.6114807128906, 'policy_logps/chosen': -355.43536376953125, 'referece_logps/rejected': -450.5166931152344, 'referece_logps/chosen': -355.4965515136719, 'logits/rejected': -0.7282336950302124, 'logits/chosen': -0.6987948417663574, 'epoch': 0.06}
+
+  2%|▏         | 27/1464 [09:30<8:20:34, 20.90s/it]
+27
+{'loss': 0.6881, 'learning_rate': 1.2727272727272726e-06, 'rewards/chosen': 0.0029262546449899673, 'rewards/rejected': 0.004346274770796299, 'rewards/accuracies': 0.5, 'rewards/margins': -0.0014200210571289062, 'policy_logps/rejected': -438.4103088378906, 'policy_logps/chosen': -360.6470031738281, 'referece_logps/rejected': -438.4537658691406, 'referece_logps/chosen': -360.67626953125, 'logits/rejected': -0.7318122982978821, 'logits/chosen': -0.7370508909225464, 'epoch': 0.06}
+
+  2%|▏         | 28/1464 [09:51<8:22:11, 20.98s/it]
+28
+{'loss': 0.6869, 'learning_rate': 1.318181818181818e-06, 'rewards/chosen': 0.021631335839629173, 'rewards/rejected': -0.016988467425107956, 'rewards/accuracies': 0.625, 'rewards/margins': 0.03861980885267258, 'policy_logps/rejected': -431.9668884277344, 'policy_logps/chosen': -360.5233154296875, 'referece_logps/rejected': -431.7969970703125, 'referece_logps/chosen': -360.7396240234375, 'logits/rejected': -0.05574934184551239, 'logits/chosen': -0.06024359166622162, 'epoch': 0.06}
+
+  2%|▏         | 29/1464 [10:12<8:21:15, 20.96s/it]
+
+  2%|▏         | 30/1464 [10:33<8:21:00, 20.96s/it]
+{'loss': 0.6888, 'learning_rate': 1.3636363636363634e-06, 'rewards/chosen': -0.00800256710499525, 'rewards/rejected': -0.019921589642763138, 'rewards/accuracies': 0.5, 'rewards/margins': 0.011919021606445312, 'policy_logps/rejected': -358.2940979003906, 'policy_logps/chosen': -384.0032043457031, 'referece_logps/rejected': -358.0948486328125, 'referece_logps/chosen': -383.9231262207031, 'logits/rejected': -0.45053958892822266, 'logits/chosen': -0.4940064251422882, 'epoch': 0.06}
+30
+30
+{'loss': 0.6972, 'learning_rate': 1.409090909090909e-06, 'rewards/chosen': -0.012073994614183903, 'rewards/rejected': -0.006990526802837849, 'rewards/accuracies': 0.4375, 'rewards/margins': -0.005083467345684767, 'policy_logps/rejected': -362.8900146484375, 'policy_logps/chosen': -425.8727722167969, 'referece_logps/rejected': -362.82012939453125, 'referece_logps/chosen': -425.75201416015625, 'logits/rejected': -0.3802778124809265, 'logits/chosen': -0.334084689617157, 'epoch': 0.06}
+
+  2%|▏         | 31/1464 [10:54<8:20:54, 20.97s/it]
+31
+{'loss': 0.6897, 'learning_rate': 1.4545454545454544e-06, 'rewards/chosen': 0.01792178303003311, 'rewards/rejected': -0.020053675398230553, 'rewards/accuracies': 0.6875, 'rewards/margins': 0.037975460290908813, 'policy_logps/rejected': -470.56646728515625, 'policy_logps/chosen': -354.38055419921875, 'referece_logps/rejected': -470.3658752441406, 'referece_logps/chosen': -354.559814453125, 'logits/rejected': -0.29925233125686646, 'logits/chosen': -0.16375413537025452, 'epoch': 0.07}
+
+  2%|▏         | 32/1464 [11:15<8:20:48, 20.98s/it]
+32
+{'loss': 0.6905, 'learning_rate': 1.5e-06, 'rewards/chosen': -0.004664325155317783, 'rewards/rejected': -0.003617190755903721, 'rewards/accuracies': 0.625, 'rewards/margins': -0.0010471339337527752, 'policy_logps/rejected': -437.77679443359375, 'policy_logps/chosen': -380.95916748046875, 'referece_logps/rejected': -437.7406005859375, 'referece_logps/chosen': -380.9125061035156, 'logits/rejected': -0.27960193157196045, 'logits/chosen': -0.28333181142807007, 'epoch': 0.07}
+
+  2%|▏         | 33/1464 [11:36<8:19:39, 20.95s/it]
+33
+{'loss': 0.69, 'learning_rate': 1.5454545454545454e-06, 'rewards/chosen': 0.007463645655661821, 'rewards/rejected': 0.003189086215570569, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.004274558275938034, 'policy_logps/rejected': -416.3536682128906, 'policy_logps/chosen': -445.73541259765625, 'referece_logps/rejected': -416.3855285644531, 'referece_logps/chosen': -445.81005859375, 'logits/rejected': -0.48220139741897583, 'logits/chosen': -0.5599088668823242, 'epoch': 0.07}
+
+  2%|▏         | 34/1464 [11:56<8:16:07, 20.82s/it]
+34
+{'loss': 0.703, 'learning_rate': 1.5909090909090908e-06, 'rewards/chosen': -4.968605935573578e-05, 'rewards/rejected': 0.026625825092196465, 'rewards/accuracies': 0.5, 'rewards/margins': -0.026675507426261902, 'policy_logps/rejected': -491.343505859375, 'policy_logps/chosen': -452.8769226074219, 'referece_logps/rejected': -491.6098327636719, 'referece_logps/chosen': -452.87646484375, 'logits/rejected': -0.2976926565170288, 'logits/chosen': -0.25939399003982544, 'epoch': 0.07}
+
+  2%|▏         | 35/1464 [12:17<8:18:03, 20.91s/it]
+35
+{'loss': 0.6989, 'learning_rate': 1.6363636363636365e-06, 'rewards/chosen': 0.0025706288870424032, 'rewards/rejected': -0.023477841168642044, 'rewards/accuracies': 0.6875, 'rewards/margins': 0.02604847215116024, 'policy_logps/rejected': -386.0184020996094, 'policy_logps/chosen': -354.12554931640625, 'referece_logps/rejected': -385.7836608886719, 'referece_logps/chosen': -354.15130615234375, 'logits/rejected': -0.6831396222114563, 'logits/chosen': -0.5256659388542175, 'epoch': 0.07}
+
+  2%|▏         | 36/1464 [12:38<8:18:22, 20.94s/it]
+36
+{'loss': 0.6975, 'learning_rate': 1.6818181818181819e-06, 'rewards/chosen': 0.014612579718232155, 'rewards/rejected': -0.014000415802001953, 'rewards/accuracies': 0.625, 'rewards/margins': 0.02861299365758896, 'policy_logps/rejected': -448.48529052734375, 'policy_logps/chosen': -440.2588195800781, 'referece_logps/rejected': -448.34527587890625, 'referece_logps/chosen': -440.4049072265625, 'logits/rejected': -0.4317401647567749, 'logits/chosen': -0.5318634510040283, 'epoch': 0.08}
+
+  3%|▎         | 37/1464 [12:59<8:19:01, 20.98s/it]
+37
+{'loss': 0.6975, 'learning_rate': 1.7272727272727273e-06, 'rewards/chosen': -0.009305287152528763, 'rewards/rejected': 0.009915351867675781, 'rewards/accuracies': 0.4375, 'rewards/margins': -0.019220639020204544, 'policy_logps/rejected': -394.6093444824219, 'policy_logps/chosen': -363.8597106933594, 'referece_logps/rejected': -394.70849609375, 'referece_logps/chosen': -363.76666259765625, 'logits/rejected': -0.7411921620368958, 'logits/chosen': -0.7651877999305725, 'epoch': 0.08}
+
+  3%|▎         | 38/1464 [13:20<8:17:34, 20.94s/it]
+38
+{'loss': 0.6879, 'learning_rate': 1.7727272727272727e-06, 'rewards/chosen': 0.005596923641860485, 'rewards/rejected': -0.0032760617323219776, 'rewards/accuracies': 0.625, 'rewards/margins': 0.00887298583984375, 'policy_logps/rejected': -408.72412109375, 'policy_logps/chosen': -421.84722900390625, 'referece_logps/rejected': -408.69134521484375, 'referece_logps/chosen': -421.9031982421875, 'logits/rejected': -0.2963768243789673, 'logits/chosen': -0.40694659948349, 'epoch': 0.08}
+
+  3%|▎         | 39/1464 [13:41<8:18:05, 20.97s/it]
+39
+{'loss': 0.6911, 'learning_rate': 1.818181818181818e-06, 'rewards/chosen': 0.019248679280281067, 'rewards/rejected': 0.004790115170180798, 'rewards/accuracies': 0.4375, 'rewards/margins': 0.014458563178777695, 'policy_logps/rejected': -431.53973388671875, 'policy_logps/chosen': -385.74896240234375, 'referece_logps/rejected': -431.5876159667969, 'referece_logps/chosen': -385.94146728515625, 'logits/rejected': -0.8260543942451477, 'logits/chosen': -0.9326753616333008, 'epoch': 0.08}
+
+  3%|▎         | 40/1464 [14:02<8:17:42, 20.97s/it]
+40
+{'loss': 0.6975, 'learning_rate': 1.8636363636363635e-06, 'rewards/chosen': -0.004630565643310547, 'rewards/rejected': -0.005361937917768955, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.000731373205780983, 'policy_logps/rejected': -411.0583190917969, 'policy_logps/chosen': -364.5164794921875, 'referece_logps/rejected': -411.00469970703125, 'referece_logps/chosen': -364.47015380859375, 'logits/rejected': -0.12606382369995117, 'logits/chosen': -0.1970282793045044, 'epoch': 0.08}
+
+  3%|▎         | 41/1464 [14:23<8:18:02, 21.00s/it]
+41
+{'loss': 0.682, 'learning_rate': 1.909090909090909e-06, 'rewards/chosen': 0.0007254130905494094, 'rewards/rejected': 0.005307769402861595, 'rewards/accuracies': 0.3125, 'rewards/margins': -0.004582355730235577, 'policy_logps/rejected': -426.0287170410156, 'policy_logps/chosen': -406.2026672363281, 'referece_logps/rejected': -426.081787109375, 'referece_logps/chosen': -406.2099609375, 'logits/rejected': 0.31911328434944153, 'logits/chosen': 0.22724659740924835, 'epoch': 0.09}
+
+  3%|▎         | 42/1464 [14:44<8:17:58, 21.01s/it]
+42
+{'loss': 0.6897, 'learning_rate': 1.9545454545454545e-06, 'rewards/chosen': 0.010225867852568626, 'rewards/rejected': -0.013641166500747204, 'rewards/accuracies': 0.75, 'rewards/margins': 0.023867037147283554, 'policy_logps/rejected': -327.8634033203125, 'policy_logps/chosen': -379.4136047363281, 'referece_logps/rejected': -327.72698974609375, 'referece_logps/chosen': -379.515869140625, 'logits/rejected': -0.38000449538230896, 'logits/chosen': -0.3876785933971405, 'epoch': 0.09}
+
+  3%|▎         | 43/1464 [15:05<8:17:18, 21.00s/it]
+
+  3%|▎         | 44/1464 [15:25<8:05:41, 20.52s/it]
+{'loss': 0.6919, 'learning_rate': 2e-06, 'rewards/chosen': -0.008399199694395065, 'rewards/rejected': 0.0014819138450548053, 'rewards/accuracies': 0.375, 'rewards/margins': -0.009881114587187767, 'policy_logps/rejected': -399.3572082519531, 'policy_logps/chosen': -386.8226623535156, 'referece_logps/rejected': -399.3721008300781, 'referece_logps/chosen': -386.7386779785156, 'logits/rejected': -0.422033429145813, 'logits/chosen': -0.4105115532875061, 'epoch': 0.09}
+44
+44
+{'loss': 0.6998, 'learning_rate': 1.999997552668028e-06, 'rewards/chosen': 0.008431052789092064, 'rewards/rejected': 0.004054069519042969, 'rewards/accuracies': 0.5, 'rewards/margins': 0.00437698420137167, 'policy_logps/rejected': -436.9219665527344, 'policy_logps/chosen': -370.1104736328125, 'referece_logps/rejected': -436.9625244140625, 'referece_logps/chosen': -370.1947937011719, 'logits/rejected': -0.9653019905090332, 'logits/chosen': -1.147270917892456, 'epoch': 0.09}
+
+  3%|▎         | 45/1464 [15:46<8:08:52, 20.67s/it]
+45
+{'loss': 0.6946, 'learning_rate': 1.999990210684092e-06, 'rewards/chosen': 2.717878669500351e-05, 'rewards/rejected': -0.011141347698867321, 'rewards/accuracies': 0.625, 'rewards/margins': 0.011168526485562325, 'policy_logps/rejected': -328.6869812011719, 'policy_logps/chosen': -374.08538818359375, 'referece_logps/rejected': -328.5755615234375, 'referece_logps/chosen': -374.0856628417969, 'logits/rejected': -0.4142841398715973, 'logits/chosen': -0.46297451853752136, 'epoch': 0.09}
+
+  3%|▎         | 46/1464 [16:06<8:09:04, 20.69s/it]
+46
+{'loss': 0.6968, 'learning_rate': 1.999977974084128e-06, 'rewards/chosen': -0.016094591468572617, 'rewards/rejected': -0.029338648542761803, 'rewards/accuracies': 0.625, 'rewards/margins': 0.013244058936834335, 'policy_logps/rejected': -541.8497924804688, 'policy_logps/chosen': -377.69696044921875, 'referece_logps/rejected': -541.556396484375, 'referece_logps/chosen': -377.5360412597656, 'logits/rejected': -1.086118221282959, 'logits/chosen': -1.1423983573913574, 'epoch': 0.1}
+
+  3%|▎         | 47/1464 [16:27<8:09:06, 20.71s/it]
+47
+{'loss': 0.6911, 'learning_rate': 1.99996084292803e-06, 'rewards/chosen': -0.0061147697269916534, 'rewards/rejected': -0.0036408905871212482, 'rewards/accuracies': 0.5, 'rewards/margins': -0.0024738789070397615, 'policy_logps/rejected': -291.02386474609375, 'policy_logps/chosen': -373.56195068359375, 'referece_logps/rejected': -290.9874572753906, 'referece_logps/chosen': -373.50079345703125, 'logits/rejected': -0.4425080418586731, 'logits/chosen': -0.45430251955986023, 'epoch': 0.1}
+
+  3%|▎         | 48/1464 [16:48<8:10:54, 20.80s/it]
+
+  3%|▎         | 49/1464 [17:09<8:11:38, 20.85s/it]
+{'loss': 0.6914, 'learning_rate': 1.9999388172996495e-06, 'rewards/chosen': -0.020711518824100494, 'rewards/rejected': -0.020268820226192474, 'rewards/accuracies': 0.6875, 'rewards/margins': -0.00044269533827900887, 'policy_logps/rejected': -368.2784729003906, 'policy_logps/chosen': -336.20660400390625, 'referece_logps/rejected': -368.0758056640625, 'referece_logps/chosen': -335.99951171875, 'logits/rejected': -0.5325407385826111, 'logits/chosen': -0.5102259516716003, 'epoch': 0.1}
+49
+49
+{'loss': 0.6905, 'learning_rate': 1.999911897306794e-06, 'rewards/chosen': 0.0012261401861906052, 'rewards/rejected': -0.0008152970112860203, 'rewards/accuracies': 0.5, 'rewards/margins': 0.002041434869170189, 'policy_logps/rejected': -393.18975830078125, 'policy_logps/chosen': -430.74212646484375, 'referece_logps/rejected': -393.1816101074219, 'referece_logps/chosen': -430.75439453125, 'logits/rejected': -0.007200200110673904, 'logits/chosen': -0.1319943517446518, 'epoch': 0.1}
+
+  3%|▎         | 50/1464 [17:30<8:11:42, 20.86s/it]
+
+  3%|▎         | 51/1464 [17:51<8:11:27, 20.87s/it]
+{'loss': 0.6922, 'learning_rate': 1.9998800830812287e-06, 'rewards/chosen': -0.022446632385253906, 'rewards/rejected': -0.01691141165792942, 'rewards/accuracies': 0.375, 'rewards/margins': -0.005535221192985773, 'policy_logps/rejected': -402.8243103027344, 'policy_logps/chosen': -380.1038513183594, 'referece_logps/rejected': -402.65521240234375, 'referece_logps/chosen': -379.87939453125, 'logits/rejected': -0.8050034046173096, 'logits/chosen': -0.5789653062820435, 'epoch': 0.1}
+51
+51
+{'loss': 0.69, 'learning_rate': 1.9998433747786726e-06, 'rewards/chosen': -0.010255909524857998, 'rewards/rejected': 2.784794196486473e-05, 'rewards/accuracies': 0.4375, 'rewards/margins': -0.010283756069839, 'policy_logps/rejected': -442.0191650390625, 'policy_logps/chosen': -433.0643615722656, 'referece_logps/rejected': -442.0194091796875, 'referece_logps/chosen': -432.9617919921875, 'logits/rejected': -0.09480154514312744, 'logits/chosen': -0.17612725496292114, 'epoch': 0.11}
+
+  4%|▎         | 52/1464 [18:11<8:09:24, 20.80s/it]
+52
+{'loss': 0.6908, 'learning_rate': 1.999801772578801e-06, 'rewards/chosen': 0.0262222308665514, 'rewards/rejected': -0.0005742069333791733, 'rewards/accuracies': 0.6875, 'rewards/margins': 0.026796437799930573, 'policy_logps/rejected': -432.2494812011719, 'policy_logps/chosen': -402.0955810546875, 'referece_logps/rejected': -432.24371337890625, 'referece_logps/chosen': -402.3578186035156, 'logits/rejected': -0.5143518447875977, 'logits/chosen': -0.6004480719566345, 'epoch': 0.11}
+
+  4%|▎         | 53/1464 [18:33<8:10:17, 20.85s/it]
+53
+{'loss': 0.6929, 'learning_rate': 1.999755276685243e-06, 'rewards/chosen': -0.0030939108692109585, 'rewards/rejected': 0.001844214741140604, 'rewards/accuracies': 0.5, 'rewards/margins': -0.004938126541674137, 'policy_logps/rejected': -375.4385986328125, 'policy_logps/chosen': -434.26177978515625, 'referece_logps/rejected': -375.4570007324219, 'referece_logps/chosen': -434.23077392578125, 'logits/rejected': -0.9933360815048218, 'logits/chosen': -0.9760735034942627, 'epoch': 0.11}
+
+  4%|▎         | 54/1464 [18:53<8:09:55, 20.85s/it]
+54
+{'loss': 0.6918, 'learning_rate': 1.99970388732558e-06, 'rewards/chosen': -0.006012916564941406, 'rewards/rejected': -0.018493080511689186, 'rewards/accuracies': 0.375, 'rewards/margins': 0.01248016394674778, 'policy_logps/rejected': -392.5494689941406, 'policy_logps/chosen': -434.30291748046875, 'referece_logps/rejected': -392.36456298828125, 'referece_logps/chosen': -434.24273681640625, 'logits/rejected': -0.6268725395202637, 'logits/chosen': -0.7491819262504578, 'epoch': 0.11}
+55
+
+  4%|▍         | 55/1464 [19:14<8:10:26, 20.88s/it]Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py", line 861, in <module>
+    main()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py", line 858, in main
+    dpo_trainer.train()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1809, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 2654, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py", line 146, in compute_loss
+    loss, metrics = self.get_batch_metrics(inputs, train_eval="train")
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py", line 99, in get_batch_metrics
+    ) = self.concatenated_forward(self.model, inputs)
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py", line 39, in concatenated_forward
+    remote_breakpoint()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/utils/debugging.py", line 57, in remote_breakpoint
+    _dp()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/utils/debugging.py", line 51, in _dp
+    debugpy.listen((host, port))
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/debugpy/public_api.py", line 31, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/debugpy/server/api.py", line 143, in debug
+    log.reraise_exception("{0}() failed:", func.__name__, level="info")
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/debugpy/server/api.py", line 141, in debug
+    return func(address, settrace_kwargs, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/debugpy/server/api.py", line 262, in listen
+    raise RuntimeError(str(endpoints["error"]))
+RuntimeError: Can't listen for client connections: [Errno 98] Address already in use

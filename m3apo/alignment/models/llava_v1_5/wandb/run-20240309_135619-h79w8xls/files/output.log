@@ -1,0 +1,39 @@
+  0%|          | 0/1464 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:141: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+0
+0
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+{'loss': 0.6931, 'learning_rate': 4.545454545454545e-08, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'policy_logps/rejected': -299.92828369140625, 'policy_logps/chosen': -301.01531982421875, 'referece_logps/rejected': -299.92828369140625, 'referece_logps/chosen': -301.01531982421875, 'logits/rejected': -0.37190359830856323, 'logits/chosen': -0.4063689410686493, 'epoch': 0.0}
+1
+  0%|          | 1/1464 [00:24<9:58:47, 24.56s/it]
+
+  0%|          | 2/1464 [00:45<9:11:22, 22.63s/it]
+{'loss': 0.6931, 'learning_rate': 9.09090909090909e-08, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'policy_logps/rejected': -433.8616638183594, 'policy_logps/chosen': -412.6845397949219, 'referece_logps/rejected': -433.8616638183594, 'referece_logps/chosen': -412.6845397949219, 'logits/rejected': 0.053385090082883835, 'logits/chosen': 0.06789463758468628, 'epoch': 0.0}
+2
+
+  0%|          | 3/1464 [01:07<9:03:09, 22.31s/it]
+{'loss': 0.6946, 'learning_rate': 1.3636363636363635e-07, 'rewards/chosen': 0.023072147741913795, 'rewards/rejected': 0.0033253654837608337, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.019746776670217514, 'policy_logps/rejected': -414.8780517578125, 'policy_logps/chosen': -409.736083984375, 'referece_logps/rejected': -414.91131591796875, 'referece_logps/chosen': -409.96685791015625, 'logits/rejected': 0.17520466446876526, 'logits/chosen': 0.1533798724412918, 'epoch': 0.01}
+3
+
+  0%|          | 4/1464 [01:28<8:50:46, 21.81s/it]
+{'loss': 0.6983, 'learning_rate': 1.818181818181818e-07, 'rewards/chosen': -0.0008396152406930923, 'rewards/rejected': 0.017270803451538086, 'rewards/accuracies': 0.5, 'rewards/margins': -0.018110420554876328, 'policy_logps/rejected': -416.69744873046875, 'policy_logps/chosen': -366.8697509765625, 'referece_logps/rejected': -416.87017822265625, 'referece_logps/chosen': -366.8613586425781, 'logits/rejected': -0.9410120248794556, 'logits/chosen': -1.0882796049118042, 'epoch': 0.01}
+4
+
+  0%|          | 5/1464 [01:49<8:43:20, 21.52s/it]
+{'loss': 0.6976, 'learning_rate': 2.2727272727272726e-07, 'rewards/chosen': -0.0010969159193336964, 'rewards/rejected': 0.00647048931568861, 'rewards/accuracies': 0.3125, 'rewards/margins': -0.007567405700683594, 'policy_logps/rejected': -378.7884826660156, 'policy_logps/chosen': -390.0916748046875, 'referece_logps/rejected': -378.8531799316406, 'referece_logps/chosen': -390.0806884765625, 'logits/rejected': 0.17759233713150024, 'logits/chosen': 0.12448526918888092, 'epoch': 0.01}
+5
+5
+{'loss': 0.6933, 'learning_rate': 2.727272727272727e-07, 'rewards/chosen': 0.003689289093017578, 'rewards/rejected': -0.0004661558195948601, 'rewards/accuracies': 0.375, 'rewards/margins': 0.004155443981289864, 'policy_logps/rejected': -357.232666015625, 'policy_logps/chosen': -316.0048522949219, 'referece_logps/rejected': -357.2279968261719, 'referece_logps/chosen': -316.0417785644531, 'logits/rejected': -0.7730503082275391, 'logits/chosen': -0.922217071056366, 'epoch': 0.01}
+
+  0%|          | 6/1464 [02:10<8:37:47, 21.31s/it]
+
+  0%|          | 7/1464 [02:31<8:34:22, 21.18s/it]
+{'loss': 0.6953, 'learning_rate': 3.1818181818181815e-07, 'rewards/chosen': -0.011477421969175339, 'rewards/rejected': -0.019351862370967865, 'rewards/accuracies': 0.5625, 'rewards/margins': 0.007874438539147377, 'policy_logps/rejected': -298.1550598144531, 'policy_logps/chosen': -327.6905517578125, 'referece_logps/rejected': -297.9615478515625, 'referece_logps/chosen': -327.5757751464844, 'logits/rejected': -0.2252688705921173, 'logits/chosen': -0.27186620235443115, 'epoch': 0.01}
+7
+
+  1%|          | 8/1464 [02:52<8:35:20, 21.24s/it]
+{'loss': 0.694, 'learning_rate': 3.636363636363636e-07, 'rewards/chosen': -0.007904434576630592, 'rewards/rejected': 0.016975069418549538, 'rewards/accuracies': 0.4375, 'rewards/margins': -0.02487950399518013, 'policy_logps/rejected': -413.52276611328125, 'policy_logps/chosen': -440.71368408203125, 'referece_logps/rejected': -413.6925048828125, 'referece_logps/chosen': -440.6346435546875, 'logits/rejected': -0.4973958134651184, 'logits/chosen': -0.47487786412239075, 'epoch': 0.02}
+8
+
+  1%|          | 9/1464 [03:13<8:32:45, 21.14s/it]
+{'loss': 0.7011, 'learning_rate': 4.090909090909091e-07, 'rewards/chosen': -0.01242914330214262, 'rewards/rejected': 0.016471004113554955, 'rewards/accuracies': 0.3125, 'rewards/margins': -0.028900146484375, 'policy_logps/rejected': -330.0918273925781, 'policy_logps/chosen': -337.4474182128906, 'referece_logps/rejected': -330.25653076171875, 'referece_logps/chosen': -337.3231201171875, 'logits/rejected': -0.021343640983104706, 'logits/chosen': -0.010880053043365479, 'epoch': 0.02}

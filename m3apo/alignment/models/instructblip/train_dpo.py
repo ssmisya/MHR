@@ -18,11 +18,11 @@ from peft.peft_model import PeftModelForCausalLM
 from transformers import TrainerCallback
 from transformers import HfArgumentParser, TrainingArguments
 
-import vigc.tasks as tasks
-from vigc.common.config import Config
+import m3apo.alignment.models.instructblip.vigc.tasks as tasks
+from m3apo.alignment.models.instructblip.vigc.common.config import Config
 
-from ha_dpo.trainer.instructblip_dpo_trainer import InstructBLIPDPOTrainer
-from ha_dpo.models.instructblip.dpo_dataset import PopeDataset, AugmentedCaptionDataset
+from m3apo.alignment.trainer.instructblip_dpo_trainer import InstructBLIPDPOTrainer
+from m3apo.alignment.models.instructblip.dpo_dataset import PopeDataset, AugmentedCaptionDataset
 
 
 # Define and parse arguments.

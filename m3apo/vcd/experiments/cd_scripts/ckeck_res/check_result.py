@@ -16,5 +16,5 @@ def main(directory):
 
 if __name__ == '__main__':
     vcd_base="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments"
-    directory = f'{vcd_base}/output/test_dpo/'  # 替换为你的目录路径
+    directory = f'/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/generations/palo_sfted_human_full'  # 替换为你的目录路径
     main(directory)

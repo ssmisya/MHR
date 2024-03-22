@@ -40,31 +40,27 @@ def main():
     cd_beta=0.2
     noise_step=-500
     partition="MoE"
-    # model_path="/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b"
-    model_path="/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/checkpoint-6500"
-    
-    
-    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/llava-v1_5_sft_lora/checkpoint-5000"
-    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/sft_self_hallucination_full"
-    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/origin_self_hallucination_full"
-    peft_model_path=None
+    model_path="/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b"
+    # model_path="/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/llava_checkpoint_1000"
+    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/origin_human_preference/6000"
+    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/sft_human_preference"
+    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/origin_self_hallucination"
+    peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/sft_self_hallucination"
+
     
     image_folder="/mnt/petrelfs/share_data/quxiaoye/VCD_file/val2014"
     vcd_base="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments"
     
-    output_file_base = "/mnt/petrelfs/songmingyang/songmingyang/runs/llava/sft/generations"
-    # output_file_dir = "origin/origin_full_self_hallucination"
-   
-    output_file_dir = "sft_step_6500"
-    commands=[]
-    
+    output_file_base = "/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/generations/direct_dpo"
+    output_file_dir = "sft_sh"
+    os.makedirs(f"{output_file_base}/{output_file_dir}", exist_ok=True)
     for i in range(len(dataset_list)):
         for j in range(len(type_list)):
             for k in range(len(language_list)):
                 dataset_name=dataset_list[i]
                 type_item=type_list[j]
                 language=language_list[k]
-                os.makedirs(f"{output_file_base}/{output_file_dir}", exist_ok=True)
+                
                 output_file=f"{output_file_base}/{output_file_dir}/llava15_sft_pope_{type_item}_answers_{language}.jsonl"
                 if os.path.exists(output_file):
                     continue
@@ -84,7 +80,7 @@ def main():
                         cmd_args.append(" --use_cd ")   
                     if peft_model_path:
                         cmd_args.append(f" --peft_model_path {peft_model_path}")
-                    log_path = f"/mnt/petrelfs/songmingyang/songmingyang/runs/llava/logs/llava15_{dataset_name}_pope_{type_item}_answers_no_cd_seed{seed}_{language}.log"
+                    log_path = f"/mnt/petrelfs/songmingyang/songmingyang/runs/llava/logs/llava15_{dataset_name}_pope_{type_item}_answers_no_cd_seed{seed}_{language}_{output_file_dir}.log"
                     # commands.append(f"nohup srun -p {partition} -n1 -N1 --gres=gpu:1 --quotatype=auto -c 16 --job-name=generate "
                     #         + f"--output={log_path} "
                     #         + f"--error={log_path} "
