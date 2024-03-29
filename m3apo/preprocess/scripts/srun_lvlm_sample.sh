@@ -1,8 +1,8 @@
 source ~/.bashrc
-source ~/anaconda3/bin/activate vcd
+source ~/anaconda3/bin/activate vcd_origin
 
 seed=55
-model_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/checkpoint-1000
+model_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/llava_checkpoint_1000
 cd_alpha=-1
 cd_beta=0.2
 noise_step=-500

@@ -19,8 +19,8 @@ from transformers import TrainerCallback
 from transformers import HfArgumentParser, TrainingArguments,  InstructBlipProcessor, InstructBlipForConditionalGeneration
 from torch.utils.data import Dataset
 
-import m3apo.alignment.models.instructblip.vigc.tasks as tasks
-from m3apo.alignment.models.instructblip.vigc.common.config import Config
+# import m3apo.alignment.models.instructblip.vigc.tasks as tasks
+# from m3apo.alignment.models.instructblip.vigc.common.config import Config
 
 from m3apo.alignment.trainer.instructblip_sft_trainer import InstructBLIPTrainer
 from m3apo.alignment.models.instructblip.dpo_dataset import DataCollatorForPaloSFTDataset, PaloSFTDataset
@@ -41,13 +41,6 @@ class ScriptArguments:
     The arguments for the DPO training script.
     """
     
-    # model config path
-    cfg_path: str = field(metadata={"help": "path to configuration file."})
-    
-    # # data parameters
-    # desc_train_data_path: Optional[str] = field(default=None, metadata={"help": "path of the description positive-negative data."})
-    # pope_train_data_path: Optional[str] = field(default=None, metadata={"help": "path of the pope-format positive-negative data."})
-    # vg_path: Optional[str] = field(default="", metadata={"help": "path of visual genome annotation file."})
     
     # hyper-parameters
     seed: Optional[int] = field(default=42, metadata={"help": "training and data seed."})
@@ -94,7 +87,19 @@ class ScriptArguments:
             'Use `"all"` to report to all integrations installed, `"none"` for no integrations.'
         },
     )
-    
+    deepspeed: Optional[str] = field(default=None, metadata={"help": "path to deepspeed config"})
+    bf16: Optional[bool] = field(default=False, metadata={"help": "whether to use bf16 weight"})
+    save_strategy: Optional[str] = field(default="steps", metadata={"help": "strategy used to save model"})
+    save_total_limit: Optional[int] = field(default=1, metadata={"help": "limit number of saved model"})
+    model_max_length: int = field(
+        default=512,
+        metadata={
+            "help":
+            "Maximum sequence length. Sequences will be right padded (and possibly truncated)."
+        },
+    )
+    tf32: Optional[bool] = field(default=True, metadata={"help": "whether to use tf32"})
+    dataloader_num_workers: Optional[int] = field(default=4, metadata={"help": "number of dataloader workers"})
     # lora parameters
     lora_alpha: Optional[float] = field(default=16, metadata={"help": "the lora alpha parameter"})
     lora_dropout: Optional[float] = field(default=0.05, metadata={"help": "the lora dropout parameter"})
@@ -141,21 +146,6 @@ def main():
     parser = transformers.HfArgumentParser(
         (DataArguments, ScriptArguments))
     data_args, script_args = parser.parse_args_into_dataclasses()
-    
-    # cfg_dict = {'cfg_path': script_args.cfg_path, 'options': None}
-    # cfg = Config(Namespace(**cfg_dict))
-    # cfg.pretty_print()
-    
-    # # set model parameters
-    # cfg.config.model.lora_config.lora_r = script_args.lora_r
-    # cfg.config.model.lora_config.lora_alpha = script_args.lora_alpha
-    # cfg.config.model.lora_config.lora_dropout = script_args.lora_dropout
-    # cfg.config.model.lora_config.lora_target_modules = script_args.lora_target_modules
-    # cfg.config.model.freeze_llm_proj = script_args.freeze_llm_proj
-
-    # task = tasks.setup_task(cfg)
-    # model = task.build_model(cfg)
-    # tokenizer = model.llm_tokenizer
 
     
     
@@ -183,14 +173,19 @@ def main():
         lr_scheduler_type=script_args.lr_scheduler_type,
         warmup_steps=script_args.warmup_steps,
         optim=script_args.optimizer_type,
-        bf16=True,
         remove_unused_columns=False,
         run_name=script_args.run_name,
         max_grad_norm=script_args.max_grad_norm,
         seed=script_args.seed,
+        # deepspeed=script_args.deepspeed,
+        bf16=script_args.bf16,
+        save_strategy=script_args.save_strategy,
+        save_total_limit=script_args.save_total_limit,
+        dataloader_num_workers=script_args.dataloader_num_workers,
+        tf32=script_args.tf32,
     )
     
-    model = InstructBlipForConditionalGeneration.from_pretrained(script_args.model_name_or_path)
+    model = InstructBlipForConditionalGeneration.from_pretrained(script_args.model_name_or_path,)
     processor = InstructBlipProcessor.from_pretrained(script_args.model_name_or_path)
     image_processor = processor.image_processor
     
@@ -203,7 +198,7 @@ def main():
     
     # initialize the SFT trainer
     train_dataset = PaloSFTDataset(
-            data_path = script_args.desc_train_data_path,
+            data_path = data_args.data_path,
             data_args=data_args,
             seed = script_args.seed,
         )
@@ -214,11 +209,8 @@ def main():
         args=training_args,
         train_dataset=train_dataset,
         tokenizer=tokenizer,
-        max_prompt_length=script_args.max_prompt_length,
-        max_length=script_args.max_length,
         data_collator=data_collator,
     )
-    
     
     # model save callback
     trainer.add_callback(MyCallback())

@@ -37,7 +37,7 @@ from peft import (
 )
 
 from m3apo.alignment.trainer.llava_dpo_trainer import LlavaDPOTrainer
-from m3apo.utils.utils import process_jsonl
+from m3apo.utils.utils import process_jsonl,load_json_file
 from m3apo.utils.debugging import remote_breakpoint
 
 local_rank = None
@@ -59,13 +59,24 @@ class ModelArguments:
 @dataclass
 class DataArguments:
     
-    data_path: str = field(default=None, metadata={"help": "Path to the training data."})
     lazy_preprocess: bool = False
     is_multimodal: bool = False
     image_folder: Optional[str] = field(default=None)
+    vg_path: Optional[str] = field(default=None)
     image_aspect_ratio: str = 'square'
-    self_hallucination_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the self-hallucination data."})
-    human_prefer_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the human_preference dpo data."})
+    
+    
+    hallucination_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the hallucination data."})
+    hallucination_data_type: Optional[str] = field(default="dir_of_json_desc", metadata={"help": "Type of hallucination data."})
+    hallucination_ratio: Optional[int] = field(default=0, metadata={"help": "The ratio of hallucination data."})
+    
+    language_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the language data."})
+    language_data_type: Optional[str] = field(default="dir_of_json_desc", metadata={"help": "Type of language data."})
+    language_ratio: Optional[int] = field(default=0, metadata={"help": "The ratio of language data."})
+    
+    preference_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the preference data."})
+    preference_data_type: Optional[str] = field(default="dir_of_json_desc", metadata={"help": "Type of preference data."})
+    preference_ratio: Optional[int] = field(default=0, metadata={"help": "The ratio of preference data."})
     
     
 
@@ -192,8 +203,221 @@ def find_all_linear_names(model):
     if 'lm_head' in lora_module_names: # needed for 16-bit
         lora_module_names.remove('lm_head')
     return list(lora_module_names)                                      
-                                      
+
+class MultilingualEnhanceDataset(Dataset):
+    def __init__(self,
+        tokenizer: transformers.PreTrainedTokenizer,
+        data_args: DataArguments,
+        seed: int = 42,
+    ):
+        super(MultilingualEnhanceDataset, self).__init__()                                
+        random.seed(seed)
+        self.data_args = data_args
+        self.tokenizer = tokenizer
+        
+        # data paths
+        self.hallucination_data_path = self.data_args.hallucination_data_path
+        self.language_data_path = self.data_args.language_data_path
+        self.preference_data_path = self.data_args.preference_data_path
+        
+        self.hallucination_ratio = self.data_args.hallucination_ratio if self.hallucination_data_path else 0
+        self.language_ratio = self.data_args.language_ratio if self.language_data_path else 0
+        self.preference_ratio = self.data_args.preference_ratio if self.preference_data_path else 0
+        
+        self.hallucination_data_type = self.data_args.hallucination_data_type if self.hallucination_data_path else None
+        self.language_data_type = self.data_args.language_data_type if self.language_data_path else None
+        self.preference_data_type = self.data_args.preference_data_type if self.preference_data_path else None
+        
+        if self.hallucination_data_path:
+            self.hallucination_data = self.load_data_from_disk(self.hallucination_data_path,self.hallucination_data_type)
+        else:
+            self.hallucination_data = None
+        
+        if self.language_data_path:
+            self.language_data = self.load_data_from_disk(self.language_data_path,self.language_data_type)
+        else:
+            self.language_data = None
+            
+        if self.preference_data_path:
+            self.preference_data = self.load_data_from_disk(self.preference_data_path,self.preference_data_type)
+        else:
+            self.preference_data = None
+        
+        self.list_data_dict = []
+        if self.hallucination_data:
+            self.list_data_dict += self.hallucination_data * self.hallucination_ratio
+        if self.language_data:
+            self.list_data_dict += self.language_data * self.language_ratio
+        if self.preference_data:
+            self.list_data_dict += self.preference_data * self.preference_ratio
+        
+        assert len(self.list_data_dict) > 0, "No data loaded."
     
+    def load_data_from_disk(self,data_path,data_type):
+        if data_type == "dir_of_json_desc":
+            return self.load_dir_of_json_desc_data(data_path)
+        else:
+            raise NotImplementedError("This data type is not implemented yet")
+            
+    def load_dir_of_json_desc_data(self,data_path):
+        vg_image_data = json.load(open(os.path.join(self.data_args.vg_path, "image_data.json")))
+        id2path = {
+            _data["image_id"]:os.path.join(self.data_args.image_folder, _data["url"].split("/")[-2], _data["url"].split("/")[-1]) 
+            for _data in vg_image_data
+        }
+        data_dir = [os.path.join(data_path,a) for a in os.listdir(data_path)]
+        data_across_different_langs = [load_json_file(a) for a in data_dir]
+        data_dict_list = []
+        id = 0
+        for file in data_across_different_langs:
+            for question_id,data in file.items():
+                # image_file_path = f"/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/vg/VG_100K/{question_id}.jpg"
+                image_file_path = id2path[int(question_id)]
+                chosen = data["chosen"]
+                reject = data["rejected"]
+                question = random.choice([
+                        "Describe this image in detail.",
+                        "Take a look at this image and describe what you notice.",
+                        "Please provide a detailed description of the picture.",
+                        "Could you describe the contents of this image for me?",
+                    ])
+                data_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
+                id+=1
+        return data_dict_list
+    
+    def formulate_data_item(self,id,image_file_or_path,question,chosen,reject):
+        if not isinstance(chosen,list):
+            chosen = [chosen]
+        if not isinstance(reject,list):
+            reject = [reject]
+        if not DEFAULT_IMAGE_TOKEN in question:
+            question = DEFAULT_IMAGE_TOKEN + '\n' + question
+            
+        questions_and_feedbacks = {"question":question,"feedback":{"chosen":chosen,"reject":reject}}
+        res = {
+                "id": int(id),
+                "image": image_file_or_path,
+                # "chosen_conversations": [
+                #             {"from": "human", "value": "{question}"},
+                #             {"from": "gpt", "value": "{chosen}"},
+                #         ],
+                # "reject_conversations": [
+                #             {"from": "human", "value": "{question}"},
+                #             {"from": "gpt", "value": "{reject}"},
+                #         ],
+                "questions_and_feedbacks":questions_and_feedbacks,
+            }
+        return res
+    
+    def __len__(self):
+        return len(self.list_data_dict)
+
+    @property
+    def lengths(self):
+        length_list = []
+        for sample in self.list_data_dict:
+            img_tokens = 128 if 'image' in sample else 0
+            length_list.append(sum(len(conv['value'].split()) for conv in sample['conversations']) + img_tokens)
+        return length_list
+
+    @property
+    def modality_lengths(self):
+        length_list = []
+        for sample in self.list_data_dict:
+            cur_len = sum(len(conv['value'].split()) for conv in sample['conversations'])
+            cur_len = cur_len if 'images' in sample else -cur_len
+            length_list.append(cur_len)
+        return length_list
+
+    def __getitem__(self, i) -> Dict[str, torch.Tensor]:
+        sources = self.list_data_dict[i]
+        if isinstance(i, int):
+            sources = [sources]
+        assert len(sources) == 1, "Don't know why it is wrapped to a list"  # FIXME
+        
+        questions_and_feedbacks = sources[0].get("questions_and_feedbacks",None)
+        if questions_and_feedbacks is not None:
+            # language_set = list(questions_and_feedbacks.keys())
+            # language = random.choice(language_set)
+            # print("dataset length:",len(self.list_data_dict),)
+            question = questions_and_feedbacks["question"]
+            chosen = random.choice(questions_and_feedbacks["feedback"]["chosen"])
+            reject = random.choice(questions_and_feedbacks["feedback"]["reject"])
+            chosen_conversations = [{"from": "human", "value": question},{"from": "gpt", "value": chosen}]
+            reject_conversations =  [{"from": "human", "value": question},{"from": "gpt", "value": reject}]
+            if question.count(DEFAULT_IMAGE_TOKEN) != 1 or question.count("\n") !=1:
+                print(f"error on question: {question}, image: {sources[0]['image']}")
+            # print(chosen_conversations)
+            chosen_sources = preprocess_multimodal(
+                copy.deepcopy([chosen_conversations for _ in sources]),
+                self.data_args)
+            reject_sources = preprocess_multimodal(
+                copy.deepcopy([reject_conversations for _ in sources]),
+                self.data_args)
+            
+        else:
+            chosen_sources = preprocess_multimodal(
+                copy.deepcopy([e["chosen_conversations"] for e in sources]),
+                self.data_args)
+            reject_sources = preprocess_multimodal(
+                copy.deepcopy([e["reject_conversations"] for e in sources]),
+                self.data_args)
+        # remote_breakpoint()
+        if 'image' in sources[0]:
+            image_file = self.list_data_dict[i]['image']
+            image_folder = self.data_args.image_folder
+            processor = self.data_args.image_processor
+            image_path = image_file if os.path.isabs(image_file) else os.path.join(image_folder, image_file)
+            image = Image.open(image_path).convert('RGB')
+            if self.data_args.image_aspect_ratio == 'pad':
+                def expand2square(pil_img, background_color):
+                    width, height = pil_img.size
+                    if width == height:
+                        return pil_img
+                    elif width > height:
+                        result = Image.new(pil_img.mode, (width, width), background_color)
+                        result.paste(pil_img, (0, (width - height) // 2))
+                        return result
+                    else:
+                        result = Image.new(pil_img.mode, (height, height), background_color)
+                        result.paste(pil_img, ((height - width) // 2, 0))
+                        return result
+                image = expand2square(image, tuple(int(x*255) for x in processor.image_mean))
+                image = processor.preprocess(image, return_tensors='pt')['pixel_values'][0]
+            else:
+                image = processor.preprocess(image, return_tensors='pt')['pixel_values'][0]
+            
+        else:
+            sources = copy.deepcopy([e["conversations"] for e in sources])
+        chosen_data_dict = preprocess(
+            chosen_sources,
+            self.tokenizer,
+            has_image=('image' in self.list_data_dict[i]))
+        reject_data_dict = preprocess(
+            reject_sources,
+            self.tokenizer,
+            has_image=('image' in self.list_data_dict[i]))
+        if isinstance(i, int):
+            data_dict = dict(
+                chosen_input_ids=chosen_data_dict["input_ids"][0],
+                chosen_labels=chosen_data_dict["labels"][0],
+                reject_input_ids=reject_data_dict["input_ids"][0],
+                reject_labels=reject_data_dict["labels"][0],
+            )
+
+        # image exist in the data
+        
+        if 'image' in self.list_data_dict[i]:
+            data_dict['images'] = image
+        elif self.data_args.is_multimodal:
+            # image does not exist in the data, but the model is multimodal
+            crop_size = self.data_args.image_processor.crop_size
+            data_dict['images'] = torch.zeros(3, crop_size['height'], crop_size['width'])
+        
+        return data_dict
+                
+                    
+        
 class LazySupervisedDataset(Dataset):
     """Dataset for supervised fine-tuning."""
 
@@ -527,12 +751,12 @@ class DataCollatorForSupervisedDataset(object):
 def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer,
                                 data_args) -> Dict:
     """Make dataset and collator for supervised fine-tuning."""
-    train_dataset = LazySupervisedDataset(tokenizer=tokenizer,
-                                data_path=data_args.data_path,
-                                human_prefer_data_path=data_args.human_prefer_data_path,
-                                self_hallucination_data_path=data_args.self_hallucination_data_path,
-                                data_args=data_args)
-    
+    # train_dataset = LazySupervisedDataset(tokenizer=tokenizer,
+    #                             data_path=data_args.data_path,
+    #                             human_prefer_data_path=data_args.human_prefer_data_path,
+    #                             self_hallucination_data_path=data_args.self_hallucination_data_path,
+    #                             data_args=data_args)
+    train_dataset = MultilingualEnhanceDataset(tokenizer=tokenizer,data_args=data_args)
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     return dict(train_dataset=train_dataset,
                 eval_dataset=None,

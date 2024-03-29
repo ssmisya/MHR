@@ -6,8 +6,8 @@ from PIL import Image
 from omegaconf import OmegaConf
 from torch.utils.data import Dataset
 
-from m3apo.alignment.models.instructblip.vigc.common.config import Config
-from m3apo.alignment.models.instructblip.vigc.common.registry import registry
+# from m3apo.alignment.models.instructblip.vigc.common.config import Config
+# from m3apo.alignment.models.instructblip.vigc.common.registry import registry
 import transformers
 import torch
 from dataclasses import dataclass, field

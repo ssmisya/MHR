@@ -5,9 +5,13 @@ def load_json_file(filepath):
     '''
         将json文件读取成为列表或词典
     '''
-    with open(filepath, 'r') as file:
+    with open(filepath, 'r',encoding="UTF-8") as file:
         data = json.load(file)
     return data
+
+def write_json_file(data, filepath):
+    with open(filepath, 'w',encoding="UTF-8") as f:
+        json.dump(data, f, ensure_ascii=False,)
 
 def process_jsonl(file_path):
     '''

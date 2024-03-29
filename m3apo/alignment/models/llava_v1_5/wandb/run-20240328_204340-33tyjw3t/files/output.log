@@ -1,0 +1,581 @@
+  0%|          | 0/5370 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:179: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/5370 [00:21<32:02:39, 21.49s/it]
+{'loss': 0.6931, 'learning_rate': 1.2345679012345678e-08, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'policy_logps/rejected': -342.7065124511719, 'policy_logps/chosen': -338.5207824707031, 'referece_logps/rejected': -342.7065124511719, 'referece_logps/chosen': -338.5207824707031, 'logits/rejected': 0.2454775720834732, 'logits/chosen': 0.14770738780498505, 'epoch': 0.0}
+[2024-03-28 20:44:29,259] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 2/5370 [00:43<32:14:55, 21.63s/it]
+[2024-03-28 20:44:50,727] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 3/5370 [01:04<32:08:04, 21.55s/it]
+[2024-03-28 20:45:14,827] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 4/5370 [01:28<33:37:32, 22.56s/it]
+
+  0%|          | 5/5370 [01:50<33:18:23, 22.35s/it]
+[2024-03-28 20:45:58,691] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  0%|          | 7/5370 [02:26<28:55:57, 19.42s/it]
+{'loss': 0.6925, 'learning_rate': 8.641975308641975e-08, 'rewards/chosen': 0.025971222668886185, 'rewards/rejected': -0.0032587037421762943, 'rewards/accuracies': 0.5, 'rewards/margins': 0.02922992594540119, 'policy_logps/rejected': -383.54376220703125, 'policy_logps/chosen': -326.42681884765625, 'referece_logps/rejected': -383.51123046875, 'referece_logps/chosen': -326.6865539550781, 'logits/rejected': -0.19619686901569366, 'logits/chosen': -0.19150729477405548, 'epoch': 0.0}
+
+
+  0%|          | 9/5370 [03:02<28:15:44, 18.98s/it]
+{'loss': 0.6924, 'learning_rate': 1.111111111111111e-07, 'rewards/chosen': 0.02897357940673828, 'rewards/rejected': 0.023115919902920723, 'rewards/accuracies': 0.75, 'rewards/margins': 0.005857656244188547, 'policy_logps/rejected': -363.9736633300781, 'policy_logps/chosen': -373.2032165527344, 'referece_logps/rejected': -364.204833984375, 'referece_logps/chosen': -373.49298095703125, 'logits/rejected': 0.4670640230178833, 'logits/chosen': 0.43685898184776306, 'epoch': 0.01}
+[2024-03-28 20:47:13,081] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 10/5370 [03:27<30:52:18, 20.73s/it]
+[2024-03-28 20:47:30,914] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  0%|          | 12/5370 [03:56<25:35:56, 17.20s/it]
+
+  0%|          | 13/5370 [04:14<26:07:41, 17.56s/it]
+{'loss': 0.7008, 'learning_rate': 1.604938271604938e-07, 'rewards/chosen': 0.04345722496509552, 'rewards/rejected': 0.007100106216967106, 'rewards/accuracies': 0.625, 'rewards/margins': 0.03635711595416069, 'policy_logps/rejected': -315.3072204589844, 'policy_logps/chosen': -291.7559814453125, 'referece_logps/rejected': -315.37823486328125, 'referece_logps/chosen': -292.1905822753906, 'logits/rejected': -0.19947147369384766, 'logits/chosen': -0.19159169495105743, 'epoch': 0.01}
+
+  0%|          | 14/5370 [04:35<27:46:51, 18.67s/it]
+
+  0%|          | 15/5370 [04:47<24:32:41, 16.50s/it]
+[2024-03-28 20:48:53,565] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 16/5370 [05:07<26:17:20, 17.68s/it]
+
+  0%|          | 17/5370 [05:25<26:14:48, 17.65s/it]
+
+
+  0%|          | 19/5370 [05:56<24:39:04, 16.58s/it]
+{'loss': 0.6919, 'learning_rate': 2.3456790123456788e-07, 'rewards/chosen': 0.015394688583910465, 'rewards/rejected': 0.006341839209198952, 'rewards/accuracies': 0.5, 'rewards/margins': 0.009052850306034088, 'policy_logps/rejected': -290.9152526855469, 'policy_logps/chosen': -275.1476135253906, 'referece_logps/rejected': -290.9786376953125, 'referece_logps/chosen': -275.3015441894531, 'logits/rejected': -0.24962486326694489, 'logits/chosen': -0.3575174808502197, 'epoch': 0.01}
+
+
+  0%|          | 21/5370 [06:30<25:05:25, 16.89s/it]
+
+  0%|          | 22/5370 [06:46<24:47:50, 16.69s/it]
+{'loss': 0.6807, 'learning_rate': 2.716049382716049e-07, 'rewards/chosen': 0.05682830512523651, 'rewards/rejected': -0.042070578783750534, 'rewards/accuracies': 0.75, 'rewards/margins': 0.09889888763427734, 'policy_logps/rejected': -480.72039794921875, 'policy_logps/chosen': -486.622314453125, 'referece_logps/rejected': -480.2996826171875, 'referece_logps/chosen': -487.1905822753906, 'logits/rejected': 0.27597302198410034, 'logits/chosen': 0.1738971620798111, 'epoch': 0.01}
+[2024-03-28 20:50:51,257] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  0%|          | 24/5370 [07:26<27:16:50, 18.37s/it]
+{'loss': 0.6816, 'learning_rate': 2.962962962962963e-07, 'rewards/chosen': 0.009569931775331497, 'rewards/rejected': -0.041527651250362396, 'rewards/accuracies': 0.5, 'rewards/margins': 0.05109759047627449, 'policy_logps/rejected': -224.31724548339844, 'policy_logps/chosen': -189.47906494140625, 'referece_logps/rejected': -223.9019775390625, 'referece_logps/chosen': -189.5747528076172, 'logits/rejected': -0.46182650327682495, 'logits/chosen': -0.5697215795516968, 'epoch': 0.01}
+
+
+  0%|          | 26/5370 [08:04<27:54:59, 18.81s/it]
+{'loss': 0.6859, 'learning_rate': 3.209876543209876e-07, 'rewards/chosen': -0.0048360819928348064, 'rewards/rejected': 0.008422184735536575, 'rewards/accuracies': 0.375, 'rewards/margins': -0.013258268125355244, 'policy_logps/rejected': -404.64935302734375, 'policy_logps/chosen': -308.2358703613281, 'referece_logps/rejected': -404.73358154296875, 'referece_logps/chosen': -308.1875305175781, 'logits/rejected': -0.062216226011514664, 'logits/chosen': -0.304739773273468, 'epoch': 0.01}
+
+  1%|          | 27/5370 [08:25<28:48:53, 19.41s/it]
+
+
+  1%|          | 29/5370 [08:52<24:38:21, 16.61s/it]
+{'loss': 0.6898, 'learning_rate': 3.580246913580247e-07, 'rewards/chosen': -0.007281874772161245, 'rewards/rejected': -0.004124640487134457, 'rewards/accuracies': 0.625, 'rewards/margins': -0.0031572324223816395, 'policy_logps/rejected': -484.291748046875, 'policy_logps/chosen': -432.5173034667969, 'referece_logps/rejected': -484.2505187988281, 'referece_logps/chosen': -432.4444885253906, 'logits/rejected': 0.2270248681306839, 'logits/chosen': 0.22454462945461273, 'epoch': 0.02}
+
+
+  1%|          | 31/5370 [09:30<26:52:07, 18.12s/it]
+{'loss': 0.694, 'learning_rate': 3.82716049382716e-07, 'rewards/chosen': -0.031341552734375, 'rewards/rejected': -0.012208748608827591, 'rewards/accuracies': 0.375, 'rewards/margins': -0.01913280412554741, 'policy_logps/rejected': -408.7176513671875, 'policy_logps/chosen': -479.55169677734375, 'referece_logps/rejected': -408.5955810546875, 'referece_logps/chosen': -479.23828125, 'logits/rejected': 0.7672322392463684, 'logits/chosen': 0.7582436800003052, 'epoch': 0.02}
+
+  1%|          | 32/5370 [09:51<28:09:55, 18.99s/it]
+
+
+  1%|          | 34/5370 [10:35<30:06:12, 20.31s/it]
+[2024-03-28 20:54:21,087] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6929, 'learning_rate': 4.1975308641975306e-07, 'rewards/chosen': -0.0064289080910384655, 'rewards/rejected': -0.0009733187034726143, 'rewards/accuracies': 0.5, 'rewards/margins': -0.0054555898532271385, 'policy_logps/rejected': -326.755615234375, 'policy_logps/chosen': -469.72882080078125, 'referece_logps/rejected': -326.7458801269531, 'referece_logps/chosen': -469.66455078125, 'logits/rejected': -0.3088974058628082, 'logits/chosen': -0.40550073981285095, 'epoch': 0.02}
+
+
+  1%|          | 36/5370 [11:09<28:07:45, 18.98s/it]
+{'loss': 0.6937, 'learning_rate': 4.444444444444444e-07, 'rewards/chosen': -0.02406606636941433, 'rewards/rejected': -0.0015186298405751586, 'rewards/accuracies': 0.5, 'rewards/margins': -0.022547435015439987, 'policy_logps/rejected': -396.15301513671875, 'policy_logps/chosen': -325.6747741699219, 'referece_logps/rejected': -396.1378479003906, 'referece_logps/chosen': -325.43414306640625, 'logits/rejected': -0.3434706926345825, 'logits/chosen': -0.31736278533935547, 'epoch': 0.02}
+
+
+  1%|          | 38/5370 [11:40<25:57:21, 17.52s/it]
+{'loss': 0.6976, 'learning_rate': 4.6913580246913576e-07, 'rewards/chosen': 0.023609161376953125, 'rewards/rejected': -0.034689709544181824, 'rewards/accuracies': 0.875, 'rewards/margins': 0.05829887464642525, 'policy_logps/rejected': -361.56634521484375, 'policy_logps/chosen': -361.40118408203125, 'referece_logps/rejected': -361.2194519042969, 'referece_logps/chosen': -361.6372985839844, 'logits/rejected': 0.009063143283128738, 'logits/chosen': 0.060411542654037476, 'epoch': 0.02}
+[2024-03-28 20:55:48,171] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  1%|          | 39/5370 [12:02<27:37:50, 18.66s/it]
+[2024-03-28 20:56:09,294] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  1%|          | 40/5370 [12:23<28:43:11, 19.40s/it]
+
+
+  1%|          | 42/5370 [12:56<26:39:11, 18.01s/it]
+
+  1%|          | 43/5370 [13:18<28:27:18, 19.23s/it]
+[2024-03-28 20:57:04,743] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6967, 'learning_rate': 5.308641975308642e-07, 'rewards/chosen': 0.025052834302186966, 'rewards/rejected': -7.653213106095791e-05, 'rewards/accuracies': 0.625, 'rewards/margins': 0.025129366666078568, 'policy_logps/rejected': -282.74822998046875, 'policy_logps/chosen': -313.6012878417969, 'referece_logps/rejected': -282.7474365234375, 'referece_logps/chosen': -313.851806640625, 'logits/rejected': -0.4904709458351135, 'logits/chosen': -0.4327967166900635, 'epoch': 0.02}
+[2024-03-28 20:57:23,957] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  1%|          | 44/5370 [13:37<28:26:34, 19.23s/it]
+
+  1%|          | 45/5370 [13:54<27:04:09, 18.30s/it]
+
+  1%|          | 46/5370 [14:17<29:20:56, 19.85s/it]
+
+
+  1%|          | 48/5370 [14:57<29:34:56, 20.01s/it]
+
+  1%|          | 49/5370 [15:14<28:19:35, 19.16s/it]
+{'loss': 0.6931, 'learning_rate': 6.049382716049383e-07, 'rewards/chosen': 0.009508132934570312, 'rewards/rejected': 0.010448073968291283, 'rewards/accuracies': 0.625, 'rewards/margins': -0.0009399410337209702, 'policy_logps/rejected': -315.88568115234375, 'policy_logps/chosen': -299.242919921875, 'referece_logps/rejected': -315.99017333984375, 'referece_logps/chosen': -299.3379821777344, 'logits/rejected': 0.20914456248283386, 'logits/chosen': 0.2536669969558716, 'epoch': 0.03}
+[2024-03-28 20:59:20,281] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  1%|          | 50/5370 [15:34<28:34:08, 19.33s/it]
+
+  1%|          | 51/5370 [15:51<27:42:50, 18.76s/it]
+[2024-03-28 20:59:57,541] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  1%|          | 53/5370 [16:28<27:21:03, 18.52s/it]
+
+  1%|          | 54/5370 [16:42<25:23:14, 17.19s/it]
+{'loss': 0.6893, 'learning_rate': 6.666666666666666e-07, 'rewards/chosen': 0.01719064451754093, 'rewards/rejected': 0.028985213488340378, 'rewards/accuracies': 0.5, 'rewards/margins': -0.011794567108154297, 'policy_logps/rejected': -351.0722351074219, 'policy_logps/chosen': -351.1853332519531, 'referece_logps/rejected': -351.36212158203125, 'referece_logps/chosen': -351.3572082519531, 'logits/rejected': -0.18486657738685608, 'logits/chosen': -0.16486653685569763, 'epoch': 0.03}
+
+
+  1%|          | 56/5370 [17:29<29:57:56, 20.30s/it]
+
+  1%|          | 57/5370 [17:48<29:33:02, 20.02s/it]
+{'loss': 0.6785, 'learning_rate': 7.037037037037037e-07, 'rewards/chosen': 0.02548827975988388, 'rewards/rejected': -0.003618430346250534, 'rewards/accuracies': 0.625, 'rewards/margins': 0.029106713831424713, 'policy_logps/rejected': -336.24359130859375, 'policy_logps/chosen': -427.88763427734375, 'referece_logps/rejected': -336.2073669433594, 'referece_logps/chosen': -428.14251708984375, 'logits/rejected': -0.6691242456436157, 'logits/chosen': -0.7000313997268677, 'epoch': 0.03}
+
+  1%|          | 58/5370 [18:01<26:26:04, 17.92s/it]
+
+
+  1%|          | 60/5370 [18:43<28:43:26, 19.47s/it]
+[2024-03-28 21:02:29,505] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6875, 'learning_rate': 7.407407407407406e-07, 'rewards/chosen': -0.03689250722527504, 'rewards/rejected': -0.022089194506406784, 'rewards/accuracies': 0.625, 'rewards/margins': -0.01480331365019083, 'policy_logps/rejected': -416.788818359375, 'policy_logps/chosen': -452.0583801269531, 'referece_logps/rejected': -416.56793212890625, 'referece_logps/chosen': -451.6894226074219, 'logits/rejected': -1.051106333732605, 'logits/chosen': -1.1746580600738525, 'epoch': 0.03}
+
+  1%|          | 61/5370 [19:00<27:25:29, 18.60s/it]
+
+  1%|          | 62/5370 [19:17<26:58:58, 18.30s/it]
+[2024-03-28 21:03:03,664] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6929, 'learning_rate': 7.65432098765432e-07, 'rewards/chosen': 0.0015857215039432049, 'rewards/rejected': -0.008797263726592064, 'rewards/accuracies': 0.75, 'rewards/margins': 0.01038298662751913, 'policy_logps/rejected': -410.4408874511719, 'policy_logps/chosen': -358.7527770996094, 'referece_logps/rejected': -410.3529357910156, 'referece_logps/chosen': -358.76861572265625, 'logits/rejected': 0.19722473621368408, 'logits/chosen': 0.1473139077425003, 'epoch': 0.03}
+
+  1%|          | 63/5370 [19:32<25:31:38, 17.32s/it]
+
+
+  1%|          | 65/5370 [20:04<24:07:18, 16.37s/it]
+{'loss': 0.69, 'learning_rate': 8.024691358024691e-07, 'rewards/chosen': 0.010037995874881744, 'rewards/rejected': 0.008202552795410156, 'rewards/accuracies': 0.75, 'rewards/margins': 0.0018354426138103008, 'policy_logps/rejected': -273.6693115234375, 'policy_logps/chosen': -302.6263427734375, 'referece_logps/rejected': -273.7513122558594, 'referece_logps/chosen': -302.7267150878906, 'logits/rejected': -0.698271632194519, 'logits/chosen': -0.6799541711807251, 'epoch': 0.04}
+
+  1%|          | 66/5370 [20:24<25:37:16, 17.39s/it]
+
+
+  1%|▏         | 68/5370 [21:01<26:43:50, 18.15s/it]
+[2024-03-28 21:04:47,457] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  1%|▏         | 69/5370 [21:23<28:21:38, 19.26s/it]
+[2024-03-28 21:05:09,307] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6923, 'learning_rate': 8.518518518518518e-07, 'rewards/chosen': -0.07581081241369247, 'rewards/rejected': -0.035028934478759766, 'rewards/accuracies': 0.5, 'rewards/margins': -0.04078187793493271, 'policy_logps/rejected': -556.010009765625, 'policy_logps/chosen': -526.7366943359375, 'referece_logps/rejected': -555.6597900390625, 'referece_logps/chosen': -525.9786376953125, 'logits/rejected': 0.27678772807121277, 'logits/chosen': 0.18959450721740723, 'epoch': 0.04}
+[2024-03-28 21:05:22,782] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  1%|▏         | 71/5370 [21:55<26:08:06, 17.76s/it]
+{'loss': 0.6838, 'learning_rate': 8.765432098765432e-07, 'rewards/chosen': -0.02956238016486168, 'rewards/rejected': -0.009218791499733925, 'rewards/accuracies': 0.375, 'rewards/margins': -0.020343590527772903, 'policy_logps/rejected': -375.5541076660156, 'policy_logps/chosen': -342.9295349121094, 'referece_logps/rejected': -375.4619140625, 'referece_logps/chosen': -342.6339111328125, 'logits/rejected': -0.06227155029773712, 'logits/chosen': -0.27236053347587585, 'epoch': 0.04}
+[2024-03-28 21:06:01,947] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  1%|▏         | 72/5370 [22:15<27:30:19, 18.69s/it]
+
+  1%|▏         | 73/5370 [22:36<28:28:30, 19.35s/it]
+
+  1%|▏         | 74/5370 [22:54<27:34:21, 18.74s/it]
+
+  1%|▏         | 75/5370 [23:12<27:30:19, 18.70s/it]
+
+  1%|▏         | 76/5370 [23:34<28:43:14, 19.53s/it]
+
+  1%|▏         | 77/5370 [23:46<25:29:54, 17.34s/it]
+
+  1%|▏         | 78/5370 [24:04<25:54:13, 17.62s/it]
+
+  1%|▏         | 79/5370 [24:16<23:25:31, 15.94s/it]
+
+
+  2%|▏         | 81/5370 [24:57<26:24:39, 17.98s/it]
+{'loss': 0.6922, 'learning_rate': 1e-06, 'rewards/chosen': -0.013411330059170723, 'rewards/rejected': -0.0395687110722065, 'rewards/accuracies': 0.625, 'rewards/margins': 0.026157382875680923, 'policy_logps/rejected': -440.49658203125, 'policy_logps/chosen': -296.5673522949219, 'referece_logps/rejected': -440.1008605957031, 'referece_logps/chosen': -296.4332580566406, 'logits/rejected': -0.0841234102845192, 'logits/chosen': -0.10782895982265472, 'epoch': 0.05}
+
+
+  2%|▏         | 83/5370 [25:38<27:55:15, 19.01s/it]
+
+  2%|▏         | 84/5370 [25:59<28:57:57, 19.73s/it]
+
+  2%|▏         | 85/5370 [26:21<30:08:44, 20.53s/it]
+[2024-03-28 21:10:07,896] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6796, 'learning_rate': 1.0493827160493827e-06, 'rewards/chosen': -0.025565149262547493, 'rewards/rejected': -0.07441043853759766, 'rewards/accuracies': 0.75, 'rewards/margins': 0.04884529113769531, 'policy_logps/rejected': -380.8119812011719, 'policy_logps/chosen': -391.99896240234375, 'referece_logps/rejected': -380.06787109375, 'referece_logps/chosen': -391.7433166503906, 'logits/rejected': -0.006970822811126709, 'logits/chosen': -0.06614174693822861, 'epoch': 0.05}
+[2024-03-28 21:10:31,000] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 86/5370 [26:44<31:16:16, 21.31s/it]
+
+
+  2%|▏         | 88/5370 [27:25<30:35:07, 20.85s/it]
+
+  2%|▏         | 89/5370 [27:46<30:31:32, 20.81s/it]
+
+  2%|▏         | 90/5370 [28:04<29:19:05, 19.99s/it]
+
+  2%|▏         | 91/5370 [28:21<28:13:51, 19.25s/it]
+{'loss': 0.6706, 'learning_rate': 1.1234567901234568e-06, 'rewards/chosen': -0.025908662006258965, 'rewards/rejected': -0.0404452309012413, 'rewards/accuracies': 0.5, 'rewards/margins': 0.014536568894982338, 'policy_logps/rejected': -442.25030517578125, 'policy_logps/chosen': -486.2425231933594, 'referece_logps/rejected': -441.8458557128906, 'referece_logps/chosen': -485.9834289550781, 'logits/rejected': 0.1094047874212265, 'logits/chosen': 0.00011986121535301208, 'epoch': 0.05}
+
+  2%|▏         | 92/5370 [28:40<28:02:47, 19.13s/it]
+
+  2%|▏         | 93/5370 [29:02<29:26:21, 20.08s/it]
+
+  2%|▏         | 94/5370 [29:21<28:43:28, 19.60s/it]
+
+
+  2%|▏         | 96/5370 [29:57<27:48:55, 18.99s/it]
+{'loss': 0.6796, 'learning_rate': 1.1851851851851852e-06, 'rewards/chosen': 0.02585458755493164, 'rewards/rejected': -0.024543000385165215, 'rewards/accuracies': 0.625, 'rewards/margins': 0.050397589802742004, 'policy_logps/rejected': -315.91766357421875, 'policy_logps/chosen': -330.06964111328125, 'referece_logps/rejected': -315.6722412109375, 'referece_logps/chosen': -330.32818603515625, 'logits/rejected': -0.4094761610031128, 'logits/chosen': -0.4832688868045807, 'epoch': 0.05}
+[2024-03-28 21:14:03,602] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  2%|▏         | 98/5370 [30:36<27:48:35, 18.99s/it]
+
+  2%|▏         | 99/5370 [30:58<29:06:48, 19.88s/it]
+{'loss': 0.6654, 'learning_rate': 1.2222222222222223e-06, 'rewards/chosen': -0.013578415848314762, 'rewards/rejected': -0.06941623985767365, 'rewards/accuracies': 1.0, 'rewards/margins': 0.05583782494068146, 'policy_logps/rejected': -330.6596984863281, 'policy_logps/chosen': -310.10357666015625, 'referece_logps/rejected': -329.9655456542969, 'referece_logps/chosen': -309.96783447265625, 'logits/rejected': -0.29575881361961365, 'logits/chosen': -0.23736485838890076, 'epoch': 0.06}
+[2024-03-28 21:15:04,808] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 100/5370 [31:18<29:29:35, 20.15s/it]
+
+  2%|▏         | 101/5370 [31:34<27:40:40, 18.91s/it]
+[2024-03-28 21:15:43,223] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 102/5370 [31:57<29:11:59, 19.95s/it]
+[2024-03-28 21:16:03,732] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 103/5370 [32:17<29:26:16, 20.12s/it]
+
+  2%|▏         | 104/5370 [32:39<30:11:39, 20.64s/it]
+[2024-03-28 21:16:49,647] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  2%|▏         | 106/5370 [33:20<29:28:18, 20.16s/it]
+{'loss': 0.6698, 'learning_rate': 1.308641975308642e-06, 'rewards/chosen': -0.01779632270336151, 'rewards/rejected': -0.0886714905500412, 'rewards/accuracies': 0.75, 'rewards/margins': 0.07087516784667969, 'policy_logps/rejected': -395.5735778808594, 'policy_logps/chosen': -393.1668395996094, 'referece_logps/rejected': -394.6868591308594, 'referece_logps/chosen': -392.9888610839844, 'logits/rejected': 0.6211835145950317, 'logits/chosen': 0.47891610860824585, 'epoch': 0.06}
+
+  2%|▏         | 107/5370 [33:33<26:37:08, 18.21s/it]
+
+  2%|▏         | 108/5370 [33:51<26:15:48, 17.97s/it]
+
+  2%|▏         | 109/5370 [34:04<24:20:25, 16.66s/it]
+
+  2%|▏         | 110/5370 [34:16<22:12:51, 15.20s/it]
+
+  2%|▏         | 111/5370 [34:33<22:50:52, 15.64s/it]
+[2024-03-28 21:18:40,940] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 112/5370 [34:54<25:25:15, 17.41s/it]
+[2024-03-28 21:19:03,097] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 113/5370 [35:17<27:29:52, 18.83s/it]
+
+  2%|▏         | 114/5370 [35:37<28:17:37, 19.38s/it]
+
+
+  2%|▏         | 116/5370 [36:16<27:44:01, 19.00s/it]
+
+  2%|▏         | 117/5370 [36:38<29:02:39, 19.90s/it]
+{'loss': 0.6696, 'learning_rate': 1.4444444444444443e-06, 'rewards/chosen': -0.1767672449350357, 'rewards/rejected': -0.2644696831703186, 'rewards/accuracies': 0.875, 'rewards/margins': 0.08770246058702469, 'policy_logps/rejected': -546.1837768554688, 'policy_logps/chosen': -492.3921203613281, 'referece_logps/rejected': -543.5391845703125, 'referece_logps/chosen': -490.6244812011719, 'logits/rejected': 0.30978864431381226, 'logits/chosen': 0.2175126075744629, 'epoch': 0.07}
+
+  2%|▏         | 118/5370 [37:01<30:33:42, 20.95s/it]
+
+  2%|▏         | 119/5370 [37:18<28:50:43, 19.78s/it]
+[2024-03-28 21:21:22,239] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 120/5370 [37:36<27:47:02, 19.05s/it]
+
+  2%|▏         | 121/5370 [37:57<28:47:31, 19.75s/it]
+
+  2%|▏         | 122/5370 [38:09<25:29:21, 17.49s/it]
+
+  2%|▏         | 123/5370 [38:33<28:03:09, 19.25s/it]
+[2024-03-28 21:22:36,064] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 124/5370 [38:50<26:59:32, 18.52s/it]
+[2024-03-28 21:22:56,990] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  2%|▏         | 125/5370 [39:10<28:02:16, 19.24s/it]
+
+  2%|▏         | 126/5370 [39:31<28:37:29, 19.65s/it]
+[2024-03-28 21:23:38,334] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  2%|▏         | 128/5370 [40:04<25:53:30, 17.78s/it]
+{'loss': 0.6477, 'learning_rate': 1.5802469135802467e-06, 'rewards/chosen': -0.08775462210178375, 'rewards/rejected': -0.18441085517406464, 'rewards/accuracies': 0.75, 'rewards/margins': 0.09665623307228088, 'policy_logps/rejected': -350.27020263671875, 'policy_logps/chosen': -361.9608154296875, 'referece_logps/rejected': -348.4261169433594, 'referece_logps/chosen': -361.083251953125, 'logits/rejected': -0.09645327925682068, 'logits/chosen': -0.15862904489040375, 'epoch': 0.07}
+[2024-03-28 21:24:10,608] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  2%|▏         | 130/5370 [40:38<24:50:54, 17.07s/it]
+
+  2%|▏         | 131/5370 [40:54<24:25:44, 16.79s/it]
+{'loss': 0.6381, 'learning_rate': 1.617283950617284e-06, 'rewards/chosen': 0.020839883014559746, 'rewards/rejected': -0.1932867169380188, 'rewards/accuracies': 1.0, 'rewards/margins': 0.2141266018152237, 'policy_logps/rejected': -408.7602233886719, 'policy_logps/chosen': -387.6484680175781, 'referece_logps/rejected': -406.8273620605469, 'referece_logps/chosen': -387.85687255859375, 'logits/rejected': -0.6137880682945251, 'logits/chosen': -0.6480581760406494, 'epoch': 0.07}
+[2024-03-28 21:25:03,089] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  2%|▏         | 133/5370 [41:38<28:20:20, 19.48s/it]
+{'loss': 0.655, 'learning_rate': 1.6419753086419753e-06, 'rewards/chosen': -0.048177141696214676, 'rewards/rejected': -0.17678822576999664, 'rewards/accuracies': 0.875, 'rewards/margins': 0.12861108779907227, 'policy_logps/rejected': -306.6981506347656, 'policy_logps/chosen': -214.2920379638672, 'referece_logps/rejected': -304.9302673339844, 'referece_logps/chosen': -213.8102569580078, 'logits/rejected': -0.458857923746109, 'logits/chosen': -0.337716668844223, 'epoch': 0.07}
+
+
+  3%|▎         | 135/5370 [42:04<23:29:26, 16.15s/it]
+{'loss': 0.6445, 'learning_rate': 1.6666666666666667e-06, 'rewards/chosen': -0.13154488801956177, 'rewards/rejected': -0.2975850999355316, 'rewards/accuracies': 0.625, 'rewards/margins': 0.16604024171829224, 'policy_logps/rejected': -357.6053466796875, 'policy_logps/chosen': -394.3677062988281, 'referece_logps/rejected': -354.6294860839844, 'referece_logps/chosen': -393.05224609375, 'logits/rejected': -0.1657775193452835, 'logits/chosen': -0.1229681596159935, 'epoch': 0.08}
+[2024-03-28 21:26:14,075] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 136/5370 [42:28<26:34:31, 18.28s/it]
+[2024-03-28 21:26:32,694] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 137/5370 [42:46<26:43:06, 18.38s/it]
+
+  3%|▎         | 138/5370 [43:03<25:55:53, 17.84s/it]
+
+  3%|▎         | 139/5370 [43:19<25:20:18, 17.44s/it]
+
+  3%|▎         | 140/5370 [43:37<25:34:37, 17.61s/it]
+[2024-03-28 21:27:43,968] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  3%|▎         | 142/5370 [44:18<27:51:49, 19.19s/it]
+[2024-03-28 21:28:05,031] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6371, 'learning_rate': 1.7530864197530864e-06, 'rewards/chosen': -0.2054542601108551, 'rewards/rejected': -0.31662121415138245, 'rewards/accuracies': 0.625, 'rewards/margins': 0.11116697639226913, 'policy_logps/rejected': -394.3782958984375, 'policy_logps/chosen': -589.8731079101562, 'referece_logps/rejected': -391.2120666503906, 'referece_logps/chosen': -587.818603515625, 'logits/rejected': -0.3016670346260071, 'logits/chosen': -0.34259232878685, 'epoch': 0.08}
+
+  3%|▎         | 143/5370 [44:30<24:20:53, 16.77s/it]
+
+  3%|▎         | 144/5370 [44:45<23:43:47, 16.35s/it]
+[2024-03-28 21:28:50,071] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 145/5370 [45:04<24:41:06, 17.01s/it]
+
+  3%|▎         | 146/5370 [45:21<24:58:44, 17.21s/it]
+
+  3%|▎         | 147/5370 [45:37<24:25:37, 16.84s/it]
+
+  3%|▎         | 148/5370 [45:57<25:52:41, 17.84s/it]
+
+  3%|▎         | 149/5370 [46:14<25:25:29, 17.53s/it]
+
+  3%|▎         | 150/5370 [46:35<26:56:58, 18.59s/it]
+
+
+  3%|▎         | 152/5370 [47:09<25:54:32, 17.88s/it]
+[2024-03-28 21:30:55,166] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 153/5370 [47:31<27:46:18, 19.16s/it]
+{'loss': 0.6449, 'learning_rate': 1.8888888888888888e-06, 'rewards/chosen': 0.054598141461610794, 'rewards/rejected': 0.0356171615421772, 'rewards/accuracies': 0.625, 'rewards/margins': 0.018980976194143295, 'policy_logps/rejected': -309.7763366699219, 'policy_logps/chosen': -239.63134765625, 'referece_logps/rejected': -310.1324768066406, 'referece_logps/chosen': -240.17730712890625, 'logits/rejected': -0.9581140279769897, 'logits/chosen': -1.0118683576583862, 'epoch': 0.09}
+
+  3%|▎         | 154/5370 [47:44<25:11:44, 17.39s/it]
+
+  3%|▎         | 155/5370 [48:01<24:59:33, 17.25s/it]
+
+
+  3%|▎         | 157/5370 [48:35<24:21:45, 16.82s/it]
+{'loss': 0.6066, 'learning_rate': 1.9382716049382716e-06, 'rewards/chosen': 0.03685379400849342, 'rewards/rejected': -0.11420231312513351, 'rewards/accuracies': 0.75, 'rewards/margins': 0.15105611085891724, 'policy_logps/rejected': -346.5354919433594, 'policy_logps/chosen': -265.50054931640625, 'referece_logps/rejected': -345.3935241699219, 'referece_logps/chosen': -265.86907958984375, 'logits/rejected': -0.5886673927307129, 'logits/chosen': -0.7275281548500061, 'epoch': 0.09}
+
+  3%|▎         | 158/5370 [48:56<26:16:22, 18.15s/it]
+
+  3%|▎         | 159/5370 [49:10<24:20:41, 16.82s/it]
+
+  3%|▎         | 160/5370 [49:27<24:31:47, 16.95s/it]
+
+  3%|▎         | 161/5370 [49:46<25:17:13, 17.48s/it]
+
+  3%|▎         | 162/5370 [50:01<24:05:11, 16.65s/it]
+[2024-03-28 21:34:08,454] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  3%|▎         | 164/5370 [50:43<27:27:47, 18.99s/it]
+[2024-03-28 21:34:29,619] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6407, 'learning_rate': 1.9999992722407448e-06, 'rewards/chosen': 0.04839630424976349, 'rewards/rejected': -0.013656803406774998, 'rewards/accuracies': 0.625, 'rewards/margins': 0.06205311045050621, 'policy_logps/rejected': -428.4275207519531, 'policy_logps/chosen': -397.340087890625, 'referece_logps/rejected': -428.29095458984375, 'referece_logps/chosen': -397.8240966796875, 'logits/rejected': -0.21068774163722992, 'logits/chosen': -0.40885502099990845, 'epoch': 0.09}
+
+
+  3%|▎         | 166/5370 [51:29<30:24:13, 21.03s/it]
+
+  3%|▎         | 167/5370 [51:51<31:04:07, 21.50s/it]
+
+  3%|▎         | 168/5370 [52:10<29:51:59, 20.67s/it]
+[2024-03-28 21:35:56,527] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 169/5370 [52:28<28:32:42, 19.76s/it]
+
+  3%|▎         | 170/5370 [52:40<25:08:03, 17.40s/it]
+
+  3%|▎         | 171/5370 [53:00<26:30:39, 18.36s/it]
+[2024-03-28 21:36:46,650] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 172/5370 [53:16<25:25:31, 17.61s/it]
+[2024-03-28 21:37:02,512] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 173/5370 [53:38<27:09:52, 18.82s/it]
+
+  3%|▎         | 174/5370 [53:50<24:31:44, 16.99s/it]
+
+  3%|▎         | 175/5370 [54:02<22:23:30, 15.52s/it]
+
+  3%|▎         | 176/5370 [54:22<24:15:07, 16.81s/it]
+
+  3%|▎         | 177/5370 [54:40<24:49:47, 17.21s/it]
+
+  3%|▎         | 178/5370 [55:03<27:15:57, 18.91s/it]
+[2024-03-28 21:38:49,792] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 179/5370 [55:22<27:09:52, 18.84s/it]
+[2024-03-28 21:39:08,477] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 180/5370 [55:39<26:30:38, 18.39s/it]
+
+  3%|▎         | 181/5370 [56:01<27:44:44, 19.25s/it]
+
+  3%|▎         | 182/5370 [56:22<28:54:20, 20.06s/it]
+[2024-03-28 21:40:09,018] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 183/5370 [56:36<26:05:35, 18.11s/it]
+[2024-03-28 21:40:22,582] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 184/5370 [56:53<25:39:02, 17.81s/it]
+
+  3%|▎         | 185/5370 [57:10<25:04:56, 17.41s/it]
+[2024-03-28 21:40:56,182] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  3%|▎         | 186/5370 [57:28<25:17:28, 17.56s/it]
+
+  3%|▎         | 187/5370 [57:44<24:54:33, 17.30s/it]
+
+  4%|▎         | 188/5370 [58:08<27:37:29, 19.19s/it]
+[2024-03-28 21:41:54,383] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▎         | 189/5370 [58:25<26:39:22, 18.52s/it]
+[2024-03-28 21:42:11,343] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▎         | 190/5370 [58:43<26:32:08, 18.44s/it]
+
+  4%|▎         | 191/5370 [58:58<24:52:09, 17.29s/it]
+
+  4%|▎         | 192/5370 [59:20<26:52:28, 18.68s/it]
+
+  4%|▎         | 193/5370 [59:34<25:03:20, 17.42s/it]
+
+  4%|▎         | 194/5370 [59:52<25:05:37, 17.45s/it]
+[2024-03-28 21:43:38,139] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▎         | 195/5370 [1:00:04<23:05:17, 16.06s/it]
+
+  4%|▎         | 196/5370 [1:00:25<24:58:47, 17.38s/it]
+
+  4%|▎         | 197/5370 [1:00:49<27:50:15, 19.37s/it]
+
+  4%|▎         | 198/5370 [1:01:06<26:46:25, 18.64s/it]
+
+  4%|▎         | 199/5370 [1:01:22<25:48:36, 17.97s/it]
+
+  4%|▎         | 200/5370 [1:01:43<26:49:59, 18.68s/it]
+[2024-03-28 21:45:29,116] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▎         | 201/5370 [1:01:57<25:09:53, 17.53s/it]
+
+  4%|▍         | 202/5370 [1:02:20<27:23:13, 19.08s/it]
+
+  4%|▍         | 203/5370 [1:02:39<27:11:03, 18.94s/it]
+
+  4%|▍         | 204/5370 [1:02:49<23:37:30, 16.46s/it]
+
+  4%|▍         | 205/5370 [1:03:10<25:33:16, 17.81s/it]
+
+  4%|▍         | 206/5370 [1:03:29<26:01:25, 18.14s/it]
+
+  4%|▍         | 207/5370 [1:03:46<25:20:41, 17.67s/it]
+
+  4%|▍         | 208/5370 [1:04:03<25:07:22, 17.52s/it]
+
+  4%|▍         | 209/5370 [1:04:22<25:41:28, 17.92s/it]
+
+  4%|▍         | 210/5370 [1:04:36<24:14:22, 16.91s/it]
+
+  4%|▍         | 211/5370 [1:04:58<26:26:46, 18.45s/it]
+[2024-03-28 21:48:45,020] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▍         | 212/5370 [1:05:15<25:25:46, 17.75s/it]
+[2024-03-28 21:49:01,122] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.5215, 'learning_rate': 1.999545184890626e-06, 'rewards/chosen': -0.1795603632926941, 'rewards/rejected': -0.5565938353538513, 'rewards/accuracies': 0.75, 'rewards/margins': 0.3770334720611572, 'policy_logps/rejected': -365.90728759765625, 'policy_logps/chosen': -341.0725402832031, 'referece_logps/rejected': -360.34136962890625, 'referece_logps/chosen': -339.2769470214844, 'logits/rejected': -0.08300536870956421, 'logits/chosen': -0.08595658838748932, 'epoch': 0.12}
+
+
+  4%|▍         | 214/5370 [1:05:54<26:24:27, 18.44s/it]
+{'loss': 0.515, 'learning_rate': 1.999508075020784e-06, 'rewards/chosen': -0.6406440734863281, 'rewards/rejected': -1.2374242544174194, 'rewards/accuracies': 0.875, 'rewards/margins': 0.5967802405357361, 'policy_logps/rejected': -428.6971435546875, 'policy_logps/chosen': -417.788330078125, 'referece_logps/rejected': -416.3229064941406, 'referece_logps/chosen': -411.38189697265625, 'logits/rejected': 0.03371967375278473, 'logits/chosen': 0.11181928962469101, 'epoch': 0.12}
+[2024-03-28 21:49:54,817] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  4%|▍         | 216/5370 [1:06:25<24:43:19, 17.27s/it]
+
+  4%|▍         | 217/5370 [1:06:47<26:44:57, 18.69s/it]
+[2024-03-28 21:50:33,935] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▍         | 218/5370 [1:07:08<27:27:13, 19.18s/it]
+[2024-03-28 21:50:54,275] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.541, 'learning_rate': 1.9994294909297177e-06, 'rewards/chosen': -0.7325195074081421, 'rewards/rejected': -1.6903494596481323, 'rewards/accuracies': 0.875, 'rewards/margins': 0.9578297734260559, 'policy_logps/rejected': -403.445068359375, 'policy_logps/chosen': -358.0025329589844, 'referece_logps/rejected': -386.54150390625, 'referece_logps/chosen': -350.67730712890625, 'logits/rejected': 0.45862340927124023, 'logits/chosen': 0.4554504156112671, 'epoch': 0.12}
+
+
+  4%|▍         | 220/5370 [1:07:42<26:29:43, 18.52s/it]
+{'loss': 0.5912, 'learning_rate': 1.9993880168228743e-06, 'rewards/chosen': -0.21161480247974396, 'rewards/rejected': -0.3133881688117981, 'rewards/accuracies': 0.625, 'rewards/margins': 0.10177335888147354, 'policy_logps/rejected': -345.0848083496094, 'policy_logps/chosen': -324.97613525390625, 'referece_logps/rejected': -341.9508972167969, 'referece_logps/chosen': -322.8599853515625, 'logits/rejected': -0.7215633392333984, 'logits/chosen': -0.557643711566925, 'epoch': 0.12}
+
+
+  4%|▍         | 222/5370 [1:08:14<24:30:43, 17.14s/it]
+
+  4%|▍         | 223/5370 [1:08:31<24:33:07, 17.17s/it]
+
+  4%|▍         | 224/5370 [1:08:49<25:04:58, 17.55s/it]
+[2024-03-28 21:52:35,965] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▍         | 225/5370 [1:09:11<26:42:46, 18.69s/it]
+
+  4%|▍         | 226/5370 [1:09:29<26:23:13, 18.47s/it]
+{'loss': 0.5806, 'learning_rate': 1.99925486698785e-06, 'rewards/chosen': -0.8248416781425476, 'rewards/rejected': -1.1698321104049683, 'rewards/accuracies': 0.75, 'rewards/margins': 0.3449903428554535, 'policy_logps/rejected': -391.07391357421875, 'policy_logps/chosen': -414.0499572753906, 'referece_logps/rejected': -379.3755798339844, 'referece_logps/chosen': -405.80157470703125, 'logits/rejected': 0.22107309103012085, 'logits/chosen': 0.08418761193752289, 'epoch': 0.13}
+[2024-03-28 21:53:36,954] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  4%|▍         | 228/5370 [1:10:11<28:13:55, 19.77s/it]
+[2024-03-28 21:53:57,499] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▍         | 229/5370 [1:10:32<28:50:17, 20.19s/it]
+
+  4%|▍         | 230/5370 [1:10:53<29:13:17, 20.47s/it]
+
+  4%|▍         | 231/5370 [1:11:15<29:38:49, 20.77s/it]
+[2024-03-28 21:55:01,267] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▍         | 232/5370 [1:11:37<30:20:58, 21.26s/it]
+[2024-03-28 21:55:23,689] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▍         | 233/5370 [1:11:50<26:54:32, 18.86s/it]
+{'loss': 0.472, 'learning_rate': 1.999082981475468e-06, 'rewards/chosen': -0.1781007945537567, 'rewards/rejected': -1.0439666509628296, 'rewards/accuracies': 0.875, 'rewards/margins': 0.8658658862113953, 'policy_logps/rejected': -406.01190185546875, 'policy_logps/chosen': -386.27734375, 'referece_logps/rejected': -395.5722351074219, 'referece_logps/chosen': -384.496337890625, 'logits/rejected': -0.5211981534957886, 'logits/chosen': -0.7673697471618652, 'epoch': 0.13}
+
+
+  4%|▍         | 235/5370 [1:12:32<28:12:58, 19.78s/it]
+{'loss': 0.5009, 'learning_rate': 1.9990305992780847e-06, 'rewards/chosen': -0.35628679394721985, 'rewards/rejected': -1.2901324033737183, 'rewards/accuracies': 0.875, 'rewards/margins': 0.9338455200195312, 'policy_logps/rejected': -480.8221130371094, 'policy_logps/chosen': -419.5653076171875, 'referece_logps/rejected': -467.9207763671875, 'referece_logps/chosen': -416.00244140625, 'logits/rejected': -0.009350419044494629, 'logits/chosen': -0.02234058640897274, 'epoch': 0.13}
+[2024-03-28 21:56:39,110] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▍         | 236/5370 [1:12:53<28:28:07, 19.96s/it]
+[2024-03-28 21:57:01,195] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  4%|▍         | 238/5370 [1:13:28<26:05:43, 18.31s/it]
+[2024-03-28 21:57:14,148] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  4%|▍         | 239/5370 [1:13:47<26:45:00, 18.77s/it]
+{'loss': 0.725, 'learning_rate': 1.9989214726390885e-06, 'rewards/chosen': -1.1646243333816528, 'rewards/rejected': -1.7146632671356201, 'rewards/accuracies': 0.875, 'rewards/margins': 0.5500388145446777, 'policy_logps/rejected': -463.82843017578125, 'policy_logps/chosen': -447.5094299316406, 'referece_logps/rejected': -446.6817932128906, 'referece_logps/chosen': -435.8631896972656, 'logits/rejected': 0.2842247188091278, 'logits/chosen': 0.08441084623336792, 'epoch': 0.13}
+
+
+  4%|▍         | 241/5370 [1:14:29<27:41:39, 19.44s/it]
+
+  5%|▍         | 242/5370 [1:14:46<26:52:28, 18.87s/it]
+
+  5%|▍         | 243/5370 [1:15:10<28:50:01, 20.25s/it]
+
+  5%|▍         | 244/5370 [1:15:31<29:28:21, 20.70s/it]
+{'loss': 0.4611, 'learning_rate': 1.998776885959594e-06, 'rewards/chosen': -0.08809585869312286, 'rewards/rejected': -0.873901903629303, 'rewards/accuracies': 0.875, 'rewards/margins': 0.7858060598373413, 'policy_logps/rejected': -384.22601318359375, 'policy_logps/chosen': -405.9742431640625, 'referece_logps/rejected': -375.4870300292969, 'referece_logps/chosen': -405.0932312011719, 'logits/rejected': -0.29771366715431213, 'logits/chosen': -0.23233886063098907, 'epoch': 0.14}
+[2024-03-28 21:59:39,260] [WARNING] [stage3.py:2069:step] 2 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  5%|▍         | 246/5370 [1:16:10<28:07:19, 19.76s/it]
+[2024-03-28 21:59:56,344] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  5%|▍         | 247/5370 [1:16:26<26:33:51, 18.67s/it]
+
+  5%|▍         | 248/5370 [1:16:40<24:44:24, 17.39s/it]
+{'loss': 0.4665, 'learning_rate': 1.9986546747321483e-06, 'rewards/chosen': 0.2163301557302475, 'rewards/rejected': -0.5376572012901306, 'rewards/accuracies': 0.875, 'rewards/margins': 0.7539873719215393, 'policy_logps/rejected': -262.1539611816406, 'policy_logps/chosen': -218.4862060546875, 'referece_logps/rejected': -256.77740478515625, 'referece_logps/chosen': -220.64950561523438, 'logits/rejected': -0.6295338869094849, 'logits/chosen': -0.7982558012008667, 'epoch': 0.14}
+[2024-03-28 22:00:43,593] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+
+  5%|▍         | 250/5370 [1:17:18<25:53:24, 18.20s/it]
+  5%|▍         | 250/5370 [1:17:18<25:53:24, 18.20s/it]Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f78ffe540d0>
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1478, in __del__
+    self._shutdown_workers()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1425, in _shutdown_workers
+    self._worker_result_queue.cancel_join_thread()

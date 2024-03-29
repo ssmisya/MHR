@@ -9,15 +9,15 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # print(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from experiments.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
-from experiments.llava.conversation import conv_templates, SeparatorStyle
-from experiments.llava.model.builder import load_pretrained_model
-from experiments.llava.utils import disable_torch_init
-from experiments.llava.mm_utils import tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria
+from m3apo.vcd.experiments.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
+from m3apo.vcd.experiments.llava.conversation import conv_templates, SeparatorStyle
+from m3apo.vcd.experiments.llava.model.builder import load_pretrained_model
+from m3apo.vcd.experiments.llava.utils import disable_torch_init
+from m3apo.vcd.experiments.llava.mm_utils import tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria
 from vcd_utils.vcd_add_noise import add_diffusion_noise
 from vcd_utils.vcd_sample import evolve_vcd_sampling
 evolve_vcd_sampling()
-from experiments.eval.language_dict import language_dict
+from m3apo.vcd.experiments.eval.language_dict import language_dict
 
 from m3apo.utils.utils import process_jsonl
 
@@ -70,8 +70,8 @@ def construct_prompt_and_inference(model,qs, tokenizer,image_processor,image_fil
         with torch.inference_mode():
             output_ids = model.generate(
                 input_ids,
-                images=image_tensor.unsqueeze(0).half().cuda(),
-                images_cd=(image_tensor_cd.unsqueeze(0).half().cuda() if image_tensor_cd is not None else None),
+                images=image_tensor.unsqueeze(0).to(torch.bfloat16).cuda(),
+                images_cd=(image_tensor_cd.unsqueeze(0).to(torch.bfloat16).cuda() if image_tensor_cd is not None else None),
                 cd_alpha = args.cd_alpha,
                 cd_beta = args.cd_beta,
                 do_sample=True,

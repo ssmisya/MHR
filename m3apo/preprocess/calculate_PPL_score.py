@@ -59,7 +59,7 @@ def main(args):
     print("begin_index: {}, end_index: {}".format(begin_index, end_index))
 
     result = []
-    fw = open(target_path, 'w', encoding='utf-8')
+    fw = open(target_path, "a+", encoding='utf-8')
     for i in tqdm(range(begin_index,end_index)):
         item = data[i]
         ref_item = ref_data[i]
