@@ -1,0 +1,1239 @@
+
+  0%|          | 0/14616 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:179: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+ 96%|█████████▌| 14001/14616 [00:20<00:00, 667.29it/s]
+
+ 96%|█████████▌| 14002/14616 [00:32<00:00, 667.29it/s]
+
+
+ 96%|█████████▌| 14003/14616 [00:42<00:02, 272.41it/s]
+
+ 96%|█████████▌| 14004/14616 [00:53<00:03, 191.02it/s]
+
+ 96%|█████████▌| 14005/14616 [01:03<00:04, 134.22it/s]
+
+ 96%|█████████▌| 14006/14616 [01:14<00:06, 93.97it/s]
+
+ 96%|█████████▌| 14007/14616 [01:25<00:09, 65.96it/s]
+
+ 96%|█████████▌| 14008/14616 [01:35<00:13, 46.18it/s]
+
+ 96%|█████████▌| 14009/14616 [01:46<00:18, 32.46it/s]
+
+ 96%|█████████▌| 14010/14616 [01:57<00:26, 22.71it/s]
+
+ 96%|█████████▌| 14011/14616 [02:07<00:38, 15.90it/s]
+
+ 96%|█████████▌| 14012/14616 [02:18<00:54, 11.15it/s]
+
+ 96%|█████████▌| 14013/14616 [02:29<01:16,  7.86it/s]
+
+ 96%|█████████▌| 14014/14616 [02:40<01:49,  5.52it/s]
+
+ 96%|█████████▌| 14015/14616 [02:50<02:34,  3.90it/s]
+
+ 96%|█████████▌| 14016/14616 [03:01<03:37,  2.76it/s]
+
+ 96%|█████████▌| 14017/14616 [03:11<05:05,  1.96it/s]
+
+ 96%|█████████▌| 14018/14616 [03:22<07:06,  1.40it/s]
+
+ 96%|█████████▌| 14019/14616 [03:33<09:53,  1.01it/s]
+
+ 96%|█████████▌| 14020/14616 [03:43<13:29,  1.36s/it]
+
+ 96%|█████████▌| 14021/14616 [03:54<18:18,  1.85s/it]
+
+ 96%|█████████▌| 14022/14616 [04:05<24:20,  2.46s/it]
+
+ 96%|█████████▌| 14023/14616 [04:16<31:37,  3.20s/it]
+
+ 96%|█████████▌| 14024/14616 [04:26<39:56,  4.05s/it]
+
+ 96%|█████████▌| 14025/14616 [04:37<49:01,  4.98s/it]
+
+ 96%|█████████▌| 14026/14616 [04:48<58:26,  5.94s/it]
+
+ 96%|█████████▌| 14027/14616 [04:58<1:07:14,  6.85s/it]
+
+ 96%|█████████▌| 14028/14616 [05:09<1:15:08,  7.67s/it]
+
+ 96%|█████████▌| 14029/14616 [05:20<1:21:58,  8.38s/it]
+
+ 96%|█████████▌| 14030/14616 [05:31<1:27:51,  9.00s/it]
+
+ 96%|█████████▌| 14031/14616 [05:41<1:31:47,  9.41s/it]
+
+ 96%|█████████▌| 14032/14616 [05:52<1:35:16,  9.79s/it]
+{'loss': 0.4349, 'learning_rate': 1.4578587699316628e-07, 'rewards/chosen': -0.16338804364204407, 'rewards/rejected': -0.8189560174942017, 'rewards/accuracies': 1.0, 'rewards/margins': 0.6555679440498352, 'policy_logps/rejected': -584.2845458984375, 'policy_logps/chosen': -554.6436767578125, 'referece_logps/rejected': -576.094970703125, 'referece_logps/chosen': -553.009765625, 'logits/rejected': 0.9090608954429626, 'logits/chosen': 0.8107263445854187, 'epoch': 5.76}
+
+
+ 96%|█████████▌| 14034/14616 [06:14<1:39:34, 10.27s/it]
+
+ 96%|█████████▌| 14035/14616 [06:24<1:40:50, 10.41s/it]
+
+ 96%|█████████▌| 14036/14616 [06:35<1:41:38, 10.52s/it]
+
+ 96%|█████████▌| 14037/14616 [06:46<1:42:08, 10.58s/it]
+
+ 96%|█████████▌| 14038/14616 [06:57<1:42:25, 10.63s/it]
+
+ 96%|█████████▌| 14039/14616 [07:07<1:42:25, 10.65s/it]
+
+ 96%|█████████▌| 14040/14616 [07:18<1:42:52, 10.72s/it]
+
+ 96%|█████████▌| 14041/14616 [07:29<1:42:23, 10.68s/it]
+
+ 96%|█████████▌| 14042/14616 [07:39<1:42:09, 10.68s/it]
+
+ 96%|█████████▌| 14043/14616 [07:50<1:42:12, 10.70s/it]
+{'loss': 0.4608, 'learning_rate': 1.958997722095672e-07, 'rewards/chosen': -0.6961029171943665, 'rewards/rejected': -0.8253028988838196, 'rewards/accuracies': 0.625, 'rewards/margins': 0.12919999659061432, 'policy_logps/rejected': -346.1900634765625, 'policy_logps/chosen': -354.1359558105469, 'referece_logps/rejected': -337.9370422363281, 'referece_logps/chosen': -347.1749572753906, 'logits/rejected': -0.7236878275871277, 'logits/chosen': -0.6241852641105652, 'epoch': 5.76}
+
+
+ 96%|█████████▌| 14045/14616 [08:12<1:42:59, 10.82s/it]
+
+ 96%|█████████▌| 14046/14616 [08:23<1:42:54, 10.83s/it]
+
+ 96%|█████████▌| 14047/14616 [08:34<1:42:30, 10.81s/it]
+
+ 96%|█████████▌| 14048/14616 [08:44<1:41:56, 10.77s/it]
+{'loss': 0.4534, 'learning_rate': 2.1867881548974943e-07, 'rewards/chosen': -0.5510203838348389, 'rewards/rejected': -1.5382049083709717, 'rewards/accuracies': 0.75, 'rewards/margins': 0.9871844053268433, 'policy_logps/rejected': -377.4825439453125, 'policy_logps/chosen': -279.26507568359375, 'referece_logps/rejected': -362.10052490234375, 'referece_logps/chosen': -273.7548522949219, 'logits/rejected': -0.9651603102684021, 'logits/chosen': -0.909513533115387, 'epoch': 5.77}
+
+
+ 96%|█████████▌| 14050/14616 [09:06<1:41:05, 10.72s/it]
+
+ 96%|█████████▌| 14051/14616 [09:16<1:40:55, 10.72s/it]
+{'loss': 0.5023, 'learning_rate': 2.3234624145785875e-07, 'rewards/chosen': -0.4492018222808838, 'rewards/rejected': -1.3492017984390259, 'rewards/accuracies': 1.0, 'rewards/margins': 0.8999999761581421, 'policy_logps/rejected': -410.4901123046875, 'policy_logps/chosen': -444.00970458984375, 'referece_logps/rejected': -396.9980773925781, 'referece_logps/chosen': -439.51763916015625, 'logits/rejected': -0.3176088333129883, 'logits/chosen': -0.42373156547546387, 'epoch': 5.77}
+
+
+ 96%|█████████▌| 14053/14616 [09:38<1:40:28, 10.71s/it]
+
+ 96%|█████████▌| 14054/14616 [09:48<1:40:22, 10.72s/it]
+
+ 96%|█████████▌| 14055/14616 [09:59<1:40:20, 10.73s/it]
+
+ 96%|█████████▌| 14056/14616 [10:10<1:40:07, 10.73s/it]
+
+ 96%|█████████▌| 14057/14616 [10:21<1:40:17, 10.76s/it]
+
+ 96%|█████████▌| 14058/14616 [10:32<1:40:05, 10.76s/it]
+
+ 96%|█████████▌| 14059/14616 [10:42<1:39:33, 10.72s/it]
+{'loss': 0.4522, 'learning_rate': 2.6879271070615035e-07, 'rewards/chosen': -0.2785377502441406, 'rewards/rejected': -1.5257182121276855, 'rewards/accuracies': 0.875, 'rewards/margins': 1.2471805810928345, 'policy_logps/rejected': -342.572998046875, 'policy_logps/chosen': -323.15863037109375, 'referece_logps/rejected': -327.3157958984375, 'referece_logps/chosen': -320.373291015625, 'logits/rejected': -1.7717353105545044, 'logits/chosen': -1.7119868993759155, 'epoch': 5.77}
+
+
+ 96%|█████████▌| 14061/14616 [11:04<1:39:23, 10.74s/it]
+
+ 96%|█████████▌| 14062/14616 [11:14<1:38:54, 10.71s/it]
+{'loss': 0.4963, 'learning_rate': 2.824601366742597e-07, 'rewards/chosen': -0.7094665765762329, 'rewards/rejected': -0.955295205116272, 'rewards/accuracies': 0.625, 'rewards/margins': 0.24582861363887787, 'policy_logps/rejected': -428.88958740234375, 'policy_logps/chosen': -452.0010681152344, 'referece_logps/rejected': -419.3366394042969, 'referece_logps/chosen': -444.9064636230469, 'logits/rejected': -0.14337807893753052, 'logits/chosen': -0.20111605525016785, 'epoch': 5.77}
+
+
+ 96%|█████████▌| 14064/14616 [11:36<1:38:38, 10.72s/it]
+
+ 96%|█████████▌| 14065/14616 [11:47<1:38:35, 10.74s/it]
+{'loss': 0.4193, 'learning_rate': 2.9612756264236897e-07, 'rewards/chosen': -0.6721874475479126, 'rewards/rejected': -1.3233003616333008, 'rewards/accuracies': 0.75, 'rewards/margins': 0.6511129140853882, 'policy_logps/rejected': -539.9285888671875, 'policy_logps/chosen': -550.279296875, 'referece_logps/rejected': -526.695556640625, 'referece_logps/chosen': -543.5574340820312, 'logits/rejected': -1.114013433456421, 'logits/chosen': -1.0885906219482422, 'epoch': 5.77}
+
+
+ 96%|█████████▌| 14067/14616 [12:08<1:37:41, 10.68s/it]
+
+ 96%|█████████▋| 14068/14616 [12:19<1:37:44, 10.70s/it]
+{'loss': 0.4534, 'learning_rate': 3.0979498861047836e-07, 'rewards/chosen': -0.4861242175102234, 'rewards/rejected': -1.7527081966400146, 'rewards/accuracies': 1.0, 'rewards/margins': 1.2665839195251465, 'policy_logps/rejected': -385.9292297363281, 'policy_logps/chosen': -527.3038940429688, 'referece_logps/rejected': -368.40216064453125, 'referece_logps/chosen': -522.4426879882812, 'logits/rejected': -0.23040121793746948, 'logits/chosen': -0.2854583263397217, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14070/14616 [12:40<1:37:13, 10.68s/it]
+{'loss': 0.5392, 'learning_rate': 3.1890660592255124e-07, 'rewards/chosen': -0.5664106607437134, 'rewards/rejected': -1.5105910301208496, 'rewards/accuracies': 0.625, 'rewards/margins': 0.944180428981781, 'policy_logps/rejected': -393.32232666015625, 'policy_logps/chosen': -428.9985656738281, 'referece_logps/rejected': -378.2164001464844, 'referece_logps/chosen': -423.33441162109375, 'logits/rejected': -0.7537198066711426, 'logits/chosen': -0.5980033278465271, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14072/14616 [13:01<1:37:14, 10.72s/it]
+
+ 96%|█████████▋| 14073/14616 [13:12<1:36:53, 10.71s/it]
+{'loss': 0.4886, 'learning_rate': 3.325740318906606e-07, 'rewards/chosen': -0.504511833190918, 'rewards/rejected': -1.661482572555542, 'rewards/accuracies': 1.0, 'rewards/margins': 1.1569708585739136, 'policy_logps/rejected': -422.1829833984375, 'policy_logps/chosen': -408.3108215332031, 'referece_logps/rejected': -405.5681457519531, 'referece_logps/chosen': -403.2657165527344, 'logits/rejected': -0.09194692969322205, 'logits/chosen': -0.15963616967201233, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14075/14616 [13:34<1:36:36, 10.71s/it]
+
+ 96%|█████████▋| 14076/14616 [13:44<1:36:19, 10.70s/it]
+{'loss': 0.4773, 'learning_rate': 3.462414578587699e-07, 'rewards/chosen': -0.7999628782272339, 'rewards/rejected': -1.1885576248168945, 'rewards/accuracies': 0.625, 'rewards/margins': 0.3885948657989502, 'policy_logps/rejected': -441.3490295410156, 'policy_logps/chosen': -553.8518676757812, 'referece_logps/rejected': -429.4634094238281, 'referece_logps/chosen': -545.8522338867188, 'logits/rejected': -0.2829163074493408, 'logits/chosen': -0.3384828567504883, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14078/14616 [14:06<1:36:10, 10.73s/it]
+
+ 96%|█████████▋| 14079/14616 [14:16<1:35:49, 10.71s/it]
+{'loss': 0.4319, 'learning_rate': 3.5990888382687925e-07, 'rewards/chosen': -0.5911510586738586, 'rewards/rejected': -2.309774875640869, 'rewards/accuracies': 1.0, 'rewards/margins': 1.7186238765716553, 'policy_logps/rejected': -604.3883056640625, 'policy_logps/chosen': -538.2617797851562, 'referece_logps/rejected': -581.2905883789062, 'referece_logps/chosen': -532.3502807617188, 'logits/rejected': -0.4617983102798462, 'logits/chosen': -0.3940346837043762, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14081/14616 [14:38<1:35:25, 10.70s/it]
+
+ 96%|█████████▋| 14082/14616 [14:48<1:35:15, 10.70s/it]
+{'loss': 0.4604, 'learning_rate': 3.735763097949886e-07, 'rewards/chosen': -0.8882829546928406, 'rewards/rejected': -0.9296775460243225, 'rewards/accuracies': 0.625, 'rewards/margins': 0.04139462113380432, 'policy_logps/rejected': -571.2667236328125, 'policy_logps/chosen': -429.68182373046875, 'referece_logps/rejected': -561.969970703125, 'referece_logps/chosen': -420.79901123046875, 'logits/rejected': -1.0770554542541504, 'logits/chosen': -0.8276456594467163, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14084/14616 [15:10<1:34:43, 10.68s/it]
+
+ 96%|█████████▋| 14085/14616 [15:21<1:34:43, 10.70s/it]
+{'loss': 0.448, 'learning_rate': 3.872437357630979e-07, 'rewards/chosen': -0.5815367102622986, 'rewards/rejected': -1.4597088098526, 'rewards/accuracies': 0.625, 'rewards/margins': 0.8781723380088806, 'policy_logps/rejected': -312.0721435546875, 'policy_logps/chosen': -345.638671875, 'referece_logps/rejected': -297.4750671386719, 'referece_logps/chosen': -339.8232727050781, 'logits/rejected': -0.6874127388000488, 'logits/chosen': -0.6485668420791626, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14087/14616 [15:42<1:34:23, 10.71s/it]
+
+ 96%|█████████▋| 14088/14616 [15:53<1:34:16, 10.71s/it]
+{'loss': 0.489, 'learning_rate': 4.0091116173120726e-07, 'rewards/chosen': -0.7697471380233765, 'rewards/rejected': -1.1068886518478394, 'rewards/accuracies': 0.625, 'rewards/margins': 0.33714136481285095, 'policy_logps/rejected': -381.8796081542969, 'policy_logps/chosen': -440.0267333984375, 'referece_logps/rejected': -370.81072998046875, 'referece_logps/chosen': -432.32928466796875, 'logits/rejected': -0.13573016226291656, 'logits/chosen': -0.06648536771535873, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14090/14616 [16:14<1:33:37, 10.68s/it]
+
+ 96%|█████████▋| 14091/14616 [16:25<1:33:34, 10.69s/it]
+{'loss': 0.4486, 'learning_rate': 4.145785876993166e-07, 'rewards/chosen': -0.7453336715698242, 'rewards/rejected': -1.7033182382583618, 'rewards/accuracies': 0.875, 'rewards/margins': 0.9579845666885376, 'policy_logps/rejected': -619.4775390625, 'policy_logps/chosen': -668.0792846679688, 'referece_logps/rejected': -602.4443969726562, 'referece_logps/chosen': -660.6259765625, 'logits/rejected': -1.4108688831329346, 'logits/chosen': -1.5276756286621094, 'epoch': 5.78}
+
+
+ 96%|█████████▋| 14093/14616 [16:46<1:33:23, 10.71s/it]
+{'loss': 0.4828, 'learning_rate': 4.2369020501138953e-07, 'rewards/chosen': -0.7038843035697937, 'rewards/rejected': -1.5551058053970337, 'rewards/accuracies': 0.75, 'rewards/margins': 0.8512215614318848, 'policy_logps/rejected': -384.89251708984375, 'policy_logps/chosen': -314.5942687988281, 'referece_logps/rejected': -369.3414306640625, 'referece_logps/chosen': -307.555419921875, 'logits/rejected': -1.779555320739746, 'logits/chosen': -1.341742753982544, 'epoch': 5.79}
+
+
+ 96%|█████████▋| 14095/14616 [17:08<1:33:02, 10.72s/it]
+
+ 96%|█████████▋| 14096/14616 [17:18<1:31:10, 10.52s/it]
+
+ 96%|█████████▋| 14097/14616 [17:28<1:31:27, 10.57s/it]
+{'loss': 0.5563, 'learning_rate': 4.419134396355353e-07, 'rewards/chosen': -0.3049074411392212, 'rewards/rejected': -0.757981538772583, 'rewards/accuracies': 0.75, 'rewards/margins': 0.4530740976333618, 'policy_logps/rejected': -395.7256774902344, 'policy_logps/chosen': -344.0580749511719, 'referece_logps/rejected': -388.1458435058594, 'referece_logps/chosen': -341.0090026855469, 'logits/rejected': -0.5510730743408203, 'logits/chosen': -0.6557757258415222, 'epoch': 5.79}
+
+
+ 96%|█████████▋| 14099/14616 [17:50<1:31:43, 10.64s/it]
+
+ 96%|█████████▋| 14100/14616 [18:01<1:31:45, 10.67s/it]
+{'loss': 0.4724, 'learning_rate': 4.555808656036446e-07, 'rewards/chosen': -0.5595733523368835, 'rewards/rejected': -0.7988031506538391, 'rewards/accuracies': 0.625, 'rewards/margins': 0.23922976851463318, 'policy_logps/rejected': -464.15277099609375, 'policy_logps/chosen': -474.7064208984375, 'referece_logps/rejected': -456.1647033691406, 'referece_logps/chosen': -469.11065673828125, 'logits/rejected': -0.2980107367038727, 'logits/chosen': -0.3832896649837494, 'epoch': 5.79}
+
+
+ 96%|█████████▋| 14102/14616 [18:22<1:31:30, 10.68s/it]
+
+ 96%|█████████▋| 14103/14616 [18:33<1:31:43, 10.73s/it]
+{'loss': 0.4345, 'learning_rate': 4.6924829157175395e-07, 'rewards/chosen': -0.48464375734329224, 'rewards/rejected': -1.0225239992141724, 'rewards/accuracies': 0.75, 'rewards/margins': 0.5378803014755249, 'policy_logps/rejected': -466.7763977050781, 'policy_logps/chosen': -520.9329833984375, 'referece_logps/rejected': -456.5511169433594, 'referece_logps/chosen': -516.0865478515625, 'logits/rejected': -1.6831833124160767, 'logits/chosen': -1.4496738910675049, 'epoch': 5.79}
+
+
+ 97%|█████████▋| 14105/14616 [18:54<1:31:19, 10.72s/it]
+
+ 97%|█████████▋| 14106/14616 [19:05<1:30:50, 10.69s/it]
+{'loss': 0.5304, 'learning_rate': 4.829157175398633e-07, 'rewards/chosen': -0.6765091419219971, 'rewards/rejected': -1.4100422859191895, 'rewards/accuracies': 0.75, 'rewards/margins': 0.7335330247879028, 'policy_logps/rejected': -508.3514099121094, 'policy_logps/chosen': -383.3082275390625, 'referece_logps/rejected': -494.2510070800781, 'referece_logps/chosen': -376.54315185546875, 'logits/rejected': 0.28170034289360046, 'logits/chosen': 0.2802949845790863, 'epoch': 5.79}
+
+
+ 97%|█████████▋| 14108/14616 [19:26<1:30:41, 10.71s/it]
+
+ 97%|█████████▋| 14109/14616 [19:37<1:30:39, 10.73s/it]
+
+ 97%|█████████▋| 14110/14616 [19:48<1:30:39, 10.75s/it]
+
+ 97%|█████████▋| 14111/14616 [19:59<1:30:21, 10.74s/it]
+{'loss': 0.4809, 'learning_rate': 5.056947608200456e-07, 'rewards/chosen': -0.4468681216239929, 'rewards/rejected': -1.5796691179275513, 'rewards/accuracies': 0.75, 'rewards/margins': 1.1328009366989136, 'policy_logps/rejected': -296.08563232421875, 'policy_logps/chosen': -305.0653991699219, 'referece_logps/rejected': -280.2889099121094, 'referece_logps/chosen': -300.59674072265625, 'logits/rejected': -0.8942185640335083, 'logits/chosen': -1.0695054531097412, 'epoch': 5.79}
+
+
+ 97%|█████████▋| 14113/14616 [20:20<1:29:52, 10.72s/it]
+
+ 97%|█████████▋| 14114/14616 [20:31<1:29:35, 10.71s/it]
+{'loss': 0.3711, 'learning_rate': 5.19362186788155e-07, 'rewards/chosen': -0.7397652268409729, 'rewards/rejected': -2.3844313621520996, 'rewards/accuracies': 1.0, 'rewards/margins': 1.644666075706482, 'policy_logps/rejected': -306.8852233886719, 'policy_logps/chosen': -386.11688232421875, 'referece_logps/rejected': -283.0408935546875, 'referece_logps/chosen': -378.7192687988281, 'logits/rejected': -0.14945435523986816, 'logits/chosen': -0.2122885286808014, 'epoch': 5.79}
+
+
+ 97%|█████████▋| 14116/14616 [20:52<1:29:03, 10.69s/it]
+
+ 97%|█████████▋| 14117/14616 [21:03<1:28:48, 10.68s/it]
+{'loss': 0.4776, 'learning_rate': 5.330296127562642e-07, 'rewards/chosen': -0.5460121035575867, 'rewards/rejected': -1.1715935468673706, 'rewards/accuracies': 0.75, 'rewards/margins': 0.6255813241004944, 'policy_logps/rejected': -365.98077392578125, 'policy_logps/chosen': -620.2495727539062, 'referece_logps/rejected': -354.26483154296875, 'referece_logps/chosen': -614.7893676757812, 'logits/rejected': -1.0530661344528198, 'logits/chosen': -1.1718641519546509, 'epoch': 5.8}
+
+
+ 97%|█████████▋| 14119/14616 [21:24<1:28:30, 10.69s/it]
+
+ 97%|█████████▋| 14120/14616 [21:35<1:28:26, 10.70s/it]
+{'loss': 0.5018, 'learning_rate': 5.466970387243735e-07, 'rewards/chosen': -0.6502634882926941, 'rewards/rejected': -1.3567323684692383, 'rewards/accuracies': 0.75, 'rewards/margins': 0.7064688205718994, 'policy_logps/rejected': -324.45831298828125, 'policy_logps/chosen': -347.33990478515625, 'referece_logps/rejected': -310.8909912109375, 'referece_logps/chosen': -340.8372802734375, 'logits/rejected': -0.3638836741447449, 'logits/chosen': -0.2812305688858032, 'epoch': 5.8}
+
+
+ 97%|█████████▋| 14122/14616 [21:56<1:28:03, 10.69s/it]
+
+ 97%|█████████▋| 14123/14616 [22:07<1:27:45, 10.68s/it]
+{'loss': 0.4542, 'learning_rate': 5.603644646924829e-07, 'rewards/chosen': -0.63993239402771, 'rewards/rejected': -1.3827869892120361, 'rewards/accuracies': 0.625, 'rewards/margins': 0.7428544759750366, 'policy_logps/rejected': -383.4922180175781, 'policy_logps/chosen': -462.13641357421875, 'referece_logps/rejected': -369.6643371582031, 'referece_logps/chosen': -455.737060546875, 'logits/rejected': -0.6342607140541077, 'logits/chosen': -0.5861027240753174, 'epoch': 5.8}
+
+
+ 97%|█████████▋| 14125/14616 [22:28<1:27:48, 10.73s/it]
+
+ 97%|█████████▋| 14126/14616 [22:39<1:27:29, 10.71s/it]
+{'loss': 0.4533, 'learning_rate': 5.740318906605922e-07, 'rewards/chosen': -0.3807651698589325, 'rewards/rejected': -0.9981392621994019, 'rewards/accuracies': 1.0, 'rewards/margins': 0.617374062538147, 'policy_logps/rejected': -340.15594482421875, 'policy_logps/chosen': -420.8892822265625, 'referece_logps/rejected': -330.174560546875, 'referece_logps/chosen': -417.0816650390625, 'logits/rejected': -0.02892151288688183, 'logits/chosen': -0.049801964312791824, 'epoch': 5.8}
+
+
+ 97%|█████████▋| 14128/14616 [23:01<1:27:22, 10.74s/it]
+
+ 97%|█████████▋| 14129/14616 [23:11<1:26:58, 10.72s/it]
+{'loss': 0.5631, 'learning_rate': 5.876993166287016e-07, 'rewards/chosen': -0.7303564548492432, 'rewards/rejected': -1.148310899734497, 'rewards/accuracies': 0.75, 'rewards/margins': 0.4179544150829315, 'policy_logps/rejected': -379.2469482421875, 'policy_logps/chosen': -359.9072265625, 'referece_logps/rejected': -367.7638244628906, 'referece_logps/chosen': -352.6036682128906, 'logits/rejected': -1.422356128692627, 'logits/chosen': -1.306681513786316, 'epoch': 5.8}
+
+
+ 97%|█████████▋| 14131/14616 [23:33<1:26:39, 10.72s/it]
+
+ 97%|█████████▋| 14132/14616 [23:43<1:26:22, 10.71s/it]
+{'loss': 0.4593, 'learning_rate': 6.013667425968109e-07, 'rewards/chosen': -0.33303147554397583, 'rewards/rejected': -0.9389128684997559, 'rewards/accuracies': 0.875, 'rewards/margins': 0.60588139295578, 'policy_logps/rejected': -458.8561096191406, 'policy_logps/chosen': -577.5797119140625, 'referece_logps/rejected': -449.46697998046875, 'referece_logps/chosen': -574.2494506835938, 'logits/rejected': -0.44414350390434265, 'logits/chosen': -0.4227767586708069, 'epoch': 5.8}
+
+
+ 97%|█████████▋| 14134/14616 [24:05<1:25:47, 10.68s/it]
+
+ 97%|█████████▋| 14135/14616 [24:15<1:25:49, 10.71s/it]
+{'loss': 0.531, 'learning_rate': 6.150341685649203e-07, 'rewards/chosen': -0.19214440882205963, 'rewards/rejected': -1.0242408514022827, 'rewards/accuracies': 1.0, 'rewards/margins': 0.8320964574813843, 'policy_logps/rejected': -327.49993896484375, 'policy_logps/chosen': -301.78228759765625, 'referece_logps/rejected': -317.2575378417969, 'referece_logps/chosen': -299.86083984375, 'logits/rejected': -0.49063393473625183, 'logits/chosen': -0.5203282833099365, 'epoch': 5.8}
+
+
+ 97%|█████████▋| 14137/14616 [24:37<1:25:35, 10.72s/it]
+
+ 97%|█████████▋| 14138/14616 [24:48<1:25:10, 10.69s/it]
+
+ 97%|█████████▋| 14139/14616 [24:58<1:25:12, 10.72s/it]
+
+ 97%|█████████▋| 14140/14616 [25:09<1:25:03, 10.72s/it]
+
+ 97%|█████████▋| 14141/14616 [25:20<1:24:45, 10.71s/it]
+
+ 97%|█████████▋| 14142/14616 [25:30<1:24:35, 10.71s/it]
+
+ 97%|█████████▋| 14143/14616 [25:41<1:24:17, 10.69s/it]
+
+ 97%|█████████▋| 14144/14616 [25:52<1:24:09, 10.70s/it]
+
+ 97%|█████████▋| 14145/14616 [26:03<1:24:21, 10.75s/it]
+
+ 97%|█████████▋| 14146/14616 [26:13<1:24:13, 10.75s/it]
+{'loss': 0.5316, 'learning_rate': 6.651480637813211e-07, 'rewards/chosen': -0.4757692515850067, 'rewards/rejected': -0.9012281894683838, 'rewards/accuracies': 0.875, 'rewards/margins': 0.4254589080810547, 'policy_logps/rejected': -471.23870849609375, 'policy_logps/chosen': -352.84698486328125, 'referece_logps/rejected': -462.2264404296875, 'referece_logps/chosen': -348.0892639160156, 'logits/rejected': -0.9456288814544678, 'logits/chosen': -0.9138360023498535, 'epoch': 5.81}
+
+
+ 97%|█████████▋| 14148/14616 [26:35<1:23:14, 10.67s/it]
+
+ 97%|█████████▋| 14149/14616 [26:45<1:23:02, 10.67s/it]
+
+ 97%|█████████▋| 14150/14616 [26:56<1:22:54, 10.67s/it]
+
+ 97%|█████████▋| 14151/14616 [27:07<1:22:48, 10.68s/it]
+
+ 97%|█████████▋| 14152/14616 [27:17<1:22:49, 10.71s/it]
+{'loss': 0.4906, 'learning_rate': 6.924829157175398e-07, 'rewards/chosen': -0.43896907567977905, 'rewards/rejected': -1.0472888946533203, 'rewards/accuracies': 0.875, 'rewards/margins': 0.608319878578186, 'policy_logps/rejected': -527.70703125, 'policy_logps/chosen': -491.0960693359375, 'referece_logps/rejected': -517.234130859375, 'referece_logps/chosen': -486.70635986328125, 'logits/rejected': -1.0678681135177612, 'logits/chosen': -0.8749974370002747, 'epoch': 5.81}
+
+
+ 97%|█████████▋| 14154/14616 [27:39<1:22:22, 10.70s/it]
+
+ 97%|█████████▋| 14155/14616 [27:50<1:22:11, 10.70s/it]
+
+ 97%|█████████▋| 14156/14616 [28:00<1:21:44, 10.66s/it]
+{'loss': 0.582, 'learning_rate': 7.107061503416856e-07, 'rewards/chosen': -0.5689763426780701, 'rewards/rejected': -1.026764154434204, 'rewards/accuracies': 1.0, 'rewards/margins': 0.45778778195381165, 'policy_logps/rejected': -319.43603515625, 'policy_logps/chosen': -405.1626892089844, 'referece_logps/rejected': -309.1684265136719, 'referece_logps/chosen': -399.472900390625, 'logits/rejected': -0.22524946928024292, 'logits/chosen': -0.32711517810821533, 'epoch': 5.81}
+
+
+ 97%|█████████▋| 14158/14616 [28:22<1:21:41, 10.70s/it]
+{'loss': 0.4691, 'learning_rate': 7.198177676537585e-07, 'rewards/chosen': -0.617766797542572, 'rewards/rejected': -1.1943724155426025, 'rewards/accuracies': 0.75, 'rewards/margins': 0.5766056180000305, 'policy_logps/rejected': -340.61334228515625, 'policy_logps/chosen': -443.7202453613281, 'referece_logps/rejected': -328.66961669921875, 'referece_logps/chosen': -437.5425720214844, 'logits/rejected': -0.08737838268280029, 'logits/chosen': 0.02021065354347229, 'epoch': 5.81}
+
+ 97%|█████████▋| 14159/14616 [28:32<1:21:23, 10.69s/it]
+
+
+ 97%|█████████▋| 14161/14616 [28:54<1:20:54, 10.67s/it]
+
+ 97%|█████████▋| 14162/14616 [29:04<1:20:42, 10.67s/it]
+
+ 97%|█████████▋| 14163/14616 [29:15<1:21:22, 10.78s/it]
+
+ 97%|█████████▋| 14164/14616 [29:26<1:20:47, 10.72s/it]
+{'loss': 0.4085, 'learning_rate': 7.471526195899772e-07, 'rewards/chosen': -0.26435795426368713, 'rewards/rejected': -1.5868866443634033, 'rewards/accuracies': 1.0, 'rewards/margins': 1.3225287199020386, 'policy_logps/rejected': -315.47454833984375, 'policy_logps/chosen': -313.2692565917969, 'referece_logps/rejected': -299.60565185546875, 'referece_logps/chosen': -310.62567138671875, 'logits/rejected': -0.35106346011161804, 'logits/chosen': -0.30579906702041626, 'epoch': 5.81}
+
+
+ 97%|█████████▋| 14166/14616 [29:47<1:20:18, 10.71s/it]
+
+ 97%|█████████▋| 14167/14616 [29:58<1:20:03, 10.70s/it]
+{'loss': 0.4309, 'learning_rate': 7.608200455580866e-07, 'rewards/chosen': -0.7100822925567627, 'rewards/rejected': -1.3400628566741943, 'rewards/accuracies': 0.625, 'rewards/margins': 0.6299806833267212, 'policy_logps/rejected': -393.4875793457031, 'policy_logps/chosen': -503.7189636230469, 'referece_logps/rejected': -380.0869445800781, 'referece_logps/chosen': -496.6181640625, 'logits/rejected': -2.2017550468444824, 'logits/chosen': -2.213972330093384, 'epoch': 5.82}
+
+
+ 97%|█████████▋| 14169/14616 [30:19<1:19:28, 10.67s/it]
+
+ 97%|█████████▋| 14170/14616 [30:30<1:19:26, 10.69s/it]
+{'loss': 0.5109, 'learning_rate': 7.744874715261959e-07, 'rewards/chosen': -0.7498056888580322, 'rewards/rejected': -1.0622695684432983, 'rewards/accuracies': 0.625, 'rewards/margins': 0.31246399879455566, 'policy_logps/rejected': -385.06085205078125, 'policy_logps/chosen': -387.65985107421875, 'referece_logps/rejected': -374.4381103515625, 'referece_logps/chosen': -380.16180419921875, 'logits/rejected': -0.5741698741912842, 'logits/chosen': -0.6776639223098755, 'epoch': 5.82}
+
+
+ 97%|█████████▋| 14172/14616 [30:51<1:19:04, 10.69s/it]
+
+ 97%|█████████▋| 14173/14616 [31:02<1:18:49, 10.68s/it]
+{'loss': 0.4922, 'learning_rate': 7.881548974943052e-07, 'rewards/chosen': -0.7049584984779358, 'rewards/rejected': -1.4234650135040283, 'rewards/accuracies': 0.625, 'rewards/margins': 0.7185065746307373, 'policy_logps/rejected': -356.8121643066406, 'policy_logps/chosen': -456.8033752441406, 'referece_logps/rejected': -342.5775146484375, 'referece_logps/chosen': -449.7537841796875, 'logits/rejected': -0.7260984182357788, 'logits/chosen': -0.7410838007926941, 'epoch': 5.82}
+
+
+ 97%|█████████▋| 14175/14616 [31:23<1:18:39, 10.70s/it]
+
+ 97%|█████████▋| 14176/14616 [31:34<1:18:17, 10.68s/it]
+{'loss': 0.4087, 'learning_rate': 8.018223234624145e-07, 'rewards/chosen': -0.5267271399497986, 'rewards/rejected': -1.4819327592849731, 'rewards/accuracies': 0.875, 'rewards/margins': 0.9552055597305298, 'policy_logps/rejected': -501.42047119140625, 'policy_logps/chosen': -445.3034973144531, 'referece_logps/rejected': -486.60113525390625, 'referece_logps/chosen': -440.0362548828125, 'logits/rejected': -1.1310958862304688, 'logits/chosen': -1.0774731636047363, 'epoch': 5.82}
+
+
+ 97%|█████████▋| 14178/14616 [31:55<1:18:04, 10.69s/it]
+
+ 97%|█████████▋| 14179/14616 [32:06<1:17:58, 10.71s/it]
+{'loss': 0.4917, 'learning_rate': 8.154897494305238e-07, 'rewards/chosen': -0.9261823892593384, 'rewards/rejected': -1.0758802890777588, 'rewards/accuracies': 0.5, 'rewards/margins': 0.14969787001609802, 'policy_logps/rejected': -377.4590148925781, 'policy_logps/chosen': -446.29425048828125, 'referece_logps/rejected': -366.7001953125, 'referece_logps/chosen': -437.0323791503906, 'logits/rejected': 0.6150428652763367, 'logits/chosen': 0.5112854242324829, 'epoch': 5.82}
+
+
+ 97%|█████████▋| 14181/14616 [32:28<1:17:52, 10.74s/it]
+
+ 97%|█████████▋| 14182/14616 [32:38<1:17:11, 10.67s/it]
+{'loss': 0.462, 'learning_rate': 8.291571753986332e-07, 'rewards/chosen': -1.0124050378799438, 'rewards/rejected': -2.009903907775879, 'rewards/accuracies': 0.625, 'rewards/margins': 0.9974987506866455, 'policy_logps/rejected': -452.981201171875, 'policy_logps/chosen': -445.6728515625, 'referece_logps/rejected': -432.8821716308594, 'referece_logps/chosen': -435.5487976074219, 'logits/rejected': -0.48911917209625244, 'logits/chosen': -0.18620143830776215, 'epoch': 5.82}
+
+
+ 97%|█████████▋| 14184/14616 [33:00<1:16:47, 10.67s/it]
+
+ 97%|█████████▋| 14185/14616 [33:10<1:16:49, 10.69s/it]
+{'loss': 0.5579, 'learning_rate': 8.428246013667426e-07, 'rewards/chosen': -0.7677493095397949, 'rewards/rejected': -1.1463820934295654, 'rewards/accuracies': 0.75, 'rewards/margins': 0.37863296270370483, 'policy_logps/rejected': -400.70306396484375, 'policy_logps/chosen': -454.1784362792969, 'referece_logps/rejected': -389.23919677734375, 'referece_logps/chosen': -446.50091552734375, 'logits/rejected': -0.8174484968185425, 'logits/chosen': -0.8834109306335449, 'epoch': 5.82}
+
+
+ 97%|█████████▋| 14187/14616 [33:32<1:16:47, 10.74s/it]
+
+ 97%|█████████▋| 14188/14616 [33:42<1:16:28, 10.72s/it]
+
+ 97%|█████████▋| 14188/14616 [33:43<1:16:28, 10.72s/it]
+
+
+ 97%|█████████▋| 14190/14616 [34:04<1:15:50, 10.68s/it]
+
+ 97%|█████████▋| 14191/14616 [34:14<1:15:35, 10.67s/it]
+{'loss': 0.5148, 'learning_rate': 8.701594533029613e-07, 'rewards/chosen': -0.785689115524292, 'rewards/rejected': -1.2873812913894653, 'rewards/accuracies': 0.625, 'rewards/margins': 0.5016921758651733, 'policy_logps/rejected': -418.8008117675781, 'policy_logps/chosen': -508.86810302734375, 'referece_logps/rejected': -405.927001953125, 'referece_logps/chosen': -501.01116943359375, 'logits/rejected': -0.7189962863922119, 'logits/chosen': -0.5984393954277039, 'epoch': 5.83}
+
+
+ 97%|█████████▋| 14193/14616 [34:36<1:15:15, 10.67s/it]
+
+ 97%|█████████▋| 14194/14616 [34:46<1:14:58, 10.66s/it]
+{'loss': 0.5195, 'learning_rate': 8.838268792710706e-07, 'rewards/chosen': -0.7181695699691772, 'rewards/rejected': -1.6551424264907837, 'rewards/accuracies': 0.75, 'rewards/margins': 0.9369728565216064, 'policy_logps/rejected': -452.74066162109375, 'policy_logps/chosen': -443.8688049316406, 'referece_logps/rejected': -436.18927001953125, 'referece_logps/chosen': -436.6871337890625, 'logits/rejected': -0.8677566051483154, 'logits/chosen': -0.9244241118431091, 'epoch': 5.83}
+
+
+ 97%|█████████▋| 14196/14616 [35:08<1:14:38, 10.66s/it]
+
+ 97%|█████████▋| 14197/14616 [35:18<1:14:30, 10.67s/it]
+{'loss': 0.4839, 'learning_rate': 8.974943052391799e-07, 'rewards/chosen': -0.6174930930137634, 'rewards/rejected': -1.6996015310287476, 'rewards/accuracies': 0.75, 'rewards/margins': 1.082108497619629, 'policy_logps/rejected': -422.02337646484375, 'policy_logps/chosen': -336.78143310546875, 'referece_logps/rejected': -405.02734375, 'referece_logps/chosen': -330.60650634765625, 'logits/rejected': -1.2934913635253906, 'logits/chosen': -1.202455759048462, 'epoch': 5.83}
+
+
+ 97%|█████████▋| 14199/14616 [35:40<1:14:05, 10.66s/it]
+
+ 97%|█████████▋| 14200/14616 [35:51<1:14:10, 10.70s/it]
+{'loss': 0.4923, 'learning_rate': 9.111617312072892e-07, 'rewards/chosen': -0.6341171264648438, 'rewards/rejected': -1.7427937984466553, 'rewards/accuracies': 0.75, 'rewards/margins': 1.1086766719818115, 'policy_logps/rejected': -447.0338439941406, 'policy_logps/chosen': -494.2248229980469, 'referece_logps/rejected': -429.6058654785156, 'referece_logps/chosen': -487.8836669921875, 'logits/rejected': 0.9230057001113892, 'logits/chosen': 0.9314164519309998, 'epoch': 5.83}
+
+
+ 97%|█████████▋| 14202/14616 [36:12<1:13:50, 10.70s/it]
+
+ 97%|█████████▋| 14203/14616 [36:23<1:13:25, 10.67s/it]
+{'loss': 0.4614, 'learning_rate': 9.248291571753985e-07, 'rewards/chosen': -0.3816123902797699, 'rewards/rejected': -1.5298372507095337, 'rewards/accuracies': 1.0, 'rewards/margins': 1.1482248306274414, 'policy_logps/rejected': -334.35443115234375, 'policy_logps/chosen': -372.54022216796875, 'referece_logps/rejected': -319.0560302734375, 'referece_logps/chosen': -368.72406005859375, 'logits/rejected': -0.7788801193237305, 'logits/chosen': -0.8225104808807373, 'epoch': 5.83}
+
+
+ 97%|█████████▋| 14205/14616 [36:44<1:13:11, 10.68s/it]
+{'loss': 0.4752, 'learning_rate': 9.339407744874714e-07, 'rewards/chosen': -0.49864351749420166, 'rewards/rejected': -1.4695502519607544, 'rewards/accuracies': 0.75, 'rewards/margins': 0.9709068536758423, 'policy_logps/rejected': -399.2968444824219, 'policy_logps/chosen': -410.35382080078125, 'referece_logps/rejected': -384.60137939453125, 'referece_logps/chosen': -405.36737060546875, 'logits/rejected': -0.24438753724098206, 'logits/chosen': -0.29087013006210327, 'epoch': 5.83}
+
+ 97%|█████████▋| 14206/14616 [36:55<1:13:21, 10.73s/it]
+
+
+ 97%|█████████▋| 14208/14616 [37:16<1:12:48, 10.71s/it]
+{'loss': 0.5161, 'learning_rate': 9.476082004555808e-07, 'rewards/chosen': -1.124327301979065, 'rewards/rejected': -1.1415231227874756, 'rewards/accuracies': 0.625, 'rewards/margins': 0.017195917665958405, 'policy_logps/rejected': -461.55743408203125, 'policy_logps/chosen': -467.2519836425781, 'referece_logps/rejected': -450.1422119140625, 'referece_logps/chosen': -456.00872802734375, 'logits/rejected': -0.3065726161003113, 'logits/chosen': -0.26380106806755066, 'epoch': 5.83}
+
+ 97%|█████████▋| 14209/14616 [37:27<1:12:35, 10.70s/it]
+
+
+ 97%|█████████▋| 14211/14616 [37:48<1:12:06, 10.68s/it]
+{'loss': 0.5029, 'learning_rate': 9.612756264236902e-07, 'rewards/chosen': -0.6034590005874634, 'rewards/rejected': -0.5872230529785156, 'rewards/accuracies': 0.625, 'rewards/margins': -0.016235917806625366, 'policy_logps/rejected': -302.545654296875, 'policy_logps/chosen': -332.65045166015625, 'referece_logps/rejected': -296.67340087890625, 'referece_logps/chosen': -326.6158447265625, 'logits/rejected': -0.9588196873664856, 'logits/chosen': -0.9133133888244629, 'epoch': 5.83}
+
+ 97%|█████████▋| 14212/14616 [37:59<1:11:54, 10.68s/it]
+
+
+ 97%|█████████▋| 14214/14616 [38:20<1:11:41, 10.70s/it]
+{'loss': 0.4066, 'learning_rate': 9.749430523917996e-07, 'rewards/chosen': -0.6261317729949951, 'rewards/rejected': -1.2651654481887817, 'rewards/accuracies': 0.875, 'rewards/margins': 0.6390334963798523, 'policy_logps/rejected': -335.3396911621094, 'policy_logps/chosen': -315.0975341796875, 'referece_logps/rejected': -322.68804931640625, 'referece_logps/chosen': -308.83624267578125, 'logits/rejected': -1.0498220920562744, 'logits/chosen': -0.8800286054611206, 'epoch': 5.83}
+
+ 97%|█████████▋| 14215/14616 [38:31<1:11:25, 10.69s/it]
+
+
+ 97%|█████████▋| 14217/14616 [38:52<1:11:01, 10.68s/it]
+{'loss': 0.4738, 'learning_rate': 9.886104783599088e-07, 'rewards/chosen': -0.21636506915092468, 'rewards/rejected': -1.4388271570205688, 'rewards/accuracies': 1.0, 'rewards/margins': 1.2224621772766113, 'policy_logps/rejected': -506.67608642578125, 'policy_logps/chosen': -373.6111755371094, 'referece_logps/rejected': -492.2878723144531, 'referece_logps/chosen': -371.44757080078125, 'logits/rejected': 1.4468706846237183, 'logits/chosen': 1.5884124040603638, 'epoch': 5.84}
+
+
+ 97%|█████████▋| 14219/14616 [39:14<1:10:49, 10.70s/it]
+
+ 97%|█████████▋| 14220/14616 [39:24<1:10:42, 10.71s/it]
+{'loss': 0.4884, 'learning_rate': 1.0022779043280182e-06, 'rewards/chosen': -0.460784912109375, 'rewards/rejected': -1.7252296209335327, 'rewards/accuracies': 0.875, 'rewards/margins': 1.2644447088241577, 'policy_logps/rejected': -521.211669921875, 'policy_logps/chosen': -518.7147827148438, 'referece_logps/rejected': -503.9594421386719, 'referece_logps/chosen': -514.1069946289062, 'logits/rejected': -0.13660193979740143, 'logits/chosen': -0.033916324377059937, 'epoch': 5.84}
+
+
+ 97%|█████████▋| 14222/14616 [39:46<1:10:12, 10.69s/it]
+
+ 97%|█████████▋| 14223/14616 [39:57<1:10:09, 10.71s/it]
+{'loss': 0.4875, 'learning_rate': 1.0159453302961276e-06, 'rewards/chosen': -0.36669161915779114, 'rewards/rejected': -1.5911390781402588, 'rewards/accuracies': 0.875, 'rewards/margins': 1.22444748878479, 'policy_logps/rejected': -350.6990661621094, 'policy_logps/chosen': -420.7989196777344, 'referece_logps/rejected': -334.78765869140625, 'referece_logps/chosen': -417.1319580078125, 'logits/rejected': -0.24642935395240784, 'logits/chosen': -0.43992337584495544, 'epoch': 5.84}
+
+
+ 97%|█████████▋| 14225/14616 [40:18<1:09:46, 10.71s/it]
+
+ 97%|█████████▋| 14226/14616 [40:29<1:09:29, 10.69s/it]
+{'loss': 0.5026, 'learning_rate': 1.029612756264237e-06, 'rewards/chosen': -0.6664808392524719, 'rewards/rejected': -1.2210043668746948, 'rewards/accuracies': 0.5, 'rewards/margins': 0.5545236468315125, 'policy_logps/rejected': -402.9559326171875, 'policy_logps/chosen': -435.76373291015625, 'referece_logps/rejected': -390.7458801269531, 'referece_logps/chosen': -429.09893798828125, 'logits/rejected': -0.6820111870765686, 'logits/chosen': -0.5492420792579651, 'epoch': 5.84}
+
+
+ 97%|█████████▋| 14228/14616 [40:50<1:09:00, 10.67s/it]
+
+ 97%|█████████▋| 14229/14616 [41:01<1:08:49, 10.67s/it]
+{'loss': 0.4938, 'learning_rate': 1.0432801822323464e-06, 'rewards/chosen': -0.6178818345069885, 'rewards/rejected': -2.588526487350464, 'rewards/accuracies': 1.0, 'rewards/margins': 1.9706447124481201, 'policy_logps/rejected': -410.30023193359375, 'policy_logps/chosen': -511.6686096191406, 'referece_logps/rejected': -384.41497802734375, 'referece_logps/chosen': -505.4897766113281, 'logits/rejected': 0.19842344522476196, 'logits/chosen': 0.2872050702571869, 'epoch': 5.84}
+
+
+ 97%|█████████▋| 14231/14616 [41:22<1:08:41, 10.70s/it]
+
+ 97%|█████████▋| 14232/14616 [41:33<1:08:31, 10.71s/it]
+{'loss': 0.4037, 'learning_rate': 1.0569476082004555e-06, 'rewards/chosen': -0.5232385396957397, 'rewards/rejected': -2.5621421337127686, 'rewards/accuracies': 1.0, 'rewards/margins': 2.0389037132263184, 'policy_logps/rejected': -541.6754150390625, 'policy_logps/chosen': -336.600830078125, 'referece_logps/rejected': -516.053955078125, 'referece_logps/chosen': -331.3684997558594, 'logits/rejected': -0.5294589996337891, 'logits/chosen': -0.3159044682979584, 'epoch': 5.84}
+
+
+ 97%|█████████▋| 14234/14616 [41:54<1:08:13, 10.72s/it]
+
+ 97%|█████████▋| 14235/14616 [42:05<1:08:00, 10.71s/it]
+{'loss': 0.4036, 'learning_rate': 1.070615034168565e-06, 'rewards/chosen': -0.5113773941993713, 'rewards/rejected': -1.487752914428711, 'rewards/accuracies': 1.0, 'rewards/margins': 0.9763755202293396, 'policy_logps/rejected': -387.2206115722656, 'policy_logps/chosen': -394.86785888671875, 'referece_logps/rejected': -372.34307861328125, 'referece_logps/chosen': -389.75408935546875, 'logits/rejected': -0.21841081976890564, 'logits/chosen': -0.15342414379119873, 'epoch': 5.84}
+
+
+ 97%|█████████▋| 14237/14616 [42:26<1:07:34, 10.70s/it]
+
+ 97%|█████████▋| 14238/14616 [42:37<1:07:24, 10.70s/it]
+{'loss': 0.455, 'learning_rate': 1.0842824601366743e-06, 'rewards/chosen': -0.5960256457328796, 'rewards/rejected': -2.016728401184082, 'rewards/accuracies': 1.0, 'rewards/margins': 1.4207029342651367, 'policy_logps/rejected': -379.3905029296875, 'policy_logps/chosen': -400.48773193359375, 'referece_logps/rejected': -359.2232360839844, 'referece_logps/chosen': -394.5274658203125, 'logits/rejected': -0.5172175168991089, 'logits/chosen': -0.7331794500350952, 'epoch': 5.84}
+
+
+ 97%|█████████▋| 14240/14616 [42:58<1:07:05, 10.71s/it]
+{'loss': 0.5248, 'learning_rate': 1.093394077448747e-06, 'rewards/chosen': -0.9648765325546265, 'rewards/rejected': -2.294855833053589, 'rewards/accuracies': 0.875, 'rewards/margins': 1.3299793004989624, 'policy_logps/rejected': -482.25738525390625, 'policy_logps/chosen': -402.1903991699219, 'referece_logps/rejected': -459.30877685546875, 'referece_logps/chosen': -392.5416259765625, 'logits/rejected': -0.8178707361221313, 'logits/chosen': -0.6277895569801331, 'epoch': 5.85}
+
+
+ 97%|█████████▋| 14242/14616 [43:20<1:06:58, 10.74s/it]
+
+ 97%|█████████▋| 14243/14616 [43:31<1:06:36, 10.72s/it]
+{'loss': 0.5363, 'learning_rate': 1.1070615034168564e-06, 'rewards/chosen': -0.6813097596168518, 'rewards/rejected': -0.8700805902481079, 'rewards/accuracies': 0.5, 'rewards/margins': 0.18877075612545013, 'policy_logps/rejected': -360.5209655761719, 'policy_logps/chosen': -383.3835754394531, 'referece_logps/rejected': -351.8201904296875, 'referece_logps/chosen': -376.5704345703125, 'logits/rejected': -0.5851334929466248, 'logits/chosen': -0.5229112505912781, 'epoch': 5.85}
+
+
+ 97%|█████████▋| 14245/14616 [43:52<1:06:11, 10.70s/it]
+
+ 97%|█████████▋| 14246/14616 [44:03<1:06:04, 10.72s/it]
+{'loss': 0.3639, 'learning_rate': 1.1207289293849658e-06, 'rewards/chosen': -0.5899145603179932, 'rewards/rejected': -1.802902340888977, 'rewards/accuracies': 1.0, 'rewards/margins': 1.2129877805709839, 'policy_logps/rejected': -419.9925231933594, 'policy_logps/chosen': -419.6138916015625, 'referece_logps/rejected': -401.9635314941406, 'referece_logps/chosen': -413.7147521972656, 'logits/rejected': -0.6125856637954712, 'logits/chosen': -0.47586825489997864, 'epoch': 5.85}
+
+
+ 97%|█████████▋| 14248/14616 [44:24<1:05:23, 10.66s/it]
+
+ 97%|█████████▋| 14249/14616 [44:35<1:05:15, 10.67s/it]
+{'loss': 0.4785, 'learning_rate': 1.134396355353075e-06, 'rewards/chosen': -1.34262216091156, 'rewards/rejected': -1.1291524171829224, 'rewards/accuracies': 0.5, 'rewards/margins': -0.21346966922283173, 'policy_logps/rejected': -568.8087158203125, 'policy_logps/chosen': -522.5521240234375, 'referece_logps/rejected': -557.5171508789062, 'referece_logps/chosen': -509.1258850097656, 'logits/rejected': -0.48082995414733887, 'logits/chosen': -0.019148215651512146, 'epoch': 5.85}
+
+ 97%|█████████▋| 14250/14616 [44:45<1:05:06, 10.67s/it]
+
+
+ 98%|█████████▊| 14252/14616 [45:07<1:04:57, 10.71s/it]
+{'loss': 0.5023, 'learning_rate': 1.1480637813211844e-06, 'rewards/chosen': -0.7932953238487244, 'rewards/rejected': -1.493638515472412, 'rewards/accuracies': 0.875, 'rewards/margins': 0.700343132019043, 'policy_logps/rejected': -458.26153564453125, 'policy_logps/chosen': -465.20465087890625, 'referece_logps/rejected': -443.32513427734375, 'referece_logps/chosen': -457.271728515625, 'logits/rejected': -0.3253493010997772, 'logits/chosen': -0.3283403813838959, 'epoch': 5.85}
+
+
+ 98%|█████████▊| 14254/14616 [45:28<1:04:35, 10.71s/it]
+
+ 98%|█████████▊| 14255/14616 [45:39<1:04:24, 10.70s/it]
+{'loss': 0.417, 'learning_rate': 1.1617312072892938e-06, 'rewards/chosen': -0.4865124225616455, 'rewards/rejected': -1.5304704904556274, 'rewards/accuracies': 0.875, 'rewards/margins': 1.0439579486846924, 'policy_logps/rejected': -379.0746765136719, 'policy_logps/chosen': -466.4423828125, 'referece_logps/rejected': -363.7699890136719, 'referece_logps/chosen': -461.5772705078125, 'logits/rejected': -0.5618010759353638, 'logits/chosen': -0.5718748569488525, 'epoch': 5.85}
+
+
+ 98%|█████████▊| 14257/14616 [46:00<1:03:52, 10.68s/it]
+
+ 98%|█████████▊| 14258/14616 [46:11<1:03:51, 10.70s/it]
+{'loss': 0.5121, 'learning_rate': 1.1753986332574032e-06, 'rewards/chosen': -0.7656195163726807, 'rewards/rejected': -1.046074628829956, 'rewards/accuracies': 0.75, 'rewards/margins': 0.28045520186424255, 'policy_logps/rejected': -548.755859375, 'policy_logps/chosen': -397.48565673828125, 'referece_logps/rejected': -538.295166015625, 'referece_logps/chosen': -389.8294677734375, 'logits/rejected': -1.0670757293701172, 'logits/chosen': -0.8657381534576416, 'epoch': 5.85}
+
+
+ 98%|█████████▊| 14260/14616 [46:32<1:03:24, 10.69s/it]
+
+ 98%|█████████▊| 14261/14616 [46:43<1:03:15, 10.69s/it]
+{'loss': 0.543, 'learning_rate': 1.1890660592255123e-06, 'rewards/chosen': -0.5084308981895447, 'rewards/rejected': -1.8261739015579224, 'rewards/accuracies': 0.75, 'rewards/margins': 1.317742943763733, 'policy_logps/rejected': -465.5167541503906, 'policy_logps/chosen': -477.78594970703125, 'referece_logps/rejected': -447.2550048828125, 'referece_logps/chosen': -472.7016296386719, 'logits/rejected': -0.44629764556884766, 'logits/chosen': -0.6449201107025146, 'epoch': 5.85}
+
+
+ 98%|█████████▊| 14263/14616 [47:05<1:03:03, 10.72s/it]
+
+ 98%|█████████▊| 14264/14616 [47:15<1:02:46, 10.70s/it]
+{'loss': 0.4196, 'learning_rate': 1.2027334851936217e-06, 'rewards/chosen': -0.2543477714061737, 'rewards/rejected': -1.2966883182525635, 'rewards/accuracies': 1.0, 'rewards/margins': 1.042340636253357, 'policy_logps/rejected': -302.43499755859375, 'policy_logps/chosen': -420.6295471191406, 'referece_logps/rejected': -289.4681396484375, 'referece_logps/chosen': -418.0860595703125, 'logits/rejected': -0.3643472194671631, 'logits/chosen': -0.5473759174346924, 'epoch': 5.86}
+
+
+ 98%|█████████▊| 14266/14616 [47:37<1:02:22, 10.69s/it]
+
+ 98%|█████████▊| 14267/14616 [47:47<1:02:07, 10.68s/it]
+{'loss': 0.5858, 'learning_rate': 1.2164009111617311e-06, 'rewards/chosen': -0.2528223395347595, 'rewards/rejected': -0.6789573431015015, 'rewards/accuracies': 0.875, 'rewards/margins': 0.4261350631713867, 'policy_logps/rejected': -478.345458984375, 'policy_logps/chosen': -479.8924560546875, 'referece_logps/rejected': -471.55584716796875, 'referece_logps/chosen': -477.3642272949219, 'logits/rejected': -0.2987631559371948, 'logits/chosen': -0.39340439438819885, 'epoch': 5.86}
+
+
+ 98%|█████████▊| 14269/14616 [48:09<1:01:42, 10.67s/it]
+
+ 98%|█████████▊| 14270/14616 [48:19<1:01:30, 10.67s/it]
+{'loss': 0.5013, 'learning_rate': 1.2300683371298405e-06, 'rewards/chosen': -0.3916069269180298, 'rewards/rejected': -1.117943525314331, 'rewards/accuracies': 0.875, 'rewards/margins': 0.726336658000946, 'policy_logps/rejected': -281.07366943359375, 'policy_logps/chosen': -342.7414855957031, 'referece_logps/rejected': -269.8941955566406, 'referece_logps/chosen': -338.825439453125, 'logits/rejected': 0.1239689439535141, 'logits/chosen': 0.10798950493335724, 'epoch': 5.86}
+
+
+ 98%|█████████▊| 14272/14616 [48:41<1:01:07, 10.66s/it]
+
+ 98%|█████████▊| 14273/14616 [48:51<1:01:02, 10.68s/it]
+{'loss': 0.4998, 'learning_rate': 1.24373576309795e-06, 'rewards/chosen': -0.49090754985809326, 'rewards/rejected': -0.6988902688026428, 'rewards/accuracies': 0.75, 'rewards/margins': 0.20798276364803314, 'policy_logps/rejected': -457.90679931640625, 'policy_logps/chosen': -344.36004638671875, 'referece_logps/rejected': -450.9178466796875, 'referece_logps/chosen': -339.45098876953125, 'logits/rejected': -0.5119671821594238, 'logits/chosen': -0.3904564678668976, 'epoch': 5.86}
+
+
+ 98%|█████████▊| 14275/14616 [49:13<1:00:46, 10.69s/it]
+
+ 98%|█████████▊| 14276/14616 [49:23<1:00:33, 10.69s/it]
+{'loss': 0.4756, 'learning_rate': 1.2574031890660593e-06, 'rewards/chosen': -0.47407421469688416, 'rewards/rejected': -1.2735029458999634, 'rewards/accuracies': 0.875, 'rewards/margins': 0.7994287610054016, 'policy_logps/rejected': -404.8703918457031, 'policy_logps/chosen': -409.1577453613281, 'referece_logps/rejected': -392.1354064941406, 'referece_logps/chosen': -404.4169921875, 'logits/rejected': -0.30614173412323, 'logits/chosen': -0.14047035574913025, 'epoch': 5.86}
+
+
+ 98%|█████████▊| 14278/14616 [49:45<1:00:27, 10.73s/it]
+{'loss': 0.55, 'learning_rate': 1.2665148063781322e-06, 'rewards/chosen': -0.3499504327774048, 'rewards/rejected': -1.197083592414856, 'rewards/accuracies': 0.875, 'rewards/margins': 0.8471331000328064, 'policy_logps/rejected': -357.9808349609375, 'policy_logps/chosen': -396.7239990234375, 'referece_logps/rejected': -346.0099792480469, 'referece_logps/chosen': -393.2245178222656, 'logits/rejected': -0.2556661069393158, 'logits/chosen': -0.13478443026542664, 'epoch': 5.86}
+
+ 98%|█████████▊| 14279/14616 [49:56<1:00:10, 10.71s/it]
+
+
+ 98%|█████████▊| 14281/14616 [50:17<59:37, 10.68s/it]
+{'loss': 0.5091, 'learning_rate': 1.2801822323462414e-06, 'rewards/chosen': -0.41416051983833313, 'rewards/rejected': -1.4228969812393188, 'rewards/accuracies': 0.875, 'rewards/margins': 1.008736491203308, 'policy_logps/rejected': -498.60552978515625, 'policy_logps/chosen': -553.623046875, 'referece_logps/rejected': -484.37652587890625, 'referece_logps/chosen': -549.4814453125, 'logits/rejected': -0.8664223551750183, 'logits/chosen': -0.8780506253242493, 'epoch': 5.86}
+
+ 98%|█████████▊| 14282/14616 [50:28<59:32, 10.70s/it]
+
+
+ 98%|█████████▊| 14284/14616 [50:49<59:09, 10.69s/it]
+{'loss': 0.5454, 'learning_rate': 1.2938496583143508e-06, 'rewards/chosen': -0.6023716330528259, 'rewards/rejected': -0.7413427233695984, 'rewards/accuracies': 0.5, 'rewards/margins': 0.13897112011909485, 'policy_logps/rejected': -392.6485290527344, 'policy_logps/chosen': -350.99798583984375, 'referece_logps/rejected': -385.235107421875, 'referece_logps/chosen': -344.97430419921875, 'logits/rejected': -0.9759422540664673, 'logits/chosen': -0.8392214775085449, 'epoch': 5.86}
+
+ 98%|█████████▊| 14285/14616 [51:00<58:53, 10.67s/it]
+
+
+ 98%|█████████▊| 14287/14616 [51:21<58:34, 10.68s/it]
+{'loss': 0.4876, 'learning_rate': 1.3075170842824602e-06, 'rewards/chosen': -0.6025392413139343, 'rewards/rejected': -1.5048304796218872, 'rewards/accuracies': 0.75, 'rewards/margins': 0.9022911190986633, 'policy_logps/rejected': -297.49664306640625, 'policy_logps/chosen': -457.028564453125, 'referece_logps/rejected': -282.4483642578125, 'referece_logps/chosen': -451.003173828125, 'logits/rejected': -0.2968868017196655, 'logits/chosen': -0.35935068130493164, 'epoch': 5.86}
+
+ 98%|█████████▊| 14288/14616 [51:32<58:25, 10.69s/it]
+
+
+ 98%|█████████▊| 14290/14616 [51:53<57:58, 10.67s/it]
+{'loss': 0.4115, 'learning_rate': 1.3211845102505694e-06, 'rewards/chosen': -0.741193413734436, 'rewards/rejected': -1.4048285484313965, 'rewards/accuracies': 0.625, 'rewards/margins': 0.6636351943016052, 'policy_logps/rejected': -291.7507629394531, 'policy_logps/chosen': -295.6152038574219, 'referece_logps/rejected': -277.7024841308594, 'referece_logps/chosen': -288.2032775878906, 'logits/rejected': -1.3745198249816895, 'logits/chosen': -1.5197135210037231, 'epoch': 5.87}
+
+ 98%|█████████▊| 14291/14616 [52:04<57:53, 10.69s/it]
+
+
+ 98%|█████████▊| 14293/14616 [52:25<57:29, 10.68s/it]
+{'loss': 0.4738, 'learning_rate': 1.3348519362186788e-06, 'rewards/chosen': -0.7256256341934204, 'rewards/rejected': -1.9816148281097412, 'rewards/accuracies': 0.625, 'rewards/margins': 1.2559891939163208, 'policy_logps/rejected': -244.92018127441406, 'policy_logps/chosen': -353.01025390625, 'referece_logps/rejected': -225.1040496826172, 'referece_logps/chosen': -345.75396728515625, 'logits/rejected': -0.6793406009674072, 'logits/chosen': -0.5386420488357544, 'epoch': 5.87}
+
+ 98%|█████████▊| 14294/14616 [52:36<57:21, 10.69s/it]
+
+
+ 98%|█████████▊| 14296/14616 [52:57<57:12, 10.73s/it]
+{'loss': 0.4268, 'learning_rate': 1.3485193621867882e-06, 'rewards/chosen': -0.8017475008964539, 'rewards/rejected': -1.873249888420105, 'rewards/accuracies': 0.875, 'rewards/margins': 1.0715023279190063, 'policy_logps/rejected': -318.8735046386719, 'policy_logps/chosen': -371.954833984375, 'referece_logps/rejected': -300.1409912109375, 'referece_logps/chosen': -363.9373779296875, 'logits/rejected': -0.03448280692100525, 'logits/chosen': 0.01902991533279419, 'epoch': 5.87}
+
+
+ 98%|█████████▊| 14298/14616 [53:19<56:53, 10.73s/it]
+
+ 98%|█████████▊| 14299/14616 [53:30<56:47, 10.75s/it]
+{'loss': 0.5624, 'learning_rate': 1.3621867881548973e-06, 'rewards/chosen': -0.6604772806167603, 'rewards/rejected': -0.9888492822647095, 'rewards/accuracies': 0.625, 'rewards/margins': 0.32837197184562683, 'policy_logps/rejected': -451.4549255371094, 'policy_logps/chosen': -308.8758544921875, 'referece_logps/rejected': -441.56646728515625, 'referece_logps/chosen': -302.27105712890625, 'logits/rejected': -0.8179441690444946, 'logits/chosen': -0.7187386155128479, 'epoch': 5.87}
+
+
+ 98%|█████████▊| 14301/14616 [53:51<56:35, 10.78s/it]
+{'loss': 0.5108, 'learning_rate': 1.3712984054669703e-06, 'rewards/chosen': -0.7459813356399536, 'rewards/rejected': -0.7271854281425476, 'rewards/accuracies': 0.5, 'rewards/margins': -0.018795952200889587, 'policy_logps/rejected': -361.60870361328125, 'policy_logps/chosen': -321.40753173828125, 'referece_logps/rejected': -354.33685302734375, 'referece_logps/chosen': -313.9477233886719, 'logits/rejected': -0.005458846688270569, 'logits/chosen': -0.019353941082954407, 'epoch': 5.87}
+
+ 98%|█████████▊| 14302/14616 [54:02<56:16, 10.75s/it]
+
+
+ 98%|█████████▊| 14304/14616 [54:23<55:36, 10.69s/it]
+{'loss': 0.4908, 'learning_rate': 1.3849658314350796e-06, 'rewards/chosen': -0.6748520135879517, 'rewards/rejected': -0.8288782238960266, 'rewards/accuracies': 0.5, 'rewards/margins': 0.15402626991271973, 'policy_logps/rejected': -486.1471862792969, 'policy_logps/chosen': -535.7115478515625, 'referece_logps/rejected': -477.8584289550781, 'referece_logps/chosen': -528.9630126953125, 'logits/rejected': -0.5250475406646729, 'logits/chosen': -0.5702613592147827, 'epoch': 5.87}
+
+
+ 98%|█████████▊| 14306/14616 [54:45<55:26, 10.73s/it]
+
+ 98%|█████████▊| 14307/14616 [54:55<55:19, 10.74s/it]
+{'loss': 0.4655, 'learning_rate': 1.398633257403189e-06, 'rewards/chosen': -0.4603677988052368, 'rewards/rejected': -1.3107246160507202, 'rewards/accuracies': 0.625, 'rewards/margins': 0.8503568172454834, 'policy_logps/rejected': -426.6332092285156, 'policy_logps/chosen': -336.16400146484375, 'referece_logps/rejected': -413.52593994140625, 'referece_logps/chosen': -331.56036376953125, 'logits/rejected': 0.06148722022771835, 'logits/chosen': 0.07645364105701447, 'epoch': 5.87}
+
+
+ 98%|█████████▊| 14309/14616 [55:17<54:45, 10.70s/it]
+
+ 98%|█████████▊| 14310/14616 [55:27<54:33, 10.70s/it]
+{'loss': 0.533, 'learning_rate': 1.4123006833712982e-06, 'rewards/chosen': -0.4576408863067627, 'rewards/rejected': -0.7644767761230469, 'rewards/accuracies': 0.75, 'rewards/margins': 0.30683591961860657, 'policy_logps/rejected': -372.173095703125, 'policy_logps/chosen': -423.71435546875, 'referece_logps/rejected': -364.5283203125, 'referece_logps/chosen': -419.1379089355469, 'logits/rejected': -0.7168865203857422, 'logits/chosen': -0.6591185927391052, 'epoch': 5.87}
+
+ 98%|█████████▊| 14311/14616 [55:38<54:19, 10.69s/it]
+
+
+ 98%|█████████▊| 14313/14616 [55:59<53:54, 10.67s/it]
+{'loss': 0.5569, 'learning_rate': 1.4259681093394076e-06, 'rewards/chosen': -0.5035728812217712, 'rewards/rejected': -1.2787601947784424, 'rewards/accuracies': 0.75, 'rewards/margins': 0.7751873135566711, 'policy_logps/rejected': -432.958740234375, 'policy_logps/chosen': -512.897705078125, 'referece_logps/rejected': -420.1711730957031, 'referece_logps/chosen': -507.86199951171875, 'logits/rejected': -0.4601174592971802, 'logits/chosen': -0.6450777053833008, 'epoch': 5.88}
+
+ 98%|█████████▊| 14314/14616 [56:10<53:43, 10.67s/it]
+
+
+ 98%|█████████▊| 14316/14616 [56:31<53:12, 10.64s/it]
+{'loss': 0.4953, 'learning_rate': 1.439635535307517e-06, 'rewards/chosen': -0.6706737875938416, 'rewards/rejected': -1.5733001232147217, 'rewards/accuracies': 0.625, 'rewards/margins': 0.9026263952255249, 'policy_logps/rejected': -372.1796569824219, 'policy_logps/chosen': -436.14892578125, 'referece_logps/rejected': -356.4466857910156, 'referece_logps/chosen': -429.4421691894531, 'logits/rejected': -0.3633038401603699, 'logits/chosen': -0.2948482036590576, 'epoch': 5.88}
+
+ 98%|█████████▊| 14317/14616 [56:42<53:01, 10.64s/it]
+
+
+ 98%|█████████▊| 14319/14616 [57:03<52:43, 10.65s/it]
+{'loss': 0.4435, 'learning_rate': 1.4533029612756264e-06, 'rewards/chosen': -0.48095303773880005, 'rewards/rejected': -2.243522882461548, 'rewards/accuracies': 0.875, 'rewards/margins': 1.762569546699524, 'policy_logps/rejected': -395.1019287109375, 'policy_logps/chosen': -457.4246826171875, 'referece_logps/rejected': -372.6667175292969, 'referece_logps/chosen': -452.6151123046875, 'logits/rejected': -0.6302496790885925, 'logits/chosen': -0.772175669670105, 'epoch': 5.88}
+
+ 98%|█████████▊| 14320/14616 [57:14<52:38, 10.67s/it]
+
+
+ 98%|█████████▊| 14322/14616 [57:36<52:28, 10.71s/it]
+{'loss': 0.4465, 'learning_rate': 1.4669703872437358e-06, 'rewards/chosen': -0.22760258615016937, 'rewards/rejected': -1.3801252841949463, 'rewards/accuracies': 1.0, 'rewards/margins': 1.1525226831436157, 'policy_logps/rejected': -367.4936218261719, 'policy_logps/chosen': -375.5035400390625, 'referece_logps/rejected': -353.6923522949219, 'referece_logps/chosen': -373.2275695800781, 'logits/rejected': -0.6194426417350769, 'logits/chosen': -0.5254113674163818, 'epoch': 5.88}
+
+ 98%|█████████▊| 14323/14616 [57:46<52:05, 10.67s/it]
+
+
+ 98%|█████████▊| 14325/14616 [58:07<51:49, 10.68s/it]
+{'loss': 0.382, 'learning_rate': 1.4806378132118452e-06, 'rewards/chosen': -0.4483013153076172, 'rewards/rejected': -1.3011178970336914, 'rewards/accuracies': 0.875, 'rewards/margins': 0.8528165221214294, 'policy_logps/rejected': -438.8017883300781, 'policy_logps/chosen': -423.73272705078125, 'referece_logps/rejected': -425.79058837890625, 'referece_logps/chosen': -419.24969482421875, 'logits/rejected': -0.09885343164205551, 'logits/chosen': -0.11323615908622742, 'epoch': 5.88}
+
+ 98%|█████████▊| 14326/14616 [58:18<51:47, 10.71s/it]
+
+
+ 98%|█████████▊| 14328/14616 [58:40<51:17, 10.68s/it]
+{'loss': 0.5136, 'learning_rate': 1.4943052391799544e-06, 'rewards/chosen': -0.4387926459312439, 'rewards/rejected': -1.0490919351577759, 'rewards/accuracies': 0.625, 'rewards/margins': 0.610299289226532, 'policy_logps/rejected': -356.4054260253906, 'policy_logps/chosen': -404.7635192871094, 'referece_logps/rejected': -345.91455078125, 'referece_logps/chosen': -400.3756103515625, 'logits/rejected': -0.209919273853302, 'logits/chosen': -0.24600006639957428, 'epoch': 5.88}
+
+
+ 98%|█████████▊| 14330/14616 [59:01<51:02, 10.71s/it]
+
+ 98%|█████████▊| 14331/14616 [59:12<50:41, 10.67s/it]
+{'loss': 0.482, 'learning_rate': 1.5079726651480637e-06, 'rewards/chosen': -0.49145448207855225, 'rewards/rejected': -1.673884630203247, 'rewards/accuracies': 0.875, 'rewards/margins': 1.1824301481246948, 'policy_logps/rejected': -401.61065673828125, 'policy_logps/chosen': -449.7829284667969, 'referece_logps/rejected': -384.871826171875, 'referece_logps/chosen': -444.86834716796875, 'logits/rejected': -0.9747677445411682, 'logits/chosen': -0.9441289305686951, 'epoch': 5.88}
+
+ 98%|█████████▊| 14332/14616 [59:22<50:35, 10.69s/it]
+
+
+ 98%|█████████▊| 14334/14616 [59:44<50:16, 10.70s/it]
+{'loss': 0.4313, 'learning_rate': 1.5216400911161731e-06, 'rewards/chosen': -0.19613529741764069, 'rewards/rejected': -1.5087411403656006, 'rewards/accuracies': 0.875, 'rewards/margins': 1.3126057386398315, 'policy_logps/rejected': -341.40301513671875, 'policy_logps/chosen': -329.06231689453125, 'referece_logps/rejected': -326.31561279296875, 'referece_logps/chosen': -327.1009521484375, 'logits/rejected': -0.9714211225509644, 'logits/chosen': -0.6925845146179199, 'epoch': 5.88}
+
+
+ 98%|█████████▊| 14336/14616 [1:00:05<50:00, 10.72s/it]
+
+ 98%|█████████▊| 14337/14616 [1:00:16<49:47, 10.71s/it]
+{'loss': 0.5385, 'learning_rate': 1.5353075170842823e-06, 'rewards/chosen': -0.5441215634346008, 'rewards/rejected': -1.0779342651367188, 'rewards/accuracies': 0.75, 'rewards/margins': 0.5338127017021179, 'policy_logps/rejected': -446.003173828125, 'policy_logps/chosen': -454.3737487792969, 'referece_logps/rejected': -435.223876953125, 'referece_logps/chosen': -448.9324951171875, 'logits/rejected': 0.32786479592323303, 'logits/chosen': 0.21215809881687164, 'epoch': 5.89}
+
+
+ 98%|█████████▊| 14339/14616 [1:00:37<49:31, 10.73s/it]
+
+ 98%|█████████▊| 14340/14616 [1:00:48<49:18, 10.72s/it]
+{'loss': 0.5, 'learning_rate': 1.5489749430523917e-06, 'rewards/chosen': -0.9372376203536987, 'rewards/rejected': -0.91644686460495, 'rewards/accuracies': 0.625, 'rewards/margins': -0.02079072594642639, 'policy_logps/rejected': -384.156005859375, 'policy_logps/chosen': -366.69586181640625, 'referece_logps/rejected': -374.99151611328125, 'referece_logps/chosen': -357.323486328125, 'logits/rejected': -0.5846468806266785, 'logits/chosen': -0.5479932427406311, 'epoch': 5.89}
+
+ 98%|█████████▊| 14341/14616 [1:00:59<49:21, 10.77s/it]
+
+ 98%|█████████▊| 14342/14616 [1:01:10<49:00, 10.73s/it]
+
+ 98%|█████████▊| 14343/14616 [1:01:20<48:53, 10.75s/it]
+
+
+ 98%|█████████▊| 14345/14616 [1:01:42<48:28, 10.73s/it]
+{'loss': 0.5159, 'learning_rate': 1.571753986332574e-06, 'rewards/chosen': -0.6532636880874634, 'rewards/rejected': -1.280462622642517, 'rewards/accuracies': 0.625, 'rewards/margins': 0.6271990537643433, 'policy_logps/rejected': -376.4709777832031, 'policy_logps/chosen': -357.2684326171875, 'referece_logps/rejected': -363.66632080078125, 'referece_logps/chosen': -350.73577880859375, 'logits/rejected': -0.42011019587516785, 'logits/chosen': -0.5028207898139954, 'epoch': 5.89}
+
+ 98%|█████████▊| 14346/14616 [1:01:53<48:30, 10.78s/it]
+
+
+ 98%|█████████▊| 14348/14616 [1:02:14<47:51, 10.72s/it]
+{'loss': 0.5041, 'learning_rate': 1.5854214123006832e-06, 'rewards/chosen': -0.52496737241745, 'rewards/rejected': -1.0253486633300781, 'rewards/accuracies': 0.875, 'rewards/margins': 0.5003812909126282, 'policy_logps/rejected': -474.2220153808594, 'policy_logps/chosen': -527.1412963867188, 'referece_logps/rejected': -463.968505859375, 'referece_logps/chosen': -521.8916015625, 'logits/rejected': -0.6053840517997742, 'logits/chosen': -0.5067532062530518, 'epoch': 5.89}
+
+ 98%|█████████▊| 14349/14616 [1:02:25<47:43, 10.72s/it]
+
+
+ 98%|█████████▊| 14351/14616 [1:02:46<47:20, 10.72s/it]
+{'loss': 0.5408, 'learning_rate': 1.5990888382687926e-06, 'rewards/chosen': -0.606167197227478, 'rewards/rejected': -1.1669727563858032, 'rewards/accuracies': 0.75, 'rewards/margins': 0.5608055591583252, 'policy_logps/rejected': -320.00634765625, 'policy_logps/chosen': -349.0682067871094, 'referece_logps/rejected': -308.3366394042969, 'referece_logps/chosen': -343.0065002441406, 'logits/rejected': -0.9613903760910034, 'logits/chosen': -1.1521086692810059, 'epoch': 5.89}
+
+ 98%|█████████▊| 14352/14616 [1:02:57<47:06, 10.71s/it]
+
+
+ 98%|█████████▊| 14354/14616 [1:03:18<46:42, 10.70s/it]
+{'loss': 0.4343, 'learning_rate': 1.612756264236902e-06, 'rewards/chosen': -0.5457145571708679, 'rewards/rejected': -1.0702478885650635, 'rewards/accuracies': 0.625, 'rewards/margins': 0.5245332717895508, 'policy_logps/rejected': -401.6229248046875, 'policy_logps/chosen': -425.1377868652344, 'referece_logps/rejected': -390.9204406738281, 'referece_logps/chosen': -419.6806335449219, 'logits/rejected': -0.5313137769699097, 'logits/chosen': -0.6986090540885925, 'epoch': 5.89}
+
+ 98%|█████████▊| 14355/14616 [1:03:29<46:32, 10.70s/it]
+
+ 98%|█████████▊| 14356/14616 [1:03:40<46:29, 10.73s/it]
+
+ 98%|█████████▊| 14357/14616 [1:03:50<46:15, 10.72s/it]
+
+ 98%|█████████▊| 14358/14616 [1:04:01<46:04, 10.71s/it]
+
+ 98%|█████████▊| 14359/14616 [1:04:12<45:51, 10.71s/it]
+
+ 98%|█████████▊| 14360/14616 [1:04:23<45:43, 10.72s/it]
+
+
+ 98%|█████████▊| 14362/14616 [1:04:44<45:21, 10.71s/it]
+{'loss': 0.4821, 'learning_rate': 1.6492027334851935e-06, 'rewards/chosen': -0.6235552430152893, 'rewards/rejected': -1.146558403968811, 'rewards/accuracies': 0.75, 'rewards/margins': 0.5230032205581665, 'policy_logps/rejected': -452.1119689941406, 'policy_logps/chosen': -388.3016357421875, 'referece_logps/rejected': -440.6463928222656, 'referece_logps/chosen': -382.0660705566406, 'logits/rejected': -1.2051137685775757, 'logits/chosen': -1.167586326599121, 'epoch': 5.9}
+
+ 98%|█████████▊| 14363/14616 [1:04:55<45:13, 10.72s/it]
+
+
+ 98%|█████████▊| 14365/14616 [1:05:16<44:48, 10.71s/it]
+{'loss': 0.5387, 'learning_rate': 1.6628701594533029e-06, 'rewards/chosen': -0.4570842981338501, 'rewards/rejected': -0.6627715826034546, 'rewards/accuracies': 0.75, 'rewards/margins': 0.20568722486495972, 'policy_logps/rejected': -340.17401123046875, 'policy_logps/chosen': -372.5065002441406, 'referece_logps/rejected': -333.5462951660156, 'referece_logps/chosen': -367.9356689453125, 'logits/rejected': -0.7787442207336426, 'logits/chosen': -0.7596012949943542, 'epoch': 5.9}
+
+ 98%|█████████▊| 14366/14616 [1:05:27<44:42, 10.73s/it]
+
+
+ 98%|█████████▊| 14368/14616 [1:05:48<44:18, 10.72s/it]
+{'loss': 0.4906, 'learning_rate': 1.6765375854214123e-06, 'rewards/chosen': -0.2247672975063324, 'rewards/rejected': -1.0192705392837524, 'rewards/accuracies': 1.0, 'rewards/margins': 0.7945032119750977, 'policy_logps/rejected': -357.4085693359375, 'policy_logps/chosen': -357.3479919433594, 'referece_logps/rejected': -347.21588134765625, 'referece_logps/chosen': -355.100341796875, 'logits/rejected': -0.19865183532238007, 'logits/chosen': -0.20897336304187775, 'epoch': 5.9}
+
+ 98%|█████████▊| 14369/14616 [1:05:59<44:13, 10.74s/it]
+
+ 98%|█████████▊| 14370/14616 [1:06:10<44:06, 10.76s/it]
+
+ 98%|█████████▊| 14371/14616 [1:06:21<43:48, 10.73s/it]
+
+
+ 98%|█████████▊| 14373/14616 [1:06:42<43:25, 10.72s/it]
+{'loss': 0.448, 'learning_rate': 1.6993166287015946e-06, 'rewards/chosen': -0.5195724964141846, 'rewards/rejected': -1.248481273651123, 'rewards/accuracies': 0.875, 'rewards/margins': 0.728908896446228, 'policy_logps/rejected': -538.5565795898438, 'policy_logps/chosen': -563.9093627929688, 'referece_logps/rejected': -526.0717163085938, 'referece_logps/chosen': -558.713623046875, 'logits/rejected': 0.18264079093933105, 'logits/chosen': 0.2253563106060028, 'epoch': 5.9}
+
+ 98%|█████████▊| 14374/14616 [1:06:53<43:15, 10.72s/it]
+
+ 98%|█████████▊| 14375/14616 [1:07:04<43:06, 10.73s/it]
+
+ 98%|█████████▊| 14376/14616 [1:07:14<42:53, 10.72s/it]
+
+ 98%|█████████▊| 14377/14616 [1:07:25<42:34, 10.69s/it]
+
+ 98%|█████████▊| 14378/14616 [1:07:36<42:26, 10.70s/it]
+
+ 98%|█████████▊| 14379/14616 [1:07:46<42:17, 10.71s/it]
+
+ 98%|█████████▊| 14380/14616 [1:07:57<42:09, 10.72s/it]
+
+ 98%|█████████▊| 14381/14616 [1:08:08<41:51, 10.69s/it]
+
+ 98%|█████████▊| 14382/14616 [1:08:18<41:33, 10.66s/it]
+
+ 98%|█████████▊| 14383/14616 [1:08:29<41:25, 10.67s/it]
+
+ 98%|█████████▊| 14384/14616 [1:08:40<41:21, 10.70s/it]
+
+ 98%|█████████▊| 14385/14616 [1:08:50<41:07, 10.68s/it]
+
+ 98%|█████████▊| 14386/14616 [1:09:01<41:04, 10.71s/it]
+
+ 98%|█████████▊| 14387/14616 [1:09:12<40:55, 10.72s/it]
+
+ 98%|█████████▊| 14388/14616 [1:09:23<40:45, 10.73s/it]
+
+ 98%|█████████▊| 14389/14616 [1:09:33<40:28, 10.70s/it]
+
+ 98%|█████████▊| 14390/14616 [1:09:44<40:20, 10.71s/it]
+
+ 98%|█████████▊| 14391/14616 [1:09:55<40:12, 10.72s/it]
+
+ 98%|█████████▊| 14392/14616 [1:10:05<40:00, 10.72s/it]
+
+ 98%|█████████▊| 14393/14616 [1:10:16<39:50, 10.72s/it]
+
+ 98%|█████████▊| 14394/14616 [1:10:27<39:41, 10.73s/it]
+
+
+ 98%|█████████▊| 14396/14616 [1:10:48<39:15, 10.71s/it]
+{'loss': 0.4456, 'learning_rate': 1.8041002277904326e-06, 'rewards/chosen': -0.436985582113266, 'rewards/rejected': -1.2335774898529053, 'rewards/accuracies': 0.75, 'rewards/margins': 0.7965919971466064, 'policy_logps/rejected': -347.1661071777344, 'policy_logps/chosen': -291.7738342285156, 'referece_logps/rejected': -334.830322265625, 'referece_logps/chosen': -287.40399169921875, 'logits/rejected': -0.4072311222553253, 'logits/chosen': -0.3567723035812378, 'epoch': 5.91}
+
+ 99%|█████████▊| 14397/14616 [1:10:59<39:10, 10.73s/it]
+
+ 99%|█████████▊| 14398/14616 [1:11:10<38:55, 10.71s/it]
+
+ 99%|█████████▊| 14399/14616 [1:11:20<38:42, 10.70s/it]
+
+ 99%|█████████▊| 14400/14616 [1:11:31<38:24, 10.67s/it]
+
+ 99%|█████████▊| 14401/14616 [1:11:42<38:16, 10.68s/it]
+
+ 99%|█████████▊| 14402/14616 [1:11:53<38:13, 10.72s/it]
+
+ 99%|█████████▊| 14403/14616 [1:12:03<38:01, 10.71s/it]
+
+ 99%|█████████▊| 14404/14616 [1:12:14<37:52, 10.72s/it]
+
+ 99%|█████████▊| 14405/14616 [1:12:25<37:43, 10.73s/it]
+
+ 99%|█████████▊| 14406/14616 [1:12:35<37:31, 10.72s/it]
+
+ 99%|█████████▊| 14407/14616 [1:12:46<37:18, 10.71s/it]
+
+ 99%|█████████▊| 14408/14616 [1:12:57<37:05, 10.70s/it]
+
+ 99%|█████████▊| 14409/14616 [1:13:08<36:55, 10.70s/it]
+
+ 99%|█████████▊| 14410/14616 [1:13:18<36:39, 10.67s/it]
+
+ 99%|█████████▊| 14411/14616 [1:13:29<36:30, 10.68s/it]
+
+ 99%|█████████▊| 14412/14616 [1:13:40<36:26, 10.72s/it]
+
+ 99%|█████████▊| 14413/14616 [1:13:50<36:14, 10.71s/it]
+
+ 99%|█████████▊| 14414/14616 [1:14:01<36:12, 10.75s/it]
+
+ 99%|█████████▊| 14415/14616 [1:14:12<36:05, 10.77s/it]
+
+ 99%|█████████▊| 14416/14616 [1:14:23<35:50, 10.75s/it]
+
+ 99%|█████████▊| 14417/14616 [1:14:33<35:39, 10.75s/it]
+
+ 99%|█████████▊| 14418/14616 [1:14:44<35:27, 10.74s/it]
+
+ 99%|█████████▊| 14419/14616 [1:14:55<35:15, 10.74s/it]
+
+ 99%|█████████▊| 14420/14616 [1:15:06<35:03, 10.73s/it]
+
+ 99%|█████████▊| 14421/14616 [1:15:16<34:51, 10.72s/it]
+
+ 99%|█████████▊| 14422/14616 [1:15:27<34:35, 10.70s/it]
+
+ 99%|█████████▊| 14423/14616 [1:15:38<34:26, 10.71s/it]
+
+ 99%|█████████▊| 14424/14616 [1:15:48<34:19, 10.73s/it]
+
+ 99%|█████████▊| 14425/14616 [1:15:59<33:56, 10.66s/it]
+
+ 99%|█████████▊| 14426/14616 [1:16:10<33:48, 10.68s/it]
+
+ 99%|█████████▊| 14427/14616 [1:16:20<33:40, 10.69s/it]
+
+ 99%|█████████▊| 14428/14616 [1:16:31<33:33, 10.71s/it]
+
+ 99%|█████████▊| 14429/14616 [1:16:42<33:23, 10.71s/it]
+
+ 99%|█████████▊| 14430/14616 [1:16:53<33:15, 10.73s/it]
+
+ 99%|█████████▊| 14431/14616 [1:17:03<33:01, 10.71s/it]
+
+ 99%|█████████▊| 14432/14616 [1:17:14<32:50, 10.71s/it]
+
+ 99%|█████████▊| 14433/14616 [1:17:25<32:40, 10.71s/it]
+
+ 99%|█████████▉| 14434/14616 [1:17:35<32:25, 10.69s/it]
+
+ 99%|█████████▉| 14435/14616 [1:17:46<32:18, 10.71s/it]
+
+ 99%|█████████▉| 14436/14616 [1:17:57<32:15, 10.75s/it]
+
+ 99%|█████████▉| 14437/14616 [1:18:08<31:57, 10.71s/it]
+
+ 99%|█████████▉| 14438/14616 [1:18:18<31:46, 10.71s/it]
+
+ 99%|█████████▉| 14439/14616 [1:18:29<31:34, 10.70s/it]
+
+ 99%|█████████▉| 14440/14616 [1:18:40<31:17, 10.67s/it]
+
+ 99%|█████████▉| 14441/14616 [1:18:50<31:12, 10.70s/it]
+
+ 99%|█████████▉| 14442/14616 [1:19:01<30:58, 10.68s/it]
+
+ 99%|█████████▉| 14443/14616 [1:19:12<30:53, 10.71s/it]
+
+ 99%|█████████▉| 14444/14616 [1:19:22<30:38, 10.69s/it]
+
+ 99%|█████████▉| 14445/14616 [1:19:33<30:25, 10.68s/it]
+
+ 99%|█████████▉| 14446/14616 [1:19:44<30:16, 10.68s/it]
+
+ 99%|█████████▉| 14447/14616 [1:19:54<30:03, 10.67s/it]
+
+ 99%|█████████▉| 14448/14616 [1:20:05<29:57, 10.70s/it]
+
+ 99%|█████████▉| 14449/14616 [1:20:16<29:49, 10.71s/it]
+
+ 99%|█████████▉| 14450/14616 [1:20:27<29:35, 10.70s/it]
+
+ 99%|█████████▉| 14451/14616 [1:20:37<29:29, 10.72s/it]
+
+ 99%|█████████▉| 14452/14616 [1:20:48<29:16, 10.71s/it]
+
+ 99%|█████████▉| 14453/14616 [1:20:59<28:59, 10.67s/it]
+
+ 99%|█████████▉| 14454/14616 [1:21:09<28:53, 10.70s/it]
+
+ 99%|█████████▉| 14455/14616 [1:21:20<28:41, 10.70s/it]
+
+ 99%|█████████▉| 14456/14616 [1:21:31<28:24, 10.66s/it]
+
+ 99%|█████████▉| 14457/14616 [1:21:41<28:10, 10.63s/it]
+
+ 99%|█████████▉| 14458/14616 [1:21:52<28:01, 10.64s/it]
+
+ 99%|█████████▉| 14459/14616 [1:22:03<27:57, 10.68s/it]
+
+ 99%|█████████▉| 14460/14616 [1:22:13<27:45, 10.67s/it]
+
+ 99%|█████████▉| 14461/14616 [1:22:24<27:34, 10.67s/it]
+
+ 99%|█████████▉| 14462/14616 [1:22:35<27:25, 10.69s/it]
+
+ 99%|█████████▉| 14463/14616 [1:22:45<27:06, 10.63s/it]
+
+ 99%|█████████▉| 14464/14616 [1:22:56<27:06, 10.70s/it]
+
+ 99%|█████████▉| 14465/14616 [1:23:07<26:51, 10.67s/it]
+
+ 99%|█████████▉| 14466/14616 [1:23:17<26:40, 10.67s/it]
+
+ 99%|█████████▉| 14467/14616 [1:23:28<26:26, 10.65s/it]
+
+ 99%|█████████▉| 14468/14616 [1:23:39<26:19, 10.68s/it]
+
+ 99%|█████████▉| 14469/14616 [1:23:49<26:10, 10.68s/it]
+
+ 99%|█████████▉| 14470/14616 [1:24:00<26:02, 10.70s/it]
+
+ 99%|█████████▉| 14471/14616 [1:24:11<25:50, 10.69s/it]
+
+ 99%|█████████▉| 14472/14616 [1:24:21<25:37, 10.68s/it]
+
+ 99%|█████████▉| 14473/14616 [1:24:32<25:31, 10.71s/it]
+
+ 99%|█████████▉| 14474/14616 [1:24:43<25:17, 10.68s/it]
+
+ 99%|█████████▉| 14475/14616 [1:24:54<25:07, 10.69s/it]
+
+ 99%|█████████▉| 14476/14616 [1:25:04<24:58, 10.71s/it]
+
+ 99%|█████████▉| 14477/14616 [1:25:15<24:50, 10.72s/it]
+
+ 99%|█████████▉| 14478/14616 [1:25:26<24:39, 10.72s/it]
+
+ 99%|█████████▉| 14479/14616 [1:25:36<24:27, 10.71s/it]
+
+ 99%|█████████▉| 14480/14616 [1:25:47<24:16, 10.71s/it]
+
+ 99%|█████████▉| 14481/14616 [1:25:58<24:10, 10.74s/it]
+
+ 99%|█████████▉| 14482/14616 [1:26:09<23:58, 10.74s/it]
+
+ 99%|█████████▉| 14483/14616 [1:26:19<23:45, 10.71s/it]
+
+ 99%|█████████▉| 14484/14616 [1:26:30<23:35, 10.72s/it]
+
+ 99%|█████████▉| 14485/14616 [1:26:41<23:26, 10.73s/it]
+
+ 99%|█████████▉| 14486/14616 [1:26:52<23:15, 10.73s/it]
+
+ 99%|█████████▉| 14487/14616 [1:27:02<23:03, 10.72s/it]
+
+ 99%|█████████▉| 14488/14616 [1:27:13<22:58, 10.77s/it]
+
+ 99%|█████████▉| 14489/14616 [1:27:24<22:44, 10.74s/it]
+
+ 99%|█████████▉| 14490/14616 [1:27:35<22:31, 10.73s/it]
+
+ 99%|█████████▉| 14491/14616 [1:27:45<22:22, 10.74s/it]
+
+ 99%|█████████▉| 14492/14616 [1:27:56<22:11, 10.74s/it]
+
+ 99%|█████████▉| 14493/14616 [1:28:07<22:00, 10.74s/it]
+
+ 99%|█████████▉| 14494/14616 [1:28:18<21:48, 10.73s/it]
+
+ 99%|█████████▉| 14495/14616 [1:28:28<21:39, 10.74s/it]
+
+
+ 99%|█████████▉| 14497/14616 [1:28:50<21:19, 10.75s/it]
+
+ 99%|█████████▉| 14498/14616 [1:29:01<21:10, 10.77s/it]
+
+ 99%|█████████▉| 14499/14616 [1:29:11<20:56, 10.74s/it]
+
+ 99%|█████████▉| 14500/14616 [1:29:22<20:42, 10.71s/it]
+
+ 99%|█████████▉| 14501/14616 [1:29:33<20:31, 10.71s/it]
+
+ 99%|█████████▉| 14502/14616 [1:29:43<20:22, 10.72s/it]
+
+ 99%|█████████▉| 14503/14616 [1:29:54<20:12, 10.73s/it]
+
+ 99%|█████████▉| 14504/14616 [1:30:05<20:05, 10.76s/it]
+
+ 99%|█████████▉| 14505/14616 [1:30:16<19:54, 10.76s/it]
+
+ 99%|█████████▉| 14506/14616 [1:30:26<19:42, 10.75s/it]
+
+ 99%|█████████▉| 14507/14616 [1:30:37<19:30, 10.74s/it]
+
+ 99%|█████████▉| 14508/14616 [1:30:48<19:18, 10.73s/it]
+
+ 99%|█████████▉| 14509/14616 [1:30:58<19:03, 10.69s/it]
+
+ 99%|█████████▉| 14510/14616 [1:31:09<18:47, 10.64s/it]
+
+ 99%|█████████▉| 14511/14616 [1:31:20<18:41, 10.68s/it]
+
+ 99%|█████████▉| 14512/14616 [1:31:31<18:32, 10.70s/it]
+
+ 99%|█████████▉| 14513/14616 [1:31:41<18:23, 10.71s/it]
+{'loss': 0.4776, 'learning_rate': 1.9998655518661545e-06, 'rewards/chosen': -1.1756064891815186, 'rewards/rejected': -1.4847939014434814, 'rewards/accuracies': 0.625, 'rewards/margins': 0.30918729305267334, 'policy_logps/rejected': -495.0943298339844, 'policy_logps/chosen': -385.53021240234375, 'referece_logps/rejected': -480.2464294433594, 'referece_logps/chosen': -373.7742004394531, 'logits/rejected': -0.5714107751846313, 'logits/chosen': -0.3305721580982208, 'epoch': 5.96}
+
+
+ 99%|█████████▉| 14515/14616 [1:32:03<18:03, 10.72s/it]
+
+ 99%|█████████▉| 14516/14616 [1:32:13<17:49, 10.69s/it]
+{'loss': 0.4208, 'learning_rate': 1.9998544299656924e-06, 'rewards/chosen': -0.9723540544509888, 'rewards/rejected': -2.885331630706787, 'rewards/accuracies': 0.75, 'rewards/margins': 1.9129772186279297, 'policy_logps/rejected': -400.8658447265625, 'policy_logps/chosen': -458.7170715332031, 'referece_logps/rejected': -372.01251220703125, 'referece_logps/chosen': -448.99359130859375, 'logits/rejected': -0.8016417026519775, 'logits/chosen': -0.6663418412208557, 'epoch': 5.96}
+
+
+ 99%|█████████▉| 14518/14616 [1:32:35<17:29, 10.71s/it]
+
+ 99%|█████████▉| 14519/14616 [1:32:45<17:16, 10.69s/it]
+{'loss': 0.4694, 'learning_rate': 1.999842866179135e-06, 'rewards/chosen': -0.6069496273994446, 'rewards/rejected': -1.6516268253326416, 'rewards/accuracies': 0.875, 'rewards/margins': 1.0446772575378418, 'policy_logps/rejected': -397.8166809082031, 'policy_logps/chosen': -343.7002258300781, 'referece_logps/rejected': -381.3004150390625, 'referece_logps/chosen': -337.6307373046875, 'logits/rejected': -0.10060741752386093, 'logits/chosen': 0.13259240984916687, 'epoch': 5.96}
+
+
+ 99%|█████████▉| 14521/14616 [1:33:07<16:54, 10.68s/it]
+
+ 99%|█████████▉| 14522/14616 [1:33:17<16:44, 10.69s/it]
+{'loss': 0.4787, 'learning_rate': 1.999830860511594e-06, 'rewards/chosen': -1.1661564111709595, 'rewards/rejected': -1.3743101358413696, 'rewards/accuracies': 0.625, 'rewards/margins': 0.20815373957157135, 'policy_logps/rejected': -384.9443054199219, 'policy_logps/chosen': -506.4539794921875, 'referece_logps/rejected': -371.20123291015625, 'referece_logps/chosen': -494.79241943359375, 'logits/rejected': -0.7003759741783142, 'logits/chosen': -0.9067202210426331, 'epoch': 5.96}
+
+
+ 99%|█████████▉| 14524/14616 [1:33:39<16:21, 10.66s/it]
+
+ 99%|█████████▉| 14525/14616 [1:33:49<16:09, 10.66s/it]
+{'loss': 0.4748, 'learning_rate': 1.9998184129683744e-06, 'rewards/chosen': -0.810185432434082, 'rewards/rejected': -1.1288434267044067, 'rewards/accuracies': 0.5, 'rewards/margins': 0.3186579942703247, 'policy_logps/rejected': -386.0507507324219, 'policy_logps/chosen': -364.5138244628906, 'referece_logps/rejected': -374.76226806640625, 'referece_logps/chosen': -356.4120178222656, 'logits/rejected': 0.1129995733499527, 'logits/chosen': 0.07718648761510849, 'epoch': 5.96}
+
+
+ 99%|█████████▉| 14527/14616 [1:34:11<15:51, 10.69s/it]
+
+ 99%|█████████▉| 14528/14616 [1:34:21<15:40, 10.69s/it]
+{'loss': 0.4606, 'learning_rate': 1.9998055235549787e-06, 'rewards/chosen': -0.7709029912948608, 'rewards/rejected': -1.0757465362548828, 'rewards/accuracies': 0.5, 'rewards/margins': 0.3048435151576996, 'policy_logps/rejected': -454.156982421875, 'policy_logps/chosen': -543.018310546875, 'referece_logps/rejected': -443.3995056152344, 'referece_logps/chosen': -535.3092651367188, 'logits/rejected': -0.3818790912628174, 'logits/chosen': -0.500593364238739, 'epoch': 5.96}
+
+
+ 99%|█████████▉| 14530/14616 [1:34:43<15:19, 10.69s/it]
+
+ 99%|█████████▉| 14531/14616 [1:34:54<15:10, 10.71s/it]
+{'loss': 0.4778, 'learning_rate': 1.9997921922771025e-06, 'rewards/chosen': -0.7430980801582336, 'rewards/rejected': -1.0659730434417725, 'rewards/accuracies': 0.625, 'rewards/margins': 0.32287490367889404, 'policy_logps/rejected': -418.60504150390625, 'policy_logps/chosen': -576.2920532226562, 'referece_logps/rejected': -407.9453125, 'referece_logps/chosen': -568.861083984375, 'logits/rejected': 0.591130793094635, 'logits/chosen': 0.3970754146575928, 'epoch': 5.97}
+
+
+ 99%|█████████▉| 14533/14616 [1:35:15<14:50, 10.72s/it]
+
+ 99%|█████████▉| 14534/14616 [1:35:26<14:38, 10.71s/it]
+{'loss': 0.4408, 'learning_rate': 1.999778419140637e-06, 'rewards/chosen': -0.6762928366661072, 'rewards/rejected': -1.7587509155273438, 'rewards/accuracies': 0.875, 'rewards/margins': 1.0824580192565918, 'policy_logps/rejected': -437.31488037109375, 'policy_logps/chosen': -505.20855712890625, 'referece_logps/rejected': -419.72735595703125, 'referece_logps/chosen': -498.4456481933594, 'logits/rejected': 0.6682738065719604, 'logits/chosen': 0.5709751844406128, 'epoch': 5.97}
+
+
+ 99%|█████████▉| 14536/14616 [1:35:47<14:17, 10.72s/it]
+
+ 99%|█████████▉| 14537/14616 [1:35:58<14:05, 10.70s/it]
+
+ 99%|█████████▉| 14538/14616 [1:36:09<13:53, 10.69s/it]
+
+ 99%|█████████▉| 14539/14616 [1:36:19<13:44, 10.71s/it]
+{'loss': 0.4686, 'learning_rate': 1.999754482021842e-06, 'rewards/chosen': -0.9087561368942261, 'rewards/rejected': -1.797333836555481, 'rewards/accuracies': 0.875, 'rewards/margins': 0.8885776996612549, 'policy_logps/rejected': -227.53781127929688, 'policy_logps/chosen': -420.21905517578125, 'referece_logps/rejected': -209.56448364257812, 'referece_logps/chosen': -411.1315002441406, 'logits/rejected': 0.5007458925247192, 'logits/chosen': 0.494383841753006, 'epoch': 5.97}
+
+
+ 99%|█████████▉| 14541/14616 [1:36:41<13:22, 10.71s/it]
+
+ 99%|█████████▉| 14542/14616 [1:36:51<13:10, 10.68s/it]
+{'loss': 0.6291, 'learning_rate': 1.999739530626097e-06, 'rewards/chosen': -0.595197319984436, 'rewards/rejected': -0.7421833872795105, 'rewards/accuracies': 0.5, 'rewards/margins': 0.14698609709739685, 'policy_logps/rejected': -262.08831787109375, 'policy_logps/chosen': -410.0386657714844, 'referece_logps/rejected': -254.66648864746094, 'referece_logps/chosen': -404.086669921875, 'logits/rejected': -1.272192120552063, 'logits/chosen': -1.3143198490142822, 'epoch': 5.97}
+
+
+100%|█████████▉| 14544/14616 [1:37:13<12:50, 10.71s/it]
+
+100%|█████████▉| 14545/14616 [1:37:24<12:40, 10.72s/it]
+{'loss': 0.4723, 'learning_rate': 1.9997241373950366e-06, 'rewards/chosen': -0.5317251086235046, 'rewards/rejected': -1.6847429275512695, 'rewards/accuracies': 0.75, 'rewards/margins': 1.1530177593231201, 'policy_logps/rejected': -284.53271484375, 'policy_logps/chosen': -346.20965576171875, 'referece_logps/rejected': -267.685302734375, 'referece_logps/chosen': -340.8924255371094, 'logits/rejected': -0.45733076333999634, 'logits/chosen': -0.5340290069580078, 'epoch': 5.97}
+
+
+100%|█████████▉| 14547/14616 [1:37:45<12:16, 10.67s/it]
+
+100%|█████████▉| 14548/14616 [1:37:55<12:01, 10.60s/it]
+
+100%|█████████▉| 14549/14616 [1:38:06<11:53, 10.65s/it]
+{'loss': 0.3971, 'learning_rate': 1.9997029257993645e-06, 'rewards/chosen': -0.9339948296546936, 'rewards/rejected': -2.1870336532592773, 'rewards/accuracies': 0.875, 'rewards/margins': 1.253038763999939, 'policy_logps/rejected': -291.8400573730469, 'policy_logps/chosen': -501.8418273925781, 'referece_logps/rejected': -269.9697265625, 'referece_logps/chosen': -492.50189208984375, 'logits/rejected': -0.6286105513572693, 'logits/chosen': -0.6287826299667358, 'epoch': 5.97}
+
+
+100%|█████████▉| 14551/14616 [1:38:27<11:32, 10.66s/it]
+
+100%|█████████▉| 14552/14616 [1:38:38<11:25, 10.71s/it]
+
+100%|█████████▉| 14553/14616 [1:38:49<11:14, 10.70s/it]
+
+100%|█████████▉| 14554/14616 [1:38:59<11:01, 10.67s/it]
+
+100%|█████████▉| 14555/14616 [1:39:10<10:49, 10.65s/it]
+{'loss': 0.423, 'learning_rate': 1.9996696356808177e-06, 'rewards/chosen': -0.744428813457489, 'rewards/rejected': -1.5535000562667847, 'rewards/accuracies': 0.875, 'rewards/margins': 0.8090711236000061, 'policy_logps/rejected': -368.10345458984375, 'policy_logps/chosen': -362.9347839355469, 'referece_logps/rejected': -352.56842041015625, 'referece_logps/chosen': -355.4905090332031, 'logits/rejected': -0.6960469484329224, 'logits/chosen': -0.5462090373039246, 'epoch': 5.97}
+
+
+100%|█████████▉| 14557/14616 [1:39:31<10:25, 10.60s/it]
+
+100%|█████████▉| 14558/14616 [1:39:42<10:15, 10.61s/it]
+{'loss': 0.4256, 'learning_rate': 1.99965232791118e-06, 'rewards/chosen': -0.5325856804847717, 'rewards/rejected': -1.4612541198730469, 'rewards/accuracies': 1.0, 'rewards/margins': 0.9286683797836304, 'policy_logps/rejected': -533.1268310546875, 'policy_logps/chosen': -546.08349609375, 'referece_logps/rejected': -518.5142211914062, 'referece_logps/chosen': -540.7576904296875, 'logits/rejected': -0.45386582612991333, 'logits/chosen': -0.5650981664657593, 'epoch': 5.98}
+
+
+100%|█████████▉| 14560/14616 [1:40:03<09:51, 10.57s/it]
+
+100%|█████████▉| 14561/14616 [1:40:14<09:44, 10.63s/it]
+{'loss': 0.4782, 'learning_rate': 1.9996345783447676e-06, 'rewards/chosen': -0.49680501222610474, 'rewards/rejected': -2.123392343521118, 'rewards/accuracies': 0.875, 'rewards/margins': 1.6265873908996582, 'policy_logps/rejected': -382.44586181640625, 'policy_logps/chosen': -430.11956787109375, 'referece_logps/rejected': -361.2119140625, 'referece_logps/chosen': -425.1515808105469, 'logits/rejected': -0.44266340136528015, 'logits/chosen': -0.26328858733177185, 'epoch': 5.98}
+
+
+100%|█████████▉| 14563/14616 [1:40:35<09:28, 10.73s/it]
+
+100%|█████████▉| 14564/14616 [1:40:46<09:18, 10.75s/it]
+{'loss': 0.4892, 'learning_rate': 1.9996163869894237e-06, 'rewards/chosen': -0.5997167229652405, 'rewards/rejected': -1.7202355861663818, 'rewards/accuracies': 0.75, 'rewards/margins': 1.1205189228057861, 'policy_logps/rejected': -298.79193115234375, 'policy_logps/chosen': -332.8868103027344, 'referece_logps/rejected': -281.5895690917969, 'referece_logps/chosen': -326.8896484375, 'logits/rejected': -0.7992551922798157, 'logits/chosen': -0.7720502018928528, 'epoch': 5.98}
+
+
+100%|█████████▉| 14566/14616 [1:41:08<08:58, 10.76s/it]
+
+100%|█████████▉| 14567/14616 [1:41:18<08:45, 10.73s/it]
+{'loss': 0.5168, 'learning_rate': 1.9995977538531884e-06, 'rewards/chosen': -0.8305591940879822, 'rewards/rejected': -1.3640429973602295, 'rewards/accuracies': 0.75, 'rewards/margins': 0.5334838628768921, 'policy_logps/rejected': -636.192138671875, 'policy_logps/chosen': -596.7227172851562, 'referece_logps/rejected': -622.5516357421875, 'referece_logps/chosen': -588.4171752929688, 'logits/rejected': -0.8048409223556519, 'logits/chosen': -0.9846334457397461, 'epoch': 5.98}
+
+
+100%|█████████▉| 14569/14616 [1:41:40<08:23, 10.72s/it]
+
+100%|█████████▉| 14570/14616 [1:41:50<08:13, 10.73s/it]
+
+100%|█████████▉| 14571/14616 [1:42:01<08:01, 10.69s/it]
+
+100%|█████████▉| 14572/14616 [1:42:12<07:50, 10.69s/it]
+
+100%|█████████▉| 14573/14616 [1:42:22<07:40, 10.71s/it]
+
+100%|█████████▉| 14574/14616 [1:42:33<07:29, 10.71s/it]
+
+100%|█████████▉| 14575/14616 [1:42:44<07:17, 10.66s/it]
+
+100%|█████████▉| 14576/14616 [1:42:54<07:06, 10.66s/it]
+
+100%|█████████▉| 14577/14616 [1:43:05<06:56, 10.67s/it]
+
+100%|█████████▉| 14578/14616 [1:43:16<06:45, 10.68s/it]
+
+100%|█████████▉| 14579/14616 [1:43:26<06:34, 10.67s/it]
+
+100%|█████████▉| 14580/14616 [1:43:37<06:24, 10.68s/it]
+
+100%|█████████▉| 14581/14616 [1:43:48<06:14, 10.71s/it]
+
+100%|█████████▉| 14582/14616 [1:43:59<06:03, 10.68s/it]
+
+100%|█████████▉| 14583/14616 [1:44:09<05:52, 10.67s/it]
+
+100%|█████████▉| 14584/14616 [1:44:20<05:41, 10.67s/it]
+{'loss': 0.4952, 'learning_rate': 1.999483821739526e-06, 'rewards/chosen': -0.677149772644043, 'rewards/rejected': -1.278625726699829, 'rewards/accuracies': 0.75, 'rewards/margins': 0.6014760136604309, 'policy_logps/rejected': -272.0415954589844, 'policy_logps/chosen': -300.7309875488281, 'referece_logps/rejected': -259.2553405761719, 'referece_logps/chosen': -293.95947265625, 'logits/rejected': 0.06462755799293518, 'logits/chosen': -0.04458664357662201, 'epoch': 5.99}
+
+
+100%|█████████▉| 14586/14616 [1:44:41<05:21, 10.71s/it]
+
+100%|█████████▉| 14587/14616 [1:44:52<05:09, 10.69s/it]
+{'loss': 0.4193, 'learning_rate': 1.9994622436172206e-06, 'rewards/chosen': -0.9285950064659119, 'rewards/rejected': -2.2740204334259033, 'rewards/accuracies': 0.875, 'rewards/margins': 1.3454253673553467, 'policy_logps/rejected': -373.4623107910156, 'policy_logps/chosen': -359.8448181152344, 'referece_logps/rejected': -350.7221374511719, 'referece_logps/chosen': -350.55889892578125, 'logits/rejected': -0.5468777418136597, 'logits/chosen': -0.4964691996574402, 'epoch': 5.99}
+
+
+100%|█████████▉| 14589/14616 [1:45:13<04:48, 10.69s/it]
+
+100%|█████████▉| 14590/14616 [1:45:24<04:38, 10.71s/it]
+{'loss': 0.4267, 'learning_rate': 1.999440223782148e-06, 'rewards/chosen': -0.8240621089935303, 'rewards/rejected': -1.7878514528274536, 'rewards/accuracies': 0.75, 'rewards/margins': 0.9637893438339233, 'policy_logps/rejected': -318.5821533203125, 'policy_logps/chosen': -477.2288513183594, 'referece_logps/rejected': -300.70367431640625, 'referece_logps/chosen': -468.9881896972656, 'logits/rejected': -0.0793558657169342, 'logits/chosen': 0.08926093578338623, 'epoch': 5.99}
+
+
+100%|█████████▉| 14592/14616 [1:45:45<04:16, 10.68s/it]
+
+100%|█████████▉| 14593/14616 [1:45:56<04:05, 10.67s/it]
+
+100%|█████████▉| 14594/14616 [1:46:07<03:54, 10.65s/it]
+
+100%|█████████▉| 14595/14616 [1:46:17<03:43, 10.64s/it]
+
+100%|█████████▉| 14596/14616 [1:46:28<03:32, 10.64s/it]
+
+100%|█████████▉| 14597/14616 [1:46:39<03:22, 10.65s/it]
+{'loss': 0.4348, 'learning_rate': 1.9993871264501344e-06, 'rewards/chosen': -0.493888258934021, 'rewards/rejected': -1.1351314783096313, 'rewards/accuracies': 0.75, 'rewards/margins': 0.6412432789802551, 'policy_logps/rejected': -439.81787109375, 'policy_logps/chosen': -322.20025634765625, 'referece_logps/rejected': -428.4665222167969, 'referece_logps/chosen': -317.2613830566406, 'logits/rejected': -1.1147037744522095, 'logits/chosen': -1.2441504001617432, 'epoch': 5.99}
+
+
+100%|█████████▉| 14599/14616 [1:47:00<03:01, 10.68s/it]
+
+100%|█████████▉| 14600/14616 [1:47:11<02:51, 10.70s/it]
+
+100%|█████████▉| 14601/14616 [1:47:21<02:40, 10.72s/it]
+
+100%|█████████▉| 14602/14616 [1:47:32<02:29, 10.71s/it]
+{'loss': 0.4565, 'learning_rate': 1.9993477275117405e-06, 'rewards/chosen': -0.6108579635620117, 'rewards/rejected': -1.3049288988113403, 'rewards/accuracies': 0.875, 'rewards/margins': 0.6940709352493286, 'policy_logps/rejected': -362.0375671386719, 'policy_logps/chosen': -426.849853515625, 'referece_logps/rejected': -348.9882507324219, 'referece_logps/chosen': -420.74127197265625, 'logits/rejected': -0.2907961905002594, 'logits/chosen': -0.28057608008384705, 'epoch': 5.99}
+
+
+100%|█████████▉| 14604/14616 [1:47:54<02:08, 10.72s/it]
+
+100%|█████████▉| 14605/14616 [1:48:04<01:57, 10.71s/it]
+{'loss': 0.4121, 'learning_rate': 1.999323499262709e-06, 'rewards/chosen': -0.6389741897583008, 'rewards/rejected': -1.347269892692566, 'rewards/accuracies': 0.625, 'rewards/margins': 0.7082956433296204, 'policy_logps/rejected': -475.1587829589844, 'policy_logps/chosen': -411.1968688964844, 'referece_logps/rejected': -461.6860656738281, 'referece_logps/chosen': -404.80706787109375, 'logits/rejected': -0.8830848932266235, 'logits/chosen': -0.9180364608764648, 'epoch': 6.0}
+
+
+100%|█████████▉| 14607/14616 [1:48:26<01:36, 10.71s/it]
+
+100%|█████████▉| 14608/14616 [1:48:36<01:25, 10.69s/it]
+{'loss': 0.4567, 'learning_rate': 1.9992988293622272e-06, 'rewards/chosen': -0.8042313456535339, 'rewards/rejected': -2.442052125930786, 'rewards/accuracies': 0.875, 'rewards/margins': 1.6378209590911865, 'policy_logps/rejected': -373.0921630859375, 'policy_logps/chosen': -557.8048095703125, 'referece_logps/rejected': -348.6716613769531, 'referece_logps/chosen': -549.7625122070312, 'logits/rejected': -1.3360556364059448, 'logits/chosen': -1.2829943895339966, 'epoch': 6.0}
+
+
+100%|█████████▉| 14610/14616 [1:48:58<01:04, 10.70s/it]
+
+100%|█████████▉| 14611/14616 [1:49:08<00:53, 10.68s/it]
+{'loss': 0.5058, 'learning_rate': 1.9992737178211988e-06, 'rewards/chosen': -0.27417126297950745, 'rewards/rejected': -0.8037707805633545, 'rewards/accuracies': 0.875, 'rewards/margins': 0.5295995473861694, 'policy_logps/rejected': -363.373779296875, 'policy_logps/chosen': -380.11334228515625, 'referece_logps/rejected': -355.33599853515625, 'referece_logps/chosen': -377.3716125488281, 'logits/rejected': -0.6962007880210876, 'logits/chosen': -0.6796691417694092, 'epoch': 6.0}
+
+
+100%|█████████▉| 14613/14616 [1:49:30<00:31, 10.64s/it]
+
+100%|█████████▉| 14614/14616 [1:49:40<00:21, 10.66s/it]
+{'loss': 0.4962, 'learning_rate': 1.999248164650722e-06, 'rewards/chosen': -0.7751960754394531, 'rewards/rejected': -1.5795705318450928, 'rewards/accuracies': 0.625, 'rewards/margins': 0.8043743371963501, 'policy_logps/rejected': -364.8221130371094, 'policy_logps/chosen': -474.41265869140625, 'referece_logps/rejected': -349.02642822265625, 'referece_logps/chosen': -466.66064453125, 'logits/rejected': -0.479839950799942, 'logits/chosen': -0.31199216842651367, 'epoch': 6.0}
+
+
+100%|██████████| 14616/14616 [1:50:03<00:00,  2.21it/s]
+{'loss': 0.3608, 'learning_rate': 1.999230883859613e-06, 'rewards/chosen': -0.8865619897842407, 'rewards/rejected': -2.224555730819702, 'rewards/accuracies': 0.875, 'rewards/margins': 1.337993860244751, 'policy_logps/rejected': -356.6963195800781, 'policy_logps/chosen': -479.62139892578125, 'referece_logps/rejected': -334.45074462890625, 'referece_logps/chosen': -470.75579833984375, 'logits/rejected': -0.6493830680847168, 'logits/chosen': -1.0076791048049927, 'epoch': 6.0}
+{'train_runtime': 6614.2286, 'train_samples_per_second': 141.412, 'train_steps_per_second': 2.21, 'train_loss': 0.01994154431623191, 'epoch': 6.0}

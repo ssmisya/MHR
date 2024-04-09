@@ -38,14 +38,15 @@ def MultiLigual_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,
         return results
     
 def BLEU_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,language='Chinese'):
-    model = rm_model
-    target_lang = 'eng_Latn'
-    tokenizer.source_lang = language
-    tokenizer.target_lang = target_lang
-    input = tokenizer(outputs, return_tensors='pt', padding='longest', truncation=True,max_length=512).to(model.device)
-    output = model.generate(**input, forced_bos_token_id=tokenizer.lang_code_to_id[target_lang])
-    output_text = tokenizer.batch_decode(output,skip_special_tokens=True)
-    score = corpus_bleu(output_text,[labels]).score
+    # model = rm_model
+    # target_lang = 'eng_Latn'
+    # tokenizer.source_lang = language
+    # tokenizer.target_lang = target_lang
+    # input = tokenizer(outputs, return_tensors='pt', padding='longest', truncation=True,max_length=512).to(model.device)
+    # output = model.generate(**input, forced_bos_token_id=tokenizer.lang_code_to_id[target_lang])
+    # output_text = tokenizer.batch_decode(output,skip_special_tokens=True)
+    
+    score = corpus_bleu(outputs,[labels]).score
     return [score]
 
 
@@ -85,7 +86,8 @@ def main(args):
         if lang == "eng_Latn":
             continue
         item_reward_list=[]
-        for it in item['answer']: 
+        for it2 in item['translation']: 
+            it = it2["result"]
             reward_list = []
             en_answers = ref_item['answer'] if alignment_strategy == "language" else ref_item['en_answer']
             en_answers = en_answers if isinstance(en_answers, list) else [en_answers]
