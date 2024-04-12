@@ -9,7 +9,7 @@ This is the official repository for Multilingual Hallucination Removal (MHR), a 
 ## 🎯 Overview
 ![MHR](fig/main.jpg)
 - We proposed the Multilingual Hallucination Removal (MHR) strategy, a straightforward yet profoundly effective framework for eliminating hallucinations across various languages.
-- Our Multilingual Hllucination Removement (MHR) method comprises two stages, specifically Multilingual Supervised Fine-Tuning and Multilingual-Enhanced Preference Optimization. Within the context of Preference Optimization, we put forward three innovative strategies for generating alignment data. These strategies consist of Hallucination-Enhanced Alignment, Language-Enhanced Alignment, and Translation-Enhanced Alignment.
+- Our Multilingual Hllucination Removal (MHR) framework comprises two stages, specifically Multilingual Supervised Fine-Tuning and Multilingual Direct Preference Optimization. 
 
 
 ## 🕹️ Usage
