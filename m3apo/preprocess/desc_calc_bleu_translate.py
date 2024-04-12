@@ -18,7 +18,7 @@ from langdetect import detect
 class DescDataset(Dataset):
     def __init__(
             self,
-            data_path="/mnt/petrelfs/songmingyang/songmingyang/data/mm/annotation/hadpo-data/hadpo/llava-v1.5/desc_data.json",
+            data_path="",
             data_type="desc",
             tokenizer=None,
             language=None,
@@ -170,7 +170,7 @@ def main(args):
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m","--model_path", type=str, default="/mnt/petrelfs/songmingyang/songmingyang/model/others/nllb-200-distilled-600M")
+    parser.add_argument("-m","--model_path", type=str, default="")
     parser.add_argument("-i","--input_file_path", type=str, default="input.txt")
     parser.add_argument("-o","--output_file_path", type=str, default="output.txt")
     parser.add_argument("-t","--input_type", type=str, default="desc")

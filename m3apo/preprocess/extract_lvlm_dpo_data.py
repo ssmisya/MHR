@@ -156,11 +156,10 @@ def extract_self_hallucinagion_top3(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-l','--language', type=str, default="en")
-    parser.add_argument('-i','--input_dir', type=str, default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/add_ppl")
-    parser.add_argument('-o','--output_dir', type=str, default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/dpo_data")
+    parser.add_argument('-i','--input_dir', type=str, default="")
+    parser.add_argument('-o','--output_dir', type=str, default="")
     parser.add_argument('-n','--file_name',type=str,default="llava_7b_v1_generation_num20_bn.json_0_2000.jsonl")
     parser.add_argument('-m',"--extract_method",type=str,default="extract_top3")
-    # parser.add_argument('-r','--refrence_file',type=str,default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/generations/llava_7b_v1_generation_num20_en.json")
     args = parser.parse_args()
     if args.extract_method == "extract_top3":
         extract_top3(args)

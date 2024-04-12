@@ -207,7 +207,7 @@ if __name__ == "__main__":
     parser.add_argument("--language", type=str, default="en")
     parser.add_argument("--generation_num", type=int, default=5)
     parser.add_argument("--dataset_type",type=str,default="vg")
-    parser.add_argument("--vg_path",type=str,default="/mnt/petrelfs/songmingyang/songmingyang/data/mm/annotation/vg")
+    parser.add_argument("--vg_path",type=str,default="")
     
     args = parser.parse_args()
     set_seed(args.seed)

@@ -47,15 +47,15 @@ def convert_dict_to_tensor(results, device):
 
 @dataclass
 class ScriptArguments:
-    middle_output_file_path: str = field(default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo_data_process/human_preference/middle", metadata={"help": "Path to the middle output file."})
+    middle_output_file_path: str = field(default="", metadata={"help": "Path to the middle output file."})
 
 @dataclass
 class ModelArguments:
-    model_name_or_path: Optional[str] = field(default="/mnt/petrelfs/songmingyang/songmingyang/model/others/llava-v1.5-7b")
+    model_name_or_path: Optional[str] = field(default="")
     version: Optional[str] = field(default="v0")
     freeze_backbone: bool = field(default=False)
     tune_mm_mlp_adapter: bool = field(default=False)
-    vision_tower: Optional[str] = field(default="/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336")
+    vision_tower: Optional[str] = field(default="")
     mm_vision_select_layer: Optional[int] = field(default=-1)   # default to the last layer
     pretrain_mm_mlp_adapter: Optional[str] = field(default=None)
     mm_projector_type: Optional[str] = field(default='linear')
@@ -66,16 +66,16 @@ class ModelArguments:
 @dataclass
 class DataArguments:
     
-    data_path: str = field(default="/mnt/petrelfs/songmingyang/songmingyang/data/mm/annotation/LLaVA-Human-Preference-10K/llava_7b_v1_preference.json", metadata={"help": "Path to the training data."})
+    data_path: str = field(default="", metadata={"help": "Path to the training data."})
     lazy_preprocess: bool = False
     is_multimodal: bool = False
-    image_folder: Optional[str] = field(default="/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017")
+    image_folder: Optional[str] = field(default="")
     image_aspect_ratio: str = 'square'
     language: str = 'bn'
     data_type: str = 'bf16'
     batch_size: int = 4
     num_workers: int = 0
-    ref_data_path :Optional[str] = field(default="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/generations/llava_7b_v1_generation_num20_en.json")
+    ref_data_path :Optional[str] = field(default="")
 
 @dataclass
 class DataCollatorForReferenceLanguageDataset(object):
@@ -400,7 +400,7 @@ def calculate_PPL_score(
 
 def extract_dpo_data():
     pass
-def process_image(processor,image_file_name,image_folder="/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017",dtype=torch.bfloat16):
+def process_image(processor,image_file_name,image_folder="",dtype=torch.bfloat16):
     image = Image.open(os.path.join(image_folder, image_file_name))
     image_tensor = processor.preprocess(image, return_tensors='pt')['pixel_values'][0]
     return image_tensor.to(dtype)
@@ -462,7 +462,7 @@ def model_generate(
     temperature: float = 1.0,
     generation_num: int = 20,
     language: str = 'en',
-    image_folder: str = "/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/train2017",
+    image_folder: str = "",
 ):
 
 
