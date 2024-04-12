@@ -34,47 +34,46 @@ pip install -e .
     - 2.2 Train SFT on LVLM:
         <details>
         <summary>SFT SCRIPTS</summary>
-        ```bash
-            
-            PROMPT_VERSION=v1
-            MODEL_VERSION=vicuna-v1-5-7b
-            LM_MODEL_CKPT=lmsys/vicuna-7b-v1.5
 
-            deepspeed m3apo/alignment/models/llava_v1_5/train_sft.py \
-                --deepspeed ./scripts/zero3.json \
-                --model_name_or_path $LM_MODEL_CKPT \
-                --version $PROMPT_VERSION \
-                --data_path ${DATA_PATH} \
-                --image_folder ${img_folder} \
-                --vision_tower openai/clip-vit-large-patch14 \
-                --pretrain_mm_mlp_adapter ${vision_tower_path} \
-                --mm_vision_select_layer -2 \
-                --mm_use_im_start_end False \
-                --mm_use_im_patch_token False \
-                --bf16 True \
-                --output_dir ${output_dir}\
-                --num_train_epochs 3 \
-                --per_device_train_batch_size 16 \
-                --per_device_eval_batch_size 16 \
-                --gradient_accumulation_steps 1 \
-                --evaluation_strategy "no" \
-                --save_strategy "steps" \
-                --save_steps 500 \
-                --save_total_limit 1 \
-                --learning_rate 2e-5 \
-                --weight_decay 0. \
-                --warmup_ratio 0.03 \
-                --lr_scheduler_type "cosine" \
-                --logging_steps 1 \
-                --tf32 True \
-                --model_max_length 1280 \
-                --gradient_checkpointing True \
-                --dataloader_num_workers 4 \
-                --lazy_preprocess True \
-                --report_to wandb \
-                --image_aspect_ratio 'pad'
-            ```
-            </details>
+                PROMPT_VERSION=v1
+                MODEL_VERSION=vicuna-v1-5-7b
+                LM_MODEL_CKPT=lmsys/vicuna-7b-v1.5
+
+                deepspeed m3apo/alignment/models/llava_v1_5/train_sft.py \
+                    --deepspeed ./scripts/zero3.json \
+                    --model_name_or_path $LM_MODEL_CKPT \
+                    --version $PROMPT_VERSION \
+                    --data_path ${DATA_PATH} \
+                    --image_folder ${img_folder} \
+                    --vision_tower openai/clip-vit-large-patch14 \
+                    --pretrain_mm_mlp_adapter ${vision_tower_path} \
+                    --mm_vision_select_layer -2 \
+                    --mm_use_im_start_end False \
+                    --mm_use_im_patch_token False \
+                    --bf16 True \
+                    --output_dir ${output_dir}\
+                    --num_train_epochs 3 \
+                    --per_device_train_batch_size 16 \
+                    --per_device_eval_batch_size 16 \
+                    --gradient_accumulation_steps 1 \
+                    --evaluation_strategy "no" \
+                    --save_strategy "steps" \
+                    --save_steps 500 \
+                    --save_total_limit 1 \
+                    --learning_rate 2e-5 \
+                    --weight_decay 0. \
+                    --warmup_ratio 0.03 \
+                    --lr_scheduler_type "cosine" \
+                    --logging_steps 1 \
+                    --tf32 True \
+                    --model_max_length 1280 \
+                    --gradient_checkpointing True \
+                    --dataloader_num_workers 4 \
+                    --lazy_preprocess True \
+                    --report_to wandb \
+                    --image_aspect_ratio 'pad'
+
+        </details>
  2. Generate Preference Data Using Scripts under `m3apo/preprocess`
     - 2.1 prepare hallucination-based English data.
     - A. For hallucination alignment or language alignment:
@@ -87,7 +86,7 @@ pip install -e .
     - Train DPO on LVLM:
         <details>
         <summary>DPO SCRIPTS</summary>
-        ```bash
+        
             accelerate launch --config_file=${accelerate_config_file}  ./train_dpo.py \
             --deepspeed ./scripts/deepspeed/zero3.json \
             --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 0 \
@@ -135,7 +134,7 @@ pip install -e .
             --image_folder ${image_folder} \
             --vg_path ${vg_annotation_path} \
             --resume_from_checkpoint ${resume_from_checkpoint}
-        ```
+        
         </details>
 4. Evaluation
     - We evaluate our method using [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval), Please follow the instructions to add task and data to evaluate.
