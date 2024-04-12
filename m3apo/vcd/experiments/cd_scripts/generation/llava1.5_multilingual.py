@@ -45,14 +45,14 @@ def main():
     # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/origin_human_preference/6000"
     # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/sft_human_preference"
     # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/origin_self_hallucination"
-    peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/sft_self_hallucination"
-
+    # peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo/sft_self_hallucination"
+    peft_model_path="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/direct_dpo"
     
     image_folder="/mnt/petrelfs/share_data/quxiaoye/VCD_file/val2014"
     vcd_base="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments"
     
     output_file_base = "/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/generations/direct_dpo"
-    output_file_dir = "sft_sh"
+    output_file_dir = "new"
     os.makedirs(f"{output_file_base}/{output_file_dir}", exist_ok=True)
     for i in range(len(dataset_list)):
         for j in range(len(type_list)):
