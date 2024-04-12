@@ -142,18 +142,23 @@ pip install -e .
 
 ## 🏅 Experiments
 - **MHR significantly mitigates the multilingual hallucination issue across different languages.**
+
 ![exp1](fig/pope_res.jpg)
+
 *Table 1. Enhanced LLaVA 1.5 model Performances on POPE benchmark’s all 3 datasets. We select the “popular" type to test.
 Average scores of current partition are marked in <mark style="background-color: gray"> gray </mark> and bold text denotes the best results of the same backbone*
 
 - **MHR gain remarkable performance on MME hallucination subset**
+
 ![exp2](fig/mme_res.jpg)
+
 *Table 2. Results on the hallucination subset of MME. Higher scores indicate better performance and fewer hallucinations. The
 best performances within each setting are bolded. Limited by space, we only present 4 languages here, including high-resource
 languages ru and zh, and low-resource languages uk and bg. To help understand the overall performance comparison, we also
 report the average results for all 13 languages.*
 
-![exp2](fig/mme_res.jpg)
+![exp2](fig/mme_radar.jpg)
+
 *Figure 2. The performance on the full MME set, which consists of 14 tasks. Each graph displays the performance of the
 respective LLaVA-1.5 and our MHR model. Here we present results in four languages (uk, zh, bg, and ru) as outlined in Table 2.*
 
@@ -162,7 +167,9 @@ respective LLaVA-1.5 and our MHR model. Here we present results in four language
 
 
 ## 📌 Examples
+
 ![Case1](fig/qualitive.jpg)
+
 *Figure 3. Illustration of hallucination removal by our proposed MHR with 7 languages as an example. We mark the hallucination part of response by <mark style="background-color: yellow"> Yellow </mark> and correctness by <mark style="background-color: green"> Green </mark> respectively.*
 
 
