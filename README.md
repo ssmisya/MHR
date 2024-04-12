@@ -1,7 +1,7 @@
 
 # Mitigating Multilingual Hallucination in Large Vision-Language Models
-This is the official repo for Multilingual Hallucination Removal, a simple and effective method for mitigating multilingual hallucinations in LVLMs.
-
+<!-- This is the official repo for Multilingual Hallucination Removal, a simple but effective method for mitigating multilingual hallucinations in LVLMs. -->
+This is the official repository for Multilingual Hallucination Removal (MHR), a straightforward yet notably effective approach aimed at alleviating multilingual hallucinations prevalent in Large Vision-Language Models (LVLMs).
 <div style='display:flex; gap: 0.25rem; '>
 <a href='LICENCE'><img src='https://img.shields.io/badge/License-Apache 2.0-g.svg'></a>
 </div>
@@ -9,8 +9,11 @@ This is the official repo for Multilingual Hallucination Removal, a simple and e
 
 ## 🎯 Overview
 ![MHR](fig/main.jpg)
-- We probosed Multilingual Hallucination Removal(MHR) a simple but effective hallucination removal framework on different languages.
-- 
+<!-- - We probosed Multilingual Hallucination Removal(MHR) a simple but effective hallucination removal framework on different languages. -->
+- We proposed the Multilingual Hallucination Removal (MHR) strategy, a straightforward yet profoundly effective framework for eliminating hallucinations across various languages.
+<!-- - MHR have 2 stages, namely multilingual supervised fine-tune and multilingual-enhanced preference optimization. During preference optimization, we proposed
+3 method to generate alignment data, which is hallucination-enhanced alignment, language-enhanced alignment and translation-enhanced alignment. -->
+- Our Multilingual Hllucination Removement (MHR) method comprises two stages, specifically Multilingual Supervised Fine-Tuning and Multilingual-Enhanced Preference Optimization. Within the context of Preference Optimization, we put forward three innovative strategies for generating alignment data. These strategies consist of Hallucination-Enhanced Alignment, Language-Enhanced Alignment, and Translation-Enhanced Alignment.
 
 
 ## 🕹️ Usage
@@ -26,7 +29,7 @@ pip install -e .
 ### Train
 
 
-1. Multilingual supervised fine-tuning:
+1. Multilingual Supervised Fine-tuning:
     - 2.1 Prepare SFT data: [PALO](https://huggingface.co/datasets/MBZUAI/palo_multilingual_dataset)
     - 2.2 Train SFT on LVLM:
         <details>
@@ -72,16 +75,16 @@ pip install -e .
                 --image_aspect_ratio 'pad'
             ```
             </details>
- 2. Generate Preference Data using scripts under `m3apo/preprocess`
+ 2. Generate Preference Data Using Scripts under `m3apo/preprocess`
     - 2.1 prepare hallucination-based English data.
     - A. For hallucination alignment or language alignment:
-    - 2.2 sample LVLM response using `m3apo/preprocess/lvlm_sampling.py`
-    - 2.3 calculate alignment score using `m3apo/preprocess/calculate_PPL_score.py` or `m3apo/preprocess/desc_calculate_ppl_score.py`
-    - 2.4 extract DPO data using `m3apo/preprocess/desc_extract_dpo_data.py` or `m3apo/preprocess/extract_dpo_data.py`
+        - 2.2 sample LVLM response using `lvlm_sampling.py`
+        - 2.3 calculate alignment score using `calculate_PPL_score.py` or `desc_calculate_ppl_score.py`
+        - 2.4 extract DPO data using `desc_extract_dpo_data.py` or `extract_dpo_data.py`
     - B. For Translation alignment:
-    - 2.2 Translate english hallucination preference dataset into other languages using `m3apo/preprocess/translate.py`
+        - 2.2 Translate english hallucination preference dataset into other languages using `translate.py`
  3. Train on Preference Optimization
-    - example script:
+    - Train DPO on LVLM:
         <details>
         <summary>DPO SCRIPTS</summary>
         ```bash
@@ -161,7 +164,7 @@ respective LLaVA-1.5 and our MHR model. Here we present results in four language
 
 ## 📌 Examples
 ![Case1](fig/qualitive.jpg)
-*Figure 3. Illustration of hallucination removal by our proposed MHR with 7 languages as an example. We mark the hallucination part of response by <mark style="background-color: yellow"> Yellow </mark> and correctness by <mark style="background-color: green"> Green </mark>*
+*Figure 3. Illustration of hallucination removal by our proposed MHR with 7 languages as an example. We mark the hallucination part of response by <mark style="background-color: yellow"> Yellow </mark> and correctness by <mark style="background-color: green"> Green </mark> respectively.*
 
 
 
