@@ -1,6 +1,5 @@
 
 # Mitigating Multilingual Hallucination in Large Vision-Language Models
-<!-- This is the official repo for Multilingual Hallucination Removal, a simple but effective method for mitigating multilingual hallucinations in LVLMs. -->
 This is the official repository for Multilingual Hallucination Removal (MHR), a straightforward yet notably effective approach aimed at alleviating multilingual hallucinations prevalent in Large Vision-Language Models (LVLMs).
 <div style='display:flex; gap: 0.25rem; '>
 <a href='LICENCE'><img src='https://img.shields.io/badge/License-Apache 2.0-g.svg'></a>
@@ -9,10 +8,7 @@ This is the official repository for Multilingual Hallucination Removal (MHR), a 
 
 ## 🎯 Overview
 ![MHR](fig/main.jpg)
-<!-- - We probosed Multilingual Hallucination Removal(MHR) a simple but effective hallucination removal framework on different languages. -->
 - We proposed the Multilingual Hallucination Removal (MHR) strategy, a straightforward yet profoundly effective framework for eliminating hallucinations across various languages.
-<!-- - MHR have 2 stages, namely multilingual supervised fine-tune and multilingual-enhanced preference optimization. During preference optimization, we proposed
-3 method to generate alignment data, which is hallucination-enhanced alignment, language-enhanced alignment and translation-enhanced alignment. -->
 - Our Multilingual Hllucination Removement (MHR) method comprises two stages, specifically Multilingual Supervised Fine-Tuning and Multilingual-Enhanced Preference Optimization. Within the context of Preference Optimization, we put forward three innovative strategies for generating alignment data. These strategies consist of Hallucination-Enhanced Alignment, Language-Enhanced Alignment, and Translation-Enhanced Alignment.
 
 
@@ -30,8 +26,8 @@ pip install -e .
 
 
 1. Multilingual Supervised Fine-tuning:
-    - 2.1 Prepare SFT data: [PALO](https://huggingface.co/datasets/MBZUAI/palo_multilingual_dataset)
-    - 2.2 Train SFT on LVLM:
+    - 1.1 Prepare SFT data: [PALO](https://huggingface.co/datasets/MBZUAI/palo_multilingual_dataset)
+    - 1.2 Train SFT on LVLM:
         <details>
         <summary>SFT SCRIPTS</summary>
 
@@ -39,7 +35,7 @@ pip install -e .
                 MODEL_VERSION=vicuna-v1-5-7b
                 LM_MODEL_CKPT=lmsys/vicuna-7b-v1.5
 
-                deepspeed m3apo/alignment/models/llava_v1_5/train_sft.py \
+                deepspeed mhr/alignment/models/llava_v1_5/train_sft.py \
                     --deepspeed ./scripts/zero3.json \
                     --model_name_or_path $LM_MODEL_CKPT \
                     --version $PROMPT_VERSION \
@@ -74,7 +70,7 @@ pip install -e .
                     --image_aspect_ratio 'pad'
 
         </details>
- 2. Generate Preference Data Using Scripts under `m3apo/preprocess`
+ 2. Generate Preference Data Using Scripts under `mhr/preprocess`
     - 2.1 prepare hallucination-based English data.
     - A. For hallucination alignment or language alignment:
         - 2.2 sample LVLM response using `lvlm_sampling.py`
@@ -173,11 +169,3 @@ respective LLaVA-1.5 and our MHR model. Here we present results in four language
 *Figure 3. Illustration of hallucination removal by our proposed MHR with 7 languages as an example. We mark the hallucination part of response by <mark style="background-color: yellow"> Yellow </mark> and correctness by <mark style="background-color: green"> Green </mark> respectively.*
 
 
-
-
-## 📝 Related Projects
-- [Contrastive Decoding](https://github.com/XiangLi1999/ContrastiveDecoding): Open-ended Text Generation as Optimization
-- [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip): Towards General-purpose Vision-Language Models with Instruction Tuning
-- [LLaVA 1.5](https://github.com/haotian-liu/LLaVA): Improved Baselines with Visual Instruction Tuning
-- [VCD](https://github.com/DAMO-NLP-SG/VCD):VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding
-- [HA-DPO](https://github.com/opendatalab/HA-DPO):HA-DPO (Hallucination-aware Direct Preference Optimization) 

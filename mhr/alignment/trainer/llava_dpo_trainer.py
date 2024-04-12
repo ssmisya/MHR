@@ -7,8 +7,8 @@ import warnings
 from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
 
 from .base_dpo_trainer import BaseDPOTrainer
-from m3apo.utils.debugging import remote_breakpoint
-from m3apo.alignment.models.llava_v1_5.llava.constants import IGNORE_INDEX, IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_PATCH_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
+from mhr.utils.debugging import remote_breakpoint
+from mhr.alignment.models.llava_v1_5.llava.constants import IGNORE_INDEX, IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_PATCH_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
 
 class LlavaDPOTrainer(BaseDPOTrainer):
         

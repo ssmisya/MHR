@@ -15,8 +15,8 @@ from llava.conversation import conv_templates, SeparatorStyle
 from llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
 from llava.mm_utils import process_images, tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria
 
-from m3apo.vcd.experiments.eval.language_dict import language_dict
-from m3apo.utils.utils import process_jsonl
+from mhr.vcd.experiments.eval.language_dict import language_dict
+from mhr.utils.utils import process_jsonl
 
 def convert_dict_to_tensor(results, device):
     part_tensor = json.dumps(results)

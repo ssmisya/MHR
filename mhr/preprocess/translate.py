@@ -10,9 +10,8 @@ from tqdm import tqdm
 from transformers import AutoTokenizer, M2M100ForConditionalGeneration,pipeline
 from torch.utils.data import Dataset, DataLoader
 
-from m3apo.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
-from m3apo.utils.utils import load_json_file,write_json_file,process_jsonl,write_jsonl
-from langdetect import detect
+from mhr.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
+from mhr.utils.utils import load_json_file,write_json_file
 
 
 class DescDataset(Dataset):
@@ -21,20 +20,16 @@ class DescDataset(Dataset):
             data_path="",
             data_type="desc",
             tokenizer=None,
-            language=None,
         ) -> None:
         super().__init__()
         self.data_path = data_path
         self.data_type = data_type
         self.tokenizer = tokenizer
-        self.language = language
         self.load_data(data_type,data_path)
         
     def load_data(self,data_type,data_path):
         if data_type == "desc":
             self.load_desc_data(data_path)
-        elif data_type == "jsonl":
-            self.load_jsonl_data(data_path)
         else:
             raise NotImplementedError("This data type is not implemented yet")
         
@@ -46,18 +41,6 @@ class DescDataset(Dataset):
                 data_map_list.append({"question_id":question_id,"sentence":sentence,"type":"chosen"})
             for sentence in data["rejected"]:
                 data_map_list.append({"question_id":question_id,"sentence":sentence,"type":"rejected"})
-        self.data_map_list = data_map_list
-        
-    def load_jsonl_data(self,data_path):
-        data_map_list = []
-        desc_data = process_jsonl(data_path)
-        lang_code = self.language if self.language != "zh" else "zh-cn"
-        assert lang_code is not None
-        for data in desc_data:
-            question_id = data["question_id"]
-            answers = data["answer"]
-            for idx,answer in enumerate(answers):
-                data_map_list.append({"question_id":question_id,"sentence":answer,"type":idx})
         self.data_map_list = data_map_list
     
     def __len__(self):
@@ -123,23 +106,6 @@ def reconstruct_data_dict(result_list):
         elif type == "rejected":
             result_dataset[question_id]["rejected"].append(sentence)
     return result_dataset
-
-def reconstruct_data_jsonl(result_list,ref_jsonl_file):
-    jsonl_data = process_jsonl(ref_jsonl_file)
-    result_idx_by_question_id = {}
-    for question_id,result,idx in zip(result_list["question_id"],result_list["sentence"],result_list["type"]):
-        if result_idx_by_question_id.get(question_id, None) is None:
-            result_idx_by_question_id[question_id] = []
-        result_idx_by_question_id[question_id].append({"result":result,"idx":idx})
-    for k,item in result_idx_by_question_id.items():
-        item.sort(key=lambda x:x["idx"])
-        result_idx_by_question_id[k] = [x["result"] for x in item]
-        
-    for data in jsonl_data:
-        res_list = result_idx_by_question_id.get(data["question_id"],[])
-        data["translation"] = res_list
-        
-    return jsonl_data
     
 
 def main(args):
@@ -159,11 +125,6 @@ def main(args):
         result_list = batch_translate(model,dataset,tokenizer,target_lang,args.batch_size,device)
         result_dataset=reconstruct_data_dict(result_list)
         write_json_file(result_dataset,args.output_file_path)
-    elif args.input_type == "jsonl":
-        dataset = DescDataset(args.input_file_path,args.input_type,tokenizer,language=args.source_language)
-        result_list = batch_translate(model,dataset,tokenizer,target_lang,args.batch_size,device)
-        result_dataset = reconstruct_data_jsonl(result_list,args.input_file_path)
-        write_jsonl(result_dataset,args.output_file_path)
     else:
         raise NotImplementedError("This input type is not implemented yet")
 

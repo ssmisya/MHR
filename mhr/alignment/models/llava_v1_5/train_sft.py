@@ -15,7 +15,7 @@
 #    limitations under the License.
 
 import os
-os.environ["WANDB_PROJECT"]="m3apo"
+os.environ["WANDB_PROJECT"]="mhr"
 
 import copy
 from dataclasses import dataclass, field
@@ -30,14 +30,14 @@ import torch
 import transformers
 
 from torch.utils.data import Dataset
-from m3apo.alignment.trainer.llaval_sft_trainer import LLaVATrainer
-from m3apo.alignment.models.llava_v1_5.llava.model import *
+from mhr.alignment.trainer.llaval_sft_trainer import LLaVATrainer
+from mhr.alignment.models.llava_v1_5.llava.model import *
 
-from m3apo.alignment.models.llava_v1_5.llava.constants import IGNORE_INDEX, IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
+from mhr.alignment.models.llava_v1_5.llava.constants import IGNORE_INDEX, IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
 
-import m3apo.alignment.models.llava_v1_5.llava.conversation as conversation_lib
-from m3apo.alignment.models.llava_v1_5.llava.mm_utils import tokenizer_image_token
-from m3apo.alignment.models.llava_v1_5.llava.train.train import preprocess_multimodal, preprocess
+import mhr.alignment.models.llava_v1_5.llava.conversation as conversation_lib
+from mhr.alignment.models.llava_v1_5.llava.mm_utils import tokenizer_image_token
+from mhr.alignment.models.llava_v1_5.llava.train.train import preprocess_multimodal, preprocess
 
 from PIL import Image
 from base64 import b64decode

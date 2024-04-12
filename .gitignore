@@ -3,10 +3,10 @@
 **__pycache__**
 **.ipynb_checkpoints
 **wandb**
-m3apo/alignment/models/llava_v1_5/scripts/**
-m3apo/alignment/models/instructblip/scripts/**
-m3apo/preprocess/scripts/**
-m3apo/vcd/experiments/cd_scripts/**
-m3apo/preprocess/test/**
-m3apo/preprocess/ref/**
-m3apo/alignment/others
+mhr/alignment/models/llava_v1_5/scripts/**
+mhr/alignment/models/instructblip/scripts/**
+mhr/preprocess/scripts/**
+mhr/vcd/experiments/cd_scripts/**
+mhr/preprocess/test/**
+mhr/preprocess/ref/**
+mhr/alignment/others

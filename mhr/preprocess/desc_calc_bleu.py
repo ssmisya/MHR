@@ -6,13 +6,13 @@ from tqdm import tqdm
 
 import argparse
 import torch.nn as nn
-from m3apo.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
+from mhr.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
 import debugpy
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from sacrebleu import corpus_bleu
 from sacrebleu.metrics import BLEU, CHRF, TER
 
-from m3apo.utils.utils import process_jsonl, write_jsonl
+from mhr.utils.utils import process_jsonl, write_jsonl
 loss_fn = nn.CrossEntropyLoss(reduction='none')
 
 def MultiLigual_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,language='Chinese'):

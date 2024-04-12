@@ -6,11 +6,11 @@ from tqdm import tqdm
 
 import argparse
 import torch.nn as nn
-from m3apo.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
+from mhr.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
 import debugpy
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-from m3apo.utils.utils import process_jsonl, write_jsonl
+from mhr.utils.utils import process_jsonl, write_jsonl
 loss_fn = nn.CrossEntropyLoss(reduction='none')
 
 def MultiLigual_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,language='Chinese'):
@@ -37,48 +37,44 @@ def MultiLigual_Alighment_reward_fuction(tokenizer,rm_model,outputs,labels=None,
 
 
 def main(args):
-    alignment_strategy = args.alignment_strategy
     data_path = os.path.join(args.input_data_dir, args.data_file)
-    target_dir = os.path.join(args.output_data_dir, f"{os.path.splitext(args.data_file)[0]}_{alignment_strategy}.jsonl")
+    target_dir = os.path.join(args.output_data_dir, os.path.splitext(args.data_file)[0])
+    target_path = target_dir + "_{proc}_{end}.jsonl".format(proc = args.begin_index,end = args.begin_index + args.data_length)
+    
+    # target_path = target_dir
     data = process_jsonl(data_path)
-    if alignment_strategy  == "hallucination":
-        ref_data = data
-    elif alignment_strategy == "language":
+    if args.reference_style == "ref_file":
         ref_data = process_jsonl(args.reference_en_file)
-    elif alignment_strategy == "preference":
-        ref_data = data
     else:
-        raise NotImplementedError
+        ref_data = data
     
     rm_model_base = AutoModelForSeq2SeqLM.from_pretrained(args.reward_model_path,device_map='auto')
     rm_model_base = rm_model_base.eval()
     rm_tokenizer = AutoTokenizer.from_pretrained(args.reward_model_path)
 
-    if os.path.exists(target_dir):
-        exist_data = process_jsonl(target_dir)
-        fw = open(target_dir, "a+",encoding="utf8")
-    else:
-        os.makedirs(os.path.dirname(target_dir), exist_ok=True)
-        fw= open(target_dir, "a+",encoding="utf8")
-        exist_data = None
-        
-    for i in tqdm(range(len(data))):
-        if exist_data is not None and i < len(exist_data) and exist_data[i]['question_id'] == data[i]['question_id']:
-            continue
+
+    begin_index = args.begin_index
+    data_length = args.data_length
+    end_index = min(len(data), begin_index + data_length)
+    print("begin_index: {}, end_index: {}".format(begin_index, end_index))
+
+    result = []
+    fw = open(target_path, "a+", encoding='utf-8')
+    for i in tqdm(range(begin_index,end_index)):
         item = data[i]
         ref_item = ref_data[i]
         assert item['question_id'] == ref_item['question_id']
         lang = nllb_200_distilled_600M_language_dict[language_dict[args.language]['full_name']]
-        if lang == "eng_Latn":
+        if lang == "English":
             continue
         item_reward_list=[]
         for it in item['answer']: 
             reward_list = []
-            en_answers = ref_item['answer'] if alignment_strategy == "language" else ref_item['en_answer']
+            en_answers = ref_item['answer'] if args.reference_style == "ref_file" else ref_item['en_answer']
             en_answers = en_answers if isinstance(en_answers, list) else [en_answers]
             input_answer = [it for _ in en_answers]
             output = [j for j in en_answers]
-            if alignment_strategy == "hallucination":
+            if args.reference_style == "self_hallucination":
                 reject_en_answers = ref_item["reject_en_answer"]
                 reject_en_answers = reject_en_answers if isinstance(en_answers,list) else [reject_en_answers]
                 reject_input_answer = [it for _ in reject_en_answers]
@@ -123,15 +119,15 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="sampling argument")
-    # parser.add_argument('--begin_index', type=int,default=0)
-    # parser.add_argument('--data_length', type=int,default=2000)
+    parser.add_argument('--begin_index', type=int,default=0)
+    parser.add_argument('--data_length', type=int,default=2000)
     parser.add_argument('-rm','--reward_model_path', type=str,default='')
     parser.add_argument('-rf','--reference_en_file',type=str, default='')
     parser.add_argument('-i','--input_data_dir',type=str, default="")
     parser.add_argument('-o','--output_data_dir',type=str, default="")
     parser.add_argument('-d','--data_file', type=str)
     parser.add_argument('-l','--language', type=str, default="en")
-    parser.add_argument('-a','--alignment_strategy',type=str, default="hallucination")
+    parser.add_argument('-rs','--reference_style',type=str, default="self_hallucination")
     args = parser.parse_args()
     main(args)
             

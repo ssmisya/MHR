@@ -5,8 +5,8 @@ import os
 from tqdm import tqdm
 
 
-from m3apo.vcd.experiments.eval.language_dict import language_dict
-from m3apo.utils.utils import write_jsonl,process_jsonl
+from mhr.vcd.experiments.eval.language_dict import language_dict
+from mhr.utils.utils import write_jsonl,process_jsonl
 
 from langdetect import detect
 
@@ -70,8 +70,7 @@ def extract_top3(args):
             
         sorted_output = [g for g in sorted(output_with_score,key=lambda x:x['score']["nllb-200-distilled-600M-reward-mean"],reverse=True)]
         
-        select_k = args.select_k
-        topk = min(select_k,len(sorted_output)//2)
+        topk = min(3,len(sorted_output)//2)
         # test language and choose top 3
 
         reject_list=[sorted_output[-k_rej-1]['answer'] for k_rej in range(topk)]
@@ -122,8 +121,7 @@ def extract_self_hallucinagion_top3(args):
         sorted_output = [g for g in sorted(output_with_score,key=lambda x:x['score']["nllb-200-distilled-600M-reward-mean"],reverse=True)]
         sorted_output_reject = [g for g in sorted(output_with_score,key=lambda x:x['score']["reject-nllb-200-distilled-600M-reward-mean"],reverse=True)]
         
-        select_k = args.select_k
-        topk = min(select_k,len(sorted_output)//2)
+        topk = min(3,len(sorted_output)//2)
         # test language and choose top 3
 
         reject_list=[sorted_output_reject[k_rej]['answer'] for k_rej in range(topk)]
@@ -162,7 +160,6 @@ if __name__ == "__main__":
     parser.add_argument('-o','--output_dir', type=str, default="")
     parser.add_argument('-n','--file_name',type=str,default="llava_7b_v1_generation_num20_bn.json_0_2000.jsonl")
     parser.add_argument('-m',"--extract_method",type=str,default="extract_top3")
-    parser.add_argument('-k',"--select_k",type=int,default=3)
     args = parser.parse_args()
     if args.extract_method == "extract_top3":
         extract_top3(args)

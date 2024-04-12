@@ -1,5 +1,5 @@
 import os
-os.environ["WANDB_PROJECT"]="m3apo"
+os.environ["WANDB_PROJECT"]="mhr"
 
 import json
 import copy
@@ -19,14 +19,14 @@ import transformers
 from transformers import TrainerCallback
 from transformers import HfArgumentParser, TrainingArguments
 
-# from m3apo.alignment.models.llava_v1_5.llava.model import *
-# form m3apo.vcd.experiments.llava.model import *
+# from mhr.alignment.models.llava_v1_5.llava.model import *
+# form mhr.vcd.experiments.llava.model import *
 
-from m3apo.alignment.models.llava_v1_5.llava.model import *
-from m3apo.alignment.models.llava_v1_5.llava import conversation as conversation_lib
-from m3apo.alignment.models.llava_v1_5.llava.train.train import preprocess_multimodal, preprocess
-from m3apo.alignment.models.llava_v1_5.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IGNORE_INDEX
-from m3apo.vcd.experiments.eval.language_dict import language_dict
+from mhr.alignment.models.llava_v1_5.llava.model import *
+from mhr.alignment.models.llava_v1_5.llava import conversation as conversation_lib
+from mhr.alignment.models.llava_v1_5.llava.train.train import preprocess_multimodal, preprocess
+from mhr.alignment.models.llava_v1_5.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IGNORE_INDEX
+from mhr.vcd.experiments.eval.language_dict import language_dict
 
 from peft.peft_model import PeftModelForCausalLM
 from peft import (
@@ -37,9 +37,9 @@ from peft import (
     set_peft_model_state_dict,
 )
 
-from m3apo.alignment.trainer.llava_dpo_trainer import LlavaDPOTrainer
-from m3apo.utils.utils import process_jsonl,load_json_file
-from m3apo.utils.debugging import remote_breakpoint
+from mhr.alignment.trainer.llava_dpo_trainer import LlavaDPOTrainer
+from mhr.utils.utils import process_jsonl,load_json_file
+from mhr.utils.debugging import remote_breakpoint
 
 local_rank = None
         
