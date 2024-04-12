@@ -316,7 +316,7 @@ class MultilingualEnhanceDataset(Dataset):
             language = file_name_without_extension.strip().split("_")[-1]
             language_based_suffix = f" Please answer this question in {language_dict[language]['full_name']}."
             for question_id,data in file.items():
-                # image_file_path = f"/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/vg/VG_100K/{question_id}.jpg"
+                
                 image_file_path = id2path[int(question_id)]
                 chosen = data["chosen"]
                 reject = data["rejected"]

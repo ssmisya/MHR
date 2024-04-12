@@ -172,9 +172,9 @@ if __name__ == "__main__":
     parser.add_argument("--pope_path", type=str, required=True)
     parser.add_argument("--set", type=str, required=True)
     
-    parser.add_argument("-i","--img_path", type=str, required=True,default="/mnt/petrelfs/share_data/quxiaoye/VCD_file/val2014")
-    parser.add_argument("-m","--multilingual_pope_path",type=str,default="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments/data/POPE/multi_lingual")
-    parser.add_argument("-g","--generate_file_save_path", type=str, default="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments/output/multilingual_gen/test")
+    parser.add_argument("-i","--img_path", type=str, required=True,default="")
+    parser.add_argument("-m","--multilingual_pope_path",type=str,default="")
+    parser.add_argument("-g","--generate_file_save_path", type=str, default="")
     parser.add_argument("-d","--dataset",type=str,default="coco")
     
     args = parser.parse_args()
