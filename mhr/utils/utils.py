@@ -48,3 +48,8 @@ def merge_jsonl(input_file_dir, output_filepath):
     with open(output_filepath, 'w') as output_file:
         for data in merged_data:
             output_file.write(json.dumps(data) + '\n')
+
+def append_jsonl(data, filename):
+    with open(filename, 'a', encoding='utf-8') as f:
+        json.dump(data, f)
+        f.write('\n')

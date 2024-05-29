@@ -83,6 +83,10 @@ class DataArguments:
     translation_data_type: Optional[str] = field(default="dir_of_json_desc", metadata={"help": "Type of translation data."})
     translation_ratio: Optional[int] = field(default=0, metadata={"help": "The ratio of translation data."})
     
+    high_resource_list : Optional[str] = field(default="en	ru	de	zh	ja	fr	es	it	nl	pt 	vi", metadata={"help": "List of high resource languages."})
+    low_resource_list : Optional[str] = field(default="bn	ta	ur	ml	mr	te	gu	my	jv	sw  ms  id	sv	ar	fa	ko	el	th	uk	bg	hi tr", metadata={"help": "List of low resource languages."})
+    high_resource_ratio: Optional[int] = field(default=1, metadata={"help": "The ratio of high resource data."})
+    low_resource_ratio: Optional[int] = field(default=1, metadata={"help": "The ratio of low resource data."})
 
 # Define and parse arguments.
 @dataclass
@@ -231,9 +235,14 @@ class MultilingualEnhanceDataset(Dataset):
         sample_weights=[self.hallucination_ratio,self.language_ratio,self.preference_ratio,self.translation_ratio]
         candidata_dataset = [self.hallucination_data,self.language_data,self.preference_data,self.translation_data]
         choice_dataset = self.rng.choices(candidata_dataset,sample_weights, k=1)[0]
-        choice_length = len(choice_dataset)
+        
+        resource_sample_weights = [self.high_resource_ratio,self.low_resource_ratio]
+        candidate_resource = [choice_dataset[0],choice_dataset[1]]
+        choice_resource = self.rng.choices(candidate_resource,resource_sample_weights,k=1)[0]
+        
+        choice_length = len(choice_resource)
         assert choice_length > 0 , "No data loaded."
-        return choice_dataset[map_to_new_range(idx,self.max_data_lenth,choice_length,)]
+        return choice_resource[map_to_new_range(idx,self.max_data_lenth,choice_length,)]
         
         
        
@@ -257,37 +266,38 @@ class MultilingualEnhanceDataset(Dataset):
         self.language_data_type = self.data_args.language_data_type if self.language_data_path else None
         self.preference_data_type = self.data_args.preference_data_type if self.preference_data_path else None
         self.translation_data_type = self.data_args.translation_data_type if self.translation_data_path else None
+        # resource setting
+        self.high_resource_list = self.data_args.high_resource_list.split()
+        self.low_resource_list = self.data_args.low_resource_list.split()
+        self.high_resource_ratio = self.data_args.high_resource_ratio
+        self.low_resource_ratio = self.data_args.low_resource_ratio
         
         if self.hallucination_data_path:
             self.hallucination_data = self.load_data_from_disk(self.hallucination_data_path,self.hallucination_data_type)
         else:
-            self.hallucination_data = []
+            self.hallucination_data = ([],[])
         
         if self.language_data_path:
             self.language_data = self.load_data_from_disk(self.language_data_path,self.language_data_type)
         else:
-            self.language_data = []
+            self.language_data = ([],[])
             
         if self.preference_data_path:
             self.preference_data = self.load_data_from_disk(self.preference_data_path,self.preference_data_type)
         else:
-            self.preference_data = []
+            self.preference_data = ([],[])
         
         if self.translation_data_path:
             self.translation_data = self.load_data_from_disk(self.translation_data_path,self.translation_data_type)
         else:
-            self.translation_data = []
-        self.max_data_lenth = max(len(self.hallucination_data),len(self.language_data),len(self.preference_data),len(self.translation_data))
-        
-        # self.list_data_dict = []
-        # if self.hallucination_data:
-        #     self.list_data_dict += self.hallucination_data * 1
-        # if self.language_data:
-        #     self.list_data_dict += self.language_data * 1
-        # if self.preference_data:
-        #     self.list_data_dict += self.preference_data * 1
-        
-        # assert len(self.list_data_dict) > 0, "No data loaded."
+            self.translation_data = ([],[])
+        self.max_data_lenth = max(
+            len(self.hallucination_data[0])+len(self.hallucination_data[1]),
+            len(self.language_data[0])+len(self.language_data[1]),
+            len(self.preference_data[0])+len(self.preference_data[1]),
+            len(self.translation_data[0])+len(self.translation_data[1]),
+            )
+    
         assert self.max_data_lenth > 0, "No data loaded."
         
         
@@ -307,14 +317,20 @@ class MultilingualEnhanceDataset(Dataset):
             for _data in vg_image_data
         }
         data_dir = [os.path.join(data_path,a) for a in os.listdir(data_path)]
+        # data_file_names = [os.path.splitext(os.path.basename(a))[0].split("_")[-1] for a in data_dir]
         data_across_different_langs = [load_json_file(a) for a in data_dir]
-        data_dict_list = []
+        high_resource_dict_list = []
+        low_resource_dict_list = []
+        # data_dict_list = []
         id = 0
         for idx,file in enumerate(data_across_different_langs):
+            
             file_name = os.path.basename(data_dir[idx])
             file_name_without_extension, extension = os.path.splitext(file_name)
             language = file_name_without_extension.strip().split("_")[-1]
             language_based_suffix = f" Please answer this question in {language_dict[language]['full_name']}."
+            high_sign = language in self.high_resource_list
+            low_sign = language in self.low_resource_list
             for question_id,data in file.items():
                 
                 image_file_path = id2path[int(question_id)]
@@ -327,14 +343,21 @@ class MultilingualEnhanceDataset(Dataset):
                         "Could you describe the contents of this image for me?",
                     ])
                 question += language_based_suffix
-                data_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
+                if high_sign:
+                    high_resource_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
+                elif low_sign:
+                    low_resource_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
+                else:
+                    raise ValueError("The language is not in the high or low resource list.")
                 id+=1
-        return data_dict_list
+        return high_resource_dict_list, low_resource_dict_list
     
     def load_dir_of_jsonl_desc_data(self,data_path):
         data_dir = [os.path.join(data_path,a) for a in os.listdir(data_path)]
         data_across_different_langs = [process_jsonl(a) for a in data_dir]
-        data_dict_list = []
+        # data_dict_list = []
+        high_resource_dict_list = []
+        low_resource_dict_list = []
         id=0
         for file in data_across_different_langs:
             for data in file:
@@ -342,9 +365,15 @@ class MultilingualEnhanceDataset(Dataset):
                 chosen = data["feedback"]["chosen"]
                 reject = data["feedback"]["reject"]
                 question = data["question"]
-                data_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
+                language = data["language"]
+                if language in self.high_resource_list:
+                    high_resource_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
+                elif language in self.low_resource_list:
+                    low_resource_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
+                else:
+                    raise ValueError("The language is not in the high or low resource list.")
                 id+=1
-        return data_dict_list
+        return high_resource_dict_list, low_resource_dict_list
     
     def formulate_data_item(self,id,image_file_or_path,question,chosen,reject):
         if not isinstance(chosen,list):
