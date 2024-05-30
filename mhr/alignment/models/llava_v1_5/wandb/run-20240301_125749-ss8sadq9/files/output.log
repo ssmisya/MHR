@@ -1,0 +1,107 @@
+  0%|          | 0/35541 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/trainer/llava_dpo_trainer.py:135: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/35541 [00:26<258:10:41, 26.15s/it]
+{'loss': 0.6931, 'learning_rate': 1.874414245548266e-09, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'policy_logps/rejected': -188.0205841064453, 'policy_logps/chosen': -235.70892333984375, 'referece_logps/rejected': -188.0205841064453, 'referece_logps/chosen': -235.70892333984375, 'logits/rejected': 0.17318032681941986, 'logits/chosen': 0.11536255478858948, 'epoch': 0.0}
+[2024-03-01 12:58:45,496] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 2/35541 [00:48<234:09:48, 23.72s/it]
+
+  0%|          | 3/35541 [01:09<224:48:58, 22.77s/it]
+
+  0%|          | 4/35541 [01:30<217:52:13, 22.07s/it]
+[2024-03-01 12:59:50,142] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 5/35541 [01:52<217:37:37, 22.05s/it]
+
+  0%|          | 6/35541 [02:12<208:23:49, 21.11s/it]
+
+
+  0%|          | 8/35541 [02:54<208:43:16, 21.15s/it]
+[2024-03-01 13:00:51,841] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.6889, 'learning_rate': 1.499531396438613e-08, 'rewards/chosen': 0.01867954432964325, 'rewards/rejected': -0.0040746331214904785, 'rewards/accuracies': 0.6875, 'rewards/margins': 0.022754177451133728, 'policy_logps/rejected': -220.14064025878906, 'policy_logps/chosen': -193.64706420898438, 'referece_logps/rejected': -220.09988403320312, 'referece_logps/chosen': -193.8338623046875, 'logits/rejected': -0.3864351511001587, 'logits/chosen': 0.03088321164250374, 'epoch': 0.0}
+
+  0%|          | 9/35541 [03:15<208:31:20, 21.13s/it]
+
+  0%|          | 10/35541 [03:36<209:08:43, 21.19s/it]
+
+  0%|          | 11/35541 [03:56<203:36:23, 20.63s/it]
+
+  0%|          | 12/35541 [04:17<204:14:59, 20.70s/it]
+
+  0%|          | 13/35541 [04:38<205:04:31, 20.78s/it]
+
+  0%|          | 14/35541 [05:00<208:45:14, 21.15s/it]
+
+  0%|          | 15/35541 [05:21<208:04:41, 21.09s/it]
+
+
+  0%|          | 17/35541 [06:02<206:32:38, 20.93s/it]
+{'loss': 0.6913, 'learning_rate': 3.1865042174320527e-08, 'rewards/chosen': -0.01391584798693657, 'rewards/rejected': 0.011259477585554123, 'rewards/accuracies': 0.3125, 'rewards/margins': -0.02517532929778099, 'policy_logps/rejected': -344.5726318359375, 'policy_logps/chosen': -192.06472778320312, 'referece_logps/rejected': -344.68524169921875, 'referece_logps/chosen': -191.9255828857422, 'logits/rejected': -0.5218698978424072, 'logits/chosen': -0.3020355701446533, 'epoch': 0.0}
+
+  0%|          | 18/35541 [06:22<203:34:28, 20.63s/it]
+
+  0%|          | 19/35541 [06:43<204:41:14, 20.74s/it]
+
+  0%|          | 20/35541 [07:04<204:45:12, 20.75s/it]
+
+  0%|          | 21/35541 [07:25<207:12:10, 21.00s/it]
+
+  0%|          | 22/35541 [07:46<207:21:12, 21.02s/it]
+
+  0%|          | 23/35541 [08:05<201:29:09, 20.42s/it]
+[2024-03-01 13:06:25,100] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 24/35541 [08:27<205:35:09, 20.84s/it]
+
+  0%|          | 25/35541 [08:48<205:16:45, 20.81s/it]
+
+  0%|          | 26/35541 [09:09<206:13:39, 20.90s/it]
+
+  0%|          | 27/35541 [09:30<206:11:19, 20.90s/it]
+
+  0%|          | 28/35541 [09:50<202:46:00, 20.55s/it]
+
+  0%|          | 29/35541 [10:11<203:40:26, 20.65s/it]
+
+  0%|          | 30/35541 [10:32<204:33:24, 20.74s/it]
+
+  0%|          | 31/35541 [10:52<204:27:44, 20.73s/it]
+
+  0%|          | 32/35541 [11:13<205:27:30, 20.83s/it]
+
+  0%|          | 33/35541 [11:34<206:07:22, 20.90s/it]
+[2024-03-01 13:09:52,943] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 34/35541 [11:55<205:30:58, 20.84s/it]
+
+
+  0%|          | 36/35541 [12:37<206:14:52, 20.91s/it]
+
+  0%|          | 37/35541 [12:58<205:39:07, 20.85s/it]
+
+  0%|          | 38/35541 [13:20<208:30:04, 21.14s/it]
+
+  0%|          | 39/35541 [13:41<207:54:05, 21.08s/it]
+
+  0%|          | 40/35541 [14:02<208:06:19, 21.10s/it]
+{'loss': 0.6934, 'learning_rate': 7.497656982193064e-08, 'rewards/chosen': -0.00587382260710001, 'rewards/rejected': 0.000762355572078377, 'rewards/accuracies': 0.3125, 'rewards/margins': -0.006636179052293301, 'policy_logps/rejected': -295.87078857421875, 'policy_logps/chosen': -261.12506103515625, 'referece_logps/rejected': -295.87841796875, 'referece_logps/chosen': -261.06634521484375, 'logits/rejected': -1.0616708993911743, 'logits/chosen': -0.3525286018848419, 'epoch': 0.0}
+
+
+  0%|          | 42/35541 [14:43<206:56:10, 20.99s/it]
+
+  0%|          | 43/35541 [15:04<207:07:06, 21.00s/it]
+
+  0%|          | 44/35541 [15:25<207:02:15, 21.00s/it]
+
+  0%|          | 45/35541 [15:46<205:59:33, 20.89s/it]
+
+  0%|          | 46/35541 [16:07<206:32:16, 20.95s/it]
+
+  0%|          | 47/35541 [16:28<205:51:19, 20.88s/it]
+
+  0%|          | 48/35541 [16:49<206:08:11, 20.91s/it]
+
+  0%|          | 49/35541 [17:09<205:15:07, 20.82s/it]
+
+  0%|          | 50/35541 [17:31<205:51:58, 20.88s/it]

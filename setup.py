@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='m3apo',  # 包的名字
+    name='mhr',  # 包的名字
     version='0.1.0',  # 包的版本
-    description='m3apo is a alignment package for LVLM',  # 包的简短描述
+    description='mhr is a alignment package for LVLM',  # 包的简短描述
     author='Song Mingyang',  # 你的名字
     author_email='hitsmy@qq.com',  # 你的邮箱
     packages=find_packages(),  # 自动找到包含在你的包中的所有子包

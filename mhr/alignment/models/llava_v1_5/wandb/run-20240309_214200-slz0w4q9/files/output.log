@@ -1,0 +1,33 @@
+  0%|          | 0/1464 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:179: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+Waiting for debugger to attach on 0.0.0.0:5678, server: SH-IDCA1404-10-140-54-52...
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py", line 863, in <module>
+    main()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py", line 860, in main
+    dpo_trainer.train()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1809, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 2654, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py", line 184, in compute_loss
+    loss, metrics = self.get_batch_metrics(inputs, train_eval="train")
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py", line 137, in get_batch_metrics
+    ) = self.concatenated_forward(self.model, inputs)
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py", line 40, in concatenated_forward
+    remote_breakpoint()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/utils/debugging.py", line 57, in remote_breakpoint
+    _dp()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/utils/debugging.py", line 51, in _dp
+    debugpy.listen((host, port))
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/debugpy/public_api.py", line 31, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/debugpy/server/api.py", line 143, in debug
+    log.reraise_exception("{0}() failed:", func.__name__, level="info")
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/debugpy/server/api.py", line 141, in debug
+    return func(address, settrace_kwargs, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/debugpy/server/api.py", line 262, in listen
+    raise RuntimeError(str(endpoints["error"]))
+RuntimeError: Can't listen for client connections: [Errno 98] Address already in use

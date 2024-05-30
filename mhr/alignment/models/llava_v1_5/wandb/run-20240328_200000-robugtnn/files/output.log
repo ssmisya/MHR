@@ -1,0 +1,32 @@
+  0%|          | 0/2685 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/./train_dpo.py", line 1077, in <module>
+    main()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/./train_dpo.py", line 1074, in main
+    dpo_trainer.train()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/transformers/trainer.py", line 1787, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/accelerate/data_loader.py", line 384, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/_utils.py", line 644, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/./train_dpo.py", line 363, in __getitem__
+    image = Image.open(image_path).convert('RGB')
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd_origin/lib/python3.9/site-packages/PIL/Image.py", line 3247, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/vg/VG_100K/2390413.jpg'

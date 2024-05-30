@@ -1,0 +1,72 @@
+  0%|          | 0/5124 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:179: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/5124 [00:24<35:13:19, 24.75s/it]
+
+  0%|          | 2/5124 [00:47<33:26:00, 23.50s/it]
+[2024-03-09 22:44:01,582] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  0%|          | 3/5124 [01:09<32:33:55, 22.89s/it]
+
+  0%|          | 4/5124 [01:30<31:14:24, 21.97s/it]
+
+  0%|          | 5/5124 [01:49<30:06:23, 21.17s/it]
+
+  0%|          | 6/5124 [02:11<30:08:26, 21.20s/it]
+
+  0%|          | 7/5124 [02:33<30:38:47, 21.56s/it]
+
+  0%|          | 8/5124 [02:54<30:14:58, 21.29s/it]
+
+  0%|          | 9/5124 [03:15<30:11:57, 21.25s/it]
+
+  0%|          | 10/5124 [03:36<30:15:37, 21.30s/it]
+
+  0%|          | 11/5124 [03:58<30:16:33, 21.32s/it]
+
+  0%|          | 12/5124 [04:19<30:12:51, 21.28s/it]
+
+  0%|          | 13/5124 [04:41<30:40:49, 21.61s/it]
+
+  0%|          | 14/5124 [05:03<30:49:27, 21.72s/it]
+
+  0%|          | 15/5124 [05:24<30:33:37, 21.53s/it]
+
+  0%|          | 16/5124 [05:45<30:19:31, 21.37s/it]
+
+  0%|          | 17/5124 [06:06<30:08:52, 21.25s/it]
+
+  0%|          | 18/5124 [06:27<29:59:24, 21.14s/it]
+
+  0%|          | 19/5124 [06:48<29:57:43, 21.13s/it]
+
+  0%|          | 20/5124 [07:10<30:03:26, 21.20s/it]
+
+  0%|          | 21/5124 [07:31<30:08:26, 21.26s/it]
+
+  0%|          | 22/5124 [07:52<29:58:30, 21.15s/it]
+
+  0%|          | 23/5124 [08:13<29:59:02, 21.16s/it]
+
+  0%|          | 24/5124 [08:35<30:24:07, 21.46s/it]
+
+  0%|          | 25/5124 [08:56<30:08:30, 21.28s/it]
+
+  1%|          | 26/5124 [09:18<30:14:38, 21.36s/it]
+{'loss': 0.6929, 'learning_rate': 3.3766233766233765e-07, 'rewards/chosen': -0.016113674268126488, 'rewards/rejected': 0.004183078650385141, 'rewards/accuracies': 0.375, 'rewards/margins': -0.020296752452850342, 'policy_logps/rejected': -502.333740234375, 'policy_logps/chosen': -356.4010925292969, 'referece_logps/rejected': -502.37554931640625, 'referece_logps/chosen': -356.2399597167969, 'logits/rejected': -0.7489993572235107, 'logits/chosen': -0.499040812253952, 'epoch': 0.02}
+
+
+  1%|          | 28/5124 [10:00<30:04:19, 21.24s/it]
+
+  1%|          | 29/5124 [10:22<30:36:42, 21.63s/it]
+[2024-03-09 22:53:37,070] [WARNING] [stage3.py:2069:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+
+  1%|          | 30/5124 [10:44<30:26:48, 21.52s/it]
+
+  1%|          | 31/5124 [11:05<30:31:41, 21.58s/it]
+
+  1%|          | 32/5124 [11:26<30:14:40, 21.38s/it]
+
+  1%|          | 33/5124 [11:46<29:31:23, 20.88s/it]
+
+  1%|          | 34/5124 [12:07<29:41:11, 21.00s/it]

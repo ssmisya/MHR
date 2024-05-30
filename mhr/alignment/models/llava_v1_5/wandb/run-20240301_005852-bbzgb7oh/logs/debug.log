@@ -1,0 +1,90 @@
+2024-03-01 00:58:52,332 INFO    MainThread:60943 [wandb_setup.py:_flush():76] Current SDK version is 0.16.3
+2024-03-01 00:58:52,333 INFO    MainThread:60943 [wandb_setup.py:_flush():76] Configure stats pid to 60943
+2024-03-01 00:58:52,334 INFO    MainThread:60943 [wandb_setup.py:_flush():76] Loading settings from /mnt/petrelfs/songmingyang/.config/wandb/settings
+2024-03-01 00:58:52,334 INFO    MainThread:60943 [wandb_setup.py:_flush():76] Loading settings from /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/wandb/settings
+2024-03-01 00:58:52,335 INFO    MainThread:60943 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'api_key': '***REDACTED***', 'project': 'mhr'}
+2024-03-01 00:58:52,335 INFO    MainThread:60943 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-03-01 00:58:52,335 INFO    MainThread:60943 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'mhr/alignment/models/llava-v1_5/train_dpo.py', 'program_abspath': '/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/train_dpo.py', 'program': '/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/./train_dpo.py'}
+2024-03-01 00:58:52,336 INFO    MainThread:60943 [wandb_init.py:_log_setup():526] Logging user logs to /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/wandb/run-20240301_005852-bbzgb7oh/logs/debug.log
+2024-03-01 00:58:52,336 INFO    MainThread:60943 [wandb_init.py:_log_setup():527] Logging internal logs to /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/wandb/run-20240301_005852-bbzgb7oh/logs/debug-internal.log
+2024-03-01 00:58:52,337 INFO    MainThread:60943 [wandb_init.py:init():566] calling init triggers
+2024-03-01 00:58:52,337 INFO    MainThread:60943 [wandb_init.py:init():573] wandb.init called with sweep_config: {}
+config: {}
+2024-03-01 00:58:52,337 INFO    MainThread:60943 [wandb_init.py:init():616] starting backend
+2024-03-01 00:58:52,338 INFO    MainThread:60943 [wandb_init.py:init():620] setting up manager
+2024-03-01 00:58:52,340 INFO    MainThread:60943 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-03-01 00:58:52,347 INFO    MainThread:60943 [wandb_init.py:init():628] backend started and connected
+2024-03-01 00:58:52,359 INFO    MainThread:60943 [wandb_init.py:init():720] updated telemetry
+2024-03-01 00:58:52,638 INFO    MainThread:60943 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-03-01 00:59:54,390 INFO    Thread-2  :60943 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f34e7a4dfa0>, 'Connection to api.wandb.ai timed out. (connect timeout=20)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f34e7a4dfa0>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/requests/adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f34e7a4dfa0>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+2024-03-01 01:00:22,653 ERROR   MainThread:60943 [wandb_init.py:init():779] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2024-03-01 01:00:24,672 ERROR   MainThread:60943 [wandb_init.py:init():1194] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1176, in init
+    run = wi.init()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2024-03-01 01:00:28,206 WARNING MsgRouterThr:60943 [router.py:message_loop():77] message_loop has been closed
