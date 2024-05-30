@@ -7,6 +7,8 @@ seed=55
 preprocess_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess
 
 reward_model_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/nllb-200-distilled-600M
+bleu_home=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/calc_score/bleu/results
+
 
 default_language=fr
 language=${1:- $default_language}

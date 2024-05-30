@@ -26,6 +26,7 @@ from m3apo.alignment.models.llava_v1_5.llava.model import *
 from m3apo.alignment.models.llava_v1_5.llava import conversation as conversation_lib
 from m3apo.alignment.models.llava_v1_5.llava.train.train import preprocess_multimodal, preprocess
 from m3apo.alignment.models.llava_v1_5.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IGNORE_INDEX
+from m3apo.vcd.experiments.eval.language_dict import language_dict
 
 from peft.peft_model import PeftModelForCausalLM
 from peft import (
@@ -78,6 +79,9 @@ class DataArguments:
     preference_data_type: Optional[str] = field(default="dir_of_json_desc", metadata={"help": "Type of preference data."})
     preference_ratio: Optional[int] = field(default=0, metadata={"help": "The ratio of preference data."})
     
+    translation_data_path: Optional[str] = field(default=None, metadata={"help": "Path to the translation data."})
+    translation_data_type: Optional[str] = field(default="dir_of_json_desc", metadata={"help": "Type of translation data."})
+    translation_ratio: Optional[int] = field(default=0, metadata={"help": "The ratio of translation data."})
     
 
 # Define and parse arguments.
@@ -87,6 +91,8 @@ class ScriptArguments:
     The arguments for the DPO training script.
     """
     
+    
+    resume_from_checkpoint: Optional[bool] = field(default=False, metadata={"help": "Whether to resume from checkpoint."})
     # llava parameters
     cache_dir: Optional[str] = field(default=None)
     optim: str = field(default="adamw_torch")
@@ -214,48 +220,83 @@ class MultilingualEnhanceDataset(Dataset):
         random.seed(seed)
         self.data_args = data_args
         self.tokenizer = tokenizer
+        self.rng = random.Random(seed)
+        self.initialize_data_args()
         
+    
+    def sample(self,i):
+        def map_to_new_range(x, b, d):
+            return int(x * (d / b))
+        idx = i%self.max_data_lenth
+        sample_weights=[self.hallucination_ratio,self.language_ratio,self.preference_ratio,self.translation_ratio]
+        candidata_dataset = [self.hallucination_data,self.language_data,self.preference_data,self.translation_data]
+        choice_dataset = self.rng.choices(candidata_dataset,sample_weights, k=1)[0]
+        choice_length = len(choice_dataset)
+        assert choice_length > 0 , "No data loaded."
+        return choice_dataset[map_to_new_range(idx,self.max_data_lenth,choice_length,)]
+        
+        
+       
+            
+        
+        
+        
+    def initialize_data_args(self):
         # data paths
         self.hallucination_data_path = self.data_args.hallucination_data_path
         self.language_data_path = self.data_args.language_data_path
         self.preference_data_path = self.data_args.preference_data_path
+        self.translation_data_path = self.data_args.translation_data_path
         
         self.hallucination_ratio = self.data_args.hallucination_ratio if self.hallucination_data_path else 0
         self.language_ratio = self.data_args.language_ratio if self.language_data_path else 0
         self.preference_ratio = self.data_args.preference_ratio if self.preference_data_path else 0
+        self.translation_ratio = self.data_args.translation_ratio if self.translation_data_path else 0
         
         self.hallucination_data_type = self.data_args.hallucination_data_type if self.hallucination_data_path else None
         self.language_data_type = self.data_args.language_data_type if self.language_data_path else None
         self.preference_data_type = self.data_args.preference_data_type if self.preference_data_path else None
+        self.translation_data_type = self.data_args.translation_data_type if self.translation_data_path else None
         
         if self.hallucination_data_path:
             self.hallucination_data = self.load_data_from_disk(self.hallucination_data_path,self.hallucination_data_type)
         else:
-            self.hallucination_data = None
+            self.hallucination_data = []
         
         if self.language_data_path:
             self.language_data = self.load_data_from_disk(self.language_data_path,self.language_data_type)
         else:
-            self.language_data = None
+            self.language_data = []
             
         if self.preference_data_path:
             self.preference_data = self.load_data_from_disk(self.preference_data_path,self.preference_data_type)
         else:
-            self.preference_data = None
+            self.preference_data = []
         
-        self.list_data_dict = []
-        if self.hallucination_data:
-            self.list_data_dict += self.hallucination_data * self.hallucination_ratio
-        if self.language_data:
-            self.list_data_dict += self.language_data * self.language_ratio
-        if self.preference_data:
-            self.list_data_dict += self.preference_data * self.preference_ratio
+        if self.translation_data_path:
+            self.translation_data = self.load_data_from_disk(self.translation_data_path,self.translation_data_type)
+        else:
+            self.translation_data = []
+        self.max_data_lenth = max(len(self.hallucination_data),len(self.language_data),len(self.preference_data),len(self.translation_data))
         
-        assert len(self.list_data_dict) > 0, "No data loaded."
+        # self.list_data_dict = []
+        # if self.hallucination_data:
+        #     self.list_data_dict += self.hallucination_data * 1
+        # if self.language_data:
+        #     self.list_data_dict += self.language_data * 1
+        # if self.preference_data:
+        #     self.list_data_dict += self.preference_data * 1
+        
+        # assert len(self.list_data_dict) > 0, "No data loaded."
+        assert self.max_data_lenth > 0, "No data loaded."
+        
+        
     
     def load_data_from_disk(self,data_path,data_type):
         if data_type == "dir_of_json_desc":
             return self.load_dir_of_json_desc_data(data_path)
+        elif data_type == "dir_of_jsonl_desc":
+            return self.load_dir_of_jsonl_desc_data(data_path)
         else:
             raise NotImplementedError("This data type is not implemented yet")
             
@@ -269,18 +310,38 @@ class MultilingualEnhanceDataset(Dataset):
         data_across_different_langs = [load_json_file(a) for a in data_dir]
         data_dict_list = []
         id = 0
-        for file in data_across_different_langs:
+        for idx,file in enumerate(data_across_different_langs):
+            file_name = os.path.basename(data_dir[idx])
+            file_name_without_extension, extension = os.path.splitext(file_name)
+            language = file_name_without_extension.strip().split("_")[-1]
+            language_based_suffix = f" Please answer this question in {language_dict[language]['full_name']}."
             for question_id,data in file.items():
                 # image_file_path = f"/mnt/petrelfs/songmingyang/songmingyang/data/mm/imgs/vg/VG_100K/{question_id}.jpg"
                 image_file_path = id2path[int(question_id)]
                 chosen = data["chosen"]
                 reject = data["rejected"]
-                question = random.choice([
+                question = self.rng.choice([
                         "Describe this image in detail.",
                         "Take a look at this image and describe what you notice.",
                         "Please provide a detailed description of the picture.",
                         "Could you describe the contents of this image for me?",
                     ])
+                question += language_based_suffix
+                data_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
+                id+=1
+        return data_dict_list
+    
+    def load_dir_of_jsonl_desc_data(self,data_path):
+        data_dir = [os.path.join(data_path,a) for a in os.listdir(data_path)]
+        data_across_different_langs = [process_jsonl(a) for a in data_dir]
+        data_dict_list = []
+        id=0
+        for file in data_across_different_langs:
+            for data in file:
+                image_file_path = data["image"]
+                chosen = data["feedback"]["chosen"]
+                reject = data["feedback"]["reject"]
+                question = data["question"]
                 data_dict_list.append(self.formulate_data_item(id,image_file_path,question,chosen,reject))
                 id+=1
         return data_dict_list
@@ -292,6 +353,12 @@ class MultilingualEnhanceDataset(Dataset):
             reject = [reject]
         if not DEFAULT_IMAGE_TOKEN in question:
             question = DEFAULT_IMAGE_TOKEN + '\n' + question
+        elif question.count(DEFAULT_IMAGE_TOKEN) > 1:
+            question = question.replace(DEFAULT_IMAGE_TOKEN,"")
+            question = question.replace("\n","")
+            question = DEFAULT_IMAGE_TOKEN + '\n' + question
+        self.remove_image_token(chosen)
+        self.remove_image_token(reject)
             
         questions_and_feedbacks = {"question":question,"feedback":{"chosen":chosen,"reject":reject}}
         res = {
@@ -309,8 +376,15 @@ class MultilingualEnhanceDataset(Dataset):
             }
         return res
     
+
+    def remove_image_token(self, sentence_list):
+        for i in range(len(sentence_list)):
+            assert isinstance(sentence_list[i],str)
+            if DEFAULT_IMAGE_TOKEN in sentence_list[i]:
+                sentence_list[i] = sentence_list[i].replace(DEFAULT_IMAGE_TOKEN, "")
+    
     def __len__(self):
-        return len(self.list_data_dict)
+        return self.max_data_lenth*(self.hallucination_ratio + self.language_ratio + self.preference_ratio + self.translation_ratio)
 
     @property
     def lengths(self):
@@ -330,7 +404,8 @@ class MultilingualEnhanceDataset(Dataset):
         return length_list
 
     def __getitem__(self, i) -> Dict[str, torch.Tensor]:
-        sources = self.list_data_dict[i]
+        # sources = self.list_data_dict[i]
+        sources = self.sample(i)
         if isinstance(i, int):
             sources = [sources]
         assert len(sources) == 1, "Don't know why it is wrapped to a list"  # FIXME
@@ -341,8 +416,8 @@ class MultilingualEnhanceDataset(Dataset):
             # language = random.choice(language_set)
             # print("dataset length:",len(self.list_data_dict),)
             question = questions_and_feedbacks["question"]
-            chosen = random.choice(questions_and_feedbacks["feedback"]["chosen"])
-            reject = random.choice(questions_and_feedbacks["feedback"]["reject"])
+            chosen = self.rng.choice(questions_and_feedbacks["feedback"]["chosen"])
+            reject = self.rng.choice(questions_and_feedbacks["feedback"]["reject"])
             chosen_conversations = [{"from": "human", "value": question},{"from": "gpt", "value": chosen}]
             reject_conversations =  [{"from": "human", "value": question},{"from": "gpt", "value": reject}]
             if question.count(DEFAULT_IMAGE_TOKEN) != 1 or question.count("\n") !=1:
@@ -364,7 +439,7 @@ class MultilingualEnhanceDataset(Dataset):
                 self.data_args)
         # remote_breakpoint()
         if 'image' in sources[0]:
-            image_file = self.list_data_dict[i]['image']
+            image_file = sources[0]['image']
             image_folder = self.data_args.image_folder
             processor = self.data_args.image_processor
             image_path = image_file if os.path.isabs(image_file) else os.path.join(image_folder, image_file)
@@ -392,11 +467,11 @@ class MultilingualEnhanceDataset(Dataset):
         chosen_data_dict = preprocess(
             chosen_sources,
             self.tokenizer,
-            has_image=('image' in self.list_data_dict[i]))
+            has_image=('image' in sources[0]))
         reject_data_dict = preprocess(
             reject_sources,
             self.tokenizer,
-            has_image=('image' in self.list_data_dict[i]))
+            has_image=('image' in sources[0]))
         if isinstance(i, int):
             data_dict = dict(
                 chosen_input_ids=chosen_data_dict["input_ids"][0],
@@ -407,7 +482,7 @@ class MultilingualEnhanceDataset(Dataset):
 
         # image exist in the data
         
-        if 'image' in self.list_data_dict[i]:
+        if 'image' in sources[0]:
             data_dict['images'] = image
         elif self.data_args.is_multimodal:
             # image does not exist in the data, but the model is multimodal
@@ -1079,7 +1154,7 @@ def main():
     
     dpo_trainer.add_callback(SaverCallback())
     
-    dpo_trainer.train()
+    dpo_trainer.train(resume_from_checkpoint=script_args.resume_from_checkpoint)
     
 if __name__ == "__main__":
     main()

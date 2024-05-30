@@ -1,0 +1,32 @@
+  0%|          | 0/4791 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:179: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/4791 [00:15<20:30:50, 15.42s/it]
+{'loss': 0.6931, 'learning_rate': 1.3888888888888887e-08, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'policy_logps/rejected': -312.14556884765625, 'policy_logps/chosen': -268.5594787597656, 'referece_logps/rejected': -312.14556884765625, 'referece_logps/chosen': -268.5594787597656, 'logits/rejected': -0.9004408121109009, 'logits/chosen': -0.9090697169303894, 'epoch': 0.0}
+
+
+  0%|          | 3/4791 [00:37<15:53:07, 11.94s/it]
+
+  0%|          | 4/4791 [00:48<15:09:58, 11.41s/it]
+{'loss': 0.696, 'learning_rate': 5.555555555555555e-08, 'rewards/chosen': -0.005429647862911224, 'rewards/rejected': -0.04087276756763458, 'rewards/accuracies': 0.5, 'rewards/margins': 0.03544311970472336, 'policy_logps/rejected': -420.06927490234375, 'policy_logps/chosen': -382.882568359375, 'referece_logps/rejected': -419.6605224609375, 'referece_logps/chosen': -382.8282470703125, 'logits/rejected': -0.00946725532412529, 'logits/chosen': 0.11026008427143097, 'epoch': 0.0}
+
+  0%|          | 5/4791 [00:58<14:45:41, 11.10s/it]
+
+
+  0%|          | 7/4791 [01:19<14:23:34, 10.83s/it]
+{'loss': 0.6955, 'learning_rate': 9.722222222222222e-08, 'rewards/chosen': -0.009582518599927425, 'rewards/rejected': 0.011884784325957298, 'rewards/accuracies': 0.375, 'rewards/margins': -0.021467305719852448, 'policy_logps/rejected': -440.826416015625, 'policy_logps/chosen': -477.196044921875, 'referece_logps/rejected': -440.9452819824219, 'referece_logps/chosen': -477.1002197265625, 'logits/rejected': -0.45451629161834717, 'logits/chosen': -0.39728620648384094, 'epoch': 0.0}
+
+  0%|          | 8/4791 [01:30<14:15:48, 10.74s/it]
+
+  0%|          | 9/4791 [01:40<14:08:22, 10.64s/it]
+
+
+  0%|          | 11/4791 [02:01<14:05:33, 10.61s/it]
+{'loss': 0.6883, 'learning_rate': 1.527777777777778e-07, 'rewards/chosen': 0.009069537743926048, 'rewards/rejected': 0.009077214635908604, 'rewards/accuracies': 0.625, 'rewards/margins': -7.677590474486351e-06, 'policy_logps/rejected': -421.69476318359375, 'policy_logps/chosen': -459.6081237792969, 'referece_logps/rejected': -421.7855529785156, 'referece_logps/chosen': -459.6988525390625, 'logits/rejected': -0.8598278760910034, 'logits/chosen': -0.869616687297821, 'epoch': 0.01}
+
+  0%|          | 12/4791 [02:12<14:04:28, 10.60s/it]
+
+
+  0%|          | 14/4791 [02:33<14:02:12, 10.58s/it]
+{'loss': 0.6897, 'learning_rate': 1.9444444444444445e-07, 'rewards/chosen': 0.0270627960562706, 'rewards/rejected': -0.03667621687054634, 'rewards/accuracies': 0.5, 'rewards/margins': 0.06373901665210724, 'policy_logps/rejected': -423.10479736328125, 'policy_logps/chosen': -626.930908203125, 'referece_logps/rejected': -422.738037109375, 'referece_logps/chosen': -627.2015991210938, 'logits/rejected': -0.2769266664981842, 'logits/chosen': -0.3937620222568512, 'epoch': 0.01}
+

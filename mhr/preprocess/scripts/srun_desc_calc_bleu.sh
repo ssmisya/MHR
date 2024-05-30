@@ -12,22 +12,23 @@ default_language=fr
 language=${1:- $default_language}
 alignment_strategy=${2:-"language"}
 
-input_data_dir=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_generations
+input_data_dir=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/calc_score/bleu/translations
+bleu_home=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/calc_score/bleu/results
 file_name=llava_sft_palo_generation_vg_num20_${language}.json
 
 if [ $alignment_strategy == "language" ]; then
-    output_data_dir=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_bleu_language_add_ppl
+    output_data_dir=${bleu_home}/desc_language_add_ppl
     reference_en_file=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_generations/llava_sft_palo_generation_vg_num20_en.json
     
 elif [ $alignment_strategy == "preference" ]; then
-    output_data_dir=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_bleu_preference_add_ppl
+    output_data_dir=${bleu_home}/desc_preference_add_ppl
     reference_en_file="fuck"
 else
-    output_data_dir=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_bleu_hallucination_add_ppl
+    output_data_dir=${bleu_home}/desc_hallucination_add_ppl
     reference_en_file="fuck"
 fi
 
-mkdir -p $output_data_dir
+mkdir -p $output_data_dirw
 
 gpus=1
 cpus=16
