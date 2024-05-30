@@ -1,7 +1,7 @@
   0%|          | 0/35541 [00:00<?, ?it/s]Traceback (most recent call last):
-  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/./train_dpo.py", line 716, in <module>
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/./train_dpo.py", line 716, in <module>
     main()
-  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/./train_dpo.py", line 713, in main
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/./train_dpo.py", line 713, in main
     dpo_trainer.train()
   File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1539, in train
     return inner_training_loop(
@@ -25,7 +25,7 @@ Original Traceback (most recent call last):
     data = [self.dataset[idx] for idx in possibly_batched_index]
   File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
     data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/./train_dpo.py", line 284, in __getitem__
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/./train_dpo.py", line 284, in __getitem__
     image = Image.open(os.path.join(image_folder, image_file)).convert('RGB')
   File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/PIL/Image.py", line 3247, in open
     fp = builtins.open(filename, "rb")

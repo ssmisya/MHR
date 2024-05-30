@@ -52,8 +52,8 @@ else
   image_folder=./data/gqa/images
 fi
 
-code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments
-# /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments/eval/object_hallucination_vqa_llava.py
+code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/vcd/experiments
+# /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/vcd/experiments/eval/object_hallucination_vqa_llava.py
 cd $code_base
 
 python ./eval/object_hallucination_vqa_llava.py \

@@ -4,7 +4,7 @@ source ~/anaconda3/bin/activate vcd
 # cd $code_base
 
 seed=55
-preprocess_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess
+preprocess_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/preprocess
 data_dir_base=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test
 
 reward_model_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/nllb-200-distilled-600M

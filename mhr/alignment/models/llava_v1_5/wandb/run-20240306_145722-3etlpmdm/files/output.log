@@ -2,9 +2,9 @@
 
   0%|          | 1/97737 [00:26<722:50:21, 26.63s/it]
   0%|          | 1/97737 [00:26<722:50:21, 26.63s/it]Traceback (most recent call last):
-  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_sft.py", line 850, in <module>
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/./train_sft.py", line 850, in <module>
     train()
-  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_sft.py", line 830, in train
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/./train_sft.py", line 830, in train
     trainer.train()
   File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1539, in train
     return inner_training_loop(

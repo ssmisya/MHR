@@ -49,7 +49,7 @@ def main():
 
     
     image_folder="/mnt/petrelfs/share_data/quxiaoye/VCD_file/val2014"
-    vcd_base="/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/vcd/experiments"
+    vcd_base="/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/vcd/experiments"
     
     output_file_base = "/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/generations/direct_dpo"
     output_file_dir = "sft_sh"

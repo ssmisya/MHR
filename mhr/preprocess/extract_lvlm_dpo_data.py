@@ -5,8 +5,8 @@ import os
 from tqdm import tqdm
 
 
-from m3apo.vcd.experiments.eval.language_dict import language_dict
-from m3apo.utils.utils import write_jsonl,process_jsonl
+from mhr.vcd.experiments.eval.language_dict import language_dict
+from mhr.utils.utils import write_jsonl,process_jsonl
 
 from langdetect import detect
 

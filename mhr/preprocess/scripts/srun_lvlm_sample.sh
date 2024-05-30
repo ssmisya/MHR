@@ -12,7 +12,7 @@ language=${1:-$default_language}
 sample_dataset_type=${2:-"vg"}
 data_base=/mnt/petrelfs/songmingyang/songmingyang/data/mm
 run_base=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess
-code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess
+code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/preprocess
 cd $code_base
 
 if [ $sample_dataset_type == "vg" ]
@@ -41,7 +41,7 @@ gpus=1
 cpus=16
 quotatype="reserved"
 OMP_NUM_THREADS=4 srun --partition=MoE --job-name="sampling" --mpi=pmi2 --gres=gpu:${gpus} -n1 --ntasks-per-node=1 -c ${cpus} --kill-on-bad-exit=1 --quotatype=${quotatype} \
-python /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess/lvlm_sampling.py \
+python /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/preprocess/lvlm_sampling.py \
 --model-path ${model_path} \
 --question-file  ${question_file} \
 --question_file_format "json" \

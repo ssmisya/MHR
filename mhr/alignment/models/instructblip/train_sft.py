@@ -1,5 +1,5 @@
 import os
-os.environ["WANDB_PROJECT"]="m3apo"
+os.environ["WANDB_PROJECT"]="mhr"
 
 import yaml
 import json
@@ -19,11 +19,11 @@ from transformers import TrainerCallback
 from transformers import HfArgumentParser, TrainingArguments,  InstructBlipProcessor, InstructBlipForConditionalGeneration
 from torch.utils.data import Dataset
 
-# import m3apo.alignment.models.instructblip.vigc.tasks as tasks
-# from m3apo.alignment.models.instructblip.vigc.common.config import Config
+# import mhr.alignment.models.instructblip.vigc.tasks as tasks
+# from mhr.alignment.models.instructblip.vigc.common.config import Config
 
-from m3apo.alignment.trainer.instructblip_sft_trainer import InstructBLIPTrainer
-from m3apo.alignment.models.instructblip.dpo_dataset import DataCollatorForPaloSFTDataset, PaloSFTDataset
+from mhr.alignment.trainer.instructblip_sft_trainer import InstructBLIPTrainer
+from mhr.alignment.models.instructblip.dpo_dataset import DataCollatorForPaloSFTDataset, PaloSFTDataset
 import transformers
 
 local_rank = None

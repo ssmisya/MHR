@@ -86,11 +86,11 @@
         "0.1"
     ],
     "state": "running",
-    "program": "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/./train_dpo.py",
+    "program": "/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava-v1_5/./train_dpo.py",
     "codePathLocal": "train_dpo.py",
-    "codePath": "m3apo/alignment/models/llava-v1_5/train_dpo.py",
+    "codePath": "mhr/alignment/models/llava-v1_5/train_dpo.py",
     "git": {
-        "remote": "git@github.com:ssmisya/M3APO.git",
+        "remote": "git@github.com:ssmisya/mhr.git",
         "commit": "110501a9e66d90fbda2b9d422d21d3425af39af7"
     },
     "email": "hitsmy@qq.com",

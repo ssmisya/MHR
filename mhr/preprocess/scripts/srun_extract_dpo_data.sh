@@ -30,7 +30,7 @@ gpus=0
 cpus=8
 quotatype="reserved"
 OMP_NUM_THREADS=4 srun --partition=MoE --job-name="extract" --mpi=pmi2 --gres=gpu:${gpus} -n1 --ntasks-per-node=1 -c ${cpus} --kill-on-bad-exit=1 --quotatype=${quotatype} \
-python /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/preprocess/desc_extract_dpo_data.py \
+python /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/preprocess/desc_extract_dpo_data.py \
 -i ${input_data_dir} \
 -o ${output_data_dir} \
 --file_name ${file_name} \

@@ -9,17 +9,17 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # print(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from m3apo.vcd.experiments.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
-from m3apo.vcd.experiments.llava.conversation import conv_templates, SeparatorStyle
-from m3apo.vcd.experiments.llava.model.builder import load_pretrained_model
-from m3apo.vcd.experiments.llava.utils import disable_torch_init
-from m3apo.vcd.experiments.llava.mm_utils import tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria
+from mhr.vcd.experiments.llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
+from mhr.vcd.experiments.llava.conversation import conv_templates, SeparatorStyle
+from mhr.vcd.experiments.llava.model.builder import load_pretrained_model
+from mhr.vcd.experiments.llava.utils import disable_torch_init
+from mhr.vcd.experiments.llava.mm_utils import tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria
 from vcd_utils.vcd_add_noise import add_diffusion_noise
 from vcd_utils.vcd_sample import evolve_vcd_sampling
 evolve_vcd_sampling()
-from m3apo.vcd.experiments.eval.language_dict import language_dict
+from mhr.vcd.experiments.eval.language_dict import language_dict
 
-from m3apo.utils.utils import process_jsonl
+from mhr.utils.utils import process_jsonl
 
 from PIL import Image
 import math

@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
-from m3apo.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
-from m3apo.utils.utils import load_json_file, write_json_file
+from mhr.vcd.experiments.eval.language_dict import language_dict,nllb_200_distilled_600M_language_dict
+from mhr.utils.utils import load_json_file, write_json_file
 
 
 ## settings

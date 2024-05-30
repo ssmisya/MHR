@@ -37,13 +37,13 @@ export PATH=/mnt/petrelfs/share/gcc/gcc-11.2.0/bin:$PATH
 # virtual environment
 source ~/.bashrc
 source ~/anaconda3/bin/activate vcd_origin
-code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/
+code_base=/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/
 cd $code_base
 
 seed=55
 
 # program settings
-accelerate_config_file=/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/scripts/deepspeed/accelerate_config.yaml
+accelerate_config_file=/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/scripts/deepspeed/accelerate_config.yaml
 ckpt_save_dir=/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints
 vision_tower_path=/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336
 model_name_or_path=/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/llava_checkpoint_1000

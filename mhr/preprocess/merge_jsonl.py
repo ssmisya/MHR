@@ -1,4 +1,4 @@
-from m3apo.utils.utils import merge_jsonl
+from mhr.utils.utils import merge_jsonl
 
 # 要合并的jsonl文件路径列表
 filepaths ="/mnt/petrelfs/songmingyang/songmingyang/runs/llava/test/dpo_data"

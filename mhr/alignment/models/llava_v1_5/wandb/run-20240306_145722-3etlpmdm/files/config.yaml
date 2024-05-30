@@ -540,7 +540,7 @@ fsdp_transformer_layer_cls_to_wrap:
   value: None
 deepspeed:
   desc: null
-  value: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5//scripts/deepspeed/zero3.json
+  value: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5//scripts/deepspeed/zero3.json
 label_smoothing_factor:
   desc: null
   value: 0.0

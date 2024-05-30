@@ -1,9 +1,9 @@
 2024-03-09 14:47:13,237 INFO    StreamThr :89642 [internal.py:wandb_internal():86] W&B internal server running at pid: 89642, started at: 2024-03-09 14:47:13.236069
 2024-03-09 14:47:13,239 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status
-2024-03-09 14:47:13,243 INFO    WriterThread:89642 [datastore.py:open_for_write():87] open: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/run-vo5fh7by.wandb
+2024-03-09 14:47:13,243 INFO    WriterThread:89642 [datastore.py:open_for_write():87] open: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/run-vo5fh7by.wandb
 2024-03-09 14:47:13,244 DEBUG   SenderThread:89642 [sender.py:send():382] send: header
 2024-03-09 14:47:13,456 DEBUG   SenderThread:89642 [sender.py:send():382] send: run
-2024-03-09 14:47:14,081 INFO    SenderThread:89642 [dir_watcher.py:__init__():211] watching files in: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files
+2024-03-09 14:47:14,081 INFO    SenderThread:89642 [dir_watcher.py:__init__():211] watching files in: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files
 2024-03-09 14:47:14,081 INFO    SenderThread:89642 [sender.py:_start_run_threads():1136] run started: vo5fh7by with start time 1709966833.239485
 2024-03-09 14:47:14,092 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: check_version
 2024-03-09 14:47:14,092 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: check_version
@@ -22,11 +22,11 @@
 2024-03-09 14:47:14,622 DEBUG   HandlerThread:89642 [system_info.py:_probe_git():136] Probing git
 2024-03-09 14:47:14,654 DEBUG   HandlerThread:89642 [system_info.py:_probe_git():144] Probing git done
 2024-03-09 14:47:14,654 DEBUG   HandlerThread:89642 [system_info.py:probe():199] Probing system done
-2024-03-09 14:47:14,655 DEBUG   HandlerThread:89642 [system_monitor.py:probe():223] {'os': 'Linux-3.10.0-957.el7.x86_64-x86_64-with-glibc2.17', 'python': '3.9.18', 'heartbeatAt': '2024-03-09T06:47:14.611332', 'startedAt': '2024-03-09T06:47:13.205298', 'docker': None, 'cuda': None, 'args': ('--deepspeed', './scripts/deepspeed/zero3.json', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '0', '--model_name_or_path', '/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/llava_checkpoint_1000', '--version', 'v1', '--self_hallucination_data_path', '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_dpo_data', '--vision_tower', '/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/palo_sfted_self_hallucination_full', '--num_train_epochs', '3', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '500', '--save_total_limit', '5', '--learning_rate', '2e-6', '--weight_decay', '0.', '--warmup_steps', '0', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb', '--run_name', 'palo_sfted_self_hallucination_full', '--beta', '0.1'), 'state': 'running', 'program': '/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py', 'codePathLocal': 'train_dpo.py', 'codePath': 'm3apo/alignment/models/llava_v1_5/train_dpo.py', 'git': {'remote': 'git@github.com:ssmisya/M3APO.git', 'commit': 'fc99efbc7b81a0927000be6b5e3760ffca90bc46'}, 'email': 'hitsmy@qq.com', 'root': '/mnt/petrelfs/songmingyang/code/mm/MAPO', 'host': 'SH-IDCA1404-10-140-54-41', 'username': 'songmingyang', 'executable': '/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}], 'disk': {'/': {'total': 488.89007568359375, 'used': 27.89568328857422}}, 'gpu': 'NVIDIA A100-SXM4-80GB', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 1007.3445129394531}}
+2024-03-09 14:47:14,655 DEBUG   HandlerThread:89642 [system_monitor.py:probe():223] {'os': 'Linux-3.10.0-957.el7.x86_64-x86_64-with-glibc2.17', 'python': '3.9.18', 'heartbeatAt': '2024-03-09T06:47:14.611332', 'startedAt': '2024-03-09T06:47:13.205298', 'docker': None, 'cuda': None, 'args': ('--deepspeed', './scripts/deepspeed/zero3.json', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '0', '--model_name_or_path', '/mnt/petrelfs/songmingyang/songmingyang/model/mm/ckpts/sft_palo/llava_checkpoint_1000', '--version', 'v1', '--self_hallucination_data_path', '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/preprocess/sft_on_palo_1000/desc_dpo_data', '--vision_tower', '/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/palo_sfted_self_hallucination_full', '--num_train_epochs', '3', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '500', '--save_total_limit', '5', '--learning_rate', '2e-6', '--weight_decay', '0.', '--warmup_steps', '0', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb', '--run_name', 'palo_sfted_self_hallucination_full', '--beta', '0.1'), 'state': 'running', 'program': '/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/./train_dpo.py', 'codePathLocal': 'train_dpo.py', 'codePath': 'mhr/alignment/models/llava_v1_5/train_dpo.py', 'git': {'remote': 'git@github.com:ssmisya/mhr.git', 'commit': 'fc99efbc7b81a0927000be6b5e3760ffca90bc46'}, 'email': 'hitsmy@qq.com', 'root': '/mnt/petrelfs/songmingyang/code/mm/MAPO', 'host': 'SH-IDCA1404-10-140-54-41', 'username': 'songmingyang', 'executable': '/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}], 'disk': {'/': {'total': 488.89007568359375, 'used': 27.89568328857422}}, 'gpu': 'NVIDIA A100-SXM4-80GB', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 1007.3445129394531}}
 2024-03-09 14:47:14,655 INFO    HandlerThread:89642 [system_monitor.py:probe():224] Finished collecting system info
 2024-03-09 14:47:14,656 INFO    HandlerThread:89642 [system_monitor.py:probe():227] Publishing system info
 2024-03-09 14:47:14,656 DEBUG   HandlerThread:89642 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
-2024-03-09 14:47:15,083 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/conda-environment.yaml
+2024-03-09 14:47:15,083 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/conda-environment.yaml
 2024-03-09 14:47:18,136 DEBUG   HandlerThread:89642 [system_info.py:_save_conda():220] Saving conda packages done
 2024-03-09 14:47:18,140 INFO    HandlerThread:89642 [system_monitor.py:probe():229] Finished publishing system info
 2024-03-09 14:47:18,147 DEBUG   SenderThread:89642 [sender.py:send():382] send: files
@@ -43,14 +43,14 @@
 2024-03-09 14:47:18,556 DEBUG   SenderThread:89642 [sender.py:send():382] send: telemetry
 2024-03-09 14:47:18,557 DEBUG   SenderThread:89642 [sender.py:send():382] send: metric
 2024-03-09 14:47:18,557 WARNING SenderThread:89642 [sender.py:send_metric():1354] Seen metric with glob (shouldn't happen)
-2024-03-09 14:47:19,089 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-metadata.json
-2024-03-09 14:47:19,090 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:47:19,091 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/requirements.txt
+2024-03-09 14:47:19,089 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-metadata.json
+2024-03-09 14:47:19,090 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:47:19,091 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/requirements.txt
 2024-03-09 14:47:19,715 INFO    wandb-upload_0:89642 [upload_job.py:push():131] Uploaded file /tmp/tmpmzkw4gv1wandb/7mko840n-wandb-metadata.json
-2024-03-09 14:47:21,095 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:47:22,098 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:47:21,095 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:47:22,098 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:47:24,256 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:47:28,115 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:47:28,115 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:47:29,390 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:47:33,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:47:33,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -74,15 +74,15 @@
 2024-03-09 14:47:43,025 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:47:43,026 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:47:43,029 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:47:43,154 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:47:44,157 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:47:43,154 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:47:44,157 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:47:45,034 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:47:45,160 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:47:46,163 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/config.yaml
+2024-03-09 14:47:45,160 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:47:46,163 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/config.yaml
 2024-03-09 14:47:48,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:47:48,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:47:48,158 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:47:50,175 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:47:50,175 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:47:51,406 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:47:56,407 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:48:01,407 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -93,11 +93,11 @@
 2024-03-09 14:48:04,351 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:48:04,351 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:48:04,354 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:48:05,218 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:48:05,219 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:48:06,221 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:05,218 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:05,219 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:48:06,221 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:48:07,355 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:48:12,238 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:12,238 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:48:12,775 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:48:14,569 DEBUG   SystemMonitor:89642 [system_monitor.py:_start():172] Starting system metrics aggregation loop
 2024-03-09 14:48:14,571 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
@@ -110,14 +110,14 @@
 2024-03-09 14:48:26,292 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:48:26,292 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:48:26,294 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:48:27,280 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:48:27,281 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:48:28,283 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:27,280 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:27,281 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:48:28,283 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:48:29,295 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:48:33,156 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:48:33,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:48:33,157 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:48:34,300 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:34,300 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:48:34,448 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:48:39,449 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:48:44,449 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -129,11 +129,11 @@
 2024-03-09 14:48:48,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:48:48,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:48:48,157 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:48:48,340 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:48:48,341 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:48:49,343 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:48,340 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:48,341 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:48:49,343 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:48:50,388 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:48:54,357 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:48:54,357 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:48:55,748 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:49:00,749 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:49:03,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -144,10 +144,10 @@
 2024-03-09 14:49:08,278 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:49:08,278 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:49:08,281 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:49:08,395 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:49:09,398 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:49:08,395 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:49:09,398 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:49:12,282 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:49:13,410 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:49:13,410 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:49:14,577 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:49:17,578 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:49:18,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -159,14 +159,14 @@
 2024-03-09 14:49:29,108 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:49:29,109 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:49:29,111 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:49:29,457 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:49:29,458 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:49:31,463 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:49:29,457 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:49:29,458 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:49:31,463 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:49:33,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:49:33,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:49:33,158 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 14:49:33,470 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:49:35,475 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:49:35,475 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:49:38,501 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:49:43,501 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:49:44,577 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
@@ -178,10 +178,10 @@
 2024-03-09 14:49:50,087 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:49:50,087 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:49:50,090 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:49:50,517 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:49:51,520 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:49:50,517 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:49:51,520 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:49:54,091 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:49:57,538 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:49:57,538 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:49:59,448 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:50:03,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:50:03,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -192,11 +192,11 @@
 2024-03-09 14:50:11,362 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:50:11,362 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:50:11,364 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:50:11,577 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:50:13,583 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:50:11,577 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:50:13,583 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:50:14,579 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:50:14,581 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:50:17,595 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:50:17,595 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:50:18,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:50:18,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:50:18,158 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -207,13 +207,13 @@
 2024-03-09 14:50:32,199 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:50:32,199 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:50:32,202 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:50:32,639 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:50:32,639 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:50:33,157 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:50:33,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:50:33,158 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:50:33,642 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:50:33,642 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:50:36,459 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:50:39,660 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:50:39,660 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:50:42,448 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:50:44,581 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:50:47,583 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -225,10 +225,10 @@
 2024-03-09 14:50:53,065 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:50:53,065 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:50:53,067 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:50:53,699 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:50:55,706 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:50:53,699 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:50:55,706 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:50:58,069 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:50:59,717 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:50:59,717 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:51:03,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:51:03,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:51:03,159 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -240,13 +240,13 @@
 2024-03-09 14:51:13,938 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:51:13,940 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
 2024-03-09 14:51:14,582 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
-2024-03-09 14:51:14,762 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:51:15,765 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:51:14,762 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:51:15,765 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:51:18,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:51:18,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:51:18,159 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 14:51:18,461 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:51:21,783 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:51:21,783 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:51:24,289 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:51:29,289 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:51:33,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -257,10 +257,10 @@
 2024-03-09 14:51:34,793 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:51:34,793 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:51:34,796 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:51:34,820 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:51:35,823 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:51:34,820 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:51:35,823 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:51:39,797 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:51:41,841 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:51:41,841 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:51:44,584 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:51:45,585 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:51:48,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -271,12 +271,12 @@
 2024-03-09 14:51:55,474 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:51:55,474 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:51:55,476 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:51:55,881 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:51:55,881 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:51:56,477 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:51:56,884 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:51:57,887 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:51:56,884 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:51:57,887 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:52:01,569 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:52:01,899 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:52:01,899 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:52:03,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:52:03,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:52:03,159 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -287,15 +287,15 @@
 2024-03-09 14:52:15,976 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:52:15,976 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:52:15,978 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:52:16,942 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:52:16,943 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:52:17,945 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:52:16,942 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:52:16,943 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:52:17,945 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:52:17,979 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:52:18,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:52:18,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:52:18,159 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 14:52:23,386 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:52:23,962 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:52:23,962 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:52:28,387 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:52:33,158 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:52:33,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -305,11 +305,11 @@
 2024-03-09 14:52:36,933 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:52:36,933 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:52:36,935 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:52:36,999 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:52:38,002 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:52:36,999 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:52:38,002 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:52:38,936 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:52:39,005 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:52:44,018 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:52:39,005 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:52:44,018 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:52:44,111 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:52:44,589 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:52:48,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -321,14 +321,14 @@
 2024-03-09 14:52:57,847 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:52:57,847 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:52:57,849 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:52:58,058 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:52:59,061 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:52:58,058 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:52:59,061 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:52:59,850 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:53:00,064 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:53:00,064 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:53:03,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:53:03,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:53:03,160 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:53:04,076 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:53:04,076 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:53:05,413 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:53:10,413 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:53:14,588 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
@@ -340,12 +340,12 @@
 2024-03-09 14:53:18,819 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:53:18,819 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:53:18,821 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:53:19,117 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:53:19,118 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:53:20,121 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:53:19,117 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:53:19,118 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:53:20,121 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:53:20,823 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:53:26,025 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:53:26,138 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:53:26,138 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:53:31,026 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:53:33,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:53:33,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -355,12 +355,12 @@
 2024-03-09 14:53:39,753 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:53:39,753 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:53:39,755 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:53:40,178 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:53:41,182 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:53:40,178 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:53:41,182 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:53:41,756 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:53:42,185 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:53:42,185 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:53:44,589 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
-2024-03-09 14:53:46,197 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:53:46,197 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:53:46,965 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:53:48,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:53:48,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -371,15 +371,15 @@
 2024-03-09 14:54:00,686 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:54:00,686 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:54:00,688 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:54:01,241 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:54:01,242 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:54:02,244 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:01,241 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:01,242 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:54:02,244 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:54:02,689 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:54:03,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:54:03,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:54:03,160 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 14:54:07,780 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:54:08,263 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:08,263 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:54:12,781 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:54:14,591 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:54:18,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -390,11 +390,11 @@
 2024-03-09 14:54:20,321 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:54:20,321 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:54:20,323 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:54:21,303 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:54:21,304 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:54:22,306 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:21,303 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:21,304 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:54:22,306 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:54:24,325 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:54:28,323 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:28,323 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:54:29,668 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:54:33,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:54:33,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -405,15 +405,15 @@
 2024-03-09 14:54:41,244 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:54:41,245 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:54:41,247 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:54:41,360 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:54:43,365 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:54:44,368 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:41,360 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:54:43,365 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:44,368 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:54:44,592 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:54:45,593 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:54:48,159 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:54:48,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:54:48,160 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:54:48,379 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:54:48,379 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:54:51,444 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:54:56,444 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:55:01,445 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -421,14 +421,14 @@
 2024-03-09 14:55:02,253 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:55:02,253 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:55:02,256 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:55:02,419 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:55:02,419 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:55:03,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:55:03,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:55:03,161 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:55:03,423 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:55:04,426 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:03,423 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:04,426 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:55:06,454 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:55:10,444 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:10,444 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:55:11,621 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:55:14,593 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:55:17,595 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -440,11 +440,11 @@
 2024-03-09 14:55:23,177 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:55:23,177 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:55:23,179 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:55:23,481 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:55:24,484 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:55:25,487 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:23,481 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:55:24,484 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:25,487 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:55:28,180 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:55:30,503 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:30,503 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:55:33,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:55:33,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:55:33,161 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -455,15 +455,15 @@
 2024-03-09 14:55:44,154 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:55:44,154 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:55:44,156 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:55:44,542 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:55:44,542 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:55:44,596 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
-2024-03-09 14:55:45,545 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:55:46,548 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:45,545 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:46,548 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:55:48,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:55:48,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:55:48,161 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 14:55:48,445 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:55:52,565 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:55:52,565 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:55:53,548 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:55:58,548 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:56:03,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -474,11 +474,11 @@
 2024-03-09 14:56:05,141 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:56:05,141 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:56:05,143 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:56:05,602 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:56:05,603 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 14:56:06,605 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:05,602 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:05,603 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:56:06,605 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:56:10,144 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:56:12,623 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:12,623 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:56:14,598 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:56:15,599 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:56:18,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -489,12 +489,12 @@
 2024-03-09 14:56:25,874 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:56:25,874 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:56:25,877 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:56:26,662 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:56:26,662 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:56:26,878 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:56:27,666 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:56:28,669 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:27,666 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:28,669 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:56:32,197 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:56:32,681 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:32,681 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:56:33,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:56:33,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:56:33,161 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -505,15 +505,15 @@
 2024-03-09 14:56:46,837 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:56:46,837 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:56:46,839 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:56:47,726 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:56:47,727 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:56:47,726 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:47,727 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:56:47,840 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:56:48,160 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:56:48,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:56:48,161 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:56:48,729 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:48,729 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:56:53,260 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:56:54,747 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:56:54,747 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:56:58,261 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:57:03,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:57:03,179 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -523,13 +523,13 @@
 2024-03-09 14:57:07,929 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:57:07,929 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:57:07,931 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:57:08,787 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:57:08,787 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:57:08,940 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:57:09,791 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:57:10,794 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:09,791 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:10,794 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:57:14,196 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:57:14,600 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
-2024-03-09 14:57:14,805 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:14,805 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:57:18,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:57:18,171 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:57:18,171 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -539,15 +539,15 @@
 2024-03-09 14:57:28,924 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:57:28,924 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:57:28,927 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:57:29,850 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:57:29,851 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:57:29,850 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:29,851 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:57:29,935 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:57:30,853 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:30,853 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:57:33,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:57:33,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:57:33,161 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 14:57:35,231 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:57:36,877 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:36,877 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:57:40,232 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:57:44,601 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:57:45,602 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -558,11 +558,11 @@
 2024-03-09 14:57:50,003 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:57:50,008 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:57:50,016 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:57:50,921 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:57:50,921 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:57:51,025 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:57:51,924 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:57:52,928 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:57:55,937 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:51,924 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:52,928 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:57:55,937 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:57:56,182 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:58:01,183 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:58:03,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -573,12 +573,12 @@
 2024-03-09 14:58:11,028 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:58:11,028 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:58:11,030 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:58:11,984 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:58:11,985 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:58:11,984 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:58:11,985 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:58:12,031 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:58:14,603 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:58:17,355 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:58:18,002 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:58:18,002 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:58:18,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:58:18,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:58:18,162 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -588,13 +588,13 @@
 2024-03-09 14:58:31,996 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:58:31,996 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:58:31,999 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:58:32,040 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:58:32,040 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:58:33,000 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:58:33,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:58:33,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:58:33,162 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 14:58:34,047 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:58:38,059 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:58:34,047 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:58:38,059 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:58:38,370 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:58:43,371 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:58:44,604 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
@@ -606,11 +606,11 @@
 2024-03-09 14:58:52,805 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:58:52,805 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:58:52,807 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:58:53,103 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:58:53,103 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:58:53,808 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:58:54,106 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:58:54,106 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:58:58,934 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:59:00,126 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:59:00,126 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:59:03,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:59:03,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:59:03,162 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -620,16 +620,16 @@
 2024-03-09 14:59:13,355 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:59:13,355 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:59:13,358 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:59:14,167 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:59:14,168 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:59:14,167 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:59:14,168 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:59:14,605 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:59:14,606 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:59:16,173 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:59:16,173 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:59:18,161 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 14:59:18,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 14:59:18,162 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 14:59:19,768 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:59:20,185 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:59:20,185 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:59:24,769 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:59:29,769 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:59:33,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -639,10 +639,10 @@
 2024-03-09 14:59:34,413 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:59:34,413 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:59:34,415 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:59:35,230 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:59:35,230 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:59:35,416 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:59:36,233 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:59:40,245 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:59:36,233 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:59:40,245 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 14:59:40,597 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 14:59:44,606 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 14:59:45,620 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -654,11 +654,11 @@
 2024-03-09 14:59:55,441 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 14:59:55,446 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 14:59:55,450 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 14:59:56,292 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 14:59:56,299 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 14:59:56,292 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:59:56,299 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 14:59:57,454 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 14:59:58,298 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:00:02,310 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 14:59:58,298 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:00:02,310 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:00:02,835 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:00:03,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:00:03,166 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -670,14 +670,14 @@
 2024-03-09 15:00:16,503 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:00:16,505 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:00:16,508 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:00:17,356 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:00:17,356 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:00:18,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:00:18,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:00:18,163 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 15:00:18,360 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:00:18,360 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:00:18,448 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:00:23,849 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:00:24,380 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:00:24,380 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:00:28,850 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:00:33,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:00:33,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -687,11 +687,11 @@
 2024-03-09 15:00:37,313 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:00:37,313 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:00:37,316 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:00:37,419 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:00:37,420 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:00:38,422 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:00:37,419 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:00:37,420 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:00:38,422 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:00:40,317 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:00:44,441 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:00:44,441 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:00:44,609 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 15:00:45,610 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:00:48,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -703,14 +703,14 @@
 2024-03-09 15:00:58,310 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:00:58,310 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:00:58,313 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:00:58,481 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:00:59,484 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:01:00,487 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:00:58,481 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:00:59,484 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:01:00,487 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:01:02,314 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:01:03,162 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:01:03,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:01:03,163 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 15:01:04,499 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:01:04,499 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:01:07,704 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:01:12,705 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:01:14,611 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
@@ -722,11 +722,11 @@
 2024-03-09 15:01:19,215 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:01:19,215 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:01:19,218 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:01:19,540 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:01:19,541 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:01:20,543 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:01:19,540 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:01:19,541 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:01:20,543 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:01:24,219 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:01:26,562 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:01:26,562 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:01:29,639 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:01:33,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:01:33,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -736,12 +736,12 @@
 2024-03-09 15:01:40,363 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:01:40,363 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:01:40,366 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:01:40,605 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:01:40,605 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:01:41,367 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:01:41,608 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:01:42,611 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:01:41,608 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:01:42,611 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:01:44,614 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
-2024-03-09 15:01:46,624 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:01:46,624 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:01:46,718 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:01:48,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:01:48,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -752,14 +752,14 @@
 2024-03-09 15:02:01,413 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:02:01,413 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:02:01,415 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:02:01,666 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:02:01,667 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:02:02,669 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:01,666 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:01,667 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:02:02,669 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:02:03,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:02:03,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:02:03,164 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 15:02:03,947 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:02:08,687 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:08,687 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:02:09,691 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:02:14,613 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 15:02:15,615 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -771,11 +771,11 @@
 2024-03-09 15:02:22,383 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:02:22,383 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:02:22,385 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:02:22,727 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:02:23,730 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:02:24,733 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:22,727 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:02:23,730 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:24,733 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:02:27,362 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:02:28,745 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:28,745 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:02:32,363 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:02:33,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:02:33,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -785,31 +785,31 @@
 2024-03-09 15:02:41,739 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:02:41,739 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:02:41,742 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:02:41,782 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:02:41,782 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:02:42,743 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:02:42,785 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:02:43,788 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:42,785 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:43,788 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:02:44,615 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 15:02:48,070 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:02:48,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:02:48,163 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 15:02:48,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
-2024-03-09 15:02:48,802 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:02:48,802 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:02:53,458 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:02:58,459 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:03:02,753 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: partial_history
 2024-03-09 15:03:02,755 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:03:02,755 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:03:02,757 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:03:02,843 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:03:02,843 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:03:03,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:03:03,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:03:03,164 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 15:03:03,470 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:03:03,846 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:03:04,849 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:03,846 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:04,849 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:03:08,963 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:03:10,867 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:10,867 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:03:13,964 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:03:14,616 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 15:03:18,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -820,12 +820,12 @@
 2024-03-09 15:03:23,533 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:03:23,533 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:03:23,535 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:03:23,904 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:03:23,905 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:03:23,904 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:23,905 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:03:24,536 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:03:24,907 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:24,907 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:03:29,715 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:03:30,924 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:30,924 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:03:33,163 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:03:33,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:03:33,164 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -836,15 +836,15 @@
 2024-03-09 15:03:44,281 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:03:44,283 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
 2024-03-09 15:03:44,618 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
-2024-03-09 15:03:44,965 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:03:44,965 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:03:45,619 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:03:45,968 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:03:46,971 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:45,968 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:46,971 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:03:48,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:03:48,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:03:48,164 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 15:03:50,811 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:03:50,983 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:03:50,983 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:03:55,812 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:04:00,812 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:04:03,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -854,12 +854,12 @@
 2024-03-09 15:04:05,427 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:04:05,427 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:04:05,429 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:04:06,028 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:04:06,029 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:04:06,028 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:06,029 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:04:06,430 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:04:07,031 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:07,031 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:04:11,716 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:04:13,048 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:13,048 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:04:14,619 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 15:04:17,620 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:04:18,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
@@ -870,11 +870,11 @@
 2024-03-09 15:04:26,208 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:04:26,208 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:04:26,210 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:04:27,088 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:04:28,091 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:04:29,094 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:27,088 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:04:28,091 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:29,094 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:04:29,211 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:04:33,106 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:33,106 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:04:33,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:04:33,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:04:33,164 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -886,15 +886,15 @@
 2024-03-09 15:04:47,180 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:04:47,180 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:04:47,182 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:04:48,148 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:04:48,149 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:04:48,148 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:48,149 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:04:48,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:04:48,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:04:48,164 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 15:04:49,151 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:49,151 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:04:49,405 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:04:54,417 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:04:55,169 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:04:55,169 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:04:59,418 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:05:03,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:05:03,165 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -904,12 +904,12 @@
 2024-03-09 15:05:08,104 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:05:08,104 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:05:08,106 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:05:08,205 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:05:08,205 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
 2024-03-09 15:05:10,107 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:05:10,211 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:05:11,214 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:10,211 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:11,214 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:05:14,622 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
-2024-03-09 15:05:15,226 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:15,226 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:05:15,624 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:05:18,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:05:18,165 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -920,15 +920,15 @@
 2024-03-09 15:05:28,735 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:05:28,736 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:05:28,738 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:05:29,266 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:05:30,269 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:05:31,273 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:29,266 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:05:30,269 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:31,273 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:05:31,740 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:05:33,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:05:33,165 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:05:33,165 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
 2024-03-09 15:05:37,073 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:05:37,292 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:37,292 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:05:42,074 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:05:44,623 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 15:05:47,624 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
@@ -939,11 +939,11 @@
 2024-03-09 15:05:49,517 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:05:49,518 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:05:49,520 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:05:50,331 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:05:50,332 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:05:51,334 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:50,331 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:50,332 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:05:51,334 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:05:53,521 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:05:57,351 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:05:57,351 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:05:58,627 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:06:03,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:06:03,165 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -954,12 +954,12 @@
 2024-03-09 15:06:10,280 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:06:10,280 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:06:10,283 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:06:10,388 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:06:12,394 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
-2024-03-09 15:06:13,397 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:06:10,388 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:06:12,394 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:06:13,397 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:06:14,624 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
 2024-03-09 15:06:14,627 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
-2024-03-09 15:06:17,409 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:06:17,409 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:06:18,164 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:06:18,165 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:06:18,165 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
@@ -970,12 +970,12 @@
 2024-03-09 15:06:31,319 DEBUG   SenderThread:89642 [sender.py:send():382] send: history
 2024-03-09 15:06:31,320 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: summary_record
 2024-03-09 15:06:31,322 INFO    SenderThread:89642 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
-2024-03-09 15:06:31,449 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
-2024-03-09 15:06:32,452 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:06:31,449 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/wandb-summary.json
+2024-03-09 15:06:32,452 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:06:33,169 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:06:33,169 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: stop_status
 2024-03-09 15:06:33,170 DEBUG   SenderThread:89642 [sender.py:send_request():409] send_request: stop_status
-2024-03-09 15:06:33,455 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
+2024-03-09 15:06:33,455 INFO    Thread-12 :89642 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/files/output.log
 2024-03-09 15:06:36,480 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:06:41,481 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: status_report
 2024-03-09 15:06:44,626 DEBUG   SenderThread:89642 [sender.py:send():382] send: stats
@@ -1640,7 +1640,7 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', por
 2024-03-09 15:31:38,185 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
 2024-03-09 15:31:43,186 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
 2024-03-09 15:31:48,174 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
-2024-03-09 15:31:52,726 WARNING FileStreamThread:89642 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/pjlab_moe/m3apo/vo5fh7by/file_stream (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f2d30663610>: Failed to establish a new connection: [Errno 110] Connection timed out'))). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x7f2d31822790>>, timeout=180.0), args: ('https://api.wandb.ai/files/pjlab_moe/m3apo/vo5fh7by/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
+2024-03-09 15:31:52,726 WARNING FileStreamThread:89642 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/pjlab_moe/mhr/vo5fh7by/file_stream (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f2d30663610>: Failed to establish a new connection: [Errno 110] Connection timed out'))). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x7f2d31822790>>, timeout=180.0), args: ('https://api.wandb.ai/files/pjlab_moe/mhr/vo5fh7by/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
 2024-03-09 15:31:53,186 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
 2024-03-09 15:31:58,186 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
 2024-03-09 15:32:03,174 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
@@ -1667,7 +1667,7 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', por
 2024-03-09 15:33:48,174 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:33:53,196 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
 2024-03-09 15:33:58,196 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
-2024-03-09 15:34:02,134 WARNING FileStreamThread:89642 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/pjlab_moe/m3apo/vo5fh7by/file_stream (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f2d306dbbe0>: Failed to establish a new connection: [Errno 110] Connection timed out'))). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x7f2d31822790>>, timeout=180.0), args: ('https://api.wandb.ai/files/pjlab_moe/m3apo/vo5fh7by/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
+2024-03-09 15:34:02,134 WARNING FileStreamThread:89642 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/pjlab_moe/mhr/vo5fh7by/file_stream (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f2d306dbbe0>: Failed to establish a new connection: [Errno 110] Connection timed out'))). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x7f2d31822790>>, timeout=180.0), args: ('https://api.wandb.ai/files/pjlab_moe/mhr/vo5fh7by/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
 2024-03-09 15:34:03,174 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:34:08,197 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
 2024-03-09 15:34:13,197 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
@@ -1695,7 +1695,7 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', por
 2024-03-09 15:36:03,175 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:36:08,207 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
 2024-03-09 15:36:13,208 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
-2024-03-09 15:36:14,102 WARNING FileStreamThread:89642 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/pjlab_moe/m3apo/vo5fh7by/file_stream (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f2d307b9400>: Failed to establish a new connection: [Errno 110] Connection timed out'))). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x7f2d31822790>>, timeout=180.0), args: ('https://api.wandb.ai/files/pjlab_moe/m3apo/vo5fh7by/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
+2024-03-09 15:36:14,102 WARNING FileStreamThread:89642 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/pjlab_moe/mhr/vo5fh7by/file_stream (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f2d307b9400>: Failed to establish a new connection: [Errno 110] Connection timed out'))). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x7f2d31822790>>, timeout=180.0), args: ('https://api.wandb.ai/files/pjlab_moe/mhr/vo5fh7by/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
 2024-03-09 15:36:18,175 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: internal_messages
 2024-03-09 15:36:23,208 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive
 2024-03-09 15:36:28,209 DEBUG   HandlerThread:89642 [handler.py:handle_request():146] handle_request: keepalive

@@ -67,7 +67,7 @@ langdetect==1.0.9
 linkify-it-py==2.0.3
 lit==17.0.6
 loguru==0.7.2
-m3apo==0.1.0
+mhr==0.1.0
 markdown-it-py==2.2.0
 markupsafe==2.1.5
 matplotlib-inline==0.1.6

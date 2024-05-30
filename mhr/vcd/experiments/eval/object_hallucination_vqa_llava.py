@@ -24,7 +24,7 @@ from transformers import set_seed
 from vcd_utils.vcd_add_noise import add_diffusion_noise
 from vcd_utils.vcd_sample import evolve_vcd_sampling
 evolve_vcd_sampling()
-from m3apo.vcd.experiments.eval.language_dict import language_dict
+from mhr.vcd.experiments.eval.language_dict import language_dict
 
 
 def eval_model(args):

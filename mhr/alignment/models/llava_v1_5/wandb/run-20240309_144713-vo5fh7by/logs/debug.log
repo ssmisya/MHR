@@ -1,12 +1,12 @@
 2024-03-09 14:47:13,226 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Current SDK version is 0.16.3
 2024-03-09 14:47:13,229 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Configure stats pid to 85189
 2024-03-09 14:47:13,229 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Loading settings from /mnt/petrelfs/songmingyang/.config/wandb/settings
-2024-03-09 14:47:13,230 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Loading settings from /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/settings
-2024-03-09 14:47:13,230 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'api_key': '***REDACTED***', 'project': 'm3apo'}
+2024-03-09 14:47:13,230 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Loading settings from /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/settings
+2024-03-09 14:47:13,230 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'api_key': '***REDACTED***', 'project': 'mhr'}
 2024-03-09 14:47:13,230 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
-2024-03-09 14:47:13,231 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'm3apo/alignment/models/llava_v1_5/train_dpo.py', 'program_abspath': '/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/train_dpo.py', 'program': '/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py'}
-2024-03-09 14:47:13,231 INFO    MainThread:85189 [wandb_init.py:_log_setup():526] Logging user logs to /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/logs/debug.log
-2024-03-09 14:47:13,232 INFO    MainThread:85189 [wandb_init.py:_log_setup():527] Logging internal logs to /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/logs/debug-internal.log
+2024-03-09 14:47:13,231 INFO    MainThread:85189 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'mhr/alignment/models/llava_v1_5/train_dpo.py', 'program_abspath': '/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/train_dpo.py', 'program': '/mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/./train_dpo.py'}
+2024-03-09 14:47:13,231 INFO    MainThread:85189 [wandb_init.py:_log_setup():526] Logging user logs to /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/logs/debug.log
+2024-03-09 14:47:13,232 INFO    MainThread:85189 [wandb_init.py:_log_setup():527] Logging internal logs to /mnt/petrelfs/songmingyang/code/mm/MAPO/mhr/alignment/models/llava_v1_5/wandb/run-20240309_144713-vo5fh7by/logs/debug-internal.log
 2024-03-09 14:47:13,232 INFO    MainThread:85189 [wandb_init.py:init():566] calling init triggers
 2024-03-09 14:47:13,232 INFO    MainThread:85189 [wandb_init.py:init():573] wandb.init called with sweep_config: {}
 config: {}
