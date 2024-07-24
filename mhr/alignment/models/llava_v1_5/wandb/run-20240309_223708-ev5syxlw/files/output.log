@@ -1,0 +1,32 @@
+  0%|          | 0/5124 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py", line 861, in <module>
+    main()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py", line 858, in main
+    dpo_trainer.train()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1787, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/accelerate/data_loader.py", line 384, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/_utils.py", line 644, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_dpo.py", line 431, in __getitem__
+    image_path = image_file if os.path.isabs(image_file) else os.path.join(image_folder, image_file)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/posixpath.py", line 76, in join
+    a = os.fspath(a)
+TypeError: expected str, bytes or os.PathLike object, not NoneType

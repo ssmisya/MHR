@@ -1,0 +1,1102 @@
+2024-03-05 13:54:55,483 INFO    StreamThr :120088 [internal.py:wandb_internal():86] W&B internal server running at pid: 120088, started at: 2024-03-05 13:54:55.482201
+2024-03-05 13:54:55,484 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status
+2024-03-05 13:54:55,490 INFO    WriterThread:120088 [datastore.py:open_for_write():87] open: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/run-bcg2ce3b.wandb
+2024-03-05 13:54:55,491 DEBUG   SenderThread:120088 [sender.py:send():382] send: header
+2024-03-05 13:54:55,712 DEBUG   SenderThread:120088 [sender.py:send():382] send: run
+2024-03-05 13:54:56,404 INFO    SenderThread:120088 [dir_watcher.py:__init__():211] watching files in: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files
+2024-03-05 13:54:56,405 INFO    SenderThread:120088 [sender.py:_start_run_threads():1136] run started: bcg2ce3b with start time 1709618095.486407
+2024-03-05 13:54:56,416 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: check_version
+2024-03-05 13:54:56,417 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: check_version
+2024-03-05 13:54:57,993 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: run_start
+2024-03-05 13:54:58,001 DEBUG   HandlerThread:120088 [system_info.py:__init__():27] System info init
+2024-03-05 13:54:58,001 DEBUG   HandlerThread:120088 [system_info.py:__init__():42] System info init done
+2024-03-05 13:54:58,002 INFO    HandlerThread:120088 [system_monitor.py:start():194] Starting system monitor
+2024-03-05 13:54:58,002 INFO    SystemMonitor:120088 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-05 13:54:58,002 INFO    HandlerThread:120088 [system_monitor.py:probe():214] Collecting system info
+2024-03-05 13:54:58,003 INFO    SystemMonitor:120088 [interfaces.py:start():190] Started cpu monitoring
+2024-03-05 13:54:58,005 INFO    SystemMonitor:120088 [interfaces.py:start():190] Started disk monitoring
+2024-03-05 13:54:58,006 INFO    SystemMonitor:120088 [interfaces.py:start():190] Started gpu monitoring
+2024-03-05 13:54:58,007 INFO    SystemMonitor:120088 [interfaces.py:start():190] Started memory monitoring
+2024-03-05 13:54:58,009 INFO    SystemMonitor:120088 [interfaces.py:start():190] Started network monitoring
+2024-03-05 13:54:58,056 DEBUG   HandlerThread:120088 [system_info.py:probe():151] Probing system
+2024-03-05 13:54:58,070 DEBUG   HandlerThread:120088 [system_info.py:_probe_git():136] Probing git
+2024-03-05 13:54:58,106 DEBUG   HandlerThread:120088 [system_info.py:_probe_git():144] Probing git done
+2024-03-05 13:54:58,106 DEBUG   HandlerThread:120088 [system_info.py:probe():199] Probing system done
+2024-03-05 13:54:58,107 DEBUG   HandlerThread:120088 [system_monitor.py:probe():223] {'os': 'Linux-3.10.0-957.el7.x86_64-x86_64-with-glibc2.17', 'python': '3.9.18', 'heartbeatAt': '2024-03-05T05:54:58.056881', 'startedAt': '2024-03-05T05:54:55.458303', 'docker': None, 'cuda': None, 'args': ('--deepspeed', './scripts/deepspeed/zero3.json', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '0', '--model_name_or_path', '/mnt/petrelfs/songmingyang/songmingyang/model/mm/LLaVA-RLHF-7b-v1.5-224/sft_model', '--version', 'v1', '--self_hallucination_data_path', '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/ha_dpo_desc/dpo_data', '--vision_tower', '/mnt/petrelfs/songmingyang/songmingyang/model/others/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/mnt/petrelfs/songmingyang/songmingyang/runs/llava/dpo/checkpoints/sft_self_hallucination_full', '--num_train_epochs', '3', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '500', '--save_total_limit', '5', '--learning_rate', '2e-6', '--weight_decay', '0.', '--warmup_steps', '0', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb', '--run_name', 'llava-v1.5-sft-lora', '--beta', '0.1'), 'state': 'running', 'program': '/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/./train_dpo.py', 'codePathLocal': 'train_dpo.py', 'codePath': 'm3apo/alignment/models/llava-v1_5/train_dpo.py', 'git': {'remote': 'git@github.com:ssmisya/M3APO.git', 'commit': '858f328e36e4458bc8f54fa584f62250dd7fa92e'}, 'email': 'hitsmy@qq.com', 'root': '/mnt/petrelfs/songmingyang/code/mm/MAPO', 'host': 'SH-IDCA1404-10-140-54-45', 'username': 'songmingyang', 'executable': '/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}], 'disk': {'/': {'total': 488.89007568359375, 'used': 27.89510726928711}}, 'gpu': 'NVIDIA A100-SXM4-80GB', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 1007.3444519042969}}
+2024-03-05 13:54:58,107 INFO    HandlerThread:120088 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-05 13:54:58,108 INFO    HandlerThread:120088 [system_monitor.py:probe():227] Publishing system info
+2024-03-05 13:54:58,108 DEBUG   HandlerThread:120088 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-03-05 13:54:58,410 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/conda-environment.yaml
+2024-03-05 13:55:01,518 DEBUG   HandlerThread:120088 [system_info.py:_save_conda():220] Saving conda packages done
+2024-03-05 13:55:01,522 INFO    HandlerThread:120088 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-05 13:55:01,529 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:01,530 DEBUG   SenderThread:120088 [sender.py:send():382] send: files
+2024-03-05 13:55:01,531 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-03-05 13:55:01,538 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-05 13:55:01,539 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: python_packages
+2024-03-05 13:55:01,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:55:01,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:55:01,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:55:01,973 DEBUG   SenderThread:120088 [sender.py:send():382] send: telemetry
+2024-03-05 13:55:01,973 DEBUG   SenderThread:120088 [sender.py:send():382] send: config
+2024-03-05 13:55:01,974 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:01,975 DEBUG   SenderThread:120088 [sender.py:send():382] send: telemetry
+2024-03-05 13:55:01,975 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:01,976 WARNING SenderThread:120088 [sender.py:send_metric():1354] Seen metric with glob (shouldn't happen)
+2024-03-05 13:55:02,447 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-metadata.json
+2024-03-05 13:55:02,447 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:55:02,448 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/requirements.txt
+2024-03-05 13:55:04,486 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:55:06,720 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:11,721 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:16,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:55:16,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:55:16,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:55:16,809 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:17,607 INFO    wandb-upload_0:120088 [upload_job.py:push():131] Uploaded file /tmp/tmpmjasi2dxwandb/bjbxjgt7-wandb-metadata.json
+2024-03-05 13:55:21,809 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:26,155 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:55:26,158 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,158 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,159 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,159 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,160 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,160 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,160 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,161 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,161 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,162 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,162 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,162 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,163 DEBUG   SenderThread:120088 [sender.py:send():382] send: metric
+2024-03-05 13:55:26,163 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:55:26,164 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:55:26,166 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:55:26,619 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:55:27,171 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:27,622 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/config.yaml
+2024-03-05 13:55:28,647 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:55:31,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:55:31,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:55:31,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:55:32,856 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:37,856 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:42,856 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:46,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:55:46,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:55:46,578 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:55:47,712 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:55:47,714 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:55:47,714 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:55:47,717 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:55:48,713 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:55:48,714 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:55:48,718 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:50,720 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:55:53,719 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:55:58,010 DEBUG   SystemMonitor:120088 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-05 13:55:58,013 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:55:59,014 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:01,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:56:01,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:56:01,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:56:04,858 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:08,452 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:56:08,454 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:56:08,454 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:56:08,456 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:56:08,775 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:56:10,458 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:10,784 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:56:15,458 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:16,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:56:16,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:56:16,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:56:20,797 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:25,798 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:28,015 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:56:29,487 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:56:29,489 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:56:29,489 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:56:29,491 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:56:29,844 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:56:30,847 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:56:31,492 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:31,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:56:31,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:56:31,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:56:36,785 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:41,785 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:46,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:56:46,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:56:46,579 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:56:46,791 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:49,966 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:56:49,968 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:56:49,968 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:56:49,971 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:56:50,912 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:56:50,913 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:56:51,972 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:56,972 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:56:58,018 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:57:01,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:57:01,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:57:01,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:57:02,817 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:07,817 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:10,687 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:57:10,689 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:57:10,689 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:57:10,692 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:57:10,974 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:57:12,980 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:57:13,693 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:16,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:57:16,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:57:16,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:57:18,818 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:23,819 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:28,020 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:57:29,021 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:31,539 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:57:31,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:57:31,579 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:57:31,770 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:57:31,873 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:57:31,873 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:57:31,875 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:57:32,119 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:57:33,123 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:57:34,877 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:35,130 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:57:39,877 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:44,877 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:46,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:57:46,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:57:46,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:57:50,800 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:53,042 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:57:53,044 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:57:53,044 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:57:53,046 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:57:53,187 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:57:54,190 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:57:55,194 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:57:56,048 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:57:58,022 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:58:01,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:58:01,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:58:01,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:58:01,873 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:06,874 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:11,874 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:12,506 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:58:12,508 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:58:12,508 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:58:12,511 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:58:13,254 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:58:14,258 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:58:15,261 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:58:16,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:58:16,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:58:16,540 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:58:16,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:21,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:26,884 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:28,023 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:58:31,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:58:31,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:58:31,580 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:58:32,839 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:33,614 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:58:33,616 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:58:33,616 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:58:33,619 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:58:34,401 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:58:34,402 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:58:35,404 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:58:38,620 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:43,620 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:46,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:58:46,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:58:46,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:58:48,889 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:53,890 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:58:54,419 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:58:54,421 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:58:54,421 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:58:54,425 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:58:54,511 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:58:56,518 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:58:58,027 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:58:59,028 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:01,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:59:01,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:59:01,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:59:04,788 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:09,788 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:14,788 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:14,912 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:59:14,914 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:59:14,914 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:59:14,916 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:59:15,649 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:59:16,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:59:16,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:59:16,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:59:16,652 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:59:19,805 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:24,805 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:28,028 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:59:30,029 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:31,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:59:31,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:59:31,580 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:59:35,763 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:35,804 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:59:35,806 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:59:35,806 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:59:35,809 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:59:36,718 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:59:36,719 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:59:40,810 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:45,810 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:46,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 13:59:46,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 13:59:46,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 13:59:50,890 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:55,890 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 13:59:56,440 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 13:59:56,442 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 13:59:56,442 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 13:59:56,445 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 13:59:56,783 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 13:59:56,784 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 13:59:58,029 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 13:59:58,791 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:00:01,030 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:01,540 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:00:01,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:00:01,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:00:06,782 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:11,782 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:16,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:00:16,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:00:16,580 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:00:16,829 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:17,270 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:00:17,272 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:00:17,272 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:00:17,275 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:00:17,853 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:00:18,856 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:00:22,276 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:27,277 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:28,030 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:00:31,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:00:31,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:00:31,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:00:32,887 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:37,887 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:38,110 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:00:38,112 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:00:38,112 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:00:38,114 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:00:38,920 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:00:38,921 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:00:43,115 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:46,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:00:46,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:00:46,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:00:48,839 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:53,839 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:00:58,031 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:00:58,102 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:00:58,104 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:00:58,104 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:00:58,106 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:00:58,986 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:00:58,987 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:00:59,107 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:01,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:01:01,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:01:01,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:01:04,882 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:09,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:14,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:16,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:01:16,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:01:16,580 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:01:18,451 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:01:18,453 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:01:18,453 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:01:18,456 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:01:19,145 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:01:19,146 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:01:20,457 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:21,152 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:01:25,457 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:28,033 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:01:31,034 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:31,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:01:31,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:01:31,541 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:01:36,863 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:39,054 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:01:39,056 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:01:39,056 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:01:39,058 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:01:39,210 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:01:41,217 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:01:42,059 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:46,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:01:46,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:01:46,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:01:47,803 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:52,804 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:57,804 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:01:58,034 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:01:59,731 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:01:59,733 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:01:59,733 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:01:59,735 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:02:00,282 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:02:01,285 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:02:01,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:02:01,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:02:01,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:02:02,818 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:07,818 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:12,818 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:16,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:02:16,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:02:16,581 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:02:18,796 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:20,414 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:02:20,416 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:02:20,416 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:02:20,418 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:02:20,438 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:02:21,442 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:02:24,419 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:28,037 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:02:30,038 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:31,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:02:31,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:02:31,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:02:35,861 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:40,861 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:41,115 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:02:41,117 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:02:41,117 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:02:41,119 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:02:41,542 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:02:42,546 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:02:43,549 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:02:46,121 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:46,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:02:46,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:02:46,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:02:51,909 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:56,909 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:02:58,037 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:03:01,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:03:01,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:03:01,581 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:03:01,747 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:03:01,835 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:03:01,836 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:03:01,838 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:03:02,667 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:03:02,668 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:03:02,839 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:03,671 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:03:07,840 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:12,840 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:16,541 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:03:16,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:03:16,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:03:17,876 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:22,581 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:03:22,583 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:03:22,583 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:03:22,585 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:03:22,733 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:03:23,586 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:23,736 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:03:24,740 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:03:28,039 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:03:29,040 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:31,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:03:31,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:03:31,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:03:34,829 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:39,830 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:43,219 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:03:43,221 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:03:43,221 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:03:43,223 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:03:43,803 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:03:44,807 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:03:45,224 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:45,810 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:03:46,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:03:46,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:03:46,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:03:50,831 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:55,832 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:03:58,040 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:04:01,041 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:01,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:04:01,542 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:04:01,581 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:04:03,905 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:04:03,907 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:04:03,907 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:04:03,909 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:04:04,872 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:04:04,873 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:04:06,910 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:11,911 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:16,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:04:16,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:04:16,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:04:17,833 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:22,833 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:24,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:04:24,544 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:04:24,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:04:24,547 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:04:24,974 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:04:24,975 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:04:28,042 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:04:28,044 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:31,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:04:31,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:04:31,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:04:33,800 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:38,801 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:43,801 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:45,268 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:04:45,270 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:04:45,270 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:04:45,272 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:04:46,126 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:04:46,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:04:46,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:04:46,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:04:47,132 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:04:48,842 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:53,842 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:04:58,042 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:04:59,044 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:01,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:05:01,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:05:01,581 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:05:04,791 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:06,048 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:05:06,050 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:05:06,050 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:05:06,052 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:05:06,191 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:05:07,195 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:05:10,053 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:15,054 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:16,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:05:16,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:05:16,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:05:20,896 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:25,897 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:26,808 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:05:26,810 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:05:26,810 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:05:26,812 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:05:27,274 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:05:28,044 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:05:29,281 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:05:31,045 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:31,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:05:31,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:05:31,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:05:36,885 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:41,885 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:46,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:05:46,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:05:46,582 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:05:47,472 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:47,511 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:05:47,513 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:05:47,513 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:05:47,515 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:05:48,362 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:05:49,381 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:05:52,517 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:57,517 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:05:58,045 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:06:01,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:06:01,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:06:01,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:06:02,881 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:07,881 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:08,236 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:06:08,238 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:06:08,238 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:06:08,240 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:06:08,471 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:06:09,475 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:06:13,241 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:16,542 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:06:16,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:06:16,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:06:18,843 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:23,843 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:28,047 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:06:28,899 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:28,938 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:06:28,939 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:06:28,940 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:06:28,942 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:06:29,568 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:06:31,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:06:31,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:06:31,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:06:31,574 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:06:33,951 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:38,952 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:43,952 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:46,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:06:46,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:06:46,582 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:06:49,675 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:49,715 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:06:49,717 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:06:49,717 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:06:49,719 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:06:50,684 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:06:51,687 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:06:54,721 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:06:58,048 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:07:00,049 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:01,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:07:01,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:07:01,543 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:07:05,804 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:10,551 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:07:10,553 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:07:10,553 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:07:10,555 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:07:10,745 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:07:11,556 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:11,748 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:07:16,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:07:16,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:07:16,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:07:16,807 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:21,808 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:26,808 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:28,050 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:07:31,283 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:07:31,285 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:07:31,285 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:07:31,287 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:07:31,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:07:31,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:07:31,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:07:31,813 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:07:31,842 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:32,817 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:07:33,820 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:07:36,843 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:41,843 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:46,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:07:46,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:07:46,583 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:07:47,802 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:51,984 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:07:51,986 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:07:51,986 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:07:51,988 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:07:52,879 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:07:52,880 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:07:52,989 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:53,882 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:07:57,990 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:07:58,051 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:08:01,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:08:01,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:08:01,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:08:03,862 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:08,863 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:12,758 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:08:12,760 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:08:12,760 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:08:12,762 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:08:12,941 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:08:12,941 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:08:13,944 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:08:14,763 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:16,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:08:16,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:08:16,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:08:19,803 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:24,803 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:28,054 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:08:30,055 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:31,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:08:31,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:08:31,583 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:08:33,410 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:08:33,412 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:08:33,412 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:08:33,414 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:08:34,005 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:08:35,008 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:08:35,415 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:40,416 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:45,416 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:46,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:08:46,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:08:46,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:08:50,866 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:54,143 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:08:54,144 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:08:54,145 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:08:54,147 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:08:55,136 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:08:55,137 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:08:56,148 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:08:58,054 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:09:01,543 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:09:01,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:09:01,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:09:01,851 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:06,852 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:11,852 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:14,955 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:09:14,957 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:09:14,957 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:09:14,960 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:09:15,198 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:09:16,201 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:09:16,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:09:16,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:09:16,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:09:17,205 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:09:17,788 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:22,789 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:27,789 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:28,055 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:09:31,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:09:31,544 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:09:31,583 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:09:32,814 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:35,408 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:09:35,409 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:09:35,410 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:09:35,412 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:09:36,266 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:09:37,269 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:09:38,273 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:09:38,413 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:43,414 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:46,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:09:46,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:09:46,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:09:48,890 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:53,891 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:09:56,181 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:09:56,183 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:09:56,183 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:09:56,186 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:09:56,376 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:09:57,380 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:09:58,056 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:09:59,058 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:01,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:10:01,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:10:01,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:10:04,889 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:09,890 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:14,890 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:16,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:10:16,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:10:16,583 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:10:17,013 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:10:17,014 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:10:17,015 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:10:17,017 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:10:17,478 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:10:17,479 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:10:19,502 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:10:20,018 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:25,019 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:28,058 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:10:30,059 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:31,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:10:31,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:10:31,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:10:35,895 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:37,702 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:10:37,704 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:10:37,704 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:10:37,706 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:10:38,589 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:10:39,592 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:10:41,708 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:46,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:10:46,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:10:46,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:10:46,802 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:51,803 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:56,803 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:10:58,059 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:10:58,403 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:10:58,405 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:10:58,405 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:10:58,407 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:10:58,699 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:10:59,702 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:11:01,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:11:01,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:11:01,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:11:01,842 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:06,842 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:11,843 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:16,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:11:16,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:11:16,584 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:11:16,884 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:19,168 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:11:19,170 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:11:19,170 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:11:19,172 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:11:19,781 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:11:19,782 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:11:21,789 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:11:22,173 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:27,174 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:28,061 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:11:31,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:11:31,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:11:31,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:11:32,908 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:37,908 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:40,020 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:11:40,022 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:11:40,022 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:11:40,024 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:11:40,852 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:11:41,855 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:11:43,026 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:46,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:11:46,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:11:46,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:11:48,848 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:53,849 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:11:58,062 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:11:59,063 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:00,793 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:12:00,796 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:12:00,796 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:12:00,798 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:12:00,923 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:12:01,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:12:01,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:12:01,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:12:01,926 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:12:04,787 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:09,788 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:14,788 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:16,544 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:12:16,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:12:16,584 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:12:19,799 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:20,329 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:12:20,330 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:12:20,331 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:12:20,333 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:12:20,985 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:12:21,989 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:12:25,335 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:28,063 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:12:31,065 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:31,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:12:31,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:12:31,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:12:36,852 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:41,027 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:12:41,028 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:12:41,029 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:12:41,031 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:12:41,067 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:12:42,032 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:42,071 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:12:46,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:12:46,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:12:46,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:12:47,810 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:52,810 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:57,811 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:12:58,065 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:13:01,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:13:01,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:13:01,584 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:13:01,692 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:13:01,829 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:13:01,830 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:13:01,832 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:13:02,156 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:13:02,833 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:03,159 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:13:04,163 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:13:07,834 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:12,834 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:16,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:13:16,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:13:16,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:13:18,820 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:22,416 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:13:22,418 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:13:22,418 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:13:22,421 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:13:23,264 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:13:23,264 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:13:24,285 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:13:24,422 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:28,066 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:13:30,068 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:31,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:13:31,545 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:13:31,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:13:35,897 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:40,898 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:43,185 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:13:43,187 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:13:43,187 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:13:43,189 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:13:43,487 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:13:44,504 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:13:45,526 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:13:46,190 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:46,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:13:46,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:13:46,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:13:51,890 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:56,891 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:13:58,068 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:14:01,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:14:01,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:14:01,584 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:14:02,843 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:03,910 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:14:03,912 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:14:03,912 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:14:03,915 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:14:04,662 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:14:05,665 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:14:06,668 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:14:07,916 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:12,916 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:16,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:14:16,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:14:16,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:14:18,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:23,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:24,526 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:14:24,528 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:14:24,528 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:14:24,530 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:14:24,741 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:14:25,744 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:14:28,069 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:14:29,071 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:31,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:14:31,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:14:31,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:14:34,819 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:39,819 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:44,820 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:45,283 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:14:45,285 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:14:45,285 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:14:45,288 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:14:45,806 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:14:45,807 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:14:46,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:14:46,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:14:46,631 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:14:47,813 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:14:49,870 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:54,870 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:14:58,071 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:15:00,072 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:01,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:15:01,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:15:01,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:15:04,598 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:15:04,599 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:15:04,600 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:15:04,604 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:15:04,867 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:15:05,605 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:05,871 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:15:10,605 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:15,606 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:16,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:15:16,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:15:16,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:15:20,803 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:25,284 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:15:25,285 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:15:25,286 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:15:25,288 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:15:25,935 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:15:25,936 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:15:26,289 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:28,072 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:15:31,545 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:15:31,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:15:31,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:15:31,812 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:36,812 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:41,812 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:45,974 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:15:45,976 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:15:45,976 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:15:45,978 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:15:45,997 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:15:46,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:15:46,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:15:46,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:15:46,882 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:48,003 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:15:51,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:56,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:15:58,074 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:16:01,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:16:01,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:16:01,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:16:02,864 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:06,556 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:16:06,558 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:16:06,558 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:16:06,560 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:16:07,083 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:16:08,086 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:16:08,561 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:13,562 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:16,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:16:16,547 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:16:16,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:16:18,877 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:23,877 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:27,253 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:16:27,255 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:16:27,255 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:16:27,257 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:16:28,074 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:16:28,171 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:16:28,172 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:16:29,076 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:30,177 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:16:31,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:16:31,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:16:31,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:16:34,879 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:39,879 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:44,880 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:46,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:16:46,546 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:16:46,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:16:47,994 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:16:47,996 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:16:47,996 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:16:47,998 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:16:48,233 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:16:49,999 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:50,239 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:16:55,000 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:16:58,076 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:17:00,077 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:01,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:17:01,547 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:17:01,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:17:05,794 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:08,750 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:17:08,752 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:17:08,752 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:17:08,754 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:17:09,337 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:17:10,369 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:17:11,755 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:16,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:17:16,547 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:17:16,630 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:17:16,875 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:21,876 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:26,876 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:28,077 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:17:28,190 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:17:28,191 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:17:28,192 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:17:28,194 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:17:28,456 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:17:29,459 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:17:30,462 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:17:31,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:17:31,547 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:17:31,631 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:17:32,784 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:37,784 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:42,785 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:46,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:17:46,547 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:17:46,631 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:17:47,815 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:48,877 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:17:48,879 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:17:48,879 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:17:48,881 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:17:49,552 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:17:49,553 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:17:50,555 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:17:52,882 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:57,883 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:17:58,082 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:18:01,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:18:01,547 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:18:01,631 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:18:03,849 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:18:08,850 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:18:09,564 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-05 14:18:09,566 DEBUG   SenderThread:120088 [sender.py:send():382] send: history
+2024-03-05 14:18:09,566 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: summary_record
+2024-03-05 14:18:09,569 INFO    SenderThread:120088 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-05 14:18:09,617 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/wandb-summary.json
+2024-03-05 14:18:10,620 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:18:11,624 INFO    Thread-12 :120088 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/files/output.log
+2024-03-05 14:18:14,570 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:18:16,546 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-05 14:18:16,547 DEBUG   SenderThread:120088 [sender.py:send_request():409] send_request: stop_status
+2024-03-05 14:18:16,631 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-05 14:18:19,882 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:18:24,882 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:18:28,080 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:18:30,082 DEBUG   HandlerThread:120088 [handler.py:handle_request():146] handle_request: status_report
+2024-03-05 14:18:31,447 INFO    cpu       :120088 [interfaces.py:monitor():140] Process cpu has exited.
+2024-03-05 14:18:31,448 DEBUG   SystemMonitor:120088 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-05 14:18:31,449 DEBUG   SystemMonitor:120088 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-05 14:18:31,450 DEBUG   SenderThread:120088 [sender.py:send():382] send: stats
+2024-03-05 14:18:33,138 INFO    MainThread:120088 [internal.py:handle_exit():76] Internal process exited
+2024-03-05 14:18:33,915 WARNING StreamThr :120088 [internal.py:is_dead():414] Internal process exiting, parent pid 116684 disappeared
+2024-03-05 14:18:33,916 ERROR   StreamThr :120088 [internal.py:wandb_internal():152] Internal process shutdown.
+2024-03-05 14:18:34,450 INFO    HandlerThread:120088 [handler.py:finish():869] shutting down handler
+2024-03-05 14:18:34,451 INFO    WriterThread:120088 [datastore.py:close():296] close: /mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava-v1_5/wandb/run-20240305_135455-bcg2ce3b/run-bcg2ce3b.wandb
+2024-03-05 14:18:34,451 INFO    HandlerThread:120088 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-05 14:18:34,451 INFO    SenderThread:120088 [sender.py:finish():1572] shutting down sender
+2024-03-05 14:18:34,452 INFO    HandlerThread:120088 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-05 14:18:34,453 INFO    HandlerThread:120088 [interfaces.py:finish():202] Joined disk monitor
+2024-03-05 14:18:34,453 INFO    HandlerThread:120088 [interfaces.py:finish():202] Joined gpu monitor
+2024-03-05 14:18:34,453 INFO    HandlerThread:120088 [interfaces.py:finish():202] Joined memory monitor
+2024-03-05 14:18:34,454 INFO    HandlerThread:120088 [interfaces.py:finish():202] Joined network monitor

@@ -1,0 +1,12 @@
+  0%|          | 0/2685 [00:00<?, ?it/s]/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/trainer/llava_dpo_trainer.py:179: UserWarning: compute_loss is only implemented for DPODataCollatorWithPadding, and you passed a datacollator that is different than DPODataCollatorWithPadding - you might see unexpected behavior. Alternatively, you can implement your own prediction_step method if you are using a custom data collator
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/2685 [00:24<18:37:27, 24.98s/it]
+
+  0%|          | 2/2685 [00:47<17:31:07, 23.51s/it]
+
+  0%|          | 3/2685 [01:09<17:04:12, 22.91s/it]
+
+  0%|          | 4/2685 [01:31<16:41:13, 22.41s/it]
+
+  0%|          | 5/2685 [01:54<16:50:09, 22.62s/it]

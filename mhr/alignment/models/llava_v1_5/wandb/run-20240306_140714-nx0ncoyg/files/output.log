@@ -1,0 +1,39 @@
+
+
+  0%|          | 1/97737 [00:20<555:47:06, 20.47s/it]
+  0%|          | 1/97737 [00:20<555:47:06, 20.47s/it]Traceback (most recent call last):
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_sft.py", line 850, in <module>
+    train()
+  File "/mnt/petrelfs/songmingyang/code/mm/MAPO/m3apo/alignment/models/llava_v1_5/./train_sft.py", line 830, in train
+    trainer.train()
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 1809, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/transformers/trainer.py", line 2665, in training_step
+    self.accelerator.backward(loss)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/accelerate/accelerator.py", line 1847, in backward
+    self.deepspeed_engine_wrapped.backward(loss, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/accelerate/utils/deepspeed.py", line 167, in backward
+    self.engine.backward(loss, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/deepspeed/utils/nvtx.py", line 15, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/deepspeed/runtime/engine.py", line 1976, in backward
+    self.optimizer.backward(loss, retain_graph=retain_graph)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/deepspeed/utils/nvtx.py", line 15, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/deepspeed/runtime/zero/stage3.py", line 2213, in backward
+    self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
+    scaled_loss.backward(retain_graph=retain_graph)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/autograd/function.py", line 274, in apply
+    return user_fn(self, *args)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/utils/checkpoint.py", line 157, in backward
+    torch.autograd.backward(outputs_with_grad, args_with_grad)
+  File "/mnt/petrelfs/songmingyang/anaconda3/envs/vcd/lib/python3.9/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 6.56 GiB (GPU 0; 79.32 GiB total capacity; 57.46 GiB already allocated; 6.38 GiB free; 71.38 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
