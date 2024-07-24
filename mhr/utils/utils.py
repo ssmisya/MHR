@@ -1,5 +1,6 @@
 import json
 import os
+import torch.distributed as dist
 
 def load_json_file(filepath):
     '''
@@ -11,7 +12,7 @@ def load_json_file(filepath):
 
 def write_json_file(data, filepath):
     with open(filepath, 'w',encoding="UTF-8") as f:
-        json.dump(data, f, ensure_ascii=False,)
+        json.dump(data, f, ensure_ascii=False,indent=4)
 
 def process_jsonl(file_path):
     '''
@@ -53,3 +54,22 @@ def append_jsonl(data, filename):
     with open(filename, 'a', encoding='utf-8') as f:
         json.dump(data, f)
         f.write('\n')
+        
+def load_txt_file(filepath):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        data = f.readlines()
+    data = [line.strip().replace("\n","") for line in data]
+    return data
+
+def write_txt_file(data, filepath):
+    for item in data:
+        with open(filepath, 'a', encoding='utf-8') as f:
+            f.write(item + '\n')
+            
+            
+def print_rank0(msg):
+    if dist.is_available() and dist.is_initialized():
+        if dist.get_rank() == 0:
+            print(msg)
+    else:
+        print(msg)
